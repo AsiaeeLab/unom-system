@@ -54,8 +54,8 @@ compares it with `paper4/figures/scoring.pdf` (apart from the creation date in t
 and compares it with `web/web/atlas/data/`, and reruns, in a copy of the repository, every script that writes in
 place (the synthetic patients and their reference outputs, the site's model copies, and the developer pages), none
 of which may change a file. It then runs the Python reference tests and the JavaScript suite and compares the counts
-with Table 2 of the manuscript: 437 JavaScript tests, all passing, and 180 reference outputs (18 patients, 10 model
-versions) reproduced by both scorers. The last line reports how many checks passed.
+with Table 2 of the manuscript: 437 JavaScript tests, all passing, and 162 reference outputs (18 patients, 9 models)
+reproduced by both scorers. The last line reports how many checks passed.
 
 To run only the JavaScript suite: `cd web && npm test`.
 

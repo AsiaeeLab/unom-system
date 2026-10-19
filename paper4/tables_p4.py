@@ -21,13 +21,13 @@ import pandas as pd
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AGG = os.path.join(ROOT, "results/aggregate")
 OUT = os.path.join(ROOT, "paper4/tables/models.tex")
-SELF_REPORT_TARGET = "Self-reported diagnosis, evaluated among self-reporters with no qualifying code"
+SELF_REPORT_TARGET = "Self-reported diagnosis among adults with no qualifying code"
 # (model file, row label, label and target, metrics file); the Long COVID row is assembled in long_covid().
 SELF_REPORT = [
     ("chronicfatigue", "Chronic fatigue", SELF_REPORT_TARGET, "33/t33_metrics.csv"),
     ("fibromyalgia", "Fibromyalgia", SELF_REPORT_TARGET, "39/t39_fibromyalgia_metrics.csv"),
     ("endometriosis", "Endometriosis",
-     "Self-reported diagnosis among women, evaluated among self-reporters with no qualifying code",
+     "Self-reported diagnosis among women with no qualifying code",
      "39/t39_endometriosis_metrics.csv"),
     ("lyme", "Lyme disease", SELF_REPORT_TARGET, "54/t54_lyme_metrics.csv"),
     ("lupus", "Lupus", SELF_REPORT_TARGET, "54/t54_lupus_metrics.csv"),

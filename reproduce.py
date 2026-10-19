@@ -36,7 +36,7 @@ SELF_REPORT = ['chronicfatigue', 'fibromyalgia', 'endometriosis', 'lyme', 'lupus
                'anxiety']
 CURRENT = ['longcovid'] + SELF_REPORT + ['longcovid.example']
 # Table 2 of the manuscript: the JavaScript suite and the cross-implementation parity check.
-TABLE2 = {'tests': 437, 'pass': 437, 'skipped': 0, 'fail': 0, 'reference outputs': 180}
+TABLE2 = {'tests': 437, 'pass': 437, 'skipped': 0, 'fail': 0, 'reference outputs': 162}
 ROWS: list[tuple[str, bool]] = []
 
 
@@ -123,9 +123,10 @@ def generators(out: Path):
 
 
 def reference_outputs() -> int:
-    """Reference outputs of the model versions shipped in model/ (one per synthetic patient and version)."""
+    """Reference outputs of the nine deployed models (one per synthetic patient and model), not the placeholder."""
     import json
-    ids = {f"{d['model_id']}-{d['version']}" for d in (json.loads(p.read_text()) for p in ROOT.glob('model/*.json'))}
+    ids = {f"{d['model_id']}-{d['version']}" for d in (json.loads(p.read_text()) for p in ROOT.glob('model/*.json')
+                                                     if not p.name.endswith('.example.json'))}
     return sum(len(list((ROOT / 'model/test_vectors/expected' / i).glob('*.json'))) for i in ids)
 
 
