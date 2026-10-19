@@ -37,7 +37,8 @@ Participant-level data stay in the Workbench and are not here.
 - `workbench/src/`: the scripts that ran inside the Workbench and produced the aggregate files, with the feature
   registries the models use.
 - `paper4/`: the script that writes Table 1 (`tables_p4.py`) and its output, the source of Figure 1
-  (`figures/figure1_architecture.tex`), and the script that captures Figure 2 (`figures/make_screens.py`).
+  (`figures/figure1_architecture.tex`), the script that draws Figure 2 from the Long COVID model file and one
+  synthetic patient (`figures/scoring.py`), and the script that captures Figure 3 (`figures/make_screens.py`).
 
 ## Reproduce the models, Table 1, and the technical evaluation
 
@@ -48,7 +49,8 @@ python3 reproduce.py
 ```
 
 This refits all nine model files from the released counts and requires each to equal `model/<name>.json` and the
-site's copy byte for byte, writes Table 1 and compares it with `paper4/tables/models.tex`, rebuilds the atlas data
+site's copy byte for byte, writes Table 1 and compares it with `paper4/tables/models.tex`, draws Figure 2 and
+compares it with `paper4/figures/scoring.pdf` (apart from the creation date in the PDF), rebuilds the atlas data
 and compares it with `web/web/atlas/data/`, and reruns, in a copy of the repository, every script that writes in
 place (the synthetic patients and their reference outputs, the site's model copies, and the developer pages), none
 of which may change a file. It then runs the Python reference tests and the JavaScript suite and compares the counts
@@ -60,7 +62,7 @@ To run only the JavaScript suite: `cd web && npm test`.
 
 The live checks of Table 2 need network access and are not part of `reproduce.py`: `node web/tools/smart-parity.mjs`
 compares the SMART sandbox launch with the demonstration for all 18 patients (see `web/README.md`). Figure 1 compiles
-with `latexmk -pdf paper4/figures/figure1_architecture.tex`. Figure 2 needs Playwright for Python, Pillow, and Chrome:
+with `latexmk -pdf paper4/figures/figure1_architecture.tex`. Figure 3 needs Playwright for Python, Pillow, and Chrome:
 `python3 paper4/figures/make_screens.py`.
 
 ## Run the site and use a model file

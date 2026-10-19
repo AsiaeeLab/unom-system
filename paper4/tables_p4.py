@@ -35,8 +35,9 @@ SELF_REPORT = [
     ("depression", "Depression", SELF_REPORT_TARGET, "55/t55_depression_metrics.csv"),
     ("anxiety", "Anxiety", SELF_REPORT_TARGET, "55/t55_anxiety_metrics.csv"),
 ]
-# The companion Long COVID analysis released a linear discriminant on 41 features, fitted without 18 held-out sites.
-COMPANION = "Companion released model (linear discriminant, 41 features) at 18 held-out sites"
+# The analysis that developed the Long COVID model released a linear discriminant on 41 features, fitted without 18
+# held-out sites.
+COMPANION = "Released linear discriminant (41 features) at 18 held-out sites"
 
 
 def model(name: str) -> dict:

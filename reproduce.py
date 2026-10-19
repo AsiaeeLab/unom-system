@@ -8,7 +8,8 @@ Steps
  1. Refit the nine model files from the released counts: the eight self-report models with
     analysis/build_cf_model.py and the Long COVID model with analysis/build_longcovid_model.py. Each refit must equal
     model/<name>.json and the site's copy in web/web/models/ byte for byte.
- 2. Write Table 1 with paper4/tables_p4.py and compare it with paper4/tables/models.tex.
+ 2. Write Table 1 with paper4/tables_p4.py and compare it with paper4/tables/models.tex, and draw Figure 2 with
+    paper4/figures/scoring.py and compare it with paper4/figures/scoring.pdf (apart from the creation date).
  3. Rebuild the atlas data with analysis/build_atlas_data.py and compare it with web/web/atlas/data/.
  4. In a copy of the repository (outputs/tree), rerun every generator that writes in place: the synthetic test
     patients and each model version's reference outputs (model/test_vectors/make_bundles.py), the site's model and
@@ -80,6 +81,13 @@ def table1(out: Path):
     dst = out / 'paper4/tables/models.tex'
     run([sys.executable, 'paper4/tables_p4.py', '--out', str(dst)])
     record('paper4/tables/models.tex (Table 1)', same(dst, ROOT / 'paper4/tables/models.tex'))
+    figs = out / 'paper4/figures'
+    figs.mkdir(parents=True, exist_ok=True)
+    run([sys.executable, '-c', 'import sys; sys.path.insert(0, "paper4/figures"); import scoring; '
+         f'scoring.main({str(figs)!r})'])
+    a, b = (figs / 'scoring.pdf').read_bytes(), (ROOT / 'paper4/figures/scoring.pdf').read_bytes()
+    strip = lambda t: re.sub(rb'/CreationDate \(D:[^)]*\)', b'', t)   # noqa: E731
+    record('paper4/figures/scoring.pdf (Figure 2)', strip(a) == strip(b))
 
 
 def atlas(out: Path):
@@ -147,7 +155,7 @@ def main() -> int:
     OUTPUTS.mkdir()
     print('1. models from the released counts')
     models(OUTPUTS)
-    print('2. Table 1')
+    print('2. Table 1 and Figure 2')
     table1(OUTPUTS)
     print('3. atlas data')
     atlas(OUTPUTS)
