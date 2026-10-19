@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="7.8343" height="7.8343" viewBox="0 0 7.8343 7.8343" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Left camera" clip-path="url(#clip0_0_224)">
+<circle id="Camera aperture" cx="3.91715" cy="3.91715" r="3.91715" fill="#080A0A"/>
+<circle id="Camera lens" cx="3.91715" cy="3.91715" r="1.7093" fill="#151D23"/>
+<circle id="Lens reflection" cx="3.0625" cy="3.0625" r="0.569767" fill="#2C3944"/>
+</g>
+<defs>
+<clipPath id="clip0_0_224">
+<rect width="7.8343" height="7.8343" fill="white"/>
+</clipPath>
+</defs>
+</svg>

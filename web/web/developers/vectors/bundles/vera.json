@@ -1,0 +1,189 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:fec8eb10-bbb0-553d-8b79-f99499b407b3",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "vera",
+    "gender": "female",
+    "birthDate": "1959-05-17",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Vera"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:10cf8b99-1c45-5a75-9174-74e85a8d691f",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "vera-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "period": {
+     "start": "2022-02-14"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:3666a0f6-be0a-52fc-bc6d-709ed32ff002",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "vera-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "period": {
+     "start": "2022-06-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:12a6f202-b777-5be4-982d-5d9eac733f30",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "vera-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "period": {
+     "start": "2022-11-01"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:f3b19ae9-1111-5da8-a8bc-3f4efc0f698b",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "vera-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "onsetDateTime": "2023-01-10",
+    "recordedDate": "2023-01-10"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:9bab773d-9850-5954-82c8-834d726ab343",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "vera-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "period": {
+     "start": "2023-01-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:b6abcd63-0528-5c2b-9583-3ce10868c787",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "vera-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "period": {
+     "start": "2024-02-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:0c09ca5c-aa24-5342-bb11-b5cf0296d258",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "vera-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R53.83",
+       "display": "Other fatigue"
+      }
+     ],
+     "text": "Other fatigue"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "onsetDateTime": "2024-02-20",
+    "recordedDate": "2024-02-20"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:b0bbdbda-37ea-52d0-af08-d7e0138a8e86",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "vera-enc-8",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/vera"
+    },
+    "period": {
+     "start": "2023-11-14"
+    }
+   }
+  }
+ ]
+}

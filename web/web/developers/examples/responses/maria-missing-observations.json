@@ -1,0 +1,20 @@
+{
+ "cards": [
+  {
+   "summary": "Could not score Long COVID, Chronic fatigue or ME/CFS, Fibromyalgia, Endometriosis, Lyme disease, Lupus, Migraine, Depression, Anxiety: Ob…",
+   "indicator": "info",
+   "detail": "**Could not score this chart for Long COVID, Chronic fatigue or ME/CFS, Fibromyalgia, Endometriosis, Lyme disease, Lupus, Migraine, Depression, Anxiety.** These conditions have no result, which is not the same as a negative result.\n\nThe EHR did not return the patient's complete Observation records (a failed, forbidden, or incomplete search). The models treat missing records as unknown, not as absent.\n\nReview the chart directly or open the SMART app.\n\nResearch decision support. Not a diagnosis. Models: unm-longcovid 1.2.0, unm-chronicfatigue 1.0.0, unm-fibromyalgia 1.0.0, unm-endometriosis 1.0.0, unm-lyme 1.0.0, unm-lupus 1.0.0, unm-migraine 1.0.0, unm-depression 1.0.0, unm-anxiety 1.0.0.",
+   "source": {
+    "label": "Undiagnosed No More (research decision support)",
+    "url": "https://undiagnosednomore.org/developers/"
+   },
+   "links": [
+    {
+     "label": "Open Undiagnosed No More (SMART app)",
+     "url": "https://undiagnosednomore.org/smart/",
+     "type": "smart"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:547173ea-faf1-5e4a-a667-4af5f12c6522",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "priya",
+    "gender": "female",
+    "birthDate": "1977-08-21",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Priya"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:432738db-b174-5265-a92b-f6912329fd4d",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "priya-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:60f56915-7ca8-56e6-8dba-b91f3bc941e7",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "priya-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:765c183e-ed28-525f-87aa-4caefa742758",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "priya-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:2fc968a8-ac1b-5bb5-9ace-d7d42e9c59f2",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "priya-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:ed34e088-1398-5fb5-89d9-3228c8335e5a",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "priya-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "period": {
+     "start": "2024-01-08"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:3df5f63d-595c-50d4-aaab-a0a6490dc59b",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "priya-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "period": {
+     "start": "2024-02-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:94c52704-17c2-5bfb-b7e9-7018f92b89b6",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "priya-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R53.83",
+       "display": "Other fatigue"
+      }
+     ],
+     "text": "Other fatigue"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "onsetDateTime": "2024-02-20",
+    "recordedDate": "2024-02-20"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:683bc486-8f78-5102-8648-f5d001380ff4",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "priya-enc-8",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "period": {
+     "start": "2023-11-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:d54464d8-721a-5c28-8538-8af5aff2f2ba",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "priya-cond-9",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U09.9",
+       "display": "Post COVID-19 condition, unspecified"
+      }
+     ],
+     "text": "Post COVID-19 condition, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/priya"
+    },
+    "onsetDateTime": "2023-11-20",
+    "recordedDate": "2023-11-20"
+   }
+  }
+ ]
+}

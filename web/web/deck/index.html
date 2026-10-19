@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#09252f">
+    <meta name="description" content="Twelve slides on Undiagnosed No More, the Invisible Patient Finder: what the health record misses, what we built, and what comes next.">
+    <link rel="canonical" href="https://undiagnosednomore.org/deck/">
+    <link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml">
+    <link rel="stylesheet" href="/shared/site-nav.css?v=20261024" />
+    <script src="/homepage-settings.js?v=20261019"></script>
+    <link rel="stylesheet" href="/deck/deck.css?v=20261017">
+    <title>Slide deck | Undiagnosed No More</title>
+  </head>
+  <body data-door="deck">
+    <div class="deck-bar">
+      <p>Slide deck, 12 slides. Use the arrow keys to move between slides. <a href="/deck/undiagnosed-no-more-deck.pdf" download>Download the PDF</a></p>
+    </div>
+
+    <main class="deck" id="deck">
+
+      <!-- 1. Title -->
+      <section class="slide slide-title" id="slide-1" aria-label="Slide 1: Title">
+        <div class="slide-inner">
+          <p class="kicker">HHS/NIH TOPx Tech Sprint · Invisible Illness track · October 2026</p>
+          <h1>Undiagnosed No More</h1>
+          <p class="subtitle">The Invisible Patient Finder</p>
+          <p class="tagline">Find the patients the health record misses: open, tested tools for patients, clinicians, health systems, and developers.</p>
+          <ul class="team">
+            <li><strong>Amir Asiaee</strong> Vanderbilt University Medical Center</li>
+            <li><strong>Kaveh Aryan</strong> Department of Informatics, King's College London</li>
+          </ul>
+          <p class="url">undiagnosednomore.org</p>
+        </div>
+      </section>
+
+      <!-- 2. The problem -->
+      <section class="slide" id="slide-2" aria-label="Slide 2: The problem">
+        <div class="slide-inner">
+          <p class="kicker">The problem</p>
+          <h2>Some illnesses are real but invisible in the record</h2>
+          <div class="two-col">
+            <div>
+              <p class="big-text">Long COVID, ME/CFS (chronic fatigue), fibromyalgia, and Lyme disease are hard to diagnose. Even after a clinician names the illness, the diagnosis code is often missing from the chart.</p>
+              <p>Without the code, the next clinician, post-COVID clinics, benefit programs, clinical trials, and studies that count patients by code can all miss the patient.</p>
+            </div>
+            <div class="callout-box">
+              <p class="callout-title">The diagnostic odyssey</p>
+              <p>In the roughly 100 days before their Long COVID was coded, patients had</p>
+              <p class="stat"><span class="stat-num">6.6</span> more outpatient visits</p>
+              <p class="stat"><span class="stat-num">0.4</span> more emergency visits</p>
+              <p>than matched post-COVID patients, about <strong>$900 per patient</strong> at Medicare prices, not counting missed work.</p>
+            </div>
+          </div>
+          <p class="source">Source: NIH All of Us Research Program, patients later coded with Long COVID against matched post-COVID patients; 2024 Medicare prices.</p>
+        </div>
+        <p class="slide-num">2 / 12</p>
+      </section>
+
+      <!-- 3. Long COVID coding -->
+      <section class="slide" id="slide-3" aria-label="Slide 3: Long COVID is rarely coded">
+        <div class="slide-inner">
+          <p class="kicker">What we found</p>
+          <h2>Long COVID is coded for about 1 in 9 adults who ever had it</h2>
+          <div class="two-col two-col-wide-left">
+            <div>
+              <div class="people" role="img" aria-label="Nine people, one of them highlighted: about 1 in 9 adults who ever had Long COVID carry its code">
+                <svg viewBox="0 0 24 40" class="person person-on" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+                <svg viewBox="0 0 24 40" class="person" aria-hidden="true"><circle cx="12" cy="7" r="6"/><rect x="3" y="15" width="18" height="24" rx="8"/></svg>
+              </div>
+              <p class="big-text">We compared how many adults say they have had Long COVID, in a national CDC survey, with how many carry its diagnosis code in their health record.</p>
+            </div>
+            <div class="callout-box">
+              <p class="callout-title">Less often for women</p>
+              <p>Women report Long COVID more often than men, but a smaller share of their Long COVID is coded: <strong>0.79 times</strong> the share for men (95% interval 0.65 to 0.95). This comparison is not adjusted for health system.</p>
+              <p>Across the 10 health systems with enough patients, coding ranged from 0.79 to 2.37 times the expected rate (10th to 90th percentile).</p>
+            </div>
+          </div>
+          <p class="source">Source: NIH All of Us Research Program, 23,790 adults with COVID-19 followed for 455 days, compared with the CDC Household Pulse Survey. Companion preprint on Long COVID coding (in preparation).</p>
+        </div>
+        <p class="slide-num">3 / 12</p>
+      </section>
+
+      <!-- 4. Self-reported diagnoses missing from the record -->
+      <section class="slide" id="slide-4" aria-label="Slide 4: Self-reported diagnoses missing from the record">
+        <div class="slide-inner">
+          <p class="kicker">What we found</p>
+          <h2>Diagnoses patients report are often missing from their record</h2>
+          <p class="lead">People told a survey that a clinician had diagnosed them. How often does their record carry the code, compared with high blood pressure and type 2 diabetes (coded as often = 1)?</p>
+          <figure class="bars" aria-labelledby="bars-caption">
+            <div class="bar-row">
+              <span class="bar-label">Fibromyalgia</span>
+              <span class="bar-track"><span class="bar w73"></span><span class="bar-value">0.73</span></span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Endometriosis (women)</span>
+              <span class="bar-track"><span class="bar w49"></span><span class="bar-value">0.49</span></span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Lyme disease</span>
+              <span class="bar-track"><span class="bar w46"></span><span class="bar-value">0.46</span></span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Chronic fatigue</span>
+              <span class="bar-track"><span class="bar w28"></span><span class="bar-value">0.28</span></span>
+            </div>
+            <div class="bar-row bar-axis" aria-hidden="true">
+              <span class="bar-label"></span>
+              <span class="bar-track"><span class="tick tick-0">0</span><span class="tick tick-50">0.5</span><span class="tick tick-100">1 = as often as high blood pressure and diabetes</span></span>
+            </div>
+            <figcaption id="bars-caption">Share coded among people who report the diagnosis, relative to high blood pressure and type 2 diabetes, which are coded for 83% to 90% of the people who report them. Chronic fatigue at 0.28 means it is coded less than a third as often.</figcaption>
+          </figure>
+          <p class="source">Source: NIH All of Us Research Program; 114,610 survey respondents with at least 5 years of health records before the survey (161,480 respondents overall), among those reporting ongoing care for each condition. Companion preprint on coding of self-reported diagnoses (in preparation).</p>
+        </div>
+        <p class="slide-num">4 / 12</p>
+      </section>
+
+      <!-- 5. Models that leave the enclave -->
+      <section class="slide" id="slide-5" aria-label="Slide 5: Models that can leave the research enclave">
+        <div class="slide-inner">
+          <p class="kicker">What we built</p>
+          <h2>A summary-count model can leave the research enclave</h2>
+          <div class="two-col">
+            <div>
+              <p class="big-text">All of Us data never leave its secure workspace, and neither may a model trained on individual records. So we fit our model only from privacy-protected summary counts, which the program allows us to export.</p>
+              <p>The result is a small, open file: a score over named, dated chart findings (new symptoms, tests, prescriptions, repeat visits) that another health system can run and check against our test patients.</p>
+            </div>
+            <div class="tiles">
+              <div class="tile">
+                <p class="tile-num">0.64</p>
+                <p>AUROC at <strong>18 health systems</strong> held out from fitting, for a model rebuilt from released counts, against 0.59 for a full-record model fitted to the same patients that cannot leave.</p>
+              </div>
+              <div class="tile">
+                <p class="tile-num">55 days</p>
+                <p>Median lead before the Long COVID code, among later-coded patients in the top 5% of scores (full-record model; analysis from this project).</p>
+              </div>
+            </div>
+          </div>
+          <p class="footnote">AUROC is the chance the model ranks a patient who is later coded above one who is not: 0.5 is a coin flip, 1.0 is perfect.</p>
+          <p class="source">Source: NIH All of Us Research Program, 5,760 patients at the 18 held-out health systems; AUROC 0.64, 95% interval 0.55 to 0.72, 0.05 above the full-record elastic net. On a random patient test (4,680 patients), the rebuilt model had an AUROC of 0.68. Companion manuscript on Long COVID coding (submitted).</p>
+        </div>
+        <p class="slide-num">5 / 12</p>
+      </section>
+
+      <!-- 6. Learning from patients' reports -->
+      <section class="slide" id="slide-6" aria-label="Slide 6: Learning from patients' reports">
+        <div class="slide-inner">
+          <p class="kicker">Lived experience in the model</p>
+          <h2>Training on patients' reports ranks uncoded patients higher</h2>
+          <p class="lead">Most models learn only from patients who already have a code. We also trained on patients' own reports of a diagnosis, then asked which model ranks higher the people who report the illness but have no code for it.</p>
+          <figure class="dots" aria-labelledby="dots-caption">
+            <ul class="legend" aria-label="Legend">
+              <li><span class="swatch swatch-report" aria-hidden="true"></span>Trained on patients' reports</li>
+              <li><span class="swatch swatch-code" aria-hidden="true"></span>Trained on diagnosis codes</li>
+            </ul>
+            <div class="dot-row">
+              <span class="dot-label">Chronic fatigue</span>
+              <span class="dot-track"><span class="dot dot-code at-67"><span>0.67</span></span><span class="dot dot-report at-74"><span>0.74</span></span></span>
+            </div>
+            <div class="dot-row">
+              <span class="dot-label">Fibromyalgia</span>
+              <span class="dot-track"><span class="dot dot-code at-64"><span>0.64</span></span><span class="dot dot-report at-73"><span>0.73</span></span></span>
+            </div>
+            <div class="dot-row">
+              <span class="dot-label">Endometriosis <em>(the limit)</em></span>
+              <span class="dot-track"><span class="dot dot-code at-53"><span>0.53</span></span><span class="dot dot-report at-61"><span>0.61</span></span></span>
+            </div>
+            <div class="dot-row dot-axis" aria-hidden="true">
+              <span class="dot-label"></span>
+              <span class="dot-track"><span class="tick tick-0">0.5 (coin flip)</span><span class="tick tick-50">0.65</span><span class="tick tick-100">0.8</span></span>
+            </div>
+            <figcaption id="dots-caption">AUROC for ranking people who report the diagnosis but have no code. For endometriosis, discrimination was low and the report-trained score did not predict later codes (0.50 against 0.70). Women who reported it were older and had fewer recent menstrual and hormonal records, so an ever-told diagnosis may describe past illness; this was not tested.</figcaption>
+          </figure>
+          <p class="source">Source: NIH All of Us Research Program, a random 20% validation split of each cohort (149,860 survey respondents for chronic fatigue, 150,340 for fibromyalgia, 97,590 women for endometriosis). Companion preprint on case-finding from patients' reports (in preparation).</p>
+        </div>
+        <p class="slide-num">6 / 12</p>
+      </section>
+
+      <!-- 7. One engine, four doors -->
+      <section class="slide" id="slide-7" aria-label="Slide 7: One engine, four doors">
+        <div class="slide-inner">
+          <p class="kicker">How it fits together</p>
+          <h2>One engine, four doors</h2>
+          <div class="engine-diagram">
+            <ol class="doors">
+              <li class="door"><p class="door-who">Patients</p><p class="door-what">Validated symptom questions, what the answers mean, a visit summary</p><span class="chip">Works today</span></li>
+              <li class="door"><p class="door-who">Clinicians</p><p class="door-what">Condition cards inside the health record, with dated findings</p><span class="chip">Works today</span></li>
+              <li class="door"><p class="door-who">Policymakers</p><p class="door-what">One condition at a time: where and for whom it goes uncoded, and what finding patients costs</p><span class="chip">Works today</span></li>
+              <li class="door"><p class="door-who">Developers</p><p class="door-what">Model files, test patients, a CDS Hooks service</p><span class="chip">Works today</span></li>
+            </ol>
+            <div class="engine">
+              <p class="engine-title">One engine</p>
+              <p>Open model files and one scorer. The patient app, the clinician card, and the CDS Hooks service run the same scorer file, so the same chart gets the same result.</p>
+            </div>
+            <ol class="flow" aria-label="How a patient's answers reach the clinician">
+              <li>Patient app</li>
+              <li>Visit summary (FHIR)</li>
+              <li>Clinician card in the EHR</li>
+              <li>Other EHRs, through FHIR and SMART on FHIR</li>
+            </ol>
+            <p class="diagram-note">The atlas is the population view of the same gap.</p>
+          </div>
+        </div>
+        <p class="slide-num">7 / 12</p>
+      </section>
+
+      <!-- 8. Patient app -->
+      <section class="slide" id="slide-8" aria-label="Slide 8: The patient app">
+        <div class="slide-inner">
+          <p class="kicker">Door 1 · Patients</p>
+          <h2>The patient app: get ready for the visit</h2>
+          <div class="shot-layout">
+            <figure class="shot"><img src="/deck/img/patient.png" width="1280" height="800" alt="The patient app with Maria's synthetic answers, page 14 of 14, Your summary: Long COVID, RECOVER symptom score 16 points; ME/CFS and Long COVID, DePaul screen positive; daily activity after COVID-19, grade 3; symptoms lasting 3 months, check matched. Each card is marked Discuss."></figure>
+            <ul class="points">
+              <li>Validated questions: the NIH RECOVER symptom questions, the DePaul questions on crashes after activity (post-exertional malaise), condition self-checks, PHQ-9, and GAD-7, in English or Spanish.</li>
+              <li>A summary of what each answer means for a condition and what to discuss. Patients never see a probability.</li>
+              <li>A visit summary to print, or to download as a FHIR file that clinic software can read.</li>
+              <li>Answers stay on the device. No account, no tracking.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="slide-num">8 / 12</p>
+      </section>
+
+      <!-- 9. Clinician view -->
+      <section class="slide" id="slide-9" aria-label="Slide 9: The clinician view">
+        <div class="slide-inner">
+          <p class="kicker">Door 2 · Clinicians</p>
+          <h2>The clinician view: the evidence inside the chart</h2>
+          <div class="shot-layout">
+            <figure class="shot"><img src="/deck/img/clinician.png" width="1280" height="800" alt="The clinician view for the synthetic patient Maria: Long COVID needs review, marked High at 15.4 times the average with her questionnaire answers and 6.1 times from the chart alone, with its top findings; ME/CFS, fibromyalgia, endometriosis, Lyme disease, lupus, migraine, depression, and anxiety typical; below, the Long COVID tab, with her RECOVER answer as the first finding."></figure>
+            <ul class="points">
+              <li>One card per condition, nine in all: Long COVID, ME/CFS, Lyme disease, lupus, fibromyalgia, migraine, endometriosis, depression, and anxiety.</li>
+              <li>Every card lists the dated chart findings behind it and the next step, such as a post-COVID clinic referral.</li>
+              <li>Built to open inside the EHR through SMART on FHIR, with no new login; tested in the public SMART sandbox.</li>
+              <li>Research decision support. It surfaces patterns for clinician review.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="slide-num">9 / 12</p>
+      </section>
+
+      <!-- 10. Atlas and cost -->
+      <section class="slide" id="slide-10" aria-label="Slide 10: The atlas and cost">
+        <div class="slide-inner">
+          <p class="kicker">Door 3 · Policymakers</p>
+          <h2>The Atlas: who goes uncoded, and what finding them costs</h2>
+          <div class="shot-layout">
+            <figure class="shot"><img src="/deck/img/atlas.png" width="1280" height="800" alt="The Atlas set to Long COVID, with its condition picker (Long COVID, ME/CFS, Lyme disease, lupus, fibromyalgia, migraine, endometriosis, depression, anxiety) and three key numbers: 1 in 9 adults who have ever had Long COVID carry its code, women's Long COVID is coded 0.79 times as often as men's, and 5.3% of US adults said they currently had Long COVID in the last CDC survey period."></figure>
+            <div class="points-block">
+              <p class="points-title">Clinician time per later-coded patient found</p>
+              <div class="cost-row"><span class="cost-num">$116</span><span>Two-step screen: a short questionnaire first, then chart review</span></div>
+              <div class="cost-row"><span class="cost-num">$233</span><span>Chart review of every flagged patient</span></div>
+              <p>The calculator assumes each patient found is recognized about 55 days before the code.</p>
+              <p class="footnote">Atlas calculator defaults: 10,000 post-COVID patients screened, the top 5% flagged (measured recall 19% and PPV 4.3%), 5 minutes per review at $120 an hour, 40% pass the questionnaire. Change any of them in the Atlas.</p>
+            </div>
+          </div>
+        </div>
+        <p class="slide-num">10 / 12</p>
+      </section>
+
+      <!-- 11. Standards and privacy -->
+      <section class="slide" id="slide-11" aria-label="Slide 11: Standards and privacy">
+        <div class="slide-inner">
+          <p class="kicker">Door 4 · Developers</p>
+          <h2>Open standards, and health data that stay local</h2>
+          <div class="three-col">
+            <div class="panel">
+              <p class="panel-title">Standards</p>
+              <ul>
+                <li><strong>FHIR R4</strong> for reading the chart</li>
+                <li><strong>SMART on FHIR</strong> to open inside the EHR</li>
+                <li><strong>CDS Hooks</strong> to send a card when a chart opens</li>
+                <li>Standard codes: ICD-10-CM, LOINC, RxNorm, CPT</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <p class="panel-title">Where health data stay</p>
+              <ul>
+                <li>The clinician view scores the chart in the browser.</li>
+                <li>The CDS Hooks service code keeps no copy of the chart data it receives and does not log it.</li>
+                <li>The patient app keeps answers on the device.</li>
+                <li>Every demo patient is synthetic.</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <p class="panel-title">All of Us disclosure rules</p>
+              <ul>
+                <li>Only checked, aggregate numbers leave the research workspace.</li>
+                <li>Counts of 1 to 20 are suppressed, and other counts are rounded up to a multiple of 10.</li>
+                <li>The models were fit from those summary counts, so no individual record left.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="lead closing">Open model files, a reference scorer, and test patients let another health system check that its copy reproduces our scores.</p>
+        </div>
+        <p class="slide-num">11 / 12</p>
+      </section>
+
+      <!-- 12. Roadmap and ask -->
+      <section class="slide" id="slide-12" aria-label="Slide 12: Roadmap and ask">
+        <div class="slide-inner">
+          <p class="kicker">What comes next</p>
+          <h2>Roadmap and ask</h2>
+          <ol class="roadmap">
+            <li class="stage">
+              <p class="stage-when"><span class="chip">Works today</span></p>
+              <p class="stage-title">Today</p>
+              <p>Patient app, clinician view, Atlas, open models, and CDS Hooks, with synthetic patients. Launches from the public SMART sandbox; registered with Epic and athenaOne, with sandbox access pending.</p>
+            </li>
+            <li class="stage">
+              <p class="stage-when"><span class="chip chip-next">Next</span></p>
+              <p class="stage-title">Pilot</p>
+              <p>A silent-mode pilot at a health system (cards scored but not shown) to check them against real charts, and validation in a second national research network.</p>
+            </li>
+            <li class="stage">
+              <p class="stage-when"><span class="chip chip-planned">Planned</span></p>
+              <p class="stage-title">Marketplace</p>
+              <p>Listings in EHR app marketplaces, and new conditions on the same engine, such as POTS and post-treatment Lyme disease syndrome.</p>
+            </li>
+          </ol>
+          <p class="ask"><strong>Our ask:</strong> help us move from sandbox to a health system. A pilot site, EHR marketplace review, and patient advocates to review every new card.</p>
+          <p class="ack">We gratefully acknowledge All of Us participants for their contributions, without whom this research would not have been possible. We also thank the National Institutes of Health's All of Us Research Program for making available the participant data examined in this study. This study used data from the All of Us Research Program's Registered Tier Dataset v9.</p>
+        </div>
+        <p class="slide-num">12 / 12</p>
+      </section>
+    </main>
+
+    <script src="/shared/site-nav.js?v=20261023" defer></script>
+    <script src="/deck/deck.js" defer></script>
+  </body>
+</html>

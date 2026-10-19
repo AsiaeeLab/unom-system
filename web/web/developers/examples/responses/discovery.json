@@ -1,0 +1,19 @@
+{
+ "services": [
+  {
+   "hook": "patient-view",
+   "id": "invisible-illness",
+   "title": "Undiagnosed No More: invisible illness check",
+   "description": "Scores the chart with the Long COVID, chronic fatigue (ME/CFS), fibromyalgia, endometriosis, Lyme disease, lupus, migraine, depression, and anxiety models and returns a card when a condition is in the High or Elevated band, plus one information card naming any condition it could not score. Research decision support; not a diagnosis. Synthetic-data prototype: the service does not authenticate callers.",
+   "prefetch": {
+    "patient": "Patient/{{context.patientId}}",
+    "conditions": "Condition?patient={{context.patientId}}",
+    "encounters": "Encounter?patient={{context.patientId}}",
+    "observations": "Observation?patient={{context.patientId}}",
+    "medications": "MedicationRequest?patient={{context.patientId}}",
+    "procedures": "Procedure?patient={{context.patientId}}"
+   },
+   "usageRequirements": "Read access to the patient's Condition, Encounter, Observation, MedicationRequest, and Procedure resources."
+  }
+ ]
+}

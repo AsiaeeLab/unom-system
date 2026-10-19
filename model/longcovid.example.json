@@ -1,0 +1,1234 @@
+{
+  "model_id": "unm-longcovid",
+  "version": "0.1.0",
+  "status": "placeholder",
+  "target": {
+    "label": "Future Long COVID diagnosis code",
+    "definition": "First ICD-10-CM U09.9 code 91-455 days after the first documented COVID-19 diagnosis",
+    "population": "Adults with documented COVID-19 and no Long COVID code by day 90",
+    "landmark_days": 90,
+    "horizon_days": [
+      91,
+      455
+    ]
+  },
+  "index_event": {
+    "condition_codes": {
+      "icd10cm": [
+        "U07.1"
+      ]
+    },
+    "positive_test_loinc": [
+      "94500-6",
+      "94309-2",
+      "94534-5",
+      "94558-4",
+      "95209-3"
+    ],
+    "rule": "earliest qualifying Condition or positive Observation"
+  },
+  "exclusion": {
+    "condition_codes": {
+      "icd10cm": [
+        "U09.9"
+      ],
+      "snomed": [
+        "1119303003",
+        "1119304009"
+      ]
+    }
+  },
+  "windows": {
+    "W0": [
+      -365,
+      -91
+    ],
+    "W1": [
+      -90,
+      -1
+    ],
+    "W2": [
+      0,
+      30
+    ],
+    "W3": [
+      31,
+      90
+    ]
+  },
+  "features": [
+    {
+      "id": "age_18_39",
+      "kind": "age_band",
+      "min": 18,
+      "max": 39,
+      "group": "Demographics",
+      "label": "age 18 39",
+      "weight": 0.0
+    },
+    {
+      "id": "age_40_49",
+      "kind": "age_band",
+      "min": 40,
+      "max": 49,
+      "group": "Demographics",
+      "label": "age 40 49",
+      "weight": 0.2
+    },
+    {
+      "id": "age_50_59",
+      "kind": "age_band",
+      "min": 50,
+      "max": 59,
+      "group": "Demographics",
+      "label": "age 50 59",
+      "weight": 0.2
+    },
+    {
+      "id": "age_60_69",
+      "kind": "age_band",
+      "min": 60,
+      "max": 69,
+      "group": "Demographics",
+      "label": "age 60 69",
+      "weight": 0.0
+    },
+    {
+      "id": "age_70p",
+      "kind": "age_band",
+      "min": 70,
+      "max": 200,
+      "group": "Demographics",
+      "label": "age 70p",
+      "weight": -0.3
+    },
+    {
+      "id": "sex_female",
+      "kind": "sex",
+      "value": "female",
+      "group": "Demographics",
+      "label": "sex female",
+      "weight": 0.2
+    },
+    {
+      "id": "acute_inpatient",
+      "label": "Hospitalized around the COVID diagnosis",
+      "group": "Acute illness",
+      "kind": "encounter_any",
+      "window": [
+        -3,
+        30
+      ],
+      "encounter_class": [
+        "IMP"
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "acute_ed",
+      "label": "Emergency visit in the first month",
+      "group": "Acute illness",
+      "kind": "encounter_any",
+      "window": [
+        0,
+        30
+      ],
+      "encounter_class": [
+        "EMER"
+      ],
+      "weight": 0.1
+    },
+    {
+      "id": "covid_pneumonia",
+      "label": "COVID pneumonia",
+      "group": "Acute illness",
+      "kind": "any",
+      "window": [
+        0,
+        30
+      ],
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "J1282"
+        ]
+      },
+      "weight": 0.3
+    },
+    {
+      "id": "acute_ventilation",
+      "label": "Ventilation or intubation",
+      "group": "Acute illness",
+      "kind": "any",
+      "window": [
+        0,
+        30
+      ],
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "94002",
+          "94003",
+          "31500"
+        ],
+        "icd10pcs": [
+          "5A1935Z",
+          "5A1945Z",
+          "5A1955Z"
+        ]
+      },
+      "weight": 0.2
+    },
+    {
+      "id": "out_w0_ge4",
+      "kind": "encounter_count_ge",
+      "encounter_class": [
+        "AMB"
+      ],
+      "windows": [
+        "W0"
+      ],
+      "threshold": 4,
+      "label": "4+ outpatient visits in the baseline year",
+      "group": "Health care use",
+      "weight": -0.1
+    },
+    {
+      "id": "out_w3_ge2",
+      "kind": "encounter_count_ge",
+      "encounter_class": [
+        "AMB"
+      ],
+      "windows": [
+        "W3"
+      ],
+      "threshold": 2,
+      "label": "2+ outpatient visits in days 31-90",
+      "group": "Health care use",
+      "weight": 0.4
+    },
+    {
+      "id": "out_w3_ge4",
+      "kind": "encounter_count_ge",
+      "encounter_class": [
+        "AMB"
+      ],
+      "windows": [
+        "W3"
+      ],
+      "threshold": 4,
+      "label": "4+ outpatient visits in days 31-90",
+      "group": "Health care use",
+      "weight": 0.4
+    },
+    {
+      "id": "ed_w3_any",
+      "kind": "encounter_count_ge",
+      "encounter_class": [
+        "EMER"
+      ],
+      "windows": [
+        "W3"
+      ],
+      "threshold": 1,
+      "label": "Emergency visit in days 31-90",
+      "group": "Health care use",
+      "weight": 0.2
+    },
+    {
+      "id": "ip_w3_any",
+      "kind": "encounter_count_ge",
+      "encounter_class": [
+        "IMP"
+      ],
+      "windows": [
+        "W3"
+      ],
+      "threshold": 1,
+      "label": "Hospital stay in days 31-90",
+      "group": "Health care use",
+      "weight": 0.2
+    },
+    {
+      "id": "visit_rate_up",
+      "kind": "encounter_rate_ratio_ge",
+      "encounter_class": [
+        "AMB",
+        "EMER"
+      ],
+      "numerator": "W3",
+      "denominator": "W0",
+      "threshold": 2.0,
+      "label": "Visit rate after COVID at least double the baseline rate",
+      "group": "Health care use",
+      "weight": 0.3
+    },
+    {
+      "id": "sym_fatigue",
+      "label": "Fatigue or malaise",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R53",
+          "G933"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.8
+    },
+    {
+      "id": "sym_dyspnea",
+      "label": "Shortness of breath",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R060"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.6
+    },
+    {
+      "id": "sym_cough",
+      "label": "Cough",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R05"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "sym_chest_pain",
+      "label": "Chest pain",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R07"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.4
+    },
+    {
+      "id": "sym_autonomic",
+      "label": "Palpitations, tachycardia, POTS, or orthostatic hypotension",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R000",
+          "R002",
+          "I498",
+          "G90A",
+          "I951"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "sym_cognitive",
+      "label": "Cognitive symptoms (brain fog, memory)",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R41",
+          "G3184"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "sym_headache",
+      "label": "Headache",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R51",
+          "G44"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "sym_dizzy_syncope",
+      "label": "Dizziness or fainting",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R42",
+          "R55"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.5
+    },
+    {
+      "id": "sym_smell_taste",
+      "label": "Loss or change of smell or taste",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R43"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.7
+    },
+    {
+      "id": "sym_sleep",
+      "label": "Sleep disturbance",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "G470",
+          "G471",
+          "G478",
+          "G479",
+          "F51"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "sym_mood",
+      "label": "Anxiety or depression",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "F41",
+          "F32",
+          "F33",
+          "F43"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.2
+    },
+    {
+      "id": "sym_msk_pain",
+      "label": "Muscle or joint pain",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "M791",
+          "M255",
+          "M796",
+          "M797"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "sym_gi",
+      "label": "Gastrointestinal symptoms",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R10",
+          "R11",
+          "R14",
+          "R19",
+          "K58",
+          "K59"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.2
+    },
+    {
+      "id": "sym_paresthesia",
+      "label": "Tingling, numbness, or neuropathy",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R20",
+          "G629"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "sym_hair_loss",
+      "label": "Hair loss",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "L659"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.4
+    },
+    {
+      "id": "sym_fever",
+      "label": "Fever",
+      "group": "Symptoms",
+      "kind": "new_onset",
+      "resource": "Condition",
+      "codes": {
+        "icd10cm_prefix": [
+          "R50"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "weight": 0.1
+    },
+    {
+      "id": "sym_count_ge2",
+      "label": "Two or more new symptom types",
+      "group": "Symptoms",
+      "kind": "derived_count_ge",
+      "of_group": "Symptoms",
+      "threshold": 2,
+      "weight": 0.4
+    },
+    {
+      "id": "sym_count_ge4",
+      "label": "Four or more new symptom types",
+      "group": "Symptoms",
+      "kind": "derived_count_ge",
+      "of_group": "Symptoms",
+      "threshold": 4,
+      "weight": 0.6
+    },
+    {
+      "id": "test_echo",
+      "label": "Echocardiogram",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "93303",
+          "93304",
+          "93305",
+          "93306",
+          "93307",
+          "93308",
+          "93312",
+          "93313",
+          "93314",
+          "93315",
+          "93316",
+          "93317",
+          "93318",
+          "93350",
+          "93351",
+          "93352"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.5
+    },
+    {
+      "id": "test_cardiac_monitor",
+      "label": "Holter or event monitor",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "93224",
+          "93225",
+          "93226",
+          "93227",
+          "93228",
+          "93229",
+          "93241",
+          "93242",
+          "93243",
+          "93244",
+          "93245",
+          "93246",
+          "93247",
+          "93248",
+          "93268",
+          "93269",
+          "93270",
+          "93271",
+          "93272"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.6
+    },
+    {
+      "id": "test_pft",
+      "label": "Pulmonary function test",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "94010",
+          "94060",
+          "94070",
+          "94726",
+          "94727",
+          "94728",
+          "94729"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.5
+    },
+    {
+      "id": "test_chest_ct",
+      "label": "Chest CT",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "71250",
+          "71260",
+          "71270",
+          "71271",
+          "71275"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.2
+    },
+    {
+      "id": "test_chest_xray",
+      "label": "Chest X-ray",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "71045",
+          "71046",
+          "71047",
+          "71048"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.1
+    },
+    {
+      "id": "test_brain_mri",
+      "label": "Brain MRI",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "70551",
+          "70552",
+          "70553"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.4
+    },
+    {
+      "id": "test_tilt",
+      "label": "Tilt-table test",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "93660"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.9
+    },
+    {
+      "id": "test_sleep_study",
+      "label": "Sleep study",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "95806",
+          "95807",
+          "95808",
+          "95809",
+          "95810",
+          "95811",
+          "G0398",
+          "G0399",
+          "G0400"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.3
+    },
+    {
+      "id": "test_walk",
+      "label": "Six-minute walk test",
+      "group": "Tests ordered",
+      "kind": "any",
+      "resource": "Procedure",
+      "codes": {
+        "cpt": [
+          "94618"
+        ]
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "weight": 0.4
+    },
+    {
+      "id": "rx_beta_blocker",
+      "label": "New propranolol, metoprolol, atenolol\u2026",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "propranolol",
+          "metoprolol",
+          "atenolol",
+          "bisoprolol",
+          "nadolol",
+          "carvedilol"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.5
+    },
+    {
+      "id": "rx_pots_other",
+      "label": "New ivabradine, midodrine, fludrocortisone",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "ivabradine",
+          "midodrine",
+          "fludrocortisone"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.8
+    },
+    {
+      "id": "rx_ssri_snri",
+      "label": "New sertraline, fluoxetine, citalopram\u2026",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "sertraline",
+          "fluoxetine",
+          "citalopram",
+          "escitalopram",
+          "paroxetine",
+          "venlafaxine",
+          "duloxetine",
+          "desvenlafaxine"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.2
+    },
+    {
+      "id": "rx_gabapentinoid",
+      "label": "New gabapentin, pregabalin",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "gabapentin",
+          "pregabalin"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.2
+    },
+    {
+      "id": "rx_inhaler",
+      "label": "New albuterol, fluticasone, budesonide\u2026",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "albuterol",
+          "fluticasone",
+          "budesonide",
+          "mometasone",
+          "beclomethasone",
+          "tiotropium",
+          "formoterol",
+          "salmeterol"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.3
+    },
+    {
+      "id": "rx_systemic_steroid",
+      "label": "New prednisone, methylprednisolone, dexamethasone\u2026",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "prednisone",
+          "methylprednisolone",
+          "dexamethasone",
+          "prednisolone"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.2
+    },
+    {
+      "id": "rx_antihistamine",
+      "label": "New cetirizine, loratadine, fexofenadine\u2026",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "cetirizine",
+          "loratadine",
+          "fexofenadine",
+          "levocetirizine",
+          "famotidine"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.3
+    },
+    {
+      "id": "rx_montelukast",
+      "label": "New montelukast",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "montelukast"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.2
+    },
+    {
+      "id": "rx_naltrexone",
+      "label": "New naltrexone",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "naltrexone"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.9
+    },
+    {
+      "id": "rx_wake_stimulant",
+      "label": "New modafinil, armodafinil, methylphenidate\u2026",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "modafinil",
+          "armodafinil",
+          "methylphenidate",
+          "amphetamine",
+          "dextroamphetamine",
+          "lisdexamfetamine"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.6
+    },
+    {
+      "id": "rx_sleep_aid",
+      "label": "New zolpidem, trazodone, eszopiclone",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "zolpidem",
+          "trazodone",
+          "eszopiclone"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.2
+    },
+    {
+      "id": "rx_opioid",
+      "label": "New oxycodone, hydrocodone, tramadol\u2026",
+      "group": "New medications",
+      "kind": "new_onset",
+      "resource": "MedicationRequest",
+      "codes": {
+        "rxnorm_ingredient_names": [
+          "oxycodone",
+          "hydrocodone",
+          "tramadol",
+          "morphine"
+        ],
+        "rxcui": []
+      },
+      "present_in": [
+        "W2",
+        "W3"
+      ],
+      "absent_in": [
+        "W0",
+        "W1"
+      ],
+      "note": "RxCUI list pending (resolved in Workbench task 02); match ingredient names meanwhile",
+      "weight": 0.1
+    }
+  ],
+  "intercept": -5.2,
+  "calibration": {
+    "method": "piecewise_linear",
+    "points": [
+      [
+        -7.0,
+        0.0009
+      ],
+      [
+        -6.0,
+        0.0025
+      ],
+      [
+        -5.0,
+        0.0067
+      ],
+      [
+        -4.0,
+        0.018
+      ],
+      [
+        -3.0,
+        0.047
+      ],
+      [
+        -2.0,
+        0.12
+      ],
+      [
+        -1.0,
+        0.27
+      ],
+      [
+        0.0,
+        0.5
+      ]
+    ]
+  },
+  "risk_bands": [
+    {
+      "name": "Typical",
+      "max_probability": 0.015
+    },
+    {
+      "name": "Elevated",
+      "max_probability": 0.04
+    },
+    {
+      "name": "High",
+      "max_probability": 1.0
+    }
+  ],
+  "reference": {
+    "cohort_base_rate": 0.011,
+    "top5pct_min_probability": 0.03
+  },
+  "provenance": {
+    "data": "PLACEHOLDER weights for interface development; not trained on any data",
+    "method": "The real model is a linear discriminant refit from dissemination-compliant summary counts",
+    "open_data": [
+      "CDC/NCHS Household Pulse Survey (gsea-w83j)",
+      "CMS fee schedules"
+    ]
+  },
+  "statement": "Research decision support. Surfaces chart patterns for clinician review. Not a diagnosis."
+}

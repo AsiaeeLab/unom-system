@@ -1,0 +1,198 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:612b5b0a-48ca-5be2-a095-76c210c50c22",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "yara",
+    "gender": "female",
+    "birthDate": "1991-06-30",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Yara"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:0c46d727-75b2-5e2a-a99b-cb7424d13519",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "yara-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:da7dc722-06bd-56fe-814e-fbd7c2ae7ad0",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "yara-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:1d78542c-5275-5109-a950-f66e1a407ff5",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "yara-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:25e37903-425b-512a-b13e-1fd7ed6f86ca",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "yara-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:5a1f5cf0-1fbd-500c-af7f-9a0227bfbd42",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "yara-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    },
+    "period": {
+     "start": "2024-01-08"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:c788c510-12d2-51a6-8b5f-7549fe238c6d",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "yara-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    },
+    "period": {
+     "start": "2024-02-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:20c19c84-ea72-5fae-8c6d-24a565954a33",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "yara-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R53.83",
+       "display": "Other fatigue"
+      }
+     ],
+     "text": "Other fatigue"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    },
+    "onsetDateTime": "2024-02-20",
+    "recordedDate": "2024-02-20"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:6e23e77b-6517-56a1-b38a-909000989ab1",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "yara-cond-8",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U09.9",
+       "display": "Post COVID-19 condition, unspecified"
+      }
+     ],
+     "text": "Post COVID-19 condition, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/yara"
+    }
+   }
+  }
+ ]
+}

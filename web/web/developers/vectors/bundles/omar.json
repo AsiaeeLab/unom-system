@@ -1,0 +1,106 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:4e62634a-0f66-5976-b57f-d790276af229",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "omar",
+    "gender": "male",
+    "birthDate": "1975-01-30",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Omar"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:7a90b6e0-a403-519f-9829-491278c7a437",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "omar-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/omar"
+    },
+    "period": {
+     "start": "2022-03-01"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:bf421010-3367-5fea-83ed-d839eee2787f",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "omar-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/omar"
+    },
+    "period": {
+     "start": "2023-03-07"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:7b7b7070-1215-5dc1-a5cc-b014b94e993f",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "omar-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/omar"
+    },
+    "period": {
+     "start": "2024-03-12"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:8439fea4-b49b-5517-b6df-640710216778",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "omar-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "I10",
+       "display": "Essential (primary) hypertension"
+      }
+     ],
+     "text": "Essential (primary) hypertension"
+    },
+    "subject": {
+     "reference": "Patient/omar"
+    },
+    "onsetDateTime": "2023-03-07",
+    "recordedDate": "2023-03-07"
+   }
+  }
+ ]
+}

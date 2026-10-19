@@ -1,0 +1,321 @@
+{
+ "status": "scored",
+ "index_date": "2024-06-01",
+ "score": -2.9221080000000006,
+ "probability": 0.027274672806701632,
+ "band": "Typical",
+ "times_average": 0.8483040808255049,
+ "features": {
+  "age_18_39": 0,
+  "age_40_49": 1,
+  "age_50_59": 0,
+  "age_60_69": 0,
+  "age_70p": 0,
+  "sex_female": 1,
+  "cx_fatigue_other": 1,
+  "cx_fatigue_recent": 1,
+  "cx_sleep": 0,
+  "cx_sleep_apnea": 0,
+  "cx_cognitive": 1,
+  "cx_autonomic": 1,
+  "cx_dizzy_syncope": 0,
+  "cx_headache": 0,
+  "cx_migraine": 0,
+  "cx_myalgia_arthralgia": 0,
+  "cx_chronic_pain": 0,
+  "cx_depression": 0,
+  "cx_anxiety": 0,
+  "cx_ptsd": 0,
+  "cx_ibs_gi": 0,
+  "cx_sore_throat_nodes": 0,
+  "cx_fever": 0,
+  "cx_lyme": 0,
+  "cx_covid": 1,
+  "cx_long_covid": 0,
+  "cx_eds_hypermobility": 0,
+  "cx_hypothyroid": 0,
+  "cx_anemia": 0,
+  "cx_vitd_deficiency": 0,
+  "cx_autoimmune": 0,
+  "cx_obesity": 0,
+  "cx_diabetes": 0,
+  "cx_hypertension": 0,
+  "cx_heart_disease": 0,
+  "cx_cancer": 0,
+  "cx_cfs": 0,
+  "cx_tmj": 0,
+  "cx_rls": 0,
+  "cx_interstitial_cystitis": 0,
+  "cx_osteoarthritis": 0,
+  "cx_neck_back_pain": 0,
+  "clusters_ge3": 1,
+  "clusters_ge5": 0,
+  "px_sleep_study": 0,
+  "px_brain_mri": 0,
+  "px_echo": 1,
+  "px_cardiac_monitor": 1,
+  "px_exercise_test": 0,
+  "px_neuropsych": 0,
+  "px_pt_eval": 0,
+  "lab_tsh": 1,
+  "lab_ferritin": 0,
+  "lab_b12": 0,
+  "lab_vitamin_d": 0,
+  "lab_ana": 0,
+  "lab_crp": 1,
+  "lab_esr": 0,
+  "lab_ebv": 0,
+  "lab_lyme": 0,
+  "lab_cortisol": 0,
+  "lab_ck": 0,
+  "lab_rf": 0,
+  "lab_ccp": 0,
+  "rx_stimulant": 0,
+  "rx_naltrexone": 0,
+  "rx_ssri_snri": 0,
+  "rx_tricyclic_lowdose": 0,
+  "rx_gabapentinoid": 0,
+  "rx_sleep_aid": 0,
+  "rx_beta_blocker": 1,
+  "rx_pots": 0,
+  "rx_opioid": 0,
+  "rx_milnacipran": 0,
+  "rx_nsaid": 0,
+  "rx_muscle_relaxant": 0,
+  "util_out_r_ge6": 1,
+  "util_out_r_ge12": 0,
+  "util_ed_r": 1,
+  "util_ip_h": 0
+ },
+ "drivers": [
+  {
+   "id": "sex_female",
+   "label": "Female",
+   "group": "Demographics",
+   "contribution": 1.418259,
+   "evidence": []
+  },
+  {
+   "id": "lab_crp",
+   "label": "C-reactive protein test",
+   "group": "Lab tests ordered",
+   "contribution": 0.872717,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "maria-obs-20",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "rx_beta_blocker",
+   "label": "Beta blocker",
+   "group": "Medications",
+   "contribution": 0.523748,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "maria-med-24",
+     "date": "2024-03-12"
+    }
+   ]
+  },
+  {
+   "id": "util_ed_r",
+   "label": "Emergency visit in the past year",
+   "group": "Health care use",
+   "contribution": 0.47388,
+   "evidence": [
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-7",
+     "date": "2024-01-10"
+    }
+   ]
+  },
+  {
+   "id": "age_40_49",
+   "label": "Age 40-49",
+   "group": "Demographics",
+   "contribution": 0.442721,
+   "evidence": []
+  },
+  {
+   "id": "cx_cognitive",
+   "label": "Cognitive symptoms (brain fog, memory)",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.326286,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-16",
+     "date": "2024-03-05"
+    }
+   ]
+  },
+  {
+   "id": "cx_fatigue_recent",
+   "label": "Fatigue or malaise coded in the past year",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.224383,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-10",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "util_out_r_ge6",
+   "label": "6+ outpatient visits in the past year",
+   "group": "Health care use",
+   "contribution": 0.182756,
+   "evidence": [
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-2",
+     "date": "2023-06-15"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-3",
+     "date": "2023-10-20"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-6",
+     "date": "2024-01-08"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-9",
+     "date": "2024-02-20"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-13",
+     "date": "2024-03-12"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-15",
+     "date": "2024-03-05"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-17",
+     "date": "2024-03-25"
+    }
+   ]
+  },
+  {
+   "id": "cx_autonomic",
+   "label": "Palpitations, POTS, orthostatic hypotension, or dysautonomia",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.142701,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-11",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "clusters_ge3",
+   "label": "Three or more symptom types",
+   "group": "Symptom pattern",
+   "contribution": 0.120593,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-10",
+     "date": "2024-02-20"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-16",
+     "date": "2024-03-05"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-11",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "lab_tsh",
+   "label": "Thyroid (TSH) test",
+   "group": "Lab tests ordered",
+   "contribution": 0.097727,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "maria-obs-25",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "cx_fatigue_other",
+   "label": "Fatigue or malaise coded",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.060234,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-10",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "px_cardiac_monitor",
+   "label": "Holter or event monitor",
+   "group": "Tests and evaluations",
+   "contribution": 0.006251,
+   "evidence": [
+    {
+     "resourceType": "Procedure",
+     "id": "maria-proc-23",
+     "date": "2024-03-10"
+    }
+   ]
+  },
+  {
+   "id": "px_echo",
+   "label": "Echocardiogram",
+   "group": "Tests and evaluations",
+   "contribution": -0.10988,
+   "evidence": [
+    {
+     "resourceType": "Procedure",
+     "id": "maria-proc-22",
+     "date": "2024-03-01"
+    }
+   ]
+  },
+  {
+   "id": "cx_covid",
+   "label": "COVID-19",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": -0.148889,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-5",
+     "date": "2024-01-08"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-12",
+     "date": "2024-02-20"
+    }
+   ]
+  }
+ ],
+ "as_of": "2024-06-01"
+}

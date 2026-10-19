@@ -1,0 +1,49 @@
+condition,sex,code_definition,standard,aou_population,benchmark,benchmark_type,aou_std_share,national_prevalence,ratio,ci_low,ci_high
+hypertension,Female,any code,US adults: age,active patients aged 18+,NHANES: hypertension,measured or treated,0.3451,0.4457,0.774288,0.728542,0.822906
+hypertension,Female,any code,US adults: age,active patients aged 18+,NHIS: hypertension_told,self-reported diagnosis,0.3451,0.3095,1.115024,1.083549,1.147414
+hypertension,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHANES: hypertension,measured or treated,0.3348,0.4457,0.751178,0.706794,0.798349
+hypertension,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: hypertension_told,self-reported diagnosis,0.3348,0.3095,1.081745,1.051199,1.113178
+hypertension,Male,any code,US adults: age,active patients aged 18+,NHANES: hypertension,measured or treated,0.4113,0.5114,0.804263,0.769,0.841143
+hypertension,Male,any code,US adults: age,active patients aged 18+,NHIS: hypertension_told,self-reported diagnosis,0.4113,0.3362,1.223379,1.188606,1.259169
+hypertension,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHANES: hypertension,measured or treated,0.4057,0.5114,0.793312,0.758512,0.82971
+hypertension,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: hypertension_told,self-reported diagnosis,0.4057,0.3362,1.206722,1.172381,1.24207
+diabetes_type2,Female,any code,US adults: age,active patients aged 18+,NHIS: diabetes_type2_told,self-reported diagnosis,0.1615,0.082,1.969512,1.849113,2.09775
+diabetes_type2,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: diabetes_type2_told,self-reported diagnosis,0.1543,0.082,1.881707,1.766627,2.004285
+diabetes_type2,Male,any code,US adults: age,active patients aged 18+,NHIS: diabetes_type2_told,self-reported diagnosis,0.1914,0.0829,2.308806,2.163763,2.463571
+diabetes_type2,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: diabetes_type2_told,self-reported diagnosis,0.1887,0.0829,2.276236,2.133269,2.428785
+depression,Female,any code,US adults: age,active patients aged 18+,NHIS: depression_told,self-reported diagnosis,0.3402,0.2383,1.427612,1.375707,1.481475
+depression,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: depression_told,self-reported diagnosis,0.3341,0.2383,1.402014,1.351004,1.454951
+depression,Male,any code,US adults: age,active patients aged 18+,NHIS: depression_told,self-reported diagnosis,0.2849,0.1368,2.082602,1.971144,2.200363
+depression,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: depression_told,self-reported diagnosis,0.2814,0.1368,2.057018,1.946764,2.173515
+anxiety,Female,any code,US adults: age,active patients aged 18+,NHIS: anxiety_told,self-reported diagnosis,0.3851,0.2381,1.617388,1.560967,1.675848
+anxiety,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: anxiety_told,self-reported diagnosis,0.3811,0.2381,1.600588,1.544732,1.658464
+anxiety,Male,any code,US adults: age,active patients aged 18+,NHIS: anxiety_told,self-reported diagnosis,0.3039,0.1289,2.357642,2.230441,2.492096
+anxiety,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: anxiety_told,self-reported diagnosis,0.3037,0.1289,2.35609,2.228882,2.490558
+long_covid,Female,any code,US adults: age,active patients aged 18+,NHIS: long_covid_ever,symptom-based,0.0112,0.1023,0.109482,0.101495,0.118097
+long_covid,Female,any code,US adults: age,active patients aged 18+,NHIS: long_covid_current,"symptom-based, current",0.0112,0.0463,0.241901,0.219018,0.267174
+long_covid,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: long_covid_ever,symptom-based,0.011,0.1023,0.107527,0.099625,0.116056
+long_covid,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: long_covid_current,"symptom-based, current",0.011,0.0463,0.237581,0.215011,0.26252
+long_covid,Male,any code,US adults: age,active patients aged 18+,NHIS: long_covid_ever,symptom-based,0.0078,0.064,0.121875,0.108203,0.137274
+long_covid,Male,any code,US adults: age,active patients aged 18+,NHIS: long_covid_current,"symptom-based, current",0.0078,0.0251,0.310757,0.265026,0.364379
+long_covid,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: long_covid_ever,symptom-based,0.0078,0.064,0.121875,0.108203,0.137274
+long_covid,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: long_covid_current,"symptom-based, current",0.0078,0.0251,0.310757,0.265026,0.364379
+mecfs_postviral,Female,any code,US adults: age,active patients aged 18+,NHIS: mecfs_current,"self-reported diagnosis, current",0.0087,0.0152,0.572368,0.486833,0.672933
+mecfs_postviral,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: mecfs_current,"self-reported diagnosis, current",0.0087,0.0152,0.572368,0.486833,0.672933
+mecfs_postviral,Male,any code,US adults: age,active patients aged 18+,NHIS: mecfs_current,"self-reported diagnosis, current",0.0046,0.0064,0.71875,0.552472,0.935073
+mecfs_postviral,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: mecfs_current,"self-reported diagnosis, current",0.0046,0.0064,0.71875,0.552472,0.935073
+chronic_pain,Female,any code,US adults: age,active patients aged 18+,NHIS: high_impact_chronic_pain,symptom-based,0.3542,0.096,3.689583,3.488159,3.902639
+chronic_pain,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: high_impact_chronic_pain,symptom-based,0.3479,0.096,3.623958,3.426004,3.833351
+chronic_pain,Male,any code,US adults: age,active patients aged 18+,NHIS: high_impact_chronic_pain,symptom-based,0.3019,0.0728,4.146978,3.857176,4.458554
+chronic_pain,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: high_impact_chronic_pain,symptom-based,0.2983,0.0728,4.097527,3.810979,4.405621
+migraine,Female,any code,US adults: age,active patients aged 18+,NHIS: headache_migraine_a_lot,symptom-based,0.2037,0.0784,2.598214,2.432508,2.775209
+migraine,Female,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: headache_migraine_a_lot,symptom-based,0.2014,0.0784,2.568878,2.404995,2.743927
+migraine,Male,any code,US adults: age,active patients aged 18+,NHIS: headache_migraine_a_lot,symptom-based,0.0873,0.0315,2.771429,2.460275,3.121933
+migraine,Male,any code,US adults: age x race and ethnicity,active patients aged 18+,NHIS: headache_migraine_a_lot,symptom-based,0.0871,0.0315,2.765079,2.453939,3.11567
+obesity,Female,any code,US adults: age,"active patients aged 20+, excluding women with a pregnancy code (July 2021 to June 2023)",NHANES: obesity,measured,0.3678,0.4128,0.890988,0.802558,0.989162
+obesity,Female,any code,US adults: age x race and ethnicity,"active patients aged 20+, excluding women with a pregnancy code (July 2021 to June 2023)",NHANES: obesity,measured,0.3563,0.4128,0.86313,0.77746,0.95824
+obesity,Male,any code,US adults: age,active patients aged 20+,NHANES: obesity,measured,0.3196,0.392,0.815306,0.739874,0.898429
+obesity,Male,any code,US adults: age x race and ethnicity,active patients aged 20+,NHANES: obesity,measured,0.3173,0.392,0.809439,0.734515,0.892005
+diabetes_any_type,Female,any code,US adults: age,active patients aged 20+,NHANES: diabetes_diagnosed,self-reported diagnosis (any type),0.1688,0.1109,1.522092,1.284921,1.803041
+diabetes_any_type,Female,any code,US adults: age x race and ethnicity,active patients aged 20+,NHANES: diabetes_diagnosed,self-reported diagnosis (any type),0.1614,0.1109,1.455365,1.228579,1.724015
+diabetes_any_type,Male,any code,US adults: age,active patients aged 20+,NHANES: diabetes_diagnosed,self-reported diagnosis (any type),0.2005,0.1235,1.623482,1.458851,1.806692
+diabetes_any_type,Male,any code,US adults: age x race and ethnicity,active patients aged 20+,NHANES: diabetes_diagnosed,self-reported diagnosis (any type),0.1978,0.1235,1.601619,1.439172,1.782404

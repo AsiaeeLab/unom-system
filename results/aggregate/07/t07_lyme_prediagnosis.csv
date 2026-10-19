@@ -1,0 +1,13 @@
+measure,cases_with,controls_with,n_cases,n_controls,pct_cases,pct_controls
+"any joint_pain_or_arthritis code, days -365 to -1",760,1470,2710,10670,0.28,0.138
+"any fatigue code, days -365 to -1",80,80,2710,10670,0.0273,0.00741
+"any rash code, days -365 to -1",240,240,2710,10670,0.0871,0.0221
+"any facial_palsy code, days -365 to -1",40,<=20,2710,10670,0.0114,<=20
+"any headache code, days -365 to -1",270,400,2710,10670,0.0974,0.0374
+"any fever code, days -365 to -1",230,130,2710,10670,0.0815,0.0119
+"any myalgia code, days -365 to -1",150,220,2710,10670,0.0535,0.0202
+"any paresthesia_neuropathy code, days -365 to -1",360,610,2710,10670,0.132,0.0568
+"any heart_block_palpitations code, days -365 to -1",190,320,2710,10670,0.0675,0.0292
+"any tick_bite_or_insect_bite code, days -365 to -1",130,30,2710,10670,0.0469,0.00281
+"Lyme serology ordered, days -365 to -1",460,50,2710,10670,0.169,0.00422
+missed opportunity: compatible symptom code 30-365 days before,1110,2340,2710,10670,0.408,0.219

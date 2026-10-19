@@ -1,0 +1,5 @@
+/es /patient/?lang=es 302
+/es/ /patient/?lang=es 302
+/evidence /about/ 301
+/evidence/ /about/ 301
+/evidence/* /about/:splat 301

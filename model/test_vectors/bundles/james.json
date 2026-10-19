@@ -1,0 +1,171 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:cbf2d838-4df9-5e42-bc0a-fbc58fe4435f",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "james",
+    "gender": "male",
+    "birthDate": "1975-07-19",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "James"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:49451907-b49f-5422-a900-78337f3a74cb",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "james-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/james"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:66144735-ac05-580d-807b-0d0dd438c551",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "james-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/james"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:bb530750-1868-5ec6-9e15-04abebc76c32",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "james-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/james"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cdca6d0e-5296-57d4-8f41-efa2f98f367b",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "james-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/james"
+    },
+    "onsetDateTime": "2024-01-05",
+    "recordedDate": "2024-01-05"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:a946e401-5c8d-524c-9ee3-dc5f013fc107",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "james-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/james"
+    },
+    "period": {
+     "start": "2024-01-05"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:1e782d10-9faa-5260-a93b-0bce1a6b2dba",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "james-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/james"
+    },
+    "period": {
+     "start": "2024-02-01"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:89761fd6-7a93-55be-ad10-bd83a38a25cf",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "james-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R05.9",
+       "display": "Cough, unspecified"
+      }
+     ],
+     "text": "Cough, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/james"
+    },
+    "onsetDateTime": "2024-02-01",
+    "recordedDate": "2024-02-01"
+   }
+  }
+ ]
+}

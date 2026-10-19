@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /athena/
+Disallow: /epic/
+Disallow: /smart/
+
+Sitemap: https://undiagnosednomore.org/sitemap.xml

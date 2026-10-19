@@ -1,0 +1,11 @@
+condition,population,n_current,n_coded_primary,n_only_observation,n_only_icd9,n_only_other_vocabulary,n_none,standard_concepts_mapped,icd9_patterns
+hypertension,women and men,37360,31610,0,3110,1000,1650,16 concepts,^(401|402|403|404|405)
+diabetes_type2,women and men,13350,11620,0,1070,350,330,21 concepts,^250[0-9][02]$
+obesity,women and men,16080,12110,0,1820,720,1430,8 concepts,^(2780|V853|V854)
+depression,women and men,28130,19070,0,3090,1280,4710,18 concepts,^(2962|2963|311)
+anxiety,women and men,21450,14570,0,2460,710,3730,3 concepts,^3000
+migraine,women and men,12970,8720,0,1550,670,2040,18 concepts,^346
+fibromyalgia,women and men,5350,3350,0,840,210,970,1 concepts,^7291
+endometriosis,women,1500,620,0,180,50,670,27 concepts,^617
+lyme,women and men,330,130,0,hidden,<=20,160,3 concepts,^08881
+chronic_fatigue,women and men,4880,1190,0,90,110,3500,2 concepts + 1 concepts,^78071 none

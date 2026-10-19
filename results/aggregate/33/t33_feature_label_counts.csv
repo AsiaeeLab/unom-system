@@ -1,0 +1,74 @@
+feature,eligible,n_x1_s1,n_x1_s0,n_x0_s1,n_x0_s0,source_tables
+age_18_39,True,1610,20190,4550,93320,not a condition feature
+age_40_49,True,1290,14600,4860,98910,not a condition feature
+age_50_59,True,1420,20240,4740,93270,not a condition feature
+age_60_69,True,1190,30340,4970,83170,not a condition feature
+age_70p,True,660,28160,5490,85350,not a condition feature
+sex_female,True,4960,71160,1190,42350,not a condition feature
+cx_fatigue_other,True,1640,17730,4520,95780,condition and observation
+cx_fatigue_recent,True,790,7180,5360,106330,condition and observation
+cx_sleep,True,1630,16780,4530,96720,condition and observation
+cx_sleep_apnea,True,1430,17040,4720,96470,condition and observation
+cx_cognitive,True,790,6460,5360,107050,condition and observation
+cx_autonomic,True,1330,15050,4830,98460,condition and observation
+cx_dizzy_syncope,True,1410,16390,4750,97110,condition and observation
+cx_headache,True,1530,15010,4620,98500,condition and observation
+cx_migraine,True,1490,10910,4660,102600,condition and observation
+cx_myalgia_arthralgia,True,3190,53850,2960,59660,condition and observation
+cx_fibromyalgia,True,1160,2260,4990,111240,condition and observation
+cx_chronic_pain,True,2370,28150,3790,85350,condition and observation
+cx_depression,True,2420,23220,3740,90290,condition and observation
+cx_anxiety,True,2330,24580,3820,88930,condition and observation
+cx_ptsd,True,780,4560,5370,108940,condition and observation
+cx_ibs_gi,True,2810,38490,3340,75020,condition and observation
+cx_sore_throat_nodes,True,950,14570,5200,98940,condition and observation
+cx_fever,True,530,6750,5620,106760,condition and observation
+cx_ebv_mono,True,30,190,6120,113320,condition and observation
+cx_lyme,True,30,630,6120,112880,condition and observation
+cx_covid,True,400,6760,5760,106750,condition and observation
+cx_long_covid,True,70,360,6080,113140,condition and observation
+cx_eds_hypermobility,True,210,350,5950,113150,condition and observation
+cx_mast_cell,True,50,70,6100,113430,condition and observation
+cx_hypothyroid,True,1040,14280,5110,99220,condition and observation
+cx_anemia,True,1280,16970,4880,96530,condition and observation
+cx_vitd_deficiency,True,1280,18570,4870,94940,condition and observation
+cx_autoimmune,True,1300,10390,4850,103120,condition and observation
+cx_obesity,True,2010,29590,4150,83920,condition and observation
+cx_diabetes,True,1090,17070,5070,96440,condition and observation
+cx_hypertension,True,2100,41350,4060,72160,condition and observation
+cx_heart_disease,True,720,12980,5440,100530,condition and observation
+cx_cancer,True,730,17970,5430,95540,condition and observation
+clusters_ge3,True,3110,37810,3050,75700,condition and observation
+clusters_ge5,True,1590,11590,4570,101910,condition and observation
+px_tilt,True,50,150,6110,113360,not a condition feature
+px_sleep_study,True,460,4980,5690,108520,not a condition feature
+px_brain_mri,True,850,9270,5300,104240,not a condition feature
+px_echo,True,1020,16990,5140,96520,not a condition feature
+px_cardiac_monitor,True,330,4680,5830,108830,not a condition feature
+px_exercise_test,True,450,8030,5700,105470,not a condition feature
+px_neuropsych,True,130,1020,6030,112490,not a condition feature
+px_pt_eval,True,870,14380,5280,99130,not a condition feature
+lab_tsh,True,4150,65980,2010,47530,not a condition feature
+lab_ferritin,True,2060,23370,4090,90140,not a condition feature
+lab_b12,True,2570,29870,3590,83640,not a condition feature
+lab_vitamin_d,True,2540,36960,3620,76550,not a condition feature
+lab_ana,True,1040,8280,5110,105230,not a condition feature
+lab_crp,True,2310,21080,3850,92430,not a condition feature
+lab_esr,True,2430,21740,3730,91770,not a condition feature
+lab_ebv,True,160,1570,5990,111930,not a condition feature
+lab_lyme,True,320,3350,5830,110160,not a condition feature
+lab_cortisol,True,610,3720,5550,109790,not a condition feature
+lab_ck,True,1290,11280,4860,102230,not a condition feature
+rx_stimulant,True,1160,4940,4990,108560,not a condition feature
+rx_naltrexone,True,270,1560,5890,111940,not a condition feature
+rx_ssri_snri,True,3430,29790,2720,83720,not a condition feature
+rx_tricyclic_lowdose,True,2220,17990,3940,95520,not a condition feature
+rx_gabapentinoid,True,2650,21880,3510,91630,not a condition feature
+rx_sleep_aid,True,1580,13620,4580,99890,not a condition feature
+rx_beta_blocker,True,1890,21510,4270,92000,not a condition feature
+rx_pots,True,310,1000,5850,112510,not a condition feature
+rx_opioid,True,3420,43140,2730,70370,not a condition feature
+util_out_r_ge6,True,5060,86670,1090,26840,not a condition feature
+util_out_r_ge12,True,4140,64030,2010,49480,not a condition feature
+util_ed_r,True,1730,18190,4430,95320,not a condition feature
+util_ip_h,True,2300,33550,3860,79950,not a condition feature

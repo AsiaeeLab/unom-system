@@ -1,0 +1,171 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:88d24b88-7aed-50c4-846b-37f70621ee94",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "kai",
+    "gender": "male",
+    "birthDate": "2007-02-14",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Kai"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:00034699-29f1-50eb-98dc-ae5c0c788874",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "kai-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/kai"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:f515b087-1d76-54e6-932e-7719e3a8b213",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "kai-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/kai"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:eb325c33-b837-5d5a-b0df-65e99afa8a2a",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "kai-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/kai"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:1c81eb33-f65c-53c5-911a-0f309cee1781",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "kai-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/kai"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:a716074c-731c-5244-8134-defd28732001",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "kai-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/kai"
+    },
+    "period": {
+     "start": "2024-01-08"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:80d09d35-0430-5844-a125-4615dfde658f",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "kai-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/kai"
+    },
+    "period": {
+     "start": "2024-02-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:e73a8ec2-2612-5cb1-b760-52d3c9eefda9",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "kai-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R53.83",
+       "display": "Other fatigue"
+      }
+     ],
+     "text": "Other fatigue"
+    },
+    "subject": {
+     "reference": "Patient/kai"
+    },
+    "onsetDateTime": "2024-02-20",
+    "recordedDate": "2024-02-20"
+   }
+  }
+ ]
+}

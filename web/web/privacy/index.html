@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#09252f">
+    <meta name="description" content="How Undiagnosed No More handles your answers and chart data: on your device, with no account and no tracking.">
+    <link rel="canonical" href="https://undiagnosednomore.org/privacy/">
+    <link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml">
+    <link rel="stylesheet" href="/shared/site-nav.css?v=20261024">
+    <script src="/homepage-settings.js?v=20261019"></script>
+    <link rel="stylesheet" href="/landing.css?v=20261012">
+    <link rel="stylesheet" href="/about/evidence.css?v=20261018">
+    <title>Privacy | Undiagnosed No More</title>
+  </head>
+  <body data-door="privacy">
+    <main id="main">
+      <header class="page-head">
+        <div class="shell narrow">
+          <p class="section-kicker">Privacy</p>
+          <h1>Privacy</h1>
+        </div>
+      </header>
+      <section class="section">
+        <div class="shell narrow legal">
+          <h2>Your answers stay on your device</h2>
+          <p>The patient app has no account, no sign-in, and no tracking. Your answers are saved only in this browser on this device, and you can delete them at any time with <strong>Delete my answers</strong>. Nothing leaves the device unless you download, print, or share it yourself.</p>
+          <p>In the demonstration, <strong>Send to my clinician (demo)</strong> keeps a copy in the same browser for the clinician demonstration page to read. It is not sent over the internet.</p>
+          <p>The demonstration people are made up. Loading one does not send information about you.</p>
+          <p>Anyone using this browser on this device can see answers saved here. On a shared device, use <strong>Delete my answers</strong> when you are done.</p>
+          <p>The study search sends only the condition and the place you type to <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>, which answers with matching studies.</p>
+          <h2>The clinician view</h2>
+          <p>When a health record system launches the clinician view, the chart is read and scored in the clinician's browser. The access token the record system grants is kept in that browser session only. The demonstration page reads synthetic records shipped with the site.</p>
+          <h2>The CDS Hooks service</h2>
+          <p>When a health record system calls the CDS Hooks service, the service scores the chart data in the request and returns cards. Request bodies are not logged or stored.</p>
+          <h2>What this site stores in your browser</h2>
+          <ul>
+            <li>Your appearance and text-size choices (<code>unom.theme</code>, <code>unom.text</code>).</li>
+            <li>Whether you have seen the homepage tour (<code>unom.tour</code>).</li>
+            <li>In the patient app, your personal answers, synthetic demo state, saved studies, and the demonstration hand-off (<code>unm-patient-personal-v1</code>, <code>unm-patient-v1</code>, <code>unm-patient-trials-v1</code>, <code>unm-demo-handoff-v1</code>).</li>
+          </ul>
+          <p>The site's code sets no cookies and includes no analytics or advertising.</p>
+          <h2>Hosting</h2>
+          <p>The site is served by Cloudflare Pages, which handles standard request data such as IP addresses to deliver the pages. The clinician launch pages load the open-source SMART on FHIR client library from the jsDelivr content network.</p>
+        </div>
+      </section>
+    </main>
+    <script src="/shared/site-nav.js?v=20261023" defer></script>
+  </body>
+</html>

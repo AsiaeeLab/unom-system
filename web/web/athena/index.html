@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f8" />
+    <title>Condition review | Undiagnosed No More</title>
+    <link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20261014" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel loading-panel" id="loading-view" aria-live="polite">
+        <div class="brand-mark" aria-hidden="true">UNM</div>
+        <p class="eyebrow">Undiagnosed No More</p>
+        <h1>Reading the patient chart</h1>
+        <p class="muted" id="loading-detail">Completing secure authorization.</p>
+        <progress id="loading-progress" max="100" value="0">0%</progress>
+      </section>
+
+      <section class="clinical-app" id="result-view" hidden>
+        <header class="app-header">
+          <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">UNM</div>
+            <div>
+              <h1>Condition review</h1>
+              <p>Undiagnosed No More</p>
+            </div>
+          </div>
+          <a class="site-link" href="https://undiagnosednomore.org/" target="_blank" rel="noreferrer" aria-label="Open the Undiagnosed No More website in a new tab">Website <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <section class="condition-cards" id="condition-cards" aria-label="Condition review"></section>
+
+        <details class="debug-panel" id="debug-panel" hidden>
+          <summary><span class="label-with-help">Debug info <span class="info-control" tabindex="0" role="img" aria-label="Testing only. This section shows FHIR retrieval diagnostics: each resource type, its record count, and whether the request succeeded." data-tooltip="Testing only. This section shows FHIR retrieval diagnostics: each resource type, its record count, and whether the request succeeded.">i</span></span></summary>
+          <div class="debug-content">
+            <dl class="debug-summary">
+              <div>
+                <dt>FHIR environment</dt>
+                <dd id="connection-status"></dd>
+              </div>
+              <div>
+                <dt>Items retrieved</dt>
+                <dd id="resource-count"></dd>
+              </div>
+              <div>
+                <dt>Core resource types available</dt>
+                <dd id="coverage-value"></dd>
+              </div>
+            </dl>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Resource type</th>
+                    <th scope="col">Records</th>
+                    <th scope="col">Retrieval status</th>
+                  </tr>
+                </thead>
+                <tbody id="coverage-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+
+      </section>
+
+      <section class="panel error-panel" id="error-view" role="alert" hidden>
+        <div class="brand-mark" aria-hidden="true">UNM</div>
+        <p class="eyebrow">Secure launch interrupted</p>
+        <h1>Unable to review this chart</h1>
+        <p id="error-message"></p>
+        <p class="muted">Close this window and relaunch the app from the patient chart or SMART launcher.</p>
+      </section>
+    </main>
+    <footer class="unm-sitefooter unm-sitefooter-compact">
+      <div class="unm-sitefooter-inner">
+        <ul class="unm-sitefooter-legal">
+          <li><a href="/terms/" target="_blank" rel="noreferrer">Terms of use</a></li>
+          <li><a href="/privacy/" target="_blank" rel="noreferrer">Privacy</a></li>
+          <li><a href="/rights/" target="_blank" rel="noreferrer">Rights and attributions</a></li>
+        </ul>
+        <p class="unm-sitefooter-copy">© 2026 Amir Asiaee and Kaveh Aryan</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/fhirclient@3.0.0/bundle/fhir-client.min.js"
+      integrity="sha384-wS88v2BGd3KdbNFRPrNfQphJbH3fTSjF23+z3wpRNHwScl9nfBIU2KtYyv3Kw6xj"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

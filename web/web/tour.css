@@ -1,0 +1,65 @@
+/* First-visit tour (tour.js). A bottom sheet on phones, a panel at the lower right on wider screens. On
+   desktop, a step about one section moves the panel to the lower left (data-side="start"), under that
+   section's text, so the screen on the right stays visible.
+   The backdrop stays clear so the highlighted section can be read; the page behind is inert while it is open.
+   Uses the homepage tokens from homepage.css. No animation, so nothing to turn off for reduced motion. */
+.tour {
+  position: fixed;
+  inset: auto 0 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  max-height: min(72svh, 36rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 var(--gutter, 16px) calc(16px + env(safe-area-inset-bottom, 0px));
+  border: 0;
+  border-top: 2px solid var(--unm-text);
+  background: var(--unm-background);
+  color: var(--unm-text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.tour::backdrop { background: transparent; }
+.tour-top { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--unm-rule); background: var(--unm-background); }
+.tour-count { color: var(--unm-secondary); font: 400 0.875rem/1.4 "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.tour-skip { display: inline-flex; align-items: center; min-height: 44px; padding-left: 12px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.tour-step h2 { margin: 14px 0 6px; font-size: 1.375rem; font-weight: 400; line-height: 1.25; }
+/* The step heading takes focus from the script (tabindex=-1) so screen readers start there; it is not a control, so no ring. */
+.tour-step h2:focus, .tour-step h2:focus-visible { outline: none; }
+.tour-step p { margin: 0 0 8px; }
+.tour-step a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+.tour-links { display: flex; flex-wrap: wrap; column-gap: 24px; }
+.tour-video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; margin: 4px 0 10px; border: 1px solid var(--unm-rule); background: #000; }
+.tour-video[hidden] { display: none; }
+.tour-note { margin: 6px 0 0; color: var(--unm-secondary); font-size: 0.875rem; }
+.tour-nav { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+.tour-nav button { min-height: 44px; min-width: 6rem; padding: 0 16px; border: 1px solid var(--unm-text); font-weight: 600; }
+.tour-back { margin-right: auto; }
+.tour-next { background: var(--unm-text); color: var(--unm-inverse); }
+.tour-nav button[hidden] { display: none; }
+.tour-target { outline: 2px solid var(--unm-accent); outline-offset: 6px; }
+.tour .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+@media (min-width: 600px) {
+  .tour {
+    inset: auto 24px 24px auto;
+    width: 25rem;
+    max-width: calc(100% - 48px);
+    max-height: calc(100svh - 48px);
+    padding: 0 24px 16px;
+    border: 1px solid var(--unm-text);
+  }
+}
+@media (min-width: 960px) {
+  /* The left column of a door section: the wrap's left edge, 5 of 12 parts of the wrap after the 56 px gap. */
+  .tour[data-side="start"] {
+    inset: auto auto 24px max(var(--gutter, 40px), calc((100% - var(--content-max-width, 1120px)) / 2));
+    width: min(25rem, calc((min(100% - 2 * var(--gutter, 40px), var(--content-max-width, 1120px)) - 56px) * 5 / 12));
+  }
+}
+@media (forced-colors: active) {
+  .tour { border: 2px solid CanvasText; }
+  .tour-target { outline-color: Highlight; }
+}

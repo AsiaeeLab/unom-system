@@ -1,0 +1,17 @@
+{
+  "name": "Undiagnosed No More: symptom check",
+  "short_name": "Symptom check",
+  "description": "A private symptom check and visit-prep tool. Your answers stay on this device.",
+  "id": "/patient/",
+  "start_url": "/patient/",
+  "scope": "/patient/",
+  "display": "standalone",
+  "background_color": "#f6f5f1",
+  "theme_color": "#f6f5f1",
+  "lang": "en-US",
+  "icons": [
+    { "src": "/patient/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/patient/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/patient/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "calibration_note": "Grouped binomial approximation using rounded bin means and counts minus 4.5. Nonnegative slope. With fewer than two distinct informative bins or degenerate slope: intercept-only using corrected informative-bin prevalence, or fit-summary prevalence if no informative bins. No score refit.",
+  "candidate_order": [
+    "nb_eb",
+    "lda_eb_0.1",
+    "lda_eb_0.3",
+    "lda_eb_0.6"
+  ],
+  "input_sha256": {
+    "results/aggregate/56/inner_cv.csv": "4d0be582aa9247384a0a7050099f25224ca68982849226707d637f2c5fa3ebf5",
+    "results/aggregate/56/patient_feature_label_counts.csv": "ef163b3966075be61ab7ea75ddae8acbfcbb7fa1cc346f11df01e5e78b557113",
+    "results/aggregate/56/patient_feature_margins.csv": "34ce38d1090c3b08b04a6acba15fd39cf27a9e6791d16e441f25da376a947864",
+    "results/aggregate/56/patient_label_counts.csv": "f2b863abf4028d1080a802ea318f523158030a1f7a7a9aba8b1f644033e3939e",
+    "results/aggregate/56/patient_pair_counts.csv": "b6501e8ec3ecbbc628962318eec0c934e0839b6fda1ec2e2c88fcdde39fd9456",
+    "results/aggregate/56/site_feature_label_counts.csv": "569a7a87a95281929540e0843cf2e02d8837e6c413501ee2eaca227e48327e41",
+    "results/aggregate/56/site_feature_margins.csv": "6a5ff2b9304468d4f080c7fb35daf4c92cc9076fb1617e90c980918ce4fb3e43",
+    "results/aggregate/56/site_label_counts.csv": "a8a1a3850018c8c28c83136f2d103e0f0bfb06cf111a491c812886f0b61f6ef0",
+    "results/aggregate/56/site_pair_counts.csv": "05ace87aa5464dcab1265ca4bec9081f394940948527c4ce6eecad0b0edc634e",
+    "results/aggregate/57/patient_calibration_bins.csv": "32673da43cd5d24301c0e89c292ba40a2c4ac5a006bb8a9b026c4f07ebb7c269",
+    "results/aggregate/57/site_calibration_bins.csv": "fa1ce479a678eb00b619d3ec224f06dc0afe9845d71695c12877e96d8c0596df"
+  },
+  "instances": {
+    "patient": {
+      "calibration": {
+        "a": -3.5568008740558223,
+        "b": 0.24332861072885248,
+        "informative_bins": 2,
+        "method": "monotone_grouped_logistic",
+        "reason": "bin means and counts minus 4.5 approximation"
+      },
+      "eligibility": "All four exact feature-label cells exceed 20 within fitting subset",
+      "fallback_pairs": 0,
+      "feature_source": "Corrected features_v3; 102 binary inputs before release eligibility; no yout_*",
+      "features": [
+        "age_40_49",
+        "age_50_59",
+        "age_60_69",
+        "age_70p",
+        "sex_female",
+        "sym_cough",
+        "sym_count_ge2",
+        "hx_asthma",
+        "hx_diabetes",
+        "hx_obesity",
+        "hx_hypertension",
+        "hx_depression",
+        "hx_anxiety",
+        "hx_chronic_pain",
+        "hx_sleep_apnea",
+        "hx_heart_disease",
+        "acute_inpatient",
+        "acute_ed",
+        "out_w0_ge4",
+        "out_w3_ge2",
+        "out_w3_ge4",
+        "visit_rate_up",
+        "test_chest_ct",
+        "test_chest_xray",
+        "lab_troponin",
+        "lab_tsh",
+        "lab_crp",
+        "rx_inhaler",
+        "sym_any_fatigue",
+        "sym_any_dyspnea",
+        "sym_any_cough",
+        "sym_any_chest_pain",
+        "sym_any_mood",
+        "sym_any_msk_pain",
+        "sym_any_gi",
+        "sym_any_w3_count_ge2",
+        "sym_any_w3_count_ge3",
+        "covid_code_w3",
+        "covid_history_code",
+        "late_visit_61_90"
+      ],
+      "fitting_prior": 0.011161827317709332,
+      "intercept": -8.221501401478132,
+      "missing_features": "error; scorer requires every fitted binary feature explicitly",
+      "name": "nb_eb",
+      "numerical_ridge": 0.0,
+      "outer_split": "patient",
+      "population": "Existing cohort_v2 landmark_eligible == 1; predict future recorded U09.9 (cohort.s)",
+      "tau2": 0.4295391932247014,
+      "time_windows": {
+        "W0": [
+          -365,
+          -91
+        ],
+        "W1": [
+          -90,
+          -1
+        ],
+        "W2": [
+          0,
+          30
+        ],
+        "W3": [
+          31,
+          90
+        ],
+        "outcome": [
+          91,
+          455
+        ]
+      },
+      "weights": [
+        0.3265238203397962,
+        -0.035330864464471715,
+        0.22342851004077857,
+        -0.07414216457945053,
+        0.2361247740121985,
+        0.6272322233440369,
+        0.6084523588090215,
+        0.4707895214152434,
+        0.4293978414728251,
+        0.49827588711525256,
+        0.26713483325225684,
+        0.4375322153291034,
+        0.11726529969028772,
+        0.4334602313879076,
+        0.7417453022993216,
+        0.07534609556356674,
+        0.2791331169075908,
+        0.586040685815409,
+        0.25213930457769346,
+        0.5146297994760624,
+        0.5550385895487658,
+        0.2077514657200069,
+        1.123135746600707,
+        0.453874364553326,
+        0.7336342702120294,
+        0.5686368141763016,
+        0.7501900432248743,
+        0.7685519570169005,
+        0.8611063256860776,
+        0.8782558510491539,
+        0.6428082145845505,
+        0.6508988959201975,
+        0.37349242394758964,
+        0.4998147737653159,
+        0.6274407143996712,
+        0.8693059185740238,
+        0.6589003367213969,
+        1.1740607429470702,
+        1.577753931005299,
+        0.2665840100292083
+      ]
+    },
+    "site": {
+      "calibration": {
+        "a": -2.3634937626378947,
+        "b": 0.4256272388479936,
+        "informative_bins": 2,
+        "method": "monotone_grouped_logistic",
+        "reason": "bin means and counts minus 4.5 approximation"
+      },
+      "eligibility": "All four exact feature-label cells exceed 20 within fitting subset",
+      "fallback_pairs": 0,
+      "feature_source": "Corrected features_v3; 102 binary inputs before release eligibility; no yout_*",
+      "features": [
+        "age_40_49",
+        "age_50_59",
+        "age_60_69",
+        "age_70p",
+        "sex_female",
+        "sym_count_ge2",
+        "hx_asthma",
+        "hx_copd",
+        "hx_diabetes",
+        "hx_obesity",
+        "hx_hypertension",
+        "hx_depression",
+        "hx_anxiety",
+        "hx_migraine",
+        "hx_chronic_pain",
+        "hx_sleep_apnea",
+        "hx_hypothyroid",
+        "hx_heart_disease",
+        "acute_inpatient",
+        "acute_ed",
+        "out_w0_ge4",
+        "out_w3_ge2",
+        "out_w3_ge4",
+        "ip_w3_any",
+        "visit_rate_up",
+        "test_chest_xray",
+        "lab_troponin",
+        "lab_tsh",
+        "lab_ferritin",
+        "lab_crp",
+        "rx_systemic_steroid",
+        "sym_any_dyspnea",
+        "sym_any_cough",
+        "sym_any_chest_pain",
+        "sym_any_mood",
+        "sym_any_msk_pain",
+        "sym_any_gi",
+        "sym_any_w3_count_ge2",
+        "sym_any_w3_count_ge3",
+        "covid_code_w3",
+        "late_visit_61_90"
+      ],
+      "fitting_prior": 0.011823981146641746,
+      "intercept": -6.517635900311339,
+      "missing_features": "error; scorer requires every fitted binary feature explicitly",
+      "name": "lda_eb_0.6",
+      "numerical_ridge": 0.0,
+      "outer_split": "site",
+      "population": "Existing cohort_v2 landmark_eligible == 1; predict future recorded U09.9 (cohort.s)",
+      "tau2": 0.06591152310137967,
+      "time_windows": {
+        "W0": [
+          -365,
+          -91
+        ],
+        "W1": [
+          -90,
+          -1
+        ],
+        "W2": [
+          0,
+          30
+        ],
+        "W3": [
+          31,
+          90
+        ],
+        "outcome": [
+          91,
+          455
+        ]
+      },
+      "weights": [
+        0.27777927454695445,
+        -0.10553548760796816,
+        0.2580680472084309,
+        -0.4020198814708639,
+        -0.0371510099446992,
+        0.0804366142619337,
+        0.2639927920570703,
+        1.0596750380157036,
+        0.08033121493192033,
+        0.4729501834568206,
+        -0.02916937894698373,
+        0.5931072904819724,
+        -0.19986149684266852,
+        0.6076625875959277,
+        0.12063428711282989,
+        0.822808789268418,
+        0.13199034829262019,
+        0.16036108674959834,
+        0.38747916320464837,
+        0.40036084604505967,
+        0.12955392040909786,
+        -0.16964005131295543,
+        0.14449980920705377,
+        0.28482978896380207,
+        0.18218660920131519,
+        0.257824735299155,
+        0.17303013941143885,
+        -0.18926838410757765,
+        0.4699025797134738,
+        0.341887870648864,
+        0.6482674237283405,
+        0.9521352337571094,
+        -0.0823825695923018,
+        0.16268535648786583,
+        0.19303973194846297,
+        0.5467712954502918,
+        0.1602348502086481,
+        0.35653085566355436,
+        -0.14113464660000616,
+        1.1403355986378378,
+        -0.08201860409753925
+      ]
+    }
+  },
+  "intended_public_instance": "site",
+  "interpretation": "Frozen follow-up comparison; outer splits inspected in historical analyses",
+  "reconstruction": "Subtract 4.5 from positive shown counts; hidden pair moments use independence. Approximation.",
+  "schema": "paper1_matched_v1",
+  "score_artifact_sha256": "4ba130380e5fa9bff7a3df51fc39a2d2a0275d74109cf9603d8d3af0b8246253",
+  "seeds": {
+    "bootstrap": 20261017,
+    "elastic_net": 20260928,
+    "inner_cv": 20261017,
+    "patient_calibration_split": 20261017,
+    "stored_patient_split": 20260929,
+    "stored_site_calibration_split": 20261003,
+    "stored_site_selection": 20260928
+  },
+  "selection": {
+    "patient": {
+      "mean_AUROC": {
+        "lda_eb_0.1": 0.5970337593451251,
+        "lda_eb_0.3": 0.6065901150190484,
+        "lda_eb_0.6": 0.6206369825200019,
+        "nb_eb": 0.6308706315557232
+      },
+      "selected": "nb_eb"
+    },
+    "site": {
+      "mean_AUROC": {
+        "lda_eb_0.1": 0.6495983966118581,
+        "lda_eb_0.3": 0.6547059123123915,
+        "lda_eb_0.6": 0.6612293742756252,
+        "nb_eb": 0.6566889043470924
+      },
+      "selected": "lda_eb_0.6"
+    }
+  },
+  "selection_rule": "Maximum mean fit-only inner three-fold protected-pipeline AUROC; listed candidate order breaks ties",
+  "source_sha256": {
+    "analysis/paper1_matched_fit.py": "75feca031ebf4cc3072ea66febacfa07825fcf8a385a450665d1a6feb2551d98",
+    "workbench/src/aou_safe.py": "79cb46e3bd4a43b888462e54b224f26949f0a77b2ddf5ea7b0c0f67142529050",
+    "workbench/src/features.json": "698fef038742a9f6d89e9277fbdd0cbe17728ea2a443e4ab50081ad010a26a65",
+    "workbench/src/features.yaml": "f0dd444cd7c3fe1774ad4fb0acf6caff28a92e46531d0976c79180bbde0ccd49",
+    "workbench/src/p1_summary_core.py": "f21e5ad2efd256bb01c6b40dfea0669d5e2e6ce51e9cda0cef1af55c232a1512",
+    "workbench/src/t04_moments.py": "732d98e2c70f342589989faeb2a1196beb87c5d9c98a3da1b9727d7ba303d55e"
+  },
+  "uncertainty": "500 outcome-stratified participant bootstraps for AUROC/AUPRC; 500 ordinary participant bootstraps for calibration intercept, calibration slope, and Brier; fixed predictions, no refitting; not site-cluster uncertainty"
+}

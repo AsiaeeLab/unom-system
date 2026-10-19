@@ -1,0 +1,754 @@
+{
+ "hookInstance": "00000000-0000-4000-8000-000000000522",
+ "hook": "patient-view",
+ "context": {
+  "userId": "Practitioner/example",
+  "patientId": "maria"
+ },
+ "extension": {
+  "org.undiagnosednomore.scoring-date": "2024-06-01"
+ },
+ "prefetch": {
+  "patient": {
+   "resourceType": "Patient",
+   "id": "maria",
+   "gender": "female",
+   "birthDate": "1980-03-02",
+   "name": [
+    {
+     "family": "Synthetic",
+     "given": [
+      "Maria"
+     ]
+    }
+   ]
+  },
+  "conditions": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 9,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:c4029410-e7b9-5f61-a3d3-333bc5b2fad0",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-4",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "J45.909",
+         "display": "Asthma, unspecified, uncomplicated"
+        }
+       ],
+       "text": "Asthma, unspecified, uncomplicated"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2023-06-15",
+      "recordedDate": "2023-06-15"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:e40c2059-f000-56ae-9423-801c5b37874d",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-5",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "U07.1",
+         "display": "COVID-19"
+        }
+       ],
+       "text": "COVID-19"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-01-08",
+      "recordedDate": "2024-01-08"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:25ed6b87-55a4-56bd-a916-8984df6328aa",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-10",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R53.83",
+         "display": "Other fatigue"
+        }
+       ],
+       "text": "Other fatigue"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-02-20",
+      "recordedDate": "2024-02-20"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:c321d403-2315-5aeb-82ac-2166125a8550",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-11",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R00.2",
+         "display": "Palpitations"
+        }
+       ],
+       "text": "Palpitations"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-02-20",
+      "recordedDate": "2024-02-20"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:15db45b3-5856-52b6-a29a-d0961a7c0540",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-12",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "U07.1",
+         "display": "COVID-19"
+        }
+       ],
+       "text": "COVID-19"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-02-20",
+      "recordedDate": "2024-02-20"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:29ad0527-8368-584c-8648-0c78a2237840",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-14",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "Z86.16",
+         "display": "Personal history of COVID-19"
+        }
+       ],
+       "text": "Personal history of COVID-19"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-12",
+      "recordedDate": "2024-03-12"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:0cd08300-2efa-5b4c-b09e-7caec0a526fd",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-16",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R41.840",
+         "display": "Attention and concentration deficit"
+        }
+       ],
+       "text": "Attention and concentration deficit"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-05",
+      "recordedDate": "2024-03-05"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:22962e0f-227f-5cfd-804d-0351e1f7771a",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-18",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R06.02",
+         "display": "Shortness of breath"
+        }
+       ],
+       "text": "Shortness of breath"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-25",
+      "recordedDate": "2024-03-25"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:fc529004-fe7f-52c2-bfd9-578bcb712127",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-19",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R07.89",
+         "display": "Other chest pain"
+        }
+       ],
+       "text": "Other chest pain"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-25",
+      "recordedDate": "2024-03-25"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "encounters": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 9,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:adb2a6dd-a1b8-5b3a-bf44-9dc9cf54bdd6",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-1",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2023-02-10"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:84e09ad6-f8df-5fbf-ab83-95eafd021ba4",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-2",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2023-06-15"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:ba0e60d3-b9ee-5a83-add0-d94e660c5e4b",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-3",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2023-10-20"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:285fdafa-f1ce-554c-8c61-3a1152318c80",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-6",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-01-08"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:d9853640-8f56-5b22-b957-e8bf8dbc8ccb",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-7",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "EMER"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-01-10"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:8bfce810-ceab-538a-bd94-01696606b10f",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-9",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-02-20"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:ec711b65-6042-54d2-8964-6d3d0ae76a7a",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-13",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-03-12"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:3fb48051-8bac-5463-b0e6-88779109a284",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-15",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-03-05"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:62bda78f-1085-5311-aab4-853d7b51944c",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-17",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-03-25"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "observations": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 3,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:b7535a4c-9bc0-52b5-9932-ef0f1da743a6",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "maria-obs-8",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "48065-7",
+         "display": "Fibrin D-dimer FEU"
+        }
+       ],
+       "text": "Fibrin D-dimer FEU"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "effectiveDateTime": "2024-01-10",
+      "valueQuantity": {
+       "value": 0.4,
+       "unit": "ug/mL"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:e40530c0-c65f-5138-9eed-0ab0a22a4c3f",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "maria-obs-20",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "1988-5",
+         "display": "C reactive protein"
+        }
+       ],
+       "text": "C reactive protein"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "effectiveDateTime": "2024-02-20",
+      "valueQuantity": {
+       "value": 4.1,
+       "unit": "mg/L"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:6d04ac0f-ca63-5bb3-9945-5800badffb33",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "maria-obs-25",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "3016-3",
+         "display": "Thyrotropin"
+        }
+       ],
+       "text": "Thyrotropin"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "effectiveDateTime": "2024-02-20",
+      "valueQuantity": {
+       "value": 1.8,
+       "unit": "mIU/L"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "medications": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 1,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:9a7a01a2-33c5-5a99-b389-798e665b3dda",
+     "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "maria-med-24",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+         "code": "8787",
+         "display": "propranolol"
+        }
+       ],
+       "text": "propranolol"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "authoredOn": "2024-03-12"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "procedures": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 3,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:008ee8e8-a403-5a66-b5f0-801fd0c98751",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "maria-proc-21",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "71275",
+         "display": "CT angiography, chest"
+        }
+       ],
+       "text": "CT angiography, chest"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "performedDateTime": "2024-03-27"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:22e76223-e4aa-57a0-83d8-ee14d1be4a1f",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "maria-proc-22",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "93306",
+         "display": "Echocardiography, transthoracic, complete"
+        }
+       ],
+       "text": "Echocardiography, transthoracic, complete"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "performedDateTime": "2024-03-01"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:c3e73679-33f9-560c-bbbc-48d1e2ea32aa",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "maria-proc-23",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "93224",
+         "display": "External electrocardiographic recording up to 48 hours"
+        }
+       ],
+       "text": "External electrocardiographic recording up to 48 hours"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "performedDateTime": "2024-03-10"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  }
+ }
+}

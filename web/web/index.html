@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171918" media="(prefers-color-scheme: dark)">
+<title>Undiagnosed No More</title>
+<meta name="description" content="Open tools that find patients whose invisible illness is missing from the health record, for nine conditions from Long COVID, ME/CFS, and Lyme disease to lupus, endometriosis, and depression: a patient app, a clinician view, an atlas, and open models built on the NIH All of Us Research Program and federal open data. Every patient on this site is synthetic.">
+<meta property="og:title" content="Undiagnosed No More (UNOM)">
+<meta property="og:description" content="Find the patients the health record misses. Open tools for patients, clinicians, health systems, and developers, shown on synthetic patients.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://undiagnosednomore.org/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://undiagnosednomore.org/images/og-card.png?v=20261015-nine">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="UNOM, Undiagnosed No More: find the patients the health record misses.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml">
+<link rel="preload" href="/fonts/ibm-plex-sans-regular-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/homepage-fonts.css?v=20261011">
+<link rel="stylesheet" href="/homepage.css?v=20261024">
+<link rel="stylesheet" href="/shared/header-tools.css?v=20261021">
+<link rel="stylesheet" href="/tour.css?v=20261011c">
+<script src="/homepage-settings.js?v=20261019"></script>
+<script src="/tour.js?v=20261012" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap header-row">
+<a class="brand" href="/" aria-label="UNOM, Undiagnosed No More: home">
+<picture class="brand-light">
+<source media="(min-width: 600px)" srcset="/images/homepage/unom-logo-wide-light.svg?v=20261013" width="256" height="32">
+<img src="/images/homepage/unom-logo-compact-light.svg?v=20261011" width="171" height="32" alt="" loading="lazy">
+</picture>
+<picture class="brand-dark">
+<source media="(min-width: 600px)" srcset="/images/homepage/unom-logo-wide-dark.svg?v=20261013" width="256" height="32">
+<img src="/images/homepage/unom-logo-compact-dark.svg?v=20261011" width="171" height="32" alt="" loading="lazy">
+</picture>
+</a>
+<nav class="door-nav" aria-label="Site">
+<ul>
+<li><a href="/clinician/">Clinicians</a></li>
+<li><a href="/patient/">Patients</a></li>
+<li><a href="/atlas/">Policymakers</a></li>
+<li><a href="/developers/">Developers</a></li>
+<li class="nav-research"><a href="/about/">About</a></li>
+</ul>
+</nav>
+<div class="header-tools">
+<button class="help-toggle" type="button" popovertarget="site-help" aria-label="Help: our TOPx submission, the demo video, and the tour">?</button>
+<button class="settings-toggle" type="button" popovertarget="display-settings" aria-label="Display settings">
+<svg width="24" height="24" viewBox="0 0 23 23" fill="none" aria-hidden="true" focusable="false"><path d="M8.625 4.648 9.583 2.827h3.834l.958 1.821 1.917.91 1.916-.182 1.917 3.096-1.15 1.638v1.821l1.15 1.639-1.917 3.095-1.916-.182-1.917.91-.958 1.821H9.583l-.958-1.82-1.917-.911-1.916.182-1.917-3.095 1.15-1.639V10.11l-1.15-1.638 1.917-3.096 1.916.182z" stroke="currentColor" stroke-width="1.4"/><circle cx="11.5" cy="11.5" r="3.354" stroke="currentColor" stroke-width="1.44"/></svg>
+</button>
+</div>
+</div>
+</header>
+
+<main id="main" tabindex="-1">
+<nav class="hub-band" aria-label="Start here"><div class="wrap"><a href="/challenge/">TOPx submission</a><a href="/walkthrough/">Demo video</a><button type="button" data-tour-open hidden>Tour</button></div></nav>
+<section class="intro wrap" id="top" aria-labelledby="intro-title">
+<h1 id="intro-title" class="sr-only">Undiagnosed No More: Find the patients the health record misses.</h1>
+<figure class="hub" aria-label="How it fits together">
+<div class="hub-wide">
+<img src="/images/homepage/unom-infographic.webp?v=20261018" width="1536" height="1024" decoding="async" alt="How Undiagnosed No More fits together. At the top, data from U.S. government sources: the All of Us Research Program (health records, surveys, Fitbit), CDC (surveys, Lyme cases), CMS (Medicare costs), and the U.S. Census Bureau (county population). It trains the UNOM AI models in the center, nine conditions and one shared scorer, with four research papers below. Around them, four users: for clinicians, the clinician app with nine condition cards inside the health record through SMART on FHIR; for policymakers, the Atlas, which also draws prevalence, cases, and costs from the data directly; for patients, the patient app, whose answers update the estimate; and for developers, the code and the open models.">
+<a class="hub-zone hub-zone-clinicians" id="hub-clinicians" href="/clinician/"><span class="sr-only">For clinicians: the clinician app</span></a>
+<a class="hub-zone hub-zone-policy" id="hub-policy" href="/atlas/"><span class="sr-only">For policymakers: the Atlas</span></a>
+<a class="hub-zone hub-zone-patients" id="hub-patients" href="/patient/"><span class="sr-only">For patients: the patient app</span></a>
+<a class="hub-zone hub-zone-developers" id="hub-developers" href="/developers/"><span class="sr-only">For developers: the developer documentation</span></a>
+<a class="hub-zone hub-zone-data" id="hub-data" href="/about/#data"><span class="sr-only">Data: the U.S. government sources</span></a>
+<a class="hub-zone hub-zone-ai" id="hub-ai" href="/about/#ai"><span class="sr-only">UNOM AI models</span></a>
+<a class="hub-zone hub-zone-papers" id="hub-papers" href="/about/#papers"><span class="sr-only">Four research papers</span></a>
+</div>
+<div class="hub-narrow">
+<ul class="hub-tiles">
+<li><a id="tile-clinicians" href="/clinician/"><img src="/images/homepage/hub-clinicians.webp?v=20261015" width="640" height="640" loading="lazy" decoding="async" alt=""><strong>For clinicians</strong></a></li>
+<li><a id="tile-policy" href="/atlas/"><img src="/images/homepage/hub-public-policy.webp?v=20261015" width="640" height="640" loading="lazy" decoding="async" alt=""><strong>For policymakers</strong></a></li>
+<li><a id="tile-patients" href="/patient/"><img src="/images/homepage/hub-patients.webp?v=20261015" width="640" height="640" loading="lazy" decoding="async" alt=""><strong>For patients</strong></a></li>
+<li><a id="tile-developers" href="/developers/"><img src="/images/homepage/hub-developers.webp?v=20261015" width="640" height="640" loading="lazy" decoding="async" alt=""><strong>For developers</strong></a></li>
+</ul>
+<a class="door-link hub-about" href="/about/">About: the data, the models, the papers, and the team<span class="arrow" aria-hidden="true">→</span></a>
+</div>
+</figure>
+</section>
+</main>
+
+<footer class="unm-sitefooter">
+<div class="unm-sitefooter-inner">
+<ul class="unm-sitefooter-legal">
+<li><a href="/terms/">Terms of use</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/rights/">Rights and attributions</a></li>
+</ul>
+<p class="unm-sitefooter-copy">© 2026 Amir Asiaee and Kaveh Aryan</p>
+</div>
+</footer>
+
+<nav id="site-help" class="site-help" popover aria-label="Help: our TOPx submission, the demo video, and the tour">
+<ul>
+<li><a href="/challenge/">Our TOPx submission</a></li>
+<li><a href="/walkthrough/">Watch the demo video</a></li>
+<li><button type="button" data-tour-open hidden>Take the tour</button></li>
+</ul>
+</nav>
+<aside id="display-settings" class="display-settings" popover aria-labelledby="settings-heading">
+<div class="settings-heading"><h2 id="settings-heading">Display</h2>
+<button type="button" popovertarget="display-settings" popovertargetaction="hide" aria-label="Close settings">×</button></div>
+<fieldset class="setting-group needs-js"><legend>Appearance</legend><div class="setting-choices setting-choices-3">
+<label><input type="radio" name="appearance" value="device" checked><span>Device</span></label>
+<label><input type="radio" name="appearance" value="light"><span>Light</span></label>
+<label><input type="radio" name="appearance" value="dark"><span>Dark</span></label>
+</div></fieldset>
+<fieldset class="setting-group needs-js"><legend>Text size</legend><div class="setting-choices">
+<label><input type="radio" name="text-size" value="default" checked><span>Default</span></label>
+<label><input type="radio" name="text-size" value="large"><span class="size-sample-large">Large</span></label>
+</div></fieldset>
+<p class="settings-note">Saved in this browser. Appearance and text size apply to every page of the site.</p>
+</aside>
+
+<dialog class="tour" id="tour" role="dialog" aria-modal="true" aria-labelledby="tour-1-title" data-counter="Step {n} of {total}" data-video="/media/walkthrough.mp4" data-video-posted="true" data-youtube-url="">
+<div class="tour-top">
+<p class="tour-count" data-tour-count>Step 1 of 8</p>
+<button class="tour-skip" type="button" data-tour-skip>Skip tour</button>
+</div>
+<p class="sr-only" aria-live="polite" data-tour-live></p>
+<section class="tour-step" data-tour-step data-target="top">
+<h2 id="tour-1-title" tabindex="-1">What this site does</h2>
+<p>Undiagnosed No More finds patients whose invisible illness is missing from the health record, for nine conditions from Long COVID, ME/CFS, and Lyme disease to lupus, endometriosis, and depression. This tour follows the tools and the evidence behind them.</p>
+</section>
+<section class="tour-step" data-tour-step data-target="#hub-data" data-side="end" hidden>
+<h2 id="tour-2-title" tabindex="-1">Data</h2>
+<p>In the NIH All of Us Research Program, only <span data-num="code.mecfs">24%</span> of people in care for chronic fatigue have its code, against <span data-num="code.hypertension">85%</span> for hypertension. All of Us records and surveys, with CDC, Census, and CMS data, show where nine invisible illnesses go uncoded.</p>
+</section>
+<section class="tour-step" data-tour-step data-target="#hub-ai" data-side="end" hidden>
+<h2 id="tour-3-title" tabindex="-1">AI models</h2>
+<p>Nine open models share one scorer. Each was fit outside the All of Us Workbench from released aggregate counts, and eight learn from patients&#39; own reports of a diagnosis, so they find people whose diagnosis was never coded. The About page has the data, the models, and the four papers.</p>
+</section>
+<section class="tour-step" data-tour-step data-target="#hub-clinicians, #tile-clinicians" data-side="end" hidden>
+<h2 id="tour-4-title" tabindex="-1">For clinicians</h2>
+<p>The clinician view opens inside the health record through SMART on FHIR. For each condition it shows the estimate, each dated finding with how much it moves it, the patient&#39;s answers, the criteria to check, and the next step.</p>
+</section>
+<section class="tour-step" data-tour-step data-target="#hub-patients, #tile-patients" data-side="end" hidden>
+<h2 id="tour-5-title" tabindex="-1">For patients</h2>
+<p>Patients and advocates in the TOPx sessions described rebuilding their history for every clinician and wanting to approve what is shared. The app asks validated questions in English or Spanish, keeps answers on the device, and ends with a summary the patient prints or downloads for the visit.</p>
+</section>
+<section class="tour-step" data-tour-step data-target="#hub-policy, #tile-policy" data-side="start" hidden>
+<h2 id="tour-6-title" tabindex="-1">For policymakers</h2>
+<p>The Atlas, for health systems and policy: pick a condition to see where and for whom it goes uncoded, what else is in the record, and what finding patients earlier costs. Its numbers are released aggregate estimates, not patient records.</p>
+</section>
+<section class="tour-step" data-tour-step data-target="#hub-developers, #tile-developers" data-side="start" hidden>
+<h2 id="tour-7-title" tabindex="-1">For developers</h2>
+<p>The tools speak HL7 FHIR, SMART on FHIR, and CDS Hooks, and read USCDI data. A new condition is a new model file, not new software.</p>
+</section>
+<section class="tour-step" data-tour-step data-target="" hidden>
+<h2 id="tour-8-title" tabindex="-1" data-video-title="Watch the 4-minute walkthrough">Try it with Maria</h2>
+<video class="tour-video" controls preload="none" playsinline width="1280" height="720" data-poster="/images/homepage/walkthrough-poster.webp?v=20261017" hidden>
+<source src="/media/walkthrough.mp4" type="video/mp4">
+<track kind="captions" src="/media/walkthrough.en.vtt?v=20261016" srclang="en" label="English">
+</video>
+<p class="tour-transcript" data-tour-transcript hidden><a href="/walkthrough/">Transcript and captions</a>.</p>
+<p data-tour-youtube hidden><a rel="noopener">Watch the walkthrough on YouTube</a> (opens youtube.com).</p>
+<div data-tour-fallback>
+<p>The patient app opens on Maria's synthetic answers, and the clinician view starts on her chart.</p>
+<p class="tour-links"><a href="/patient/">Open the patient app</a> <a href="/clinician/">Open the clinician view</a></p>
+</div>
+</section>
+<p class="tour-note">Every patient on this site is synthetic.</p>
+<div class="tour-nav">
+<button class="tour-back" type="button" data-tour-back hidden>Back</button>
+<button class="tour-next" type="button" data-tour-next>Next</button>
+<button class="tour-next" type="button" data-tour-done hidden>Close the tour</button>
+</div>
+</dialog>
+</body>
+</html>

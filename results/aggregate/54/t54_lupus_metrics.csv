@@ -1,0 +1,13 @@
+model,target,auroc,auprc,auroc_lo,auroc_hi
+nb_sr_exported,self-report,0.8242,0.0435,0.7804,0.8605
+nb_sr_exported,"self-report, never coded",0.8235,0.0291,0.777,0.863
+nb_sr_exported,later code,0.7327,0.0207,0.648,0.7911
+en_sr,self-report,0.8516,0.09,0.8126,0.879
+en_sr,"self-report, never coded",0.8462,0.0604,0.798,0.8844
+en_sr,later code,0.7559,0.025,0.6846,0.8102
+nb_code,self-report,0.6583,0.013,0.6026,0.7157
+nb_code,"self-report, never coded",0.6519,0.0092,0.5877,0.7093
+nb_code,later code,0.6916,0.011,0.5988,0.7715
+en_code,self-report,0.758,0.0578,0.707,0.8054
+en_code,"self-report, never coded",0.7387,0.0267,0.682,0.7915
+en_code,later code,0.8138,0.0486,0.7575,0.8581

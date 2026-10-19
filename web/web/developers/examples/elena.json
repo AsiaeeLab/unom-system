@@ -1,0 +1,933 @@
+{
+ "hookInstance": "00000000-0000-4000-8000-000000000517",
+ "hook": "patient-view",
+ "context": {
+  "userId": "Practitioner/example",
+  "patientId": "elena"
+ },
+ "extension": {
+  "org.undiagnosednomore.scoring-date": "2024-06-01"
+ },
+ "prefetch": {
+  "patient": {
+   "resourceType": "Patient",
+   "id": "elena",
+   "gender": "female",
+   "birthDate": "1986-09-14",
+   "name": [
+    {
+     "family": "Synthetic",
+     "given": [
+      "Elena"
+     ]
+    }
+   ]
+  },
+  "conditions": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 12,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:01dbbee6-81c7-5e99-a22a-8da463562543",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-13",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "B27.90",
+         "display": "Infectious mononucleosis, unspecified without complication"
+        }
+       ],
+       "text": "Infectious mononucleosis, unspecified without complication"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2019-11-04",
+      "recordedDate": "2019-11-04"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:fa913320-f49e-5920-b240-699622d69eee",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-14",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R53.83",
+         "display": "Other fatigue"
+        }
+       ],
+       "text": "Other fatigue"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2020-05-12",
+      "recordedDate": "2020-05-12"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:e1b4217f-4c16-5fed-8eaa-6df91c03b6d8",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-15",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "G47.9",
+         "display": "Sleep disorder, unspecified"
+        }
+       ],
+       "text": "Sleep disorder, unspecified"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2020-10-02",
+      "recordedDate": "2020-10-02"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:f2ed9068-4397-5e52-89e1-a6ec635fd6db",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-16",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R41.840",
+         "display": "Attention and concentration deficit"
+        }
+       ],
+       "text": "Attention and concentration deficit"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2021-03-15",
+      "recordedDate": "2021-03-15"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:72919290-e19a-53b8-8603-67dc3336c470",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-17",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "M79.10",
+         "display": "Myalgia, unspecified site"
+        }
+       ],
+       "text": "Myalgia, unspecified site"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2021-09-20",
+      "recordedDate": "2021-09-20"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:050915fc-abab-50b5-8d27-9ec974b2b1b4",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-18",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R42",
+         "display": "Dizziness and giddiness"
+        }
+       ],
+       "text": "Dizziness and giddiness"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2022-02-08",
+      "recordedDate": "2022-02-08"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:366095be-5e35-5312-ba1a-eb02eecd5b36",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-19",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R00.2",
+         "display": "Palpitations"
+        }
+       ],
+       "text": "Palpitations"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2022-08-30",
+      "recordedDate": "2022-08-30"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:2d315948-28ef-5579-b7af-cbb028efa375",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-20",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "K58.9",
+         "display": "Irritable bowel syndrome without diarrhea"
+        }
+       ],
+       "text": "Irritable bowel syndrome without diarrhea"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2023-01-17",
+      "recordedDate": "2023-01-17"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:1e559991-5714-50e3-96b7-73b11ff3ba60",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-21",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R53.83",
+         "display": "Other fatigue"
+        }
+       ],
+       "text": "Other fatigue"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2023-05-09",
+      "recordedDate": "2023-05-09"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:ef081792-dc7a-545c-807d-137b089dcd2f",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-22",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R53.81",
+         "display": "Other malaise"
+        }
+       ],
+       "text": "Other malaise"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2024-01-22",
+      "recordedDate": "2024-01-22"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:8215f6ad-9d80-565d-afc3-5ac4238a966f",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-23",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R53.83",
+         "display": "Other fatigue"
+        }
+       ],
+       "text": "Other fatigue"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2024-04-30",
+      "recordedDate": "2024-04-30"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:f6300f0e-4821-54f6-ad2b-bf3b93ea7c0c",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "elena-cond-29",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "G90.A",
+         "display": "Postural orthostatic tachycardia syndrome [POTS]"
+        }
+       ],
+       "text": "Postural orthostatic tachycardia syndrome [POTS]"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "onsetDateTime": "2022-09-28",
+      "recordedDate": "2022-09-28"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "encounters": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 13,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:6e549450-c576-5508-bc0b-9cb810753301",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-1",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2019-11-04"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:5fc771c2-a9cb-5f7d-aba5-77037bd0842c",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-2",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2020-05-12"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:a4c47dec-3cf5-5227-8214-f86e9feaf413",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-3",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2020-10-02"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:4cd499f6-d3cb-57eb-98e8-20e19a768a13",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-4",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2021-03-15"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:3f4c0ad6-d3aa-5b0d-bfca-0c9309a3dba5",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-5",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2021-09-20"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:a21e4f17-b077-5c3e-b6ed-e94ac98f41f4",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-6",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2022-02-08"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:513b54b0-2f96-5a33-b9dc-0a2e6367f94e",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-7",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2022-08-30"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:8da6aeab-ac0c-5072-bf05-fb6cd536d090",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-8",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2023-01-17"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:07e64b7a-8394-59b0-9d61-f2f1c3bbd434",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-9",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2023-05-09"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:d1d85b21-9dc6-5da5-9930-79fd54c0edc4",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-10",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2023-09-26"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:ea304aee-3bdf-571e-8be8-b0f4df459a9e",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-11",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2024-01-22"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:23a5bc4d-431b-5ae8-8393-d3c841d4f118",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-12",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2024-04-30"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:343608ca-4d9c-5a68-bbba-cf5479148854",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "elena-enc-28",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "period": {
+       "start": "2022-09-28"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "observations": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 3,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:dd82ee5e-65b1-5d15-86f5-7e9048acb51b",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "elena-obs-24",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "3016-3",
+         "display": "Thyrotropin [Units/volume] in Serum or Plasma"
+        }
+       ],
+       "text": "Thyrotropin [Units/volume] in Serum or Plasma"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "effectiveDateTime": "2020-05-12",
+      "valueQuantity": {
+       "value": 1.8,
+       "unit": "m[IU]/L"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:7005785d-0452-59ae-8b54-2a77c6c5d018",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "elena-obs-25",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "2276-4",
+         "display": "Ferritin [Mass/volume] in Serum or Plasma"
+        }
+       ],
+       "text": "Ferritin [Mass/volume] in Serum or Plasma"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "effectiveDateTime": "2020-05-12",
+      "valueQuantity": {
+       "value": 42,
+       "unit": "ng/mL"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:1e0715ab-2d39-566c-9629-0fef2c4a7ec2",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "elena-obs-26",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "2132-9",
+         "display": "Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma"
+        }
+       ],
+       "text": "Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "effectiveDateTime": "2021-03-15",
+      "valueQuantity": {
+       "value": 510,
+       "unit": "pg/mL"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "medications": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 2,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:7c759428-4542-56ce-8d2c-bbd009c18cf1",
+     "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "elena-med-30",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+         "display": "midodrine hydrochloride 5 MG Oral Tablet"
+        }
+       ],
+       "text": "midodrine hydrochloride 5 MG Oral Tablet"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "authoredOn": "2022-09-28"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:581062d8-4ec7-5b5b-8cb5-fe82c885f4ab",
+     "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "elena-med-32",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+         "display": "modafinil 100 MG Oral Tablet"
+        }
+       ],
+       "text": "modafinil 100 MG Oral Tablet"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "authoredOn": "2023-05-09"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "procedures": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 2,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:8aad694f-e925-50ae-a918-2c651ec23e99",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "elena-proc-27",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "93660",
+         "display": "Tilt table evaluation"
+        }
+       ],
+       "text": "Tilt table evaluation"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "performedDateTime": "2022-09-14"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:5f776a09-6f27-5a49-822c-b68dc48eb546",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "elena-proc-31",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "95810",
+         "display": "Polysomnography"
+        }
+       ],
+       "text": "Polysomnography"
+      },
+      "subject": {
+       "reference": "Patient/elena"
+      },
+      "performedDateTime": "2023-02-21"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  }
+ }
+}

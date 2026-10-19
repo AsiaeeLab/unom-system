@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://undiagnosednomore.org/</loc><lastmod>2026-10-04</lastmod><priority>1.0</priority></url>
+  <url><loc>https://undiagnosednomore.org/patient/</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://undiagnosednomore.org/clinician/</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://undiagnosednomore.org/atlas/</loc><lastmod>2026-10-04</lastmod><priority>0.9</priority></url>
+  <url><loc>https://undiagnosednomore.org/developers/</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://undiagnosednomore.org/developers/models</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
+  <url><loc>https://undiagnosednomore.org/developers/spec</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
+  <url><loc>https://undiagnosednomore.org/about/</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority></url>
+  <url><loc>https://undiagnosednomore.org/challenge/</loc><lastmod>2026-10-15</lastmod><priority>0.9</priority></url>
+  <url><loc>https://undiagnosednomore.org/walkthrough/</loc><lastmod>2026-10-12</lastmod><priority>0.7</priority></url>
+  <url><loc>https://undiagnosednomore.org/deck/</loc><lastmod>2026-10-04</lastmod><priority>0.7</priority></url>
+</urlset>

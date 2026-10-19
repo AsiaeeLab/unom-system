@@ -1,0 +1,68 @@
+{
+ "cards": [
+  {
+   "summary": "Chronic fatigue or ME/CFS: High chart pattern, 3.3× the average. Review the dated findings.",
+   "indicator": "warning",
+   "detail": "**Chart pattern similar to patients who report a chronic fatigue or ME/CFS diagnosis that was never coded.**\n\nProbability that the patient reports a chronic fatigue diagnosis: 17% (3.3× the average for adults with a visit in the past year). Band: High (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Five or more symptom types (6 dates, 2020-05-12 to 2023-01-17)\n2. POTS medication (2022-09-28)\n3. Tilt-table test (2022-09-14)\n\nNext step: Ask the patient about post-exertional malaise (DePaul screen) and review the IOM 2015 ME/CFS criteria: reduced activity for more than 6 months with fatigue, post-exertional malaise, unrefreshing sleep, and cognitive impairment or orthostatic intolerance.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-chronicfatigue 1.0.0.",
+   "source": {
+    "label": "Undiagnosed No More (research decision support)",
+    "url": "https://undiagnosednomore.org/developers/"
+   },
+   "links": [
+    {
+     "label": "Open Undiagnosed No More (SMART app)",
+     "url": "https://undiagnosednomore.org/smart/",
+     "type": "smart"
+    }
+   ]
+  },
+  {
+   "summary": "Migraine: Elevated chart pattern, 1.7× the average. Review the dated findings.",
+   "indicator": "info",
+   "detail": "**Chart pattern similar to patients who report a migraine diagnosis that was never coded.**\n\nProbability that the patient reports a migraine diagnosis: 23% (1.7× the average for adults with a visit in the past year). Band: Elevated (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Female (patient demographics)\n2. Stimulant or wakefulness drug (2023-05-09)\n3. POTS medication (2022-09-28)\n\nNext step: Review the headaches against the ICHD-3 criteria for migraine (frequency, duration, pain features, and nausea or sensitivity to light and sound); if they fit, discuss acute and preventive treatment.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-migraine 1.0.0.",
+   "source": {
+    "label": "Undiagnosed No More (research decision support)",
+    "url": "https://undiagnosednomore.org/developers/"
+   },
+   "links": [
+    {
+     "label": "Open Undiagnosed No More (SMART app)",
+     "url": "https://undiagnosednomore.org/smart/",
+     "type": "smart"
+    }
+   ]
+  },
+  {
+   "summary": "Depression: Elevated chart pattern, 1.6× the average. Review the dated findings.",
+   "indicator": "info",
+   "detail": "**Chart pattern similar to patients who report a depression diagnosis that was never coded.**\n\nProbability that the patient reports a depression diagnosis: 33% (1.6× the average for adults with a visit in the past year). Band: Elevated (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Stimulant or wakefulness drug (2023-05-09)\n2. Age 18-39 (patient demographics)\n3. Female (patient demographics)\n\nNext step: Screen with the PHQ-9 (USPSTF 2023); if it is 10 or more, assess for major depression and ask about thoughts of self-harm, following your clinic's safety protocol and sharing the 988 Suicide and Crisis Lifeline.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-depression 1.0.0.",
+   "source": {
+    "label": "Undiagnosed No More (research decision support)",
+    "url": "https://undiagnosednomore.org/developers/"
+   },
+   "links": [
+    {
+     "label": "Open Undiagnosed No More (SMART app)",
+     "url": "https://undiagnosednomore.org/smart/",
+     "type": "smart"
+    }
+   ]
+  },
+  {
+   "summary": "Anxiety: Elevated chart pattern, 1.8× the average. Review the dated findings.",
+   "indicator": "info",
+   "detail": "**Chart pattern similar to patients who report an anxiety diagnosis that was never coded.**\n\nProbability that the patient reports an anxiety diagnosis: 26% (1.8× the average for adults with a visit in the past year). Band: Elevated (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Stimulant or wakefulness drug (2023-05-09)\n2. Age 18-39 (patient demographics)\n3. Female (patient demographics)\n\nNext step: Screen with the GAD-7 (USPSTF 2023 recommends anxiety screening for adults under 65); if it is 10 or more, assess for an anxiety disorder.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-anxiety 1.0.0.",
+   "source": {
+    "label": "Undiagnosed No More (research decision support)",
+    "url": "https://undiagnosednomore.org/developers/"
+   },
+   "links": [
+    {
+     "label": "Open Undiagnosed No More (SMART app)",
+     "url": "https://undiagnosednomore.org/smart/",
+     "type": "smart"
+    }
+   ]
+  }
+ ]
+}

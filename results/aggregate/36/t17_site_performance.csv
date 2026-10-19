@@ -1,0 +1,5 @@
+model,auroc,auroc_lo,auroc_hi,auprc,auprc_lo,auprc_hi,held_out_people,held_out_positives,calibration_intercept,calibration_slope,observed_to_expected
+exported naive Bayes (frozen; trained on fit split counts),0.6586,0.5758,0.7219,0.0178,0.0111,0.034,5760.0,60.0,,,
+elastic net (participant rows of training sites; not exportable),0.6187,0.5246,0.7038,0.0252,0.0128,0.052,5760.0,60.0,,,
+"difference (exported minus elastic net; observed, bootstrap interval)",0.0399,-0.0276,0.1093,-0.0074,-0.0268,0.0008,,,,,
+exported naive Bayes after recalibration on the calibration split,,,,,,,,,-0.15,0.729,1.02

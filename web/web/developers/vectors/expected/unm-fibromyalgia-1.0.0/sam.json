@@ -1,0 +1,139 @@
+{
+ "status": "scored",
+ "index_date": "2024-06-01",
+ "score": -7.015859000000001,
+ "probability": 0.009884076116330043,
+ "band": "Typical",
+ "times_average": 0.3074171471861795,
+ "features": {
+  "age_18_39": 0,
+  "age_40_49": 0,
+  "age_50_59": 1,
+  "age_60_69": 0,
+  "age_70p": 0,
+  "sex_female": 0,
+  "cx_fatigue_other": 1,
+  "cx_fatigue_recent": 1,
+  "cx_sleep": 0,
+  "cx_sleep_apnea": 0,
+  "cx_cognitive": 0,
+  "cx_autonomic": 0,
+  "cx_dizzy_syncope": 0,
+  "cx_headache": 0,
+  "cx_migraine": 0,
+  "cx_myalgia_arthralgia": 0,
+  "cx_chronic_pain": 0,
+  "cx_depression": 0,
+  "cx_anxiety": 0,
+  "cx_ptsd": 0,
+  "cx_ibs_gi": 0,
+  "cx_sore_throat_nodes": 0,
+  "cx_fever": 0,
+  "cx_lyme": 0,
+  "cx_covid": 1,
+  "cx_long_covid": 0,
+  "cx_eds_hypermobility": 0,
+  "cx_hypothyroid": 0,
+  "cx_anemia": 0,
+  "cx_vitd_deficiency": 0,
+  "cx_autoimmune": 0,
+  "cx_obesity": 0,
+  "cx_diabetes": 0,
+  "cx_hypertension": 0,
+  "cx_heart_disease": 0,
+  "cx_cancer": 0,
+  "cx_cfs": 0,
+  "cx_tmj": 0,
+  "cx_rls": 0,
+  "cx_interstitial_cystitis": 0,
+  "cx_osteoarthritis": 0,
+  "cx_neck_back_pain": 0,
+  "clusters_ge3": 0,
+  "clusters_ge5": 0,
+  "px_sleep_study": 0,
+  "px_brain_mri": 0,
+  "px_echo": 0,
+  "px_cardiac_monitor": 0,
+  "px_exercise_test": 0,
+  "px_neuropsych": 0,
+  "px_pt_eval": 0,
+  "lab_tsh": 0,
+  "lab_ferritin": 0,
+  "lab_b12": 0,
+  "lab_vitamin_d": 0,
+  "lab_ana": 0,
+  "lab_crp": 0,
+  "lab_esr": 0,
+  "lab_ebv": 0,
+  "lab_lyme": 0,
+  "lab_cortisol": 0,
+  "lab_ck": 0,
+  "lab_rf": 0,
+  "lab_ccp": 0,
+  "rx_stimulant": 0,
+  "rx_naltrexone": 0,
+  "rx_ssri_snri": 0,
+  "rx_tricyclic_lowdose": 0,
+  "rx_gabapentinoid": 0,
+  "rx_sleep_aid": 0,
+  "rx_beta_blocker": 0,
+  "rx_pots": 0,
+  "rx_opioid": 0,
+  "rx_milnacipran": 0,
+  "rx_nsaid": 0,
+  "rx_muscle_relaxant": 0,
+  "util_out_r_ge6": 0,
+  "util_out_r_ge12": 0,
+  "util_ed_r": 0,
+  "util_ip_h": 0
+ },
+ "drivers": [
+  {
+   "id": "age_50_59",
+   "label": "Age 50-59",
+   "group": "Demographics",
+   "contribution": 0.404008,
+   "evidence": []
+  },
+  {
+   "id": "cx_fatigue_recent",
+   "label": "Fatigue or malaise coded in the past year",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.224383,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sam-cond-7",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "cx_fatigue_other",
+   "label": "Fatigue or malaise coded",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.060234,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sam-cond-7",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "cx_covid",
+   "label": "COVID-19",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": -0.148889,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sam-cond-4",
+     "date": "2024-01-08"
+    }
+   ]
+  }
+ ],
+ "as_of": "2024-06-01"
+}

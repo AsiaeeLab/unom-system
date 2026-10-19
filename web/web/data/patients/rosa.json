@@ -1,0 +1,171 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:0b227600-9379-5d83-b850-515718e59ded",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "rosa",
+    "gender": "female",
+    "birthDate": "1968-11-30",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Rosa"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:77cda7fe-d3c9-5119-b900-87d4fc73c70e",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "rosa-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/rosa"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:a6eaf647-e75c-5997-8b11-cfc8975f52c5",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "rosa-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/rosa"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:4b41ac09-d0d5-5c4e-938e-118bbe465588",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "rosa-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/rosa"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:1977b849-4d2f-50a5-b259-e48f568deff7",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "rosa-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/rosa"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:5d640a5c-c7f3-57c1-b9c0-e8ec8b6daa11",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "rosa-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/rosa"
+    },
+    "period": {
+     "start": "2024-01-08"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:e1f6011e-480e-5711-afe7-707b3a50252f",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "rosa-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/rosa"
+    },
+    "period": {
+     "start": "2024-04-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:4afe3d62-c096-56d5-b595-4fc510d3b88d",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "rosa-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U09.9",
+       "display": "Post COVID-19 condition, unspecified"
+      }
+     ],
+     "text": "Post COVID-19 condition, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/rosa"
+    },
+    "onsetDateTime": "2024-04-15",
+    "recordedDate": "2024-04-15"
+   }
+  }
+ ]
+}

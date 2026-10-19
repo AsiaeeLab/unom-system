@@ -1,0 +1,397 @@
+{
+ "status": "scored",
+ "index_date": "2024-01-08",
+ "score": 6.560688000000001,
+ "probability": 0.062489,
+ "band": "High",
+ "times_average": 6.057483520744475,
+ "features": {
+  "age_18_39": 0,
+  "age_40_49": 1,
+  "age_50_59": 0,
+  "age_60_69": 0,
+  "age_70p": 0,
+  "sex_female": 1,
+  "sym_dyspnea": 1,
+  "sym_cough": 0,
+  "sym_chest_pain": 1,
+  "sym_msk_pain": 0,
+  "hx_asthma": 1,
+  "hx_copd": 0,
+  "hx_diabetes": 0,
+  "hx_obesity": 0,
+  "hx_hypertension": 0,
+  "hx_depression": 0,
+  "hx_anxiety": 0,
+  "hx_migraine": 0,
+  "hx_chronic_pain": 0,
+  "hx_sleep_apnea": 0,
+  "hx_autoimmune": 0,
+  "hx_hypothyroid": 0,
+  "hx_heart_disease": 0,
+  "acute_inpatient": 0,
+  "acute_ed": 1,
+  "out_w0_ge4": 0,
+  "out_w3_ge2": 1,
+  "out_w3_ge4": 1,
+  "ed_w3_any": 0,
+  "ip_w3_any": 0,
+  "visit_rate_up": 1,
+  "test_chest_ct": 1,
+  "test_chest_xray": 0,
+  "lab_d_dimer": 1,
+  "lab_troponin": 0,
+  "lab_natriuretic": 0,
+  "lab_tsh": 1,
+  "lab_ferritin": 0,
+  "lab_crp": 1,
+  "lab_vitamin_d": 0,
+  "lab_b12": 0,
+  "rx_inhaler": 0,
+  "rx_systemic_steroid": 0,
+  "sym_any_fatigue": 1,
+  "sym_any_dyspnea": 1,
+  "sym_any_cough": 0,
+  "sym_any_chest_pain": 1,
+  "sym_any_autonomic": 1,
+  "sym_any_mood": 0,
+  "sym_any_msk_pain": 0,
+  "sym_any_gi": 0,
+  "sym_any_w3_count_ge2": 1,
+  "sym_any_w3_count_ge3": 1,
+  "covid_code_w3": 1,
+  "covid_history_code": 1,
+  "late_visit_61_90": 1,
+  "sym_fatigue": 1,
+  "sym_autonomic": 1,
+  "sym_cognitive": 1,
+  "sym_headache": 0,
+  "sym_dizzy_syncope": 0,
+  "sym_smell_taste": 0,
+  "sym_sleep": 0,
+  "sym_mood": 0,
+  "sym_gi": 0,
+  "sym_paresthesia": 0,
+  "sym_hair_loss": 0,
+  "sym_fever": 0,
+  "sym_count_ge2": 1
+ },
+ "drivers": [
+  {
+   "id": "sym_any_w3_count_ge3",
+   "label": "3+ symptom types coded in days 31-90",
+   "group": "Symptoms after COVID",
+   "contribution": 1.888304,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-10",
+     "date": "2024-02-20"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-18",
+     "date": "2024-03-25"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-19",
+     "date": "2024-03-25"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-11",
+     "date": "2024-02-20"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-16",
+     "date": "2024-03-05"
+    }
+   ]
+  },
+  {
+   "id": "covid_history_code",
+   "label": "Personal history of COVID-19 coded (days 31-90)",
+   "group": "Coding after COVID",
+   "contribution": 1.291872,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-14",
+     "date": "2024-03-12"
+    }
+   ]
+  },
+  {
+   "id": "covid_code_w3",
+   "label": "COVID-19 still coded at a follow-up visit (days 31-90)",
+   "group": "Coding after COVID",
+   "contribution": 1.210176,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-12",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "out_w3_ge4",
+   "label": "4+ outpatient visits in days 31-90",
+   "group": "Health care use",
+   "contribution": 1.103111,
+   "evidence": [
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-9",
+     "date": "2024-02-20"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-13",
+     "date": "2024-03-12"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-15",
+     "date": "2024-03-05"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-17",
+     "date": "2024-03-25"
+    }
+   ]
+  },
+  {
+   "id": "test_chest_ct",
+   "label": "Chest CT",
+   "group": "Tests after COVID",
+   "contribution": 1.100903,
+   "evidence": [
+    {
+     "resourceType": "Procedure",
+     "id": "maria-proc-21",
+     "date": "2024-03-27"
+    }
+   ]
+  },
+  {
+   "id": "sym_any_dyspnea",
+   "label": "Shortness of breath (coded by day 90)",
+   "group": "Symptoms after COVID",
+   "contribution": 1.042229,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-18",
+     "date": "2024-03-25"
+    }
+   ]
+  },
+  {
+   "id": "sym_any_fatigue",
+   "label": "Fatigue or malaise (coded by day 90)",
+   "group": "Symptoms after COVID",
+   "contribution": 0.852829,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-10",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "lab_d_dimer",
+   "label": "D-dimer test",
+   "group": "Tests after COVID",
+   "contribution": 0.831808,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "maria-obs-8",
+     "date": "2024-01-10"
+    }
+   ]
+  },
+  {
+   "id": "sym_chest_pain",
+   "label": "New: chest pain",
+   "group": "New symptoms",
+   "contribution": 0.830356,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-19",
+     "date": "2024-03-25"
+    }
+   ]
+  },
+  {
+   "id": "sym_dyspnea",
+   "label": "New: shortness of breath",
+   "group": "New symptoms",
+   "contribution": 0.776553,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-18",
+     "date": "2024-03-25"
+    }
+   ]
+  },
+  {
+   "id": "lab_crp",
+   "label": "C-reactive protein test",
+   "group": "Tests after COVID",
+   "contribution": 0.753055,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "maria-obs-20",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "sym_count_ge2",
+   "label": "Two or more new symptom types",
+   "group": "New symptoms",
+   "contribution": 0.683606,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-18",
+     "date": "2024-03-25"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-19",
+     "date": "2024-03-25"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-10",
+     "date": "2024-02-20"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-11",
+     "date": "2024-02-20"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-16",
+     "date": "2024-03-05"
+    }
+   ]
+  },
+  {
+   "id": "sym_any_autonomic",
+   "label": "Palpitations, tachycardia, POTS, or orthostatic hypotension (coded by day 90)",
+   "group": "Symptoms after COVID",
+   "contribution": 0.673716,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-11",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "sym_any_chest_pain",
+   "label": "Chest pain (coded by day 90)",
+   "group": "Symptoms after COVID",
+   "contribution": 0.656634,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-19",
+     "date": "2024-03-25"
+    }
+   ]
+  },
+  {
+   "id": "acute_ed",
+   "label": "Emergency visit in the first month",
+   "group": "Acute illness",
+   "contribution": 0.464286,
+   "evidence": [
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-7",
+     "date": "2024-01-10"
+    }
+   ]
+  },
+  {
+   "id": "lab_tsh",
+   "label": "Thyroid (TSH) test",
+   "group": "Tests after COVID",
+   "contribution": 0.447952,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "maria-obs-25",
+     "date": "2024-02-20"
+    }
+   ]
+  },
+  {
+   "id": "hx_asthma",
+   "label": "History: asthma",
+   "group": "Prior conditions",
+   "contribution": 0.440153,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "maria-cond-4",
+     "date": "2023-06-15"
+    }
+   ]
+  },
+  {
+   "id": "late_visit_61_90",
+   "label": "Visit in days 61-90",
+   "group": "Health care use",
+   "contribution": 0.252437,
+   "evidence": [
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-13",
+     "date": "2024-03-12"
+    },
+    {
+     "resourceType": "Encounter",
+     "id": "maria-enc-17",
+     "date": "2024-03-25"
+    }
+   ]
+  },
+  {
+   "id": "sex_female",
+   "label": "Female",
+   "group": "Demographics",
+   "contribution": 0.207423,
+   "evidence": []
+  },
+  {
+   "id": "visit_rate_up",
+   "label": "Visit rate after COVID at least double the baseline rate",
+   "group": "Health care use",
+   "contribution": 0.083971,
+   "evidence": []
+  },
+  {
+   "id": "age_40_49",
+   "label": "Age 40-49",
+   "group": "Demographics",
+   "contribution": -0.068725,
+   "evidence": []
+  }
+ ],
+ "as_of": "2024-06-01"
+}

@@ -1,0 +1,13 @@
+condition,sex,standard,benchmark,aou_std_share,p_code,national_prevalence,kappa
+hypertension,Female,US adults: age,NHANES: hypertension,0.3451,0.781771,0.4457,0.990428
+hypertension,Female,US adults: age,NHIS: hypertension_told,0.3451,0.781771,0.3095,1.42628
+hypertension,Female,US adults: age x race and ethnicity,NHANES: hypertension,0.3348,0.781771,0.4457,0.960867
+hypertension,Female,US adults: age x race and ethnicity,NHIS: hypertension_told,0.3348,0.781771,0.3095,1.383711
+hypertension,Male,US adults: age,NHANES: hypertension,0.4113,0.820535,0.5114,0.980168
+hypertension,Male,US adults: age,NHIS: hypertension_told,0.4113,0.820535,0.3362,1.490952
+hypertension,Male,US adults: age x race and ethnicity,NHANES: hypertension,0.4057,0.820535,0.5114,0.966823
+hypertension,Male,US adults: age x race and ethnicity,NHIS: hypertension_told,0.4057,0.820535,0.3362,1.470652
+diabetes_type2,Female,US adults: age,NHIS: diabetes_type2_told,0.1615,0.8125,0.082,2.424015
+diabetes_type2,Female,US adults: age x race and ethnicity,NHIS: diabetes_type2_told,0.1543,0.8125,0.082,2.315947
+diabetes_type2,Male,US adults: age,NHIS: diabetes_type2_told,0.1914,0.875912,0.0829,2.635887
+diabetes_type2,Male,US adults: age x race and ethnicity,NHIS: diabetes_type2_told,0.1887,0.875912,0.0829,2.598703

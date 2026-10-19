@@ -1,0 +1,35 @@
+condition,population,axis,group,n_self_report_current,n_both_current,p_code_given_current_self_report
+hypertension,women,race_eth,Hispanic or Latino,2450,2020,0.8245
+hypertension,women,race_eth,NH Asian,440,350,0.7955
+hypertension,women,race_eth,NH Black,4500,3750,0.8333
+hypertension,women,race_eth,NH White,18850,15020,0.7968
+hypertension,women,race_eth,NH other or multiple,1270,960,0.7559
+hypertension,women,race_eth,Unknown,630,530,0.8413
+hypertension,women,age_band,18-39,1260,790,0.627
+hypertension,women,age_band,40-49,2730,1960,0.7179
+hypertension,women,age_band,50-59,5200,4030,0.775
+hypertension,women,age_band,60-69,8530,6950,0.8148
+hypertension,women,age_band,70+,10420,8890,0.8532
+hypertension,women,ehr_depth,no condition records,320,0,0.0
+hypertension,women,ehr_depth,record starts after survey,660,470,0.7121
+hypertension,women,ehr_depth,under 2 years,2270,1710,0.7533
+hypertension,women,ehr_depth,2 to 4 years,3730,2860,0.7668
+hypertension,women,ehr_depth,5 to 9 years,7610,6090,0.8003
+hypertension,women,ehr_depth,10 years or more,13550,11490,0.848
+diabetes_type2,women,race_eth,Hispanic or Latino,1570,1350,0.8599
+diabetes_type2,women,race_eth,NH Asian,180,140,0.7778
+diabetes_type2,women,race_eth,NH Black,1840,1560,0.8478
+diabetes_type2,women,race_eth,NH White,5340,4280,0.8015
+diabetes_type2,women,race_eth,NH other or multiple,570,450,0.7895
+diabetes_type2,women,race_eth,Unknown,250,230,0.92
+diabetes_type2,women,age_band,18-39,450,330,0.7333
+diabetes_type2,women,age_band,40-49,1110,820,0.7387
+diabetes_type2,women,age_band,50-59,2250,1760,0.7822
+diabetes_type2,women,age_band,60-69,3120,2620,0.8397
+diabetes_type2,women,age_band,70+,2810,2460,0.8754
+diabetes_type2,women,ehr_depth,no condition records,90,0,0.0
+diabetes_type2,women,ehr_depth,record starts after survey,220,160,0.7273
+diabetes_type2,women,ehr_depth,under 2 years,820,660,0.8049
+diabetes_type2,women,ehr_depth,2 to 4 years,1330,1030,0.7744
+diabetes_type2,women,ehr_depth,5 to 9 years,2730,2220,0.8132
+diabetes_type2,women,ehr_depth,10 years or more,4550,3930,0.8637

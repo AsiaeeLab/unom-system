@@ -1,0 +1,21 @@
+{
+ "source": "results/derived/coding_gap.csv",
+ "sha256": "df0f388e5addc5f6ceb02d934a6d29dd13bf4b88c2751dd3288b8805918d136d",
+ "reference": "Male",
+ "sex": {
+  "ever": {
+   "c_female": 0.0942,
+   "c_male": 0.1199,
+   "ratio": 0.785,
+   "lo": 0.652,
+   "hi": 0.95
+  },
+  "current": {
+   "c_female": 0.2322,
+   "c_male": 0.3219,
+   "ratio": 0.721,
+   "lo": 0.578,
+   "hi": 0.883
+  }
+ }
+}

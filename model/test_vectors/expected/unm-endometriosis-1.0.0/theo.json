@@ -1,0 +1,6 @@
+{
+ "status": "not_scored",
+ "reason": "the model covers women (FHIR gender female)",
+ "index_date": "2024-06-01",
+ "as_of": "2024-06-01"
+}

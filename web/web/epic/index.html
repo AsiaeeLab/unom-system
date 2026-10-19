@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f8" />
+    <title>Epic SMART launch | Undiagnosed No More</title>
+    <link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml" />
+    <link rel="stylesheet" href="../athena/styles.css?v=20261014" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel loading-panel" aria-live="polite">
+        <div class="brand-mark" aria-hidden="true">UNM</div>
+        <p class="eyebrow">Undiagnosed No More</p>
+        <h1>Connecting to the patient chart</h1>
+        <p class="muted" id="launch-status">Preparing the secure SMART launch.</p>
+        <progress max="100">Connecting</progress>
+      </section>
+    </main>
+    <footer class="unm-sitefooter unm-sitefooter-compact">
+      <div class="unm-sitefooter-inner">
+        <ul class="unm-sitefooter-legal">
+          <li><a href="/terms/" target="_blank" rel="noreferrer">Terms of use</a></li>
+          <li><a href="/privacy/" target="_blank" rel="noreferrer">Privacy</a></li>
+          <li><a href="/rights/" target="_blank" rel="noreferrer">Rights and attributions</a></li>
+        </ul>
+        <p class="unm-sitefooter-copy">© 2026 Amir Asiaee and Kaveh Aryan</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/fhirclient@3.0.0/bundle/fhir-client.min.js"
+      integrity="sha384-wS88v2BGd3KdbNFRPrNfQphJbH3fTSjF23+z3wpRNHwScl9nfBIU2KtYyv3Kw6xj"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="launch.js"></script>
+  </body>
+</html>

@@ -1,0 +1,500 @@
+{
+ "resourceType": "QuestionnaireResponse",
+ "id": "dana-qr-1",
+ "meta": {
+  "tag": [
+   {
+    "system": "https://undiagnosednomore.org/fhir/CodeSystem/source",
+    "code": "patient-reported",
+    "display": "Patient reported"
+   }
+  ]
+ },
+ "questionnaire": "https://undiagnosednomore.org/fhir/Questionnaire/unm-patient-symptom-check|1.3.0",
+ "status": "completed",
+ "authored": "2024-05-31T12:00:00Z",
+ "source": {
+  "display": "Patient"
+ },
+ "item": [
+  {
+   "linkId": "timeline",
+   "text": "Symptom timeline",
+   "item": [
+    {
+     "linkId": "timeline.respondent",
+     "text": "Who answered these questions",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/respondent",
+        "code": "self",
+        "display": "The patient"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "timeline.onset",
+     "text": "When symptoms started",
+     "answer": [
+      {
+       "valueDate": "2024-04-15"
+      }
+     ]
+    },
+    {
+     "linkId": "timeline.covid",
+     "text": "Has had COVID-19",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+        "code": "no",
+        "display": "No"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "timeline.symptoms",
+     "text": "Main symptoms, in the patient's words",
+     "answer": [
+      {
+       "valueString": "My knee swelled up a few weeks after a hike, and a few days ago one side of my face started drooping."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "recover",
+   "text": "RECOVER 2024 index",
+   "item": [
+    {
+     "linkId": "recover.smell-taste",
+     "text": "Loss of smell or taste",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.pem",
+     "text": "Post-exertional malaise",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.cough",
+     "text": "Chronic cough",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.brain-fog",
+     "text": "Brain fog",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.palpitations",
+     "text": "Palpitations",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.dizziness",
+     "text": "Dizziness",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.breath",
+     "text": "Shortness of breath",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.thirst",
+     "text": "Thirst",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.chest-pain",
+     "text": "Chest pain",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.fatigue",
+     "text": "Fatigue",
+     "answer": [
+      {
+       "valueBoolean": true
+      }
+     ]
+    },
+    {
+     "linkId": "recover.snoring",
+     "text": "Snoring or sleep apnea",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "pem",
+   "text": "DePaul Symptom Questionnaire: post-exertional malaise",
+   "item": [
+    {
+     "linkId": "pem.1",
+     "text": "Dead, heavy feeling after starting to exercise",
+     "item": [
+      {
+       "linkId": "pem.1.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "0",
+          "display": "none of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.1.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "0",
+          "display": "symptom not present"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.2",
+     "text": "Next day soreness or fatigue after non-strenuous, everyday activities",
+     "item": [
+      {
+       "linkId": "pem.2.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "1",
+          "display": "a little of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.2.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "1",
+          "display": "mild"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.3",
+     "text": "Mentally tired after the slightest effort",
+     "item": [
+      {
+       "linkId": "pem.3.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "0",
+          "display": "none of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.3.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "0",
+          "display": "symptom not present"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.4",
+     "text": "Minimum exercise makes you physically tired",
+     "item": [
+      {
+       "linkId": "pem.4.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "0",
+          "display": "none of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.4.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "0",
+          "display": "symptom not present"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.5",
+     "text": "Physically drained or sick after mild activity",
+     "item": [
+      {
+       "linkId": "pem.5.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "1",
+          "display": "a little of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.5.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "1",
+          "display": "mild"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.screen",
+     "text": "Meets the published DePaul PEM screening rule (calculated)",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "change",
+   "text": "What changed since your symptoms started (not scored)",
+   "item": [
+    {
+     "linkId": "change.1",
+     "text": "Compared with before your symptoms started: How tired you feel during a normal day.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "somewhat-more",
+        "display": "Somewhat more"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.2",
+     "text": "Compared with before your symptoms started: How short of breath you get with activities you used to do easily.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "same",
+        "display": "About the same"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.3",
+     "text": "Compared with before your symptoms started: How often your heart races or pounds, especially when you stand up.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "same",
+        "display": "About the same"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.4",
+     "text": "Compared with before your symptoms started: How often you have trouble thinking, concentrating, or remembering.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "same",
+        "display": "About the same"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.5",
+     "text": "Compared with before your symptoms started: How often you have seen a doctor or gone to urgent care or the emergency department.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "much-more",
+        "display": "Much more"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "checks",
+   "text": "Condition self-checks (patient self-checks against published criteria and questionnaires; not a diagnosis)",
+   "item": [
+    {
+     "linkId": "checks.lyme",
+     "text": "Lyme disease: possible exposure (not scored)",
+     "item": [
+      {
+       "linkId": "checks.lyme.tick",
+       "text": "In the 3 months before your symptoms started, did you find a tick attached to your skin?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+          "code": "unsure",
+          "display": "Not sure"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.lyme.outdoors",
+       "text": "In those 3 months, did you spend time in wooded, brushy, or grassy places, including your own yard, where Lyme disease is common (for example the Northeast, the Mid-Atlantic, or the upper Midwest)?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+          "code": "yes",
+          "display": "Yes"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.lyme.rash",
+       "text": "Did you have a red rash that grew larger over several days, to at least 2 inches (5 cm) across?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+          "code": "no",
+          "display": "No"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "questions",
+   "text": "Questions to ask my clinician",
+   "item": [
+    {
+     "linkId": "questions.1",
+     "text": "Question",
+     "answer": [
+      {
+       "valueString": "Could this be Lyme disease?"
+      }
+     ]
+    },
+    {
+     "linkId": "questions.2",
+     "text": "Question",
+     "answer": [
+      {
+       "valueString": "Do I need a blood test or treatment now?"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "subject": {
+  "reference": "Patient/dana"
+ }
+}

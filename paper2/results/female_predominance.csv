@@ -1,0 +1,14 @@
+condition,ratio_women_to_men,source,female_predominant
+endometriosis,inf,defined only in women,True
+fibromyalgia,5.56,All of Us self-reported diagnosis (no national item),True
+migraine,2.49,NHIS: headache_migraine_a_lot,True
+chronic_fatigue,2.38,NHIS: mecfs_current,True
+mecfs_postviral,2.38,NHIS: mecfs_current,True
+anxiety,1.85,NHIS: anxiety_told,True
+depression,1.74,NHIS: depression_told,True
+long_covid,1.6,NHIS: long_covid_ever,True
+chronic_pain,1.32,NHIS: high_impact_chronic_pain,False
+obesity,1.05,NHANES: obesity,False
+diabetes_type2,0.99,NHIS: diabetes_type2_told,False
+hypertension,0.92,NHIS: hypertension_told,False
+lyme,0.86,All of Us self-reported diagnosis (no national item),False

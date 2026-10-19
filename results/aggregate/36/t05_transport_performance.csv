@@ -1,0 +1,11 @@
+model,trained_on,auroc,auprc,auroc_lo,auroc_hi,held_out_people,held_out_positives
+naive_bayes,summary counts (exportable),0.6737,0.0279,0.5919,0.7465,4680,50
+nb_eb,summary counts (exportable),0.6736,0.0282,0.5923,0.7469,4680,50
+lda_shrink_0.1,summary counts (exportable),0.6671,0.0422,0.5761,0.7493,4680,50
+lda_eb_0.1,summary counts (exportable),0.6677,0.0419,0.5791,0.7502,4680,50
+lda_shrink_0.3,summary counts (exportable),0.6718,0.051,0.5835,0.7565,4680,50
+lda_eb_0.3,summary counts (exportable),0.6718,0.0508,0.5823,0.7546,4680,50
+lda_shrink_0.6,summary counts (exportable),0.6794,0.0356,0.598,0.7559,4680,50
+lda_eb_0.6,summary counts (exportable),0.6799,0.035,0.5995,0.755,4680,50
+M2_elastic_net_logistic,participant rows (stays in Workbench),0.6804,0.0889,0.5907,0.7572,4680,50
+M4_pu_bagging,participant rows (stays in Workbench),0.6727,0.0398,0.59,0.7514,4680,50

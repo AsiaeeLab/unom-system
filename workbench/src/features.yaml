@@ -1,0 +1,131 @@
+# Feature registry: the single definition used by the Workbench pipeline (OMOP)
+# and by the app (FHIR). Codes are source vocabularies so both sides match.
+#
+# icd10cm_prefix: ICD-10-CM codes with dots removed, matched by prefix.
+# cpt: CPT/HCPCS codes, exact (ranges written as "93224-93229").
+# loinc_seed: lab names resolved to full LOINC lists inside Workbench (task 02)
+#             via the concept table; the resolved lists are exported (vocabulary only).
+# rxnorm_ingredients: ingredient names resolved to RxCUIs (ingredient plus
+#             clinical/branded drugs) via concept_ancestor; lists exported.
+# Windows (days from index): W0 [-365,-91], W1 [-90,-1], W2 [0,30], W3 [31,90].
+
+version: 1
+windows: {W0: [-365, -91], W1: [-90, -1], W2: [0, 30], W3: [31, 90]}
+
+demographics:
+  - {id: age_18_39, kind: age_band, min: 18, max: 39}
+  - {id: age_40_49, kind: age_band, min: 40, max: 49}
+  - {id: age_50_59, kind: age_band, min: 50, max: 59}
+  - {id: age_60_69, kind: age_band, min: 60, max: 69}
+  - {id: age_70p, kind: age_band, min: 70, max: 200}
+  - {id: sex_female, kind: sex, value: female}
+
+acute:
+  - {id: acute_inpatient, kind: encounter_any, encounter_class: [IMP], window: [-3, 30], label: "Hospitalized around the COVID diagnosis"}
+  - {id: acute_ed, kind: encounter_any, encounter_class: [EMER], window: [0, 30], label: "Emergency visit in the first month"}
+  - {id: covid_pneumonia, kind: any, resource: Condition, icd10cm_prefix: [J1282], window: [0, 30], label: "COVID pneumonia"}
+  - {id: acute_ventilation, kind: any, resource: Procedure, cpt: ["94002", "94003", "31500"], icd10pcs: ["5A1935Z", "5A1945Z", "5A1955Z"], window: [0, 30], label: "Ventilation or intubation"}
+
+# COVID-19 vaccination is not used: vaccine administration records are suppressed
+# in the Registered Tier (All of Us CDR v9 release notes).
+
+utilization:
+  - {id: out_w0_ge4, kind: encounter_count_ge, encounter_class: [AMB], windows: [W0], threshold: 4, label: "4+ outpatient visits in the baseline year"}
+  - {id: out_w3_ge2, kind: encounter_count_ge, encounter_class: [AMB], windows: [W3], threshold: 2, label: "2+ outpatient visits in days 31-90"}
+  - {id: out_w3_ge4, kind: encounter_count_ge, encounter_class: [AMB], windows: [W3], threshold: 4, label: "4+ outpatient visits in days 31-90"}
+  - {id: ed_w3_any, kind: encounter_count_ge, encounter_class: [EMER], windows: [W3], threshold: 1, label: "Emergency visit in days 31-90"}
+  - {id: ip_w3_any, kind: encounter_count_ge, encounter_class: [IMP], windows: [W3], threshold: 1, label: "Hospital stay in days 31-90"}
+  - {id: visit_rate_up, kind: encounter_rate_ratio_ge, encounter_class: [AMB, EMER], numerator: W3, denominator: W0, threshold: 2.0, label: "Visit rate after COVID at least double the baseline rate"}
+
+new_symptoms:   # present in W2 or W3, absent in W0 and W1
+  - {id: sym_fatigue, icd10cm_prefix: [R53, G933], label: "Fatigue or malaise"}
+  - {id: sym_dyspnea, icd10cm_prefix: [R060], label: "Shortness of breath"}
+  - {id: sym_cough, icd10cm_prefix: [R05], label: "Cough"}
+  - {id: sym_chest_pain, icd10cm_prefix: [R07], label: "Chest pain"}
+  - {id: sym_autonomic, icd10cm_prefix: [R000, R002, I498, G90A, I951], label: "Palpitations, tachycardia, POTS, or orthostatic hypotension"}
+  - {id: sym_cognitive, icd10cm_prefix: [R41, G3184], label: "Cognitive symptoms (brain fog, memory)"}
+  - {id: sym_headache, icd10cm_prefix: [R51, G44], label: "Headache"}
+  - {id: sym_dizzy_syncope, icd10cm_prefix: [R42, R55], label: "Dizziness or fainting"}
+  - {id: sym_smell_taste, icd10cm_prefix: [R43], label: "Loss or change of smell or taste"}
+  - {id: sym_sleep, icd10cm_prefix: [G470, G471, G478, G479, F51], label: "Sleep disturbance"}
+  - {id: sym_mood, icd10cm_prefix: [F41, F32, F33, F43], label: "Anxiety or depression"}
+  - {id: sym_msk_pain, icd10cm_prefix: [M791, M255, M796, M797], label: "Muscle or joint pain"}
+  - {id: sym_gi, icd10cm_prefix: [R10, R11, R14, R19, K58, K59], label: "Gastrointestinal symptoms"}
+  - {id: sym_paresthesia, icd10cm_prefix: [R20, G629], label: "Tingling, numbness, or neuropathy"}
+  - {id: sym_hair_loss, icd10cm_prefix: [L659], label: "Hair loss"}
+  - {id: sym_fever, icd10cm_prefix: [R50], label: "Fever"}
+  - {id: sym_count_ge2, kind: derived_count_ge, of: new_symptoms, threshold: 2, label: "Two or more new symptom types"}
+  - {id: sym_count_ge4, kind: derived_count_ge, of: new_symptoms, threshold: 4, label: "Four or more new symptom types"}
+
+prior_conditions:   # any in W0 or W1
+  - {id: hx_asthma, icd10cm_prefix: [J45]}
+  - {id: hx_copd, icd10cm_prefix: [J44]}
+  - {id: hx_diabetes, icd10cm_prefix: [E10, E11]}
+  - {id: hx_obesity, icd10cm_prefix: [E66, Z683, Z684]}
+  - {id: hx_hypertension, icd10cm_prefix: [I10]}
+  - {id: hx_depression, icd10cm_prefix: [F32, F33]}
+  - {id: hx_anxiety, icd10cm_prefix: [F41]}
+  - {id: hx_migraine, icd10cm_prefix: [G43]}
+  - {id: hx_fibromyalgia, icd10cm_prefix: [M797]}
+  - {id: hx_mecfs, icd10cm_prefix: [G933]}
+  - {id: hx_chronic_pain, icd10cm_prefix: [G89]}
+  - {id: hx_sleep_apnea, icd10cm_prefix: [G4733]}
+  - {id: hx_autoimmune, icd10cm_prefix: [M05, M06, M32, L40, K50, K51, M45]}
+  - {id: hx_hypothyroid, icd10cm_prefix: [E03]}
+  - {id: hx_heart_disease, icd10cm_prefix: [I25, I50]}
+
+new_tests:   # present in W2 or W3
+  procedures:
+    - {id: test_echo, cpt: ["93303-93308", "93312-93318", "93350-93352"], label: "Echocardiogram"}
+    - {id: test_cardiac_monitor, cpt: ["93224-93229", "93241-93248", "93268-93272"], label: "Holter or event monitor"}
+    - {id: test_pft, cpt: ["94010", "94060", "94070", "94726-94729"], label: "Pulmonary function test"}
+    - {id: test_chest_ct, cpt: ["71250", "71260", "71270", "71271", "71275"], label: "Chest CT"}
+    - {id: test_chest_xray, cpt: ["71045-71048"], label: "Chest X-ray"}
+    - {id: test_brain_mri, cpt: ["70551-70553"], label: "Brain MRI"}
+    - {id: test_tilt, cpt: ["93660"], label: "Tilt-table test"}
+    - {id: test_sleep_study, cpt: ["95806-95811", "G0398", "G0399", "G0400"], label: "Sleep study"}
+    - {id: test_walk, cpt: ["94618"], label: "Six-minute walk test"}
+  labs:
+    - {id: lab_d_dimer, loinc_seed: "D-dimer", label: "D-dimer test"}
+    - {id: lab_troponin, loinc_seed: "Troponin", label: "Troponin test"}
+    - {id: lab_natriuretic, loinc_seed: "Natriuretic peptide", label: "BNP or NT-proBNP test"}
+    - {id: lab_tsh, loinc_seed: "Thyrotropin", label: "Thyroid (TSH) test"}
+    - {id: lab_ferritin, loinc_seed: "Ferritin", label: "Ferritin test"}
+    - {id: lab_crp, loinc_seed: "C reactive protein", label: "C-reactive protein test"}
+    - {id: lab_esr, loinc_seed: "Erythrocyte sedimentation rate", label: "Sedimentation rate (ESR) test"}
+    - {id: lab_vitamin_d, loinc_seed: "25-hydroxyvitamin D", label: "Vitamin D test"}
+    - {id: lab_b12, loinc_seed: "Cobalamin", label: "Vitamin B12 test"}
+    - {id: lab_ana, loinc_seed: "Nuclear Ab", label: "Antinuclear antibody (ANA) test"}
+
+new_medications:   # present in W2 or W3, absent in W0 and W1
+  - {id: rx_beta_blocker, rxnorm_ingredients: [propranolol, metoprolol, atenolol, bisoprolol, nadolol, carvedilol], label: "New beta blocker"}
+  - {id: rx_pots_other, rxnorm_ingredients: [ivabradine, midodrine, fludrocortisone], label: "New POTS medication"}
+  - {id: rx_ssri_snri, rxnorm_ingredients: [sertraline, fluoxetine, citalopram, escitalopram, paroxetine, venlafaxine, duloxetine, desvenlafaxine], label: "New SSRI or SNRI antidepressant"}
+  - {id: rx_gabapentinoid, rxnorm_ingredients: [gabapentin, pregabalin], label: "New gabapentin or pregabalin"}
+  - {id: rx_inhaler, rxnorm_ingredients: [albuterol, fluticasone, budesonide, mometasone, beclomethasone, tiotropium, formoterol, salmeterol], label: "New inhaler"}
+  - {id: rx_systemic_steroid, rxnorm_ingredients: [prednisone, methylprednisolone, dexamethasone, prednisolone], label: "New oral or injected steroid"}
+  - {id: rx_antihistamine, rxnorm_ingredients: [cetirizine, loratadine, fexofenadine, levocetirizine, famotidine], label: "New antihistamine or famotidine"}
+  - {id: rx_montelukast, rxnorm_ingredients: [montelukast], label: "New montelukast"}
+  - {id: rx_naltrexone, rxnorm_ingredients: [naltrexone], label: "New naltrexone"}
+  - {id: rx_wake_stimulant, rxnorm_ingredients: [modafinil, armodafinil, methylphenidate, amphetamine, dextroamphetamine, lisdexamfetamine], label: "New stimulant or wakefulness drug"}
+  - {id: rx_sleep_aid, rxnorm_ingredients: [zolpidem, trazodone, eszopiclone], label: "New sleep medication"}
+  - {id: rx_opioid, rxnorm_ingredients: [oxycodone, hydrocodone, tramadol, morphine], label: "New opioid"}
+
+# Outcome-window checks for task 03 (never used as features).
+face_validity:
+  long_covid_typical_outcomes: [sym_fatigue, sym_dyspnea, sym_autonomic, sym_cognitive, sym_dizzy_syncope, sym_smell_taste]
+  negative_control_outcomes:
+    - {id: nc_fracture, icd10cm_prefix: [S02, S12, S22, S32, S42, S52, S62, S72, S82, S92]}
+    - {id: nc_laceration, icd10cm_prefix: [S01, S11, S21, S31, S41, S51, S61, S71, S81, S91]}
+    - {id: nc_appendicitis, icd10cm_prefix: [K35, K36, K37]}
+    - {id: nc_cataract, icd10cm_prefix: [H25, H26]}
+
+# Task 12 features (appended to the mart as features_v2). Definitions for the app model file.
+extra_features:
+  any_symptom_window: [0, 90]          # sym_any_<cluster>: any code in the cluster, not required to be new
+  w3_cluster_count: {window: [31, 90], thresholds: [2, 3]}   # sym_any_w3_count_ge2 / ge3
+  single:
+    - {id: covid_code_w3, icd10cm_prefix: [U071], window: [31, 90], label: "COVID-19 still coded at a follow-up visit (days 31-90)"}
+    - {id: sequelae_code, icd10cm_prefix: [B948], window: [0, 90], label: "Sequelae of infection coded after COVID"}
+    - {id: covid_history_code, icd10cm_prefix: [Z8616], window: [31, 90], label: "Personal history of COVID-19 coded (days 31-90)"}
+  late_visit_61_90: {encounter_class: [AMB, EMER], window: [61, 90], label: "Visit in days 61-90"}

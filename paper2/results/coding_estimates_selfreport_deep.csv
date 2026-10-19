@@ -1,0 +1,57 @@
+condition,sex,self_report,n_self_report,p_code,ci_low,ci_high,ci_low_delta,ci_high_delta,ci_method
+hypertension,Female,ever,22930.0,0.811601,0.806487,0.81661,,,
+hypertension,Female,current,21160.0,0.83034,0.825223,0.835337,,,
+hypertension,Male,ever,17100.0,0.854386,0.84902,0.859593,,,
+hypertension,Male,current,16210.0,0.866132,0.860803,0.871287,,,
+diabetes_type2,Female,ever,7660.0,0.836815,0.828371,0.844921,,,
+diabetes_type2,Female,current,7280.0,0.843407,0.834877,0.851573,,,
+diabetes_type2,Male,ever,6300.0,0.898413,0.890708,0.905632,,,
+diabetes_type2,Male,current,6080.0,0.901316,0.893564,0.908561,,,
+obesity,Female,ever,23480.0,0.698467,0.692565,0.704304,,,
+obesity,Female,current,11800.0,0.74322,0.73526,0.751023,,,
+obesity,Male,ever,8240.0,0.729369,0.719671,0.738853,,,
+obesity,Male,current,4280.0,0.78271,0.770104,0.794809,,,
+depression,Female,ever,27650.0,0.609042,0.603275,0.614778,,,
+depression,Female,current,21030.0,0.66524,0.658832,0.671588,,,
+depression,Male,ever,9700.0,0.642268,0.632674,0.651749,,,
+depression,Male,current,7110.0,0.714487,0.703874,0.724867,,,
+anxiety,Female,ever,20810.0,0.646804,0.640284,0.653271,,,
+anxiety,Female,current,16770.0,0.673226,0.666088,0.680285,,,
+anxiety,Male,ever,5960.0,0.65604,0.643883,0.667996,,,
+anxiety,Male,current,4680.0,0.702991,0.689738,0.715912,,,
+migraine,Female,ever,19800.0,0.526263,0.519303,0.533212,,,
+migraine,Female,current,11050.0,0.677828,0.669054,0.686478,,,
+migraine,Male,ever,3960.0,0.434343,0.418976,0.449838,,,
+migraine,Male,current,1920.0,0.640625,0.618901,0.661787,,,
+fibromyalgia,Female,ever,6710.0,0.582712,0.570869,0.594461,,,
+fibromyalgia,Female,current,4880.0,0.641393,0.627831,0.654733,,,
+fibromyalgia,Male,ever,690.0,0.42029,0.384,0.457463,,,
+fibromyalgia,Male,current,480.0,0.479167,0.434818,0.523846,,,
+endometriosis,Female,ever,7460.0,0.190349,0.1816,0.199416,,,
+endometriosis,Female,current,1500.0,0.413333,0.388665,0.438444,,,
+lyme,Female,ever,2170.0,0.221198,0.204236,0.239146,,,
+lyme,Female,current,230.0,0.391304,0.330511,0.455669,,,
+lyme,Male,ever,1420.0,0.21831,0.197599,0.240541,,,
+lyme,Male,current,100.0,0.4,0.3094,0.497999,,,
+chronic_fatigue,Female,ever,5710.0,0.229422,0.2187,0.240508,,,
+chronic_fatigue,Female,current,4010.0,0.246883,0.233783,0.260467,,,
+chronic_fatigue,Male,ever,1310.0,0.206107,0.185076,0.228856,,,
+chronic_fatigue,Male,current,880.0,0.227273,0.200804,0.256112,,,
+anxiety,Female/Male,current,,0.957659,0.938,0.98,0.937382,0.978374,participant bootstrap
+anxiety,Female/Male,ever,,0.985922,0.965485,1.006791,0.965485,1.006791,log-scale delta method
+chronic_fatigue,Female/Male,current,,1.086284,0.947,1.225,0.950733,1.241162,participant bootstrap
+chronic_fatigue,Female/Male,ever,,1.113122,0.990784,1.250566,0.990784,1.250566,log-scale delta method
+depression,Female/Male,current,,0.931074,0.916,0.949,0.914881,0.947554,participant bootstrap
+depression,Female/Male,ever,,0.948267,0.931723,0.965105,0.931723,0.965105,log-scale delta method
+diabetes_type2,Female/Male,current,,0.93575,0.924,0.949,0.92373,0.947927,participant bootstrap
+diabetes_type2,Female/Male,ever,,0.931437,0.919486,0.943543,0.919486,0.943543,log-scale delta method
+fibromyalgia,Female/Male,current,,1.33856,1.24,1.511,1.21652,1.472843,participant bootstrap
+fibromyalgia,Female/Male,ever,,1.386454,1.267198,1.516932,1.267198,1.516932,log-scale delta method
+hypertension,Female/Male,current,,0.958676,0.951,0.968,0.95048,0.966943,participant bootstrap
+hypertension,Female/Male,ever,,0.949923,0.941614,0.958305,0.941614,0.958305,log-scale delta method
+lyme,Female/Male,current,,0.978261,0.725,1.324,0.732622,1.30626,participant bootstrap
+lyme,Female/Male,ever,,1.01323,0.893123,1.149489,0.893123,1.149489,log-scale delta method
+migraine,Female/Male,current,,1.058073,1.025,1.102,1.020778,1.09673,participant bootstrap
+migraine,Female/Male,ever,,1.211628,1.166541,1.258457,1.166541,1.258457,log-scale delta method
+obesity,Female/Male,current,,0.949547,0.933,0.97,0.93166,0.967778,participant bootstrap
+obesity,Female/Male,ever,,0.957632,0.942801,0.972696,0.942801,0.972696,log-scale delta method

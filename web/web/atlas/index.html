@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#171918" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Atlas: pick a condition (Long COVID, ME/CFS, Lyme disease, lupus, fibromyalgia, migraine, endometriosis, depression, or anxiety) and see it by state, who goes uncoded by age group, sex, and race and ethnicity, what else is in the record, activity and sleep from wearables, and what finding patients earlier costs.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml">
+    <link rel="stylesheet" href="/shared/site-nav.css?v=20261024" />
+    <script src="/homepage-settings.js?v=20261019"></script>
+    <link rel="stylesheet" href="/atlas/atlas.css?v=20261018">
+    <title>Atlas | Undiagnosed No More</title>
+  </head>
+  <body data-door="atlas">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="atlas-title">
+        <p class="kicker">Atlas</p>
+        <p class="lede">In the Atlas, pick a condition and see where and for whom it goes uncoded: a state map, coding by age, sex, and race and ethnicity, what else is in the record, and for Long COVID, what finding patients earlier could cost.</p>
+        <h1 id="atlas-title">Choose a condition</h1>
+        <!-- Condition selector, grouped by family (conditions/index.json): links on wide screens, a select on phones. -->
+        <nav class="picker" aria-label="Condition">
+          <ul id="picker"></ul>
+          <label class="picker-select" for="picker-select">Condition
+            <select id="picker-select"></select>
+          </label>
+        </nav>
+        <p class="definition" id="definition"></p>
+        <p class="visually-hidden" id="announce" aria-live="polite"></p>
+        <noscript><p class="notice">The Atlas needs JavaScript to draw its maps and charts.</p></noscript>
+      </section>
+
+      <section class="summary" aria-label="Key numbers">
+        <ul class="stat-grid" id="summary"></ul>
+      </section>
+
+      <!-- By state. Data: map.layers in /atlas/data/conditions/<slug>.json (analysis/build_atlas_data.py). -->
+      <section class="panel" id="where" aria-labelledby="where-title" hidden>
+        <h2 id="where-title">By state</h2>
+        <p class="takeaway" id="where-takeaway"></p>
+        <div class="controls" id="where-controls" role="group" aria-label="Map measure"></div>
+        <h3 class="chart-title" id="where-chart-title"></h3>
+        <div class="legend" id="where-legend"></div>
+        <div class="map-layout">
+          <div class="chart map" id="where-map"></div>
+          <div class="county-panel" id="county-panel" hidden>
+            <label class="field-inline" for="county-state">State
+              <select id="county-state"><option value="">All states (top 50 counties)</option></select>
+            </label>
+            <div class="table-scroll" id="county-table" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="chart-note" id="where-national"></p>
+        <details class="data-table">
+          <summary>Show state data table</summary>
+          <div id="where-table"></div>
+        </details>
+        <p class="source" id="where-source"></p>
+      </section>
+
+      <!-- Who goes uncoded. Data: groups in the condition file. -->
+      <section class="panel" id="who" aria-labelledby="who-title" hidden>
+        <h2 id="who-title">Who goes uncoded</h2>
+        <p class="takeaway" id="who-takeaway"></p>
+        <div class="controls" id="who-controls" role="group" aria-label="Survey definition"></div>
+        <h3 class="chart-title" id="who-chart-title"></h3>
+        <p class="chart-note" id="who-note"></p>
+        <div class="legend" id="who-legend"></div>
+        <div class="chart" id="who-chart"></div>
+        <div id="who-notes"></div>
+        <details class="data-table">
+          <summary>Show data table</summary>
+          <div id="who-table"></div>
+        </details>
+        <p class="source" id="who-source"></p>
+      </section>
+
+      <!-- What else is in the record. Data: related in the condition file. -->
+      <section class="panel" id="related" aria-labelledby="related-title" hidden>
+        <h2 id="related-title">What else is in the record</h2>
+        <p class="takeaway" id="related-takeaway"></p>
+        <h3 class="chart-title" id="related-chart-title"></h3>
+        <p class="chart-note" id="related-note"></p>
+        <div class="legend" id="related-legend"></div>
+        <div class="chart" id="related-chart"></div>
+        <details class="data-table">
+          <summary>Show all rows</summary>
+          <div id="related-table"></div>
+        </details>
+        <p class="source" id="related-source"></p>
+      </section>
+
+      <!-- Activity and sleep: shown only for a condition whose file has a wearables block (ME/CFS, fibromyalgia,
+           endometriosis: Fitbit means by group in the year before the survey) or a trajectory block (Long COVID:
+           weekly Fitbit means around COVID-19, with a comparison toggle). No group sizes. -->
+      <section class="panel" id="wearables" aria-labelledby="wearables-title" hidden>
+        <h2 id="wearables-title">Activity and sleep</h2>
+        <p class="takeaway" id="wearables-takeaway"></p>
+        <div class="controls" id="wearables-controls" role="group" aria-label="Wearable measure"></div>
+        <div class="controls" id="wearables-compare" role="group" aria-label="Compare" hidden></div>
+        <h3 class="chart-title" id="wearables-chart-title"></h3>
+        <p class="chart-note" id="wearables-note"></p>
+        <div class="legend" id="wearables-legend"></div>
+        <div class="chart" id="wearables-chart"></div>
+        <p class="visually-hidden" id="wearables-live" aria-live="polite"></p>
+        <details class="data-table">
+          <summary>Show data table</summary>
+          <div id="wearables-table"></div>
+        </details>
+        <p class="source" id="wearables-source"></p>
+      </section>
+
+      <!-- Cost calculator: shown only for a condition whose file has a calculator block (Long COVID). Pure
+           functions in /atlas/calc.js; measured inputs from the condition file. -->
+      <section class="panel" id="cost" aria-labelledby="cost-title" hidden>
+        <h2 id="cost-title">What finding patients earlier costs</h2>
+        <p class="takeaway" id="cost-takeaway">With the default assumptions, a two-step screen costs $116 in clinician review time for each later-coded patient it finds, and chart review of every flag costs $233, each finding patients about 55 days before their Long COVID code.</p>
+        <p class="explain" id="cost-setting">Setting: 10,000 patients who had COVID-19 are scored by the model at day 90, and the top 5% (500 patients) are flagged. A later-coded patient is one who receives the Long COVID code later on.</p>
+        <p class="explain" id="cost-model"></p>
+
+        <h3 class="chart-title">Clinician cost per later-coded patient found</h3>
+        <div class="headline-cards">
+          <article class="headline-card primary" aria-labelledby="hc-two-title">
+            <h4 id="hc-two-title">Two-step screen</h4>
+            <p class="big"><span id="hc-two-cpf">$116</span> <span class="big-unit">per later-coded patient found</span></p>
+            <p>Flagged patients answer a symptom questionnaire first, and a clinician reviews the <span id="hc-two-reviewed">200</span> who pass. That finds <span id="hc-two-found">17.2</span> later-coded patients for <span id="hc-two-cost">$2,000</span> of clinician time, about <span id="hc-two-lead">60</span> days before their code, if <span id="hc-two-sens">80%</span> of later-coded patients pass the questionnaire.</p>
+          </article>
+          <article class="headline-card" aria-labelledby="hc-chart-title">
+            <h4 id="hc-chart-title">Chart review of every flag</h4>
+            <p class="big"><span id="hc-chart-cpf">$233</span> <span class="big-unit">per later-coded patient found</span></p>
+            <p>A clinician reviews all <span id="hc-chart-reviewed">500</span> flagged patients. That finds <span id="hc-chart-found">21.5</span> later-coded patients for <span id="hc-chart-cost">$5,000</span> of clinician time, about <span id="hc-chart-lead">60</span> days before their code.</p>
+          </article>
+        </div>
+
+        <details class="assumptions" id="calc-details">
+          <summary>Change the assumptions</summary>
+          <form class="calc" id="calc-form" novalidate>
+            <fieldset>
+              <legend class="visually-hidden">Calculator inputs</legend>
+              <div class="calc-inputs" id="calc-inputs"></div>
+              <button type="button" class="toggle" id="calc-reset">Reset to defaults</button>
+            </fieldset>
+          </form>
+        </details>
+
+        <h3 class="sub-title">Avoided spending</h3>
+        <p class="explain" id="cost-avoided">Before their first code, later-coded patients have about $900 more in visits and tests than similar patients without the code. If earlier recognition avoids part of that, chart review of every flag avoids an estimated $3,193 against $5,000 of review cost, and the two-step screen avoids an estimated $2,554 against $2,000, per 10,000 patients screened.</p>
+        <h4 class="chart-title" id="calc-chart-title">Clinician review cost and avoided spending per 10,000 patients screened</h4>
+        <div class="legend" id="calc-legend"></div>
+        <div class="chart" id="calc-chart"></div>
+        <details class="data-table">
+          <summary>All calculator results</summary>
+          <div class="calc-results" id="calc-results" aria-live="polite"></div>
+        </details>
+        <details class="formulas">
+          <summary>Formulas, with your inputs</summary>
+          <ol id="calc-formulas"></ol>
+        </details>
+        <p class="source" id="cost-source"></p>
+      </section>
+    </main>
+
+    <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+    <script src="/shared/site-nav.js?v=20261023" defer></script>
+    <script type="module" src="/atlas/atlas.js?v=20261016"></script>
+  </body>
+</html>

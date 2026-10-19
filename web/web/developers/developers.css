@@ -1,0 +1,946 @@
+/* Developer pages, in the homepage system: IBM Plex Sans for prose and IBM Plex Mono for code (faces declared in
+   /shared/site-nav.css), near-black on off-white, hairline rules, one red accent (the current page or section in
+   the side navigation, link hover, and focus). Layout: a side navigation beside the document from 1024px up;
+   below that the navigation sits under the page heading (on /developers/) or after the document (generated pages). */
+:root {
+  color-scheme: light;
+  --bg: #f6f5f1;
+  --paper: #f6f5f1;
+  --soft: #ecebe5;
+  --ink: #191918;
+  --body: #3d3d38;
+  --muted: #62625b;
+  --link: #191918;
+  --accent: #ae0808;
+  --rule: #d5d4cd;
+  --rule-strong: #84837b;
+  --code-bg: #ecebe5;
+  --code-ink: #191918;
+  --on-ink: #f6f5f1;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #171918;
+    --paper: #171918;
+    --soft: #202321;
+    --ink: #eeeee7;
+    --body: #d6d6cf;
+    --muted: #adaea5;
+    --link: #eeeee7;
+    --accent: #d87067;
+    --rule: #3c403a;
+    --rule-strong: #74786f;
+    --code-bg: #202321;
+    --code-ink: #eeeee7;
+    --on-ink: #171918;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #171918;
+  --paper: #171918;
+  --soft: #202321;
+  --ink: #eeeee7;
+  --body: #d6d6cf;
+  --muted: #adaea5;
+  --link: #eeeee7;
+  --accent: #d87067;
+  --rule: #3c403a;
+  --rule-strong: #74786f;
+  --code-bg: #202321;
+  --code-ink: #eeeee7;
+  --on-ink: #171918;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------------------------------------------------------------- layout */
+
+/* The homepage's 1120px column (gutters from /shared/site-nav.css), so text lines up under the logo. */
+.dev-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: min(100% - 2 * var(--unm-gutter, 16px), var(--unm-wrap, 1120px));
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 72px) 0 32px;
+}
+
+.doc {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .dev-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-areas: "nav head" "nav doc";
+    grid-template-rows: auto 1fr;
+    column-gap: 56px;
+  }
+
+  .dev-head {
+    grid-area: head;
+  }
+
+  .doc {
+    grid-area: doc;
+  }
+
+  .dev-nav {
+    grid-area: nav;
+    position: sticky;
+    top: 88px;
+    align-self: start;
+    max-height: calc(100vh - 104px);
+    overflow-y: auto;
+  }
+}
+
+/* In-page targets clear the sticky 64px site bar. */
+:where(.dev-layout) [id] {
+  scroll-margin-top: 80px;
+}
+
+.doc > section + section {
+  margin-top: clamp(48px, 6vw, 72px);
+  padding-top: clamp(32px, 4vw, 44px);
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------------------------------------------------------------- side navigation */
+
+.dev-nav {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.dev-nav-group + .dev-nav-group {
+  margin-top: 20px;
+}
+
+.dev-nav-title {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.dev-layout .dev-nav ul {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dev-layout .dev-nav li + li {
+  margin-top: 0;
+}
+
+.dev-layout .dev-nav a {
+  display: block;
+  padding: 5px 0 5px 12px;
+  border-left: 2px solid var(--rule);
+  color: var(--body);
+  text-decoration: none;
+}
+
+.dev-layout .dev-nav a:hover {
+  border-left-color: var(--rule-strong);
+  color: var(--ink);
+}
+
+.dev-layout .dev-nav a.is-current,
+.dev-layout .dev-nav a[aria-current="page"] {
+  border-left-color: var(--accent);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@media (max-width: 1023px) {
+  .dev-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 24px;
+    margin: 0 0 40px;
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .dev-nav-group + .dev-nav-group {
+    margin-top: 0;
+  }
+
+  .dev-layout .dev-nav a {
+    padding-block: 7px;
+  }
+
+  /* generated pages put the navigation after the document */
+  .doc + .dev-nav {
+    margin: 56px 0 0;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .dev-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* ---------------------------------------------------------------- type */
+
+:where(.dev-layout) h1,
+:where(.dev-layout) h2,
+:where(.dev-layout) h3,
+:where(.dev-layout) h4 {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+:where(.dev-layout) h1 {
+  max-width: 820px;
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 4.6vw, 3.2rem);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+:where(.dev-layout) h2 {
+  margin: 2.6rem 0 1rem;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+
+:where(.dev-layout) section > h2:first-child {
+  margin-top: 0;
+}
+
+:where(.dev-layout) h3 {
+  margin: 2.2rem 0 0.7rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+:where(.dev-layout) h4 {
+  margin: 1.6rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+:where(.dev-layout) p,
+:where(.dev-layout) li,
+:where(.dev-layout) dd {
+  color: var(--body);
+  overflow-wrap: break-word;
+}
+
+:where(.dev-layout) p {
+  max-width: 70ch;
+  margin: 0 0 1rem;
+}
+
+.lede {
+  max-width: 64ch;
+  margin-bottom: 2rem;
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+}
+
+.muted,
+.generated-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+:where(.dev-layout) a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+:where(.dev-layout) a:hover {
+  color: var(--accent);
+}
+
+:where(.dev-layout) a:focus-visible,
+:where(.dev-layout) button:focus-visible,
+:where(.dev-layout) summary:focus-visible,
+:where(.dev-layout) select:focus-visible,
+:where(.dev-layout) input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+:where(.dev-layout) ul,
+:where(.dev-layout) ol {
+  max-width: 74ch;
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+
+:where(.dev-layout) li + li {
+  margin-top: 0.35rem;
+}
+
+:where(.dev-layout) strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.crumbs {
+  margin: 0 0 1.2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* "On this page" lists of the generated pages */
+.toc {
+  margin: 1.8rem 0 2.4rem;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.dev-layout .toc ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dev-layout .toc li + li {
+  margin-top: 0;
+}
+
+.toc-title {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+/* ---------------------------------------------------------------- overview diagram */
+
+.flow {
+  margin: 0 0 1rem;
+}
+
+.flow-caption {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.flow-grid {
+  display: grid;
+  gap: 28px;
+}
+
+.flow-col {
+  position: relative;
+  padding: 14px 16px 6px;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+}
+
+.flow-col + .flow-col::before {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  color: var(--muted);
+  font-size: 1rem;
+  content: "↓";
+  transform: translateX(-50%);
+}
+
+@media (min-width: 760px) {
+  .flow-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .flow-col + .flow-col::before {
+    top: 50%;
+    left: -21px;
+    content: "→";
+    transform: translateY(-50%);
+  }
+}
+
+.flow-head {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.dev-layout .flow-col ul {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.dev-layout .flow-col li {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.flow-note {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.dev-layout .flow-base {
+  max-width: none;
+  margin: 12px 0 0;
+  padding: 10px 16px;
+  border: 1px dashed var(--rule-strong);
+  font-size: 0.92rem;
+}
+
+/* ---------------------------------------------------------------- code */
+
+:where(.dev-layout) code {
+  padding: 0.08em 0.32em;
+  background: var(--soft);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.86em;
+  overflow-wrap: anywhere;
+}
+
+:where(.dev-layout) pre {
+  margin: 0 0 1.2rem;
+  padding: 16px 18px;
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background: var(--code-bg);
+  color: var(--code-ink);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  tab-size: 2;
+}
+
+:where(.dev-layout) pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  overflow-wrap: normal;
+}
+
+.code {
+  margin: 0 0 1.4rem;
+  border: 1px solid var(--rule);
+  background: var(--code-bg);
+}
+
+.code-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 38px;
+  padding: 4px 6px 4px 14px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.dev-layout .code pre {
+  margin: 0;
+  border: 0;
+}
+
+.dev-layout .code-tall pre {
+  max-height: 440px;
+  overflow: auto;
+}
+
+/* long JSON strings (card detail) wrap instead of scrolling sideways */
+.dev-layout .code-wrap pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.code-caption {
+  margin: 1.4rem 0 0.5rem;
+}
+
+.copy {
+  flex: none;
+  min-height: 30px;
+  padding: 2px 10px;
+  border: 1px solid var(--rule-strong);
+  background: var(--bg);
+  color: var(--ink);
+  font: 600 0.75rem var(--sans);
+  cursor: pointer;
+}
+
+.copy:hover {
+  border-color: var(--ink);
+  text-decoration: underline;
+}
+
+details.code-details {
+  margin: 0 0 1.4rem;
+}
+
+details.code-details > summary,
+.vectors-detail > summary,
+.try-json > summary {
+  padding: 10px 0;
+  color: var(--link);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+details.code-details > summary {
+  font-weight: 400;
+}
+
+details.code-details[open] > summary {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------------------------------------------------------------- tables and definition lists */
+
+.table-wrap {
+  max-width: 100%;
+  margin: 0 0 1.4rem;
+  overflow-x: auto;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
+}
+
+:where(.dev-layout) table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+:where(.dev-layout) th,
+:where(.dev-layout) td {
+  padding: 9px 12px 9px 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+:where(.dev-layout) th + th,
+:where(.dev-layout) td + td {
+  padding-left: 12px;
+}
+
+:where(.dev-layout) th {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+:where(.dev-layout) tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+:where(.dev-layout) td {
+  color: var(--body);
+}
+
+table.fields td:first-child {
+  white-space: nowrap;
+}
+
+table.compact {
+  width: auto;
+  min-width: 280px;
+}
+
+/* the models guide's feature tables keep their columns readable and scroll sideways inside .table-wrap */
+:where(.dev-layout) table.features {
+  min-width: 980px;
+  font-size: 0.84rem;
+}
+
+table.features td:first-child code {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+table.features td:nth-child(6) {
+  min-width: 9rem;
+}
+
+table.features td:nth-child(5) {
+  min-width: 260px;
+}
+
+table.features td:last-child {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.code-system {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.codes {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.more-codes summary {
+  color: var(--link);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 820px;
+  margin: 0 0 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+}
+
+.facts dt {
+  padding: 9px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.facts dd {
+  margin: 0;
+  padding: 2px 0 9px;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 600px) {
+  .facts {
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+  }
+
+  .facts dt {
+    padding: 9px 16px 9px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .facts dd {
+    padding: 9px 0;
+  }
+}
+
+.hash {
+  font-size: 0.78em;
+}
+
+.model-entry + .model-entry {
+  margin-top: 2rem;
+}
+
+.model-entry h3 {
+  margin-top: 1.6rem;
+}
+
+.model-id {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.vectors-detail {
+  margin: 0.4rem 0 1.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------------------------------------------------------------- buttons and forms */
+
+.actions {
+  margin: 0.4rem 0 1.4rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+  font: 600 0.88rem var(--sans);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--on-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.field {
+  display: block;
+  min-width: 0;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+:where(.dev-layout) select,
+:where(.dev-layout) input[type="date"] {
+  width: 100%;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------- try the scorer */
+
+.try {
+  margin: 1.2rem 0 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.try-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px 16px;
+}
+
+@media (min-width: 600px) {
+  .try-fields {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+}
+
+.try-unavailable {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 14px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.try-unavailable legend {
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.check {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  min-height: 32px;
+  font-size: 0.9rem;
+}
+
+.check input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--ink);
+}
+
+.try-out {
+  border-top: 1px solid var(--rule);
+}
+
+.try-out:empty {
+  border-top: 0;
+}
+
+.try-scenario {
+  margin: 14px 0 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.try-result {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+
+.try-check {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.try-check.is-different {
+  color: var(--accent);
+}
+
+.try-out table td:nth-child(3) {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.try-out .table-wrap {
+  margin-bottom: 0.6rem;
+}
+
+.dev-layout .try-json pre {
+  max-height: 420px;
+  overflow: auto;
+}
+
+/* ---------------------------------------------------------------- live CDS request */
+
+.live {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: end;
+  margin: 0.8rem 0 0.6rem;
+}
+
+.live .field {
+  flex: 1 1 260px;
+  max-width: 360px;
+}
+
+.live-status {
+  font-size: 0.9rem;
+}
+
+.live-status:empty {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  :where(.dev-layout) th,
+  :where(.dev-layout) td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  .dev-nav,
+  .copy,
+  .try,
+  .try-out,
+  .live {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+  }
+}
+
+/* code system URIs stay on one line; the table scrolls on narrow screens instead */
+:where(.dev-layout) table.systems td:nth-child(2) code {
+  white-space: nowrap;
+}
+
+.try-evidence span {
+  display: block;
+  white-space: nowrap;
+}
+
+.try-note {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.dev-layout table.systems td:first-child {
+  white-space: nowrap;
+}
+
+/* Field tables become one block per field on phones: the name, then its description */
+@media (max-width: 599px) {
+  .dev-layout table.fields thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .dev-layout table.fields,
+  .dev-layout table.fields tbody,
+  .dev-layout table.fields tr,
+  .dev-layout table.fields td {
+    display: block;
+    width: 100%;
+  }
+
+  .dev-layout table.fields tr {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .dev-layout table.fields tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .dev-layout table.fields td,
+  .dev-layout table.fields td + td {
+    padding: 2px 0;
+    border: 0;
+    white-space: normal;
+  }
+
+  .dev-layout table.fields td[data-label]::before {
+    color: var(--muted);
+    content: attr(data-label) ": ";
+  }
+}

@@ -1,0 +1,371 @@
+{
+ "status": "scored",
+ "index_date": "2024-06-01",
+ "score": 6.988124000000003,
+ "probability": 0.16922853922615083,
+ "band": "High",
+ "times_average": 3.2872676617356418,
+ "features": {
+  "age_18_39": 1,
+  "age_40_49": 0,
+  "age_50_59": 0,
+  "age_60_69": 0,
+  "age_70p": 0,
+  "sex_female": 1,
+  "cx_fatigue_other": 1,
+  "cx_fatigue_recent": 1,
+  "cx_sleep": 1,
+  "cx_sleep_apnea": 0,
+  "cx_cognitive": 1,
+  "cx_autonomic": 1,
+  "cx_dizzy_syncope": 1,
+  "cx_headache": 0,
+  "cx_migraine": 0,
+  "cx_myalgia_arthralgia": 1,
+  "cx_fibromyalgia": 0,
+  "cx_chronic_pain": 0,
+  "cx_depression": 0,
+  "cx_anxiety": 0,
+  "cx_ptsd": 0,
+  "cx_ibs_gi": 1,
+  "cx_sore_throat_nodes": 0,
+  "cx_fever": 0,
+  "cx_ebv_mono": 1,
+  "cx_lyme": 0,
+  "cx_covid": 0,
+  "cx_long_covid": 0,
+  "cx_eds_hypermobility": 0,
+  "cx_mast_cell": 0,
+  "cx_hypothyroid": 0,
+  "cx_anemia": 0,
+  "cx_vitd_deficiency": 0,
+  "cx_autoimmune": 0,
+  "cx_obesity": 0,
+  "cx_diabetes": 0,
+  "cx_hypertension": 0,
+  "cx_heart_disease": 0,
+  "cx_cancer": 0,
+  "clusters_ge3": 1,
+  "clusters_ge5": 1,
+  "px_tilt": 1,
+  "px_sleep_study": 1,
+  "px_brain_mri": 0,
+  "px_echo": 0,
+  "px_cardiac_monitor": 0,
+  "px_exercise_test": 0,
+  "px_neuropsych": 0,
+  "px_pt_eval": 0,
+  "lab_tsh": 1,
+  "lab_ferritin": 1,
+  "lab_b12": 1,
+  "lab_vitamin_d": 0,
+  "lab_ana": 0,
+  "lab_crp": 0,
+  "lab_esr": 0,
+  "lab_ebv": 0,
+  "lab_lyme": 0,
+  "lab_cortisol": 0,
+  "lab_ck": 0,
+  "rx_stimulant": 1,
+  "rx_naltrexone": 0,
+  "rx_ssri_snri": 0,
+  "rx_tricyclic_lowdose": 0,
+  "rx_gabapentinoid": 0,
+  "rx_sleep_aid": 0,
+  "rx_beta_blocker": 0,
+  "rx_pots": 1,
+  "rx_opioid": 0,
+  "util_out_r_ge6": 0,
+  "util_out_r_ge12": 0,
+  "util_ed_r": 0,
+  "util_ip_h": 0
+ },
+ "drivers": [
+  {
+   "id": "clusters_ge5",
+   "label": "Five or more symptom types",
+   "group": "Symptom pattern",
+   "contribution": 1.828592,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-14",
+     "date": "2020-05-12"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-15",
+     "date": "2020-10-02"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-16",
+     "date": "2021-03-15"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-18",
+     "date": "2022-02-08"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-17",
+     "date": "2021-09-20"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-20",
+     "date": "2023-01-17"
+    }
+   ]
+  },
+  {
+   "id": "rx_pots",
+   "label": "POTS medication",
+   "group": "Medications",
+   "contribution": 1.766644,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "elena-med-30",
+     "date": "2022-09-28"
+    }
+   ]
+  },
+  {
+   "id": "px_tilt",
+   "label": "Tilt-table test",
+   "group": "Tests and evaluations",
+   "contribution": 1.700041,
+   "evidence": [
+    {
+     "resourceType": "Procedure",
+     "id": "elena-proc-27",
+     "date": "2022-09-14"
+    }
+   ]
+  },
+  {
+   "id": "rx_stimulant",
+   "label": "Stimulant or wakefulness drug",
+   "group": "Medications",
+   "contribution": 1.626329,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "elena-med-32",
+     "date": "2023-05-09"
+    }
+   ]
+  },
+  {
+   "id": "sex_female",
+   "label": "Female",
+   "group": "Demographics",
+   "contribution": 0.910153,
+   "evidence": []
+  },
+  {
+   "id": "cx_ebv_mono",
+   "label": "Infectious mononucleosis (EBV)",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.887581,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-13",
+     "date": "2019-11-04"
+    }
+   ]
+  },
+  {
+   "id": "cx_cognitive",
+   "label": "Cognitive symptoms (brain fog, memory)",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.887045,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-16",
+     "date": "2021-03-15"
+    }
+   ]
+  },
+  {
+   "id": "cx_fatigue_recent",
+   "label": "Fatigue or malaise coded in the past year",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.774788,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-22",
+     "date": "2024-01-22"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-23",
+     "date": "2024-04-30"
+    }
+   ]
+  },
+  {
+   "id": "cx_sleep",
+   "label": "Sleep disturbance",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.727156,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-15",
+     "date": "2020-10-02"
+    }
+   ]
+  },
+  {
+   "id": "lab_b12",
+   "label": "Vitamin B12 test",
+   "group": "Lab tests ordered",
+   "contribution": 0.694428,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "elena-obs-26",
+     "date": "2021-03-15"
+    }
+   ]
+  },
+  {
+   "id": "cx_fatigue_other",
+   "label": "Fatigue or malaise coded",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.670716,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-14",
+     "date": "2020-05-12"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-21",
+     "date": "2023-05-09"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-22",
+     "date": "2024-01-22"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-23",
+     "date": "2024-04-30"
+    }
+   ]
+  },
+  {
+   "id": "lab_ferritin",
+   "label": "Ferritin test",
+   "group": "Lab tests ordered",
+   "contribution": 0.662508,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "elena-obs-25",
+     "date": "2020-05-12"
+    }
+   ]
+  },
+  {
+   "id": "cx_autonomic",
+   "label": "Palpitations, POTS, orthostatic hypotension, or dysautonomia",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.585676,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-19",
+     "date": "2022-08-30"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-29",
+     "date": "2022-09-28"
+    }
+   ]
+  },
+  {
+   "id": "cx_dizzy_syncope",
+   "label": "Dizziness or fainting",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.561932,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-18",
+     "date": "2022-02-08"
+    }
+   ]
+  },
+  {
+   "id": "px_sleep_study",
+   "label": "Sleep study",
+   "group": "Tests and evaluations",
+   "contribution": 0.556376,
+   "evidence": [
+    {
+     "resourceType": "Procedure",
+     "id": "elena-proc-31",
+     "date": "2023-02-21"
+    }
+   ]
+  },
+  {
+   "id": "cx_ibs_gi",
+   "label": "Irritable bowel or gastrointestinal symptoms",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.493963,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-20",
+     "date": "2023-01-17"
+    }
+   ]
+  },
+  {
+   "id": "age_18_39",
+   "label": "Age 18-39",
+   "group": "Demographics",
+   "contribution": 0.489792,
+   "evidence": []
+  },
+  {
+   "id": "lab_tsh",
+   "label": "Thyroid (TSH) test",
+   "group": "Lab tests ordered",
+   "contribution": 0.397745,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "elena-obs-24",
+     "date": "2020-05-12"
+    }
+   ]
+  },
+  {
+   "id": "cx_myalgia_arthralgia",
+   "label": "Muscle or joint pain",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.177264,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "elena-cond-17",
+     "date": "2021-09-20"
+    }
+   ]
+  }
+ ],
+ "as_of": "2024-06-01"
+}

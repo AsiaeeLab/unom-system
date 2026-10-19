@@ -1,0 +1,674 @@
+{
+ "resourceType": "QuestionnaireResponse",
+ "id": "sofia-qr-1",
+ "meta": {
+  "tag": [
+   {
+    "system": "https://undiagnosednomore.org/fhir/CodeSystem/source",
+    "code": "patient-reported",
+    "display": "Patient reported"
+   }
+  ]
+ },
+ "questionnaire": "https://undiagnosednomore.org/fhir/Questionnaire/unm-patient-symptom-check|1.3.0",
+ "status": "completed",
+ "authored": "2024-05-30T12:00:00Z",
+ "source": {
+  "display": "Patient"
+ },
+ "item": [
+  {
+   "linkId": "timeline",
+   "text": "Symptom timeline",
+   "item": [
+    {
+     "linkId": "timeline.respondent",
+     "text": "Who answered these questions",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/respondent",
+        "code": "self",
+        "display": "The patient"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "timeline.onset",
+     "text": "When symptoms started",
+     "answer": [
+      {
+       "valueDate": "2019-09-01"
+      }
+     ]
+    },
+    {
+     "linkId": "timeline.covid",
+     "text": "Has had COVID-19",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+        "code": "no",
+        "display": "No"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "timeline.symptoms",
+     "text": "Main symptoms, in the patient's words",
+     "answer": [
+      {
+       "valueString": "Pain moves around: neck, back, jaw, hips. I sleep badly, wake up stiff, and my tests keep coming back normal."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "recover",
+   "text": "RECOVER 2024 index",
+   "item": [
+    {
+     "linkId": "recover.smell-taste",
+     "text": "Loss of smell or taste",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.pem",
+     "text": "Post-exertional malaise",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.cough",
+     "text": "Chronic cough",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.brain-fog",
+     "text": "Brain fog",
+     "answer": [
+      {
+       "valueBoolean": true
+      }
+     ]
+    },
+    {
+     "linkId": "recover.palpitations",
+     "text": "Palpitations",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.dizziness",
+     "text": "Dizziness",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.breath",
+     "text": "Shortness of breath",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.thirst",
+     "text": "Thirst",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.chest-pain",
+     "text": "Chest pain",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    },
+    {
+     "linkId": "recover.fatigue",
+     "text": "Fatigue",
+     "answer": [
+      {
+       "valueBoolean": true
+      }
+     ]
+    },
+    {
+     "linkId": "recover.snoring",
+     "text": "Snoring or sleep apnea",
+     "answer": [
+      {
+       "valueBoolean": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "pem",
+   "text": "DePaul Symptom Questionnaire: post-exertional malaise",
+   "item": [
+    {
+     "linkId": "pem.1",
+     "text": "Dead, heavy feeling after starting to exercise",
+     "item": [
+      {
+       "linkId": "pem.1.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "1",
+          "display": "a little of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.1.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "1",
+          "display": "mild"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.2",
+     "text": "Next day soreness or fatigue after non-strenuous, everyday activities",
+     "item": [
+      {
+       "linkId": "pem.2.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "2",
+          "display": "about half the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.2.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "1",
+          "display": "mild"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.3",
+     "text": "Mentally tired after the slightest effort",
+     "item": [
+      {
+       "linkId": "pem.3.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "1",
+          "display": "a little of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.3.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "1",
+          "display": "mild"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.4",
+     "text": "Minimum exercise makes you physically tired",
+     "item": [
+      {
+       "linkId": "pem.4.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "1",
+          "display": "a little of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.4.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "1",
+          "display": "mild"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.5",
+     "text": "Physically drained or sick after mild activity",
+     "item": [
+      {
+       "linkId": "pem.5.frequency",
+       "text": "Throughout the past 6 months, how often have you had this symptom?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-frequency",
+          "code": "1",
+          "display": "a little of the time"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "pem.5.severity",
+       "text": "Throughout the past 6 months, how much has this symptom bothered you?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-severity",
+          "code": "1",
+          "display": "mild"
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "linkId": "pem.duration",
+     "text": "If you feel worse after activities, how long does this last?",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/dsq-pem-duration",
+        "code": "4-10h",
+        "display": "4 to 10 hours"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "pem.screen",
+     "text": "Meets the published DePaul PEM screening rule (calculated)",
+     "answer": [
+      {
+       "valueBoolean": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "change",
+   "text": "What changed since your symptoms started (not scored)",
+   "item": [
+    {
+     "linkId": "change.1",
+     "text": "Compared with before your symptoms started: How tired you feel during a normal day.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "much-more",
+        "display": "Much more"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.2",
+     "text": "Compared with before your symptoms started: How short of breath you get with activities you used to do easily.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "same",
+        "display": "About the same"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.3",
+     "text": "Compared with before your symptoms started: How often your heart races or pounds, especially when you stand up.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "same",
+        "display": "About the same"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.4",
+     "text": "Compared with before your symptoms started: How often you have trouble thinking, concentrating, or remembering.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "somewhat-more",
+        "display": "Somewhat more"
+       }
+      }
+     ]
+    },
+    {
+     "linkId": "change.5",
+     "text": "Compared with before your symptoms started: How often you have seen a doctor or gone to urgent care or the emergency department.",
+     "answer": [
+      {
+       "valueCoding": {
+        "system": "https://undiagnosednomore.org/fhir/CodeSystem/change-since-covid",
+        "code": "much-more",
+        "display": "Much more"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "checks",
+   "text": "Condition self-checks (patient self-checks against published criteria and questionnaires; not a diagnosis)",
+   "item": [
+    {
+     "linkId": "checks.fibro",
+     "text": "Fibromyalgia: where it hurts and how you feel",
+     "item": [
+      {
+       "linkId": "checks.fibro.areas",
+       "text": "In the past 7 days, where have you had pain or tenderness? Mark every area that applies.",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "jaw-l",
+          "display": "Jaw, left"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "shoulder-l",
+          "display": "Shoulder, left"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "shoulder-r",
+          "display": "Shoulder, right"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "hip-l",
+          "display": "Hip or buttock, left"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "hip-r",
+          "display": "Hip or buttock, right"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "upper-leg-r",
+          "display": "Upper leg, right"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "neck",
+          "display": "Neck"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "upper-back",
+          "display": "Upper back"
+         }
+        },
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-area",
+          "code": "lower-back",
+          "display": "Lower back"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.fatigue",
+       "text": "In the past 7 days, how much of a problem has each of these been? Tiredness (fatigue)",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-severity",
+          "code": "2",
+          "display": "Moderate, often there"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.unrefreshed",
+       "text": "In the past 7 days, how much of a problem has each of these been? Waking up tired or unrefreshed",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-severity",
+          "code": "2",
+          "display": "Moderate, often there"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.cognitive",
+       "text": "In the past 7 days, how much of a problem has each of these been? Trouble thinking or remembering",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/fibro-severity",
+          "code": "1",
+          "display": "Slight or mild, or only now and then"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.headache",
+       "text": "In the past 6 months, have you had any of these? Headaches",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+          "code": "yes",
+          "display": "Yes"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.lower-abdomen",
+       "text": "In the past 6 months, have you had any of these? Pain or cramps in the lower belly",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+          "code": "no",
+          "display": "No"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.depression",
+       "text": "In the past 6 months, have you had any of these? Depression",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+          "code": "no",
+          "display": "No"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.duration",
+       "text": "Have your pain and these symptoms been at about the same level for at least 3 months?",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/yes-no-unsure",
+          "code": "yes",
+          "display": "Yes"
+         }
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.wpi",
+       "text": "Widespread Pain Index, 0 to 19 (calculated)",
+       "answer": [
+        {
+         "valueInteger": 9
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.sss",
+       "text": "Symptom Severity Scale, 0 to 12 (calculated)",
+       "answer": [
+        {
+         "valueInteger": 6
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.regions",
+       "text": "Body regions with pain, of 5 (calculated)",
+       "answer": [
+        {
+         "valueInteger": 5
+        }
+       ]
+      },
+      {
+       "linkId": "checks.fibro.result",
+       "text": "Self-check result (calculated)",
+       "answer": [
+        {
+         "valueCoding": {
+          "system": "https://undiagnosednomore.org/fhir/CodeSystem/self-check-result",
+          "code": "match",
+          "display": "Widespread Pain Index 9 of 19, Symptom Severity Scale 6 of 12, pain in 5 of 5 body regions; matches the 2016 criteria pattern."
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "linkId": "questions",
+   "text": "Questions to ask my clinician",
+   "item": [
+    {
+     "linkId": "questions.1",
+     "text": "Question",
+     "answer": [
+      {
+       "valueString": "Could this be fibromyalgia?"
+      }
+     ]
+    },
+    {
+     "linkId": "questions.2",
+     "text": "Question",
+     "answer": [
+      {
+       "valueString": "What can I do about the pain and the sleep?"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "subject": {
+  "reference": "Patient/sofia"
+ }
+}

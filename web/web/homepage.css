@@ -1,0 +1,239 @@
+/* Homepage, one vertical page at every width (Kaveh Aryan's system: IBM Plex Sans and Mono, near-black
+   on off-white, one red accent, hairline rules; no cards, gradients, pills, badges, or shadows).
+   Type is in rem with width-based clamp(), so it follows the reader's text size and never the viewport height.
+   Theme: the device setting by default; homepage-settings.js sets data-theme="light" or "dark" when the
+   visitor picks one, and data-text="large" for large text. */
+:root {
+  --unm-background: #f6f5f1;
+  --unm-text: #191918;
+  --unm-secondary: #62625b;
+  --unm-rule: #d5d4cd;
+  --unm-accent: #ae0808;
+  --unm-inverse: #f6f5f1;
+  --unm-code: #ecebe5;
+  --gutter: 16px;
+  --content-max-width: 1120px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --unm-background: #171918;
+    --unm-text: #eeeee7;
+    --unm-secondary: #adaea5;
+    --unm-rule: #3c403a;
+    --unm-accent: #d87067;
+    --unm-inverse: #171918;
+    --unm-code: #21241f;
+    color-scheme: dark;
+  }
+  :root:not([data-theme="light"]) .brand-light { display: none; }
+  :root:not([data-theme="light"]) .brand-dark { display: block; }
+}
+:root[data-theme="dark"] {
+  --unm-background: #171918;
+  --unm-text: #eeeee7;
+  --unm-secondary: #adaea5;
+  --unm-rule: #3c403a;
+  --unm-accent: #d87067;
+  --unm-inverse: #171918;
+  --unm-code: #21241f;
+  color-scheme: dark;
+}
+:root[data-theme="dark"] .brand-light { display: none; }
+:root[data-theme="dark"] .brand-dark { display: block; }
+:root[data-text="large"] { font-size: 125%; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--unm-background); color: var(--unm-text); font: 400 1rem/1.55 "IBM Plex Sans", system-ui, sans-serif; }
+h1, h2, p, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+img { display: block; max-width: 100%; height: auto; }
+:focus-visible { outline: 2px solid var(--unm-accent); outline-offset: 3px; }
+main:focus { outline: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; left: var(--gutter); top: -200px; z-index: 10; padding: 12px 16px; background: var(--unm-background); border: 1px solid var(--unm-text); font-weight: 600; }
+.skip-link:focus { top: 8px; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--content-max-width)); margin-inline: auto; }
+.arrow { margin-left: 0.5em; }
+.text-button { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.text-button:hover { text-decoration-thickness: 2px; }
+
+/* Header: logo, the doors, language, display settings. Phones list the four tools; Research joins at 600 px
+   (it is also a section of the page and a footer link), so the row does not wrap one item onto its own line. */
+.site-header { border-bottom: 1px solid var(--unm-rule); }
+.header-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 16px; min-height: 64px; }
+.brand { display: inline-flex; align-items: center; min-height: 44px; justify-self: start; text-decoration: none; }
+.brand picture { display: block; }
+.brand img { width: auto; height: 32px; }
+.brand .brand-dark { display: none; }
+.door-nav { grid-column: 1 / -1; grid-row: 2; border-top: 1px solid var(--unm-rule); }
+.door-nav ul { display: flex; flex-wrap: wrap; justify-content: flex-start; column-gap: 16px; }
+.door-nav .nav-research { display: none; }
+.door-nav a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-size: 0.9375rem; text-decoration: none; }
+.door-nav a:hover { text-decoration: underline; }
+
+/* First screen: the claim, the conditions, the context line, the first door. */
+.intro { display: grid; gap: 32px; padding-block: 20px 24px; }
+.intro h1 { max-width: 21ch; text-wrap: balance; font-size: clamp(1.75rem, 1.25rem + 2.3vw, 3.25rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.01em; }
+.lede { max-width: 38rem; margin-top: 14px; font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem); line-height: 1.5; }
+.context { max-width: 38rem; margin-top: 12px; color: var(--unm-secondary); font-size: 0.9375rem; }
+.intro-actions { display: flex; flex-wrap: wrap; align-items: center; column-gap: 24px; margin-top: 20px; }
+.intro-actions .door-link { flex: 1 1 100%; }
+
+/* The homepage is the hub alone. Wide screens show the infographic with a link over each part; phones show the
+   four person tiles, each one tap away, and a row to the About page. */
+.intro-head, .hub { grid-column: 1 / -1; }
+.intro-head .intro-actions { margin-top: 16px; }
+.hub { margin: 0; }
+/* Under the site bar: the submission, the video, and the tour, in one slim band. */
+.hub-band { border-bottom: 1px solid var(--unm-rule); background: var(--unm-code); }
+.hub-band .wrap { display: flex; flex-wrap: wrap; justify-content: space-evenly; gap: 2px 16px; padding-block: 2px; }
+@media (min-width: 600px) { .hub-band .wrap { justify-content: center; column-gap: 32px; } }
+.hub-band a, .hub-band button { display: inline-flex; align-items: center; min-height: 36px; padding: 0; border: 0; background: none; color: var(--unm-text); font: inherit; font-size: 0.875rem; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; cursor: pointer; }
+.hub-band a:hover, .hub-band button:hover { text-decoration-thickness: 2px; }
+.hub-wide { display: none; position: relative; }
+.hub-wide img { display: block; width: 100%; height: auto; }
+.hub-zone { position: absolute; display: block; border: 1px solid transparent; }
+.hub-zone:hover { border-color: var(--unm-rule); }
+.hub-zone:focus-visible { border-color: var(--unm-accent); outline: 2px solid var(--unm-accent); outline-offset: 2px; }
+.hub-zone-clinicians { left: 1%; top: 10%; width: 34%; height: 42%; }
+.hub-zone-policy { left: 67%; top: 10%; width: 32%; height: 42%; }
+.hub-zone-patients { left: 1%; top: 61%; width: 26%; height: 30%; }
+.hub-zone-developers { left: 61%; top: 61%; width: 38%; height: 30%; }
+.hub-zone-data { left: 40%; top: 10%; width: 19.5%; height: 20%; }
+.hub-zone-ai { left: 42%; top: 37%; width: 16%; height: 25%; }
+.hub-zone-papers { left: 45%; top: 71%; width: 10%; height: 17%; }
+.hub-narrow { display: grid; justify-items: center; gap: 20px; }
+.hub-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; margin: 0; padding: 0; list-style: none; }
+.hub-tiles a { display: grid; align-content: start; gap: 4px; height: 100%; padding: 8px 8px 12px; border: 1px solid var(--unm-rule); color: var(--unm-text); text-decoration: none; }
+.hub-tiles a:hover strong { text-decoration: underline; }
+.hub-tiles img { display: block; width: 100%; height: auto; }
+.hub-tiles strong { font-weight: 600; }
+.hub-about { width: 100%; }
+.file-list-title { margin: 32px 0 8px; font-size: 1rem; font-weight: 600; }
+@media (min-width: 760px) {
+  .hub-wide { display: block; }
+  .hub-narrow { display: none; }
+}
+
+/* A door link is a full-width row between two hairlines, label left, arrow right. */
+.door-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding-block: 10px; border-block: 1px solid var(--unm-text); font-weight: 600; text-decoration: none; }
+.door-link:hover { text-decoration: underline; }
+.door-link .arrow { margin-left: 0; }
+
+/* On this page: the doors as a numbered list, like a problem list. Hidden on phones, where the page itself is the list. */
+.contents { display: none; }
+.contents ol { border-top: 1px solid var(--unm-text); }
+.contents li { border-bottom: 1px solid var(--unm-rule); }
+.contents a { display: grid; grid-template-columns: 2.5rem minmax(0, 7.5rem) minmax(0, 1fr); align-items: baseline; column-gap: 12px; min-height: 48px; padding-block: 12px; text-decoration: none; }
+.contents a:hover .label { text-decoration: underline; }
+.contents .num { color: var(--unm-secondary); font: 400 0.875rem/1.4 "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.contents .label { font-weight: 600; }
+.contents .desc { color: var(--unm-secondary); font-size: 0.9375rem; }
+
+/* Door sections: heading and one sentence, a real screen, the link. */
+.door, .team { padding-block: 40px; border-top: 1px solid var(--unm-rule); scroll-margin-top: 16px; }
+.door { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-content: start; }
+.door > * { min-width: 0; }
+.door h2, .team h2 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); font-weight: 400; line-height: 1.2; }
+.door-head p { max-width: 36rem; margin-top: 10px; font-size: 1.0625rem; }
+/* Each screen is also a link to its tool (tabindex=-1: the door link below is the keyboard stop). */
+.shot-link { display: block; }
+.door-shot img { width: 100%; border: 1px solid var(--unm-rule); background: #f6f5f1; }
+.shot-link:hover img { border-color: var(--unm-text); }
+.door-shot figcaption { margin-top: 8px; color: var(--unm-secondary); font-size: 0.875rem; line-height: 1.45; }
+/* Developers: the code as text, at full size in a box that scrolls sideways when the lines are longer than the column. */
+.code-sample { margin: 0; padding: 16px; overflow-x: auto; overscroll-behavior-x: contain; border: 1px solid var(--unm-rule); background: var(--unm-code); color: var(--unm-text); font: 400 0.875rem/1.6 "IBM Plex Mono", ui-monospace, monospace; tab-size: 2; }
+.code-sample code { font: inherit; }
+.door-action { max-width: 36rem; }
+
+.file-list { border-top: 1px solid var(--unm-text); }
+.file-list li { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; border-bottom: 1px solid var(--unm-rule); }
+.file-list li > a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 10px; font-weight: 600; }
+.file-list .meta { flex-shrink: 0; color: var(--unm-secondary); font: 400 0.875rem/1.4 "IBM Plex Mono", ui-monospace, monospace; }
+.file-list .meta a { display: inline-flex; align-items: center; justify-content: flex-end; min-width: 44px; min-height: 44px; }
+
+/* Conditions: what we built for each, as a hairline table that scrolls sideways on a phone. */
+.cover, .evidence { padding-block: 40px; border-top: 1px solid var(--unm-rule); scroll-margin-top: 16px; }
+.cover h2, .evidence h2 { font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); font-weight: 400; line-height: 1.2; }
+.table-scroll { margin-top: 20px; overflow-x: auto; overscroll-behavior-x: contain; }
+.table-scroll:focus-visible { outline: 2px solid var(--unm-accent); outline-offset: 2px; }
+.cover-table { width: 100%; min-width: 40rem; border-collapse: collapse; font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+.cover-table caption { caption-side: bottom; padding-top: 10px; color: var(--unm-secondary); font-size: 0.875rem; line-height: 1.45; text-align: left; }
+.cover-table th, .cover-table td { padding: 8px 12px 8px 0; border-bottom: 1px solid var(--unm-rule); text-align: left; vertical-align: baseline; }
+.cover-table thead th { border-bottom: 1px solid var(--unm-text); color: var(--unm-secondary); font-size: 0.875rem; font-weight: 600; }
+.cover-table tbody th { font-weight: 600; }
+.cover-table .family th { padding-top: 16px; color: var(--unm-secondary); font-size: 0.875rem; font-weight: 600; }
+.cover-table td a { display: inline-flex; align-items: center; min-height: 32px; color: var(--unm-text); }
+.cover-table .none { color: var(--unm-secondary); }
+
+/* How we know: short lists in columns. */
+.evidence-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 20px; }
+.evidence-grid h3 { padding-bottom: 6px; border-bottom: 1px solid var(--unm-text); font-size: 1rem; font-weight: 600; }
+.evidence-grid ul { margin-top: 4px; }
+.evidence-grid li { padding-block: 8px; border-bottom: 1px solid var(--unm-rule); font-size: 0.9375rem; line-height: 1.5; }
+.evidence .door-action { margin-top: 24px; }
+@media (min-width: 900px) {
+  .evidence-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+}
+
+.team ul { margin-top: 16px; border-top: 1px solid var(--unm-text); }
+.team li { display: flex; flex-direction: column; padding-block: 12px; border-bottom: 1px solid var(--unm-rule); }
+.team .name { font-weight: 600; }
+.team .org { color: var(--unm-secondary); }
+.team .links { display: flex; flex-wrap: wrap; column-gap: 16px; }
+.team .links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--unm-text); }
+.team p { max-width: 38rem; margin-top: 16px; color: var(--unm-secondary); font-size: 0.9375rem; }
+.team .contact { margin-top: 4px; }
+.team .contact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--unm-text); }
+
+.unm-sitefooter { padding-block: 16px 32px; border-top: 1px solid var(--unm-text); }
+.unm-sitefooter-inner { width: min(100% - 2 * var(--gutter), 1120px); margin-inline: auto; }
+.unm-sitefooter ul { display: flex; flex-wrap: wrap; column-gap: 20px; }
+.unm-sitefooter a { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.9375rem; text-decoration: none; }
+.unm-sitefooter a:hover { text-decoration: underline; }
+.unm-sitefooter-legal a { color: var(--unm-secondary); font-size: 0.875rem; }
+.unm-sitefooter p { margin-top: 8px; color: var(--unm-secondary); font-size: 0.875rem; }
+.unm-sitefooter .unm-sitefooter-note { color: var(--unm-text); }
+
+/* Tablet and up: wide logo, contents list beside the claim. */
+@media (min-width: 600px) {
+  :root { --gutter: 24px; }
+  .intro { padding-block: 24px 40px; }
+  .door-nav ul { column-gap: 24px; }
+  .door-nav .nav-research { display: list-item; }
+  .intro-actions .door-link { flex: 0 1 22rem; }
+  .contents { display: block; }
+  .team li { flex-direction: row; flex-wrap: wrap; align-items: baseline; column-gap: 16px; }
+  .phone-hint { display: none; }
+}
+
+/* Desktop: doors in the header row, screens beside the copy. */
+@media (min-width: 960px) {
+  :root { --gutter: 40px; }
+  body { font-size: 1.0625rem; }
+  .header-row { grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 24px; }
+  .door-nav { grid-column: 2; grid-row: 1; border-top: 0; }
+  .door-nav ul { column-gap: 20px; } /* the five Spanish labels fit on one line at 960 px */
+  .intro { padding-block: 24px 48px; }
+  .door { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr; grid-template-areas: "head shot" "action shot"; column-gap: 56px; row-gap: 24px; padding-block: 64px; }
+  .door-head { grid-area: head; }
+  .door-shot, .file-list { grid-area: shot; }
+  .door-action { grid-area: action; align-self: start; }
+  /* The code's longest line is wider than the screen column, so the developer door puts it under the text. */
+  .door-code { grid-template-rows: auto auto auto; grid-template-areas: "head ." "shot shot" "action ."; }
+  .team { padding-block: 64px; }
+}
+
+@media (forced-colors: active) {
+  .door-link, .contents ol, .file-list, .team ul { border-color: CanvasText; }
+  .setting-choices label:has(input:checked) { outline: 2px solid Highlight; }
+}
+@media print {
+  .site-header .header-tools, .door-nav, .skip-link, .tour, [data-tour-open] { display: none; }
+}

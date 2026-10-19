@@ -1,0 +1,79 @@
+{
+ "source": "NHANES August 2021-August 2023 DEMO_L, interview weights WTINT2YR, adults 18+ (US civilian noninstitutionalized population)",
+ "sex": {
+  "Female": 0.515328,
+  "Male": 0.484672
+ },
+ "age": {
+  "Female": {
+   "18-39": 0.365928,
+   "40-49": 0.156214,
+   "50-59": 0.162838,
+   "60-69": 0.158583,
+   "70+": 0.156437
+  },
+  "Male": {
+   "18-39": 0.383574,
+   "40-49": 0.160976,
+   "50-59": 0.169196,
+   "60-69": 0.154637,
+   "70+": 0.131616
+  }
+ },
+ "age_race": {
+  "Female": {
+   "18-39|Hispanic or Latino": 0.077464,
+   "18-39|NH Asian": 0.028422,
+   "18-39|NH Black": 0.046011,
+   "18-39|NH White": 0.189906,
+   "18-39|NH other or multiple": 0.024125,
+   "40-49|Hispanic or Latino": 0.031198,
+   "40-49|NH Asian": 0.009954,
+   "40-49|NH Black": 0.018967,
+   "40-49|NH White": 0.086052,
+   "40-49|NH other or multiple": 0.010043,
+   "50-59|Hispanic or Latino": 0.025016,
+   "50-59|NH Asian": 0.010197,
+   "50-59|NH Black": 0.020329,
+   "50-59|NH White": 0.097239,
+   "50-59|NH other or multiple": 0.010058,
+   "60-69|Hispanic or Latino": 0.017327,
+   "60-69|NH Asian": 0.007143,
+   "60-69|NH Black": 0.018033,
+   "60-69|NH White": 0.107489,
+   "60-69|NH other or multiple": 0.008592,
+   "70+|Hispanic or Latino": 0.013769,
+   "70+|NH Asian": 0.005433,
+   "70+|NH Black": 0.014345,
+   "70+|NH White": 0.116093,
+   "70+|NH other or multiple": 0.006798
+  },
+  "Male": {
+   "18-39|Hispanic or Latino": 0.085363,
+   "18-39|NH Asian": 0.024268,
+   "18-39|NH Black": 0.043442,
+   "18-39|NH White": 0.201458,
+   "18-39|NH other or multiple": 0.029043,
+   "40-49|Hispanic or Latino": 0.034301,
+   "40-49|NH Asian": 0.012657,
+   "40-49|NH Black": 0.015277,
+   "40-49|NH White": 0.089458,
+   "40-49|NH other or multiple": 0.009283,
+   "50-59|Hispanic or Latino": 0.02646,
+   "50-59|NH Asian": 0.011176,
+   "50-59|NH Black": 0.019752,
+   "50-59|NH White": 0.101388,
+   "50-59|NH other or multiple": 0.010421,
+   "60-69|Hispanic or Latino": 0.016798,
+   "60-69|NH Asian": 0.006242,
+   "60-69|NH Black": 0.014166,
+   "60-69|NH White": 0.107661,
+   "60-69|NH other or multiple": 0.009769,
+   "70+|Hispanic or Latino": 0.010823,
+   "70+|NH Asian": 0.005678,
+   "70+|NH Black": 0.00999,
+   "70+|NH White": 0.096642,
+   "70+|NH other or multiple": 0.008483
+  }
+ }
+}

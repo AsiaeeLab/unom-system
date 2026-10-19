@@ -1,0 +1,852 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:b08696fd-8366-5d1c-a789-09ef62dd0b46",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "sofia",
+    "gender": "female",
+    "birthDate": "1979-04-22",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Sofia"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:26142d7f-0598-518c-b7da-46cd909b91fc",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2020-03-09"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:aa122cac-8cb5-54e6-8999-582f05729a13",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2020-11-16"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:6e343eff-000c-5211-afe5-f4392211cd12",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2021-06-21"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:13868b42-8ac0-50e1-a647-3c075ef58bf5",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-4",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2022-01-24"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:df014b9f-af5b-501e-af2e-ee02de44e5ee",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2022-08-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:e1069d22-14a4-54ab-ab43-de2c548f08a0",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2023-03-13"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:7ffe0761-9bbd-521b-ab45-9771c763f4b8",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-7",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2023-07-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:f80de491-553e-5daa-97ff-5739c68ab78d",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-8",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2023-10-02"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:90735625-ef69-5675-9635-ae37418962e9",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-9",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2023-12-11"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:7cc5fa40-0329-5ca3-80c6-6ca8adb2ba41",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-10",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2024-02-05"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:b53c6ec1-b4de-535d-ace0-9bf45455b021",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sofia-enc-11",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "period": {
+     "start": "2024-04-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:e0f41870-fe70-5e0a-b592-e3f2bdefaaf6",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-12",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "M54.2",
+       "display": "Cervicalgia"
+      }
+     ],
+     "text": "Cervicalgia"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2020-03-09",
+    "recordedDate": "2020-03-09"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:3cfb9a01-4d9b-5c7e-a43f-edc015013a13",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-13",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "M54.50",
+       "display": "Low back pain, unspecified"
+      }
+     ],
+     "text": "Low back pain, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2020-11-16",
+    "recordedDate": "2020-11-16"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:e1e150d3-a47a-5e46-831e-269e281446e2",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-14",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "M26.629",
+       "display": "Arthralgia of temporomandibular joint, unspecified side"
+      }
+     ],
+     "text": "Arthralgia of temporomandibular joint, unspecified side"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2021-06-21",
+    "recordedDate": "2021-06-21"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:380b89e1-5684-5ced-afb8-8a925ddef060",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-15",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R51.9",
+       "display": "Headache, unspecified"
+      }
+     ],
+     "text": "Headache, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2022-01-24",
+    "recordedDate": "2022-01-24"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:b2bc9c3f-a71e-5464-a6d5-36e30606785b",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-16",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "K58.9",
+       "display": "Irritable bowel syndrome without diarrhea"
+      }
+     ],
+     "text": "Irritable bowel syndrome without diarrhea"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2022-08-15",
+    "recordedDate": "2022-08-15"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:cffe23b6-1d93-510a-a82c-c934f6cc96a0",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-17",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "G47.00",
+       "display": "Insomnia, unspecified"
+      }
+     ],
+     "text": "Insomnia, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2023-03-13",
+    "recordedDate": "2023-03-13"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:98f57528-eae5-5e5d-b6ce-b559b01657cc",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-18",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "F41.1",
+       "display": "Generalized anxiety disorder"
+      }
+     ],
+     "text": "Generalized anxiety disorder"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2023-07-10",
+    "recordedDate": "2023-07-10"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:528d0cbd-bfd5-5593-a4ea-a8ee42cc8ace",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sofia-cond-19",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R53.83",
+       "display": "Other fatigue"
+      }
+     ],
+     "text": "Other fatigue"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "onsetDateTime": "2024-02-05",
+    "recordedDate": "2024-02-05"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:5addfddd-0129-5e7b-88c5-26f2cd94257d",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "sofia-obs-20",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "11572-5",
+       "display": "Rheumatoid factor [Units/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Rheumatoid factor [Units/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "effectiveDateTime": "2022-01-24",
+    "valueQuantity": {
+     "value": 8,
+     "unit": "[IU]/mL"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:3523b762-1cde-5e4c-b3e5-81def77be1ff",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "sofia-obs-21",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "32218-0",
+       "display": "Cyclic citrullinated peptide Ab [Units/volume] in Serum by Immunoassay"
+      }
+     ],
+     "text": "Cyclic citrullinated peptide Ab [Units/volume] in Serum by Immunoassay"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "effectiveDateTime": "2022-01-24",
+    "valueQuantity": {
+     "value": 3,
+     "unit": "U/mL"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:eea02410-60bd-5174-a6a9-39d124abaa8e",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "sofia-obs-22",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "5048-4",
+       "display": "Nuclear Ab [Titer] in Serum"
+      }
+     ],
+     "text": "Nuclear Ab [Titer] in Serum"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "effectiveDateTime": "2022-01-24",
+    "valueQuantity": {
+     "value": 40,
+     "unit": "{titer}"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:4323f2d4-bcb8-5450-95b9-09aec179e8fd",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "sofia-obs-23",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "4537-7",
+       "display": "Erythrocyte sedimentation rate by Westergren method"
+      }
+     ],
+     "text": "Erythrocyte sedimentation rate by Westergren method"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "effectiveDateTime": "2022-01-24",
+    "valueQuantity": {
+     "value": 12,
+     "unit": "mm/h"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:564e9f3a-f59d-5e3b-a0f5-19afb1ae5fee",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "sofia-obs-24",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "1988-5",
+       "display": "C reactive protein [Mass/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "C reactive protein [Mass/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "effectiveDateTime": "2022-01-24",
+    "valueQuantity": {
+     "value": 2.1,
+     "unit": "mg/L"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:85a9286c-c97a-545d-8a71-113e3e8da077",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "sofia-obs-25",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "2157-6",
+       "display": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Creatine kinase [Enzymatic activity/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "effectiveDateTime": "2022-01-24",
+    "valueQuantity": {
+     "value": 96,
+     "unit": "U/L"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:9921ac98-a89b-5bae-9a0a-003904c1adb5",
+   "resource": {
+    "resourceType": "Observation",
+    "id": "sofia-obs-26",
+    "status": "final",
+    "category": [
+     {
+      "coding": [
+       {
+        "code": "laboratory"
+       }
+      ]
+     }
+    ],
+    "code": {
+     "coding": [
+      {
+       "system": "http://loinc.org",
+       "code": "3016-3",
+       "display": "Thyrotropin [Units/volume] in Serum or Plasma"
+      }
+     ],
+     "text": "Thyrotropin [Units/volume] in Serum or Plasma"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "effectiveDateTime": "2022-01-24",
+    "valueQuantity": {
+     "value": 2.2,
+     "unit": "m[IU]/L"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:d2531e3c-5c01-5273-a956-2c1ad00787ad",
+   "resource": {
+    "resourceType": "Procedure",
+    "id": "sofia-proc-27",
+    "status": "completed",
+    "code": {
+     "coding": [
+      {
+       "system": "http://www.ama-assn.org/go/cpt",
+       "code": "97162",
+       "display": "Physical therapy evaluation, moderate complexity"
+      }
+     ],
+     "text": "Physical therapy evaluation, moderate complexity"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "performedDateTime": "2020-11-23"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:5278f3fa-bad0-55f8-9a80-8d6d6d494bd8",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "sofia-med-28",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "coding": [
+      {
+       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+       "display": "naproxen 500 MG Oral Tablet"
+      }
+     ],
+     "text": "naproxen 500 MG Oral Tablet"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "authoredOn": "2020-03-09"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:91e8a3bb-59ab-5d07-b3b1-c7ce1c07c716",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "sofia-med-29",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "coding": [
+      {
+       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+       "display": "cyclobenzaprine hydrochloride 10 MG Oral Tablet"
+      }
+     ],
+     "text": "cyclobenzaprine hydrochloride 10 MG Oral Tablet"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "authoredOn": "2020-11-16"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:459c1f0a-648d-5d4e-adfd-42e6251f488e",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "sofia-med-30",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "coding": [
+      {
+       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+       "display": "tizanidine 4 MG Oral Tablet"
+      }
+     ],
+     "text": "tizanidine 4 MG Oral Tablet"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "authoredOn": "2021-06-21"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:b4063b99-1bb4-52c0-b4e7-2eefc2c12bff",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "sofia-med-31",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "coding": [
+      {
+       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+       "display": "gabapentin 300 MG Oral Capsule"
+      }
+     ],
+     "text": "gabapentin 300 MG Oral Capsule"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "authoredOn": "2022-08-15"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:d006b879-7b4e-53fe-94b4-515762b9e441",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "sofia-med-32",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "coding": [
+      {
+       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+       "display": "trazodone hydrochloride 50 MG Oral Tablet"
+      }
+     ],
+     "text": "trazodone hydrochloride 50 MG Oral Tablet"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "authoredOn": "2023-03-13"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:d21d4151-cc04-5d11-83f0-ad99c5f51b5c",
+   "resource": {
+    "resourceType": "MedicationRequest",
+    "id": "sofia-med-33",
+    "status": "active",
+    "intent": "order",
+    "medicationCodeableConcept": {
+     "coding": [
+      {
+       "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+       "display": "duloxetine 30 MG Delayed Release Oral Capsule"
+      }
+     ],
+     "text": "duloxetine 30 MG Delayed Release Oral Capsule"
+    },
+    "subject": {
+     "reference": "Patient/sofia"
+    },
+    "authoredOn": "2023-07-10"
+   }
+  }
+ ]
+}

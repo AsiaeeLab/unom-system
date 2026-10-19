@@ -1,0 +1,20 @@
+{
+ "cards": [
+  {
+   "summary": "Long COVID: High chart pattern, 6.1× the post-COVID average. Review the dated findings.",
+   "indicator": "warning",
+   "detail": "**Chart pattern similar to adults later coded with Long COVID.**\n\nEstimated probability, as of day 90, of a Long COVID code 91 to 455 days after COVID-19: 6.2% (6.1× the average for adults 90 days after COVID-19). Band: High (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. 3+ symptom types coded in days 31-90 (2024-02-20, 2024-03-05, 2024-03-25)\n2. Personal history of COVID-19 coded (days 31-90) (2024-03-12)\n3. COVID-19 still coded at a follow-up visit (days 31-90) (2024-02-20)\n\nNext step: Review the dated findings and ask the patient to complete the RECOVER symptom list, the DePaul post-exertional malaise screen, and the PCFS functional status grade. If the review supports post-COVID illness, consider a post-COVID clinic referral or clinical trial screening.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-longcovid 1.2.0.",
+   "source": {
+    "label": "Undiagnosed No More (research decision support)",
+    "url": "https://undiagnosednomore.org/developers/"
+   },
+   "links": [
+    {
+     "label": "Open Undiagnosed No More (SMART app)",
+     "url": "https://undiagnosednomore.org/smart/",
+     "type": "smart"
+    }
+   ]
+  }
+ ]
+}

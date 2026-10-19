@@ -1,0 +1,84 @@
+/*
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+
+/*.css
+  Cache-Control: public, max-age=3600
+
+# The paper drafts are linked from the site but kept out of search results until the medRxiv preprints are
+# posted (then the links point to medRxiv). Crawlers may fetch them, so they see this header and obey it.
+/about/papers/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: public, max-age=300
+
+# The athenaOne Preview exception is deliberately limited to the embedded app.
+/athena
+  ! Content-Security-Policy
+  ! X-Frame-Options
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://api.preview.platform.athenahealth.com https://athena.okta.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors https://preview.athenahealth.com; upgrade-insecure-requests
+  X-Robots-Tag: noindex, nofollow
+
+/athena/*
+  ! Content-Security-Policy
+  ! X-Frame-Options
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://api.preview.platform.athenahealth.com https://athena.okta.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors https://preview.athenahealth.com; upgrade-insecure-requests
+  X-Robots-Tag: noindex, nofollow
+
+/smart
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://launch.smarthealthit.org; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+
+/smart/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://launch.smarthealthit.org; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+
+/epic
+  ! Content-Security-Policy
+  ! X-Frame-Options
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://fhir.epic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors https://fhir.epic.com https://open.epic.com; upgrade-insecure-requests
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+
+/epic/*
+  ! Content-Security-Policy
+  ! X-Frame-Options
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://fhir.epic.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors https://fhir.epic.com https://open.epic.com; upgrade-insecure-requests
+  Cache-Control: no-store
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex, nofollow
+
+# Patient app: same-origin everything, plus the public ClinicalTrials.gov API for the trial finder.
+/patient
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self' https://clinicaltrials.gov; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
+/patient/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'self' https://clinicaltrials.gov; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
+/models/*
+  Cache-Control: public, max-age=300
+  Access-Control-Allow-Origin: *
+
+/data/*
+  Cache-Control: public, max-age=300

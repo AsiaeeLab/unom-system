@@ -1,0 +1,61 @@
+indicator,group,subgroup,mean_pct,pooled_se_pct,min_pct,max_pct,n_periods,first_period,last_period
+current_among_infected,By Age,18 - 29 years,9.8,0.173,6.8,17.0,30,2022-06-01,2024-09-16
+current_among_infected,By Age,30 - 39 years,10.44,0.124,6.8,16.5,30,2022-06-01,2024-09-16
+current_among_infected,By Age,40 - 49 years,12.61,0.125,9.7,19.5,30,2022-06-01,2024-09-16
+current_among_infected,By Age,50 - 59 years,13.59,0.135,10.2,21.2,30,2022-06-01,2024-09-16
+current_among_infected,By Age,60 - 69 years,12.41,0.143,8.4,20.9,30,2022-06-01,2024-09-16
+current_among_infected,By Age,70 - 79 years,10.62,0.207,6.0,23.3,30,2022-06-01,2024-09-16
+current_among_infected,By Age,80 years and above,10.61,0.419,5.3,19.1,30,2022-06-01,2024-09-16
+current_among_infected,By Race/Hispanic ethnicity,Hispanic or Latino,11.36,0.181,7.4,19.1,30,2022-06-01,2024-09-16
+current_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",6.46,0.219,3.5,14.3,30,2022-06-01,2024-09-16
+current_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic Black, single race",10.68,0.187,7.2,18.5,30,2022-06-01,2024-09-16
+current_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic White, single race",11.9,0.068,9.0,19.5,30,2022-06-01,2024-09-16
+current_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",15.53,0.283,11.6,27.6,30,2022-06-01,2024-09-16
+current_among_infected,By Sex,Female,13.9,0.083,10.3,22.6,30,2022-06-01,2024-09-16
+current_among_infected,By Sex,Male,8.9,0.085,6.4,14.5,30,2022-06-01,2024-09-16
+current_among_infected,National Estimate,United States,11.57,0.06,8.7,18.9,30,2022-06-01,2024-09-16
+ever_among_infected,By Age,18 - 29 years,28.89,0.265,25.8,36.1,30,2022-06-01,2024-09-16
+ever_among_infected,By Age,30 - 39 years,29.1,0.184,25.2,34.0,30,2022-06-01,2024-09-16
+ever_among_infected,By Age,40 - 49 years,32.01,0.184,27.3,36.7,30,2022-06-01,2024-09-16
+ever_among_infected,By Age,50 - 59 years,32.27,0.193,27.1,38.2,30,2022-06-01,2024-09-16
+ever_among_infected,By Age,60 - 69 years,28.19,0.192,23.9,34.4,30,2022-06-01,2024-09-16
+ever_among_infected,By Age,70 - 79 years,23.47,0.258,20.4,37.7,30,2022-06-01,2024-09-16
+ever_among_infected,By Age,80 years and above,23.29,0.568,18.5,29.0,30,2022-06-01,2024-09-16
+ever_among_infected,By Race/Hispanic ethnicity,Hispanic or Latino,33.63,0.274,28.9,39.6,30,2022-06-01,2024-09-16
+ever_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",20.19,0.338,14.4,26.9,30,2022-06-01,2024-09-16
+ever_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic Black, single race",29.64,0.298,26.0,37.8,30,2022-06-01,2024-09-16
+ever_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic White, single race",28.42,0.091,24.9,33.8,30,2022-06-01,2024-09-16
+ever_among_infected,By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",36.43,0.403,28.2,42.5,30,2022-06-01,2024-09-16
+ever_among_infected,By Sex,Female,34.29,0.109,30.1,41.5,30,2022-06-01,2024-09-16
+ever_among_infected,By Sex,Male,23.88,0.124,20.6,28.4,30,2022-06-01,2024-09-16
+ever_among_infected,National Estimate,United States,29.41,0.08,25.6,35.1,31,2022-06-01,2024-09-16
+ever_had_covid,By Age,18 - 29 years,59.96,0.227,49.6,65.4,30,2022-06-01,2024-09-16
+ever_had_covid,By Age,30 - 39 years,61.71,0.153,47.4,67.9,30,2022-06-01,2024-09-16
+ever_had_covid,By Age,40 - 49 years,59.97,0.153,46.5,66.0,30,2022-06-01,2024-09-16
+ever_had_covid,By Age,50 - 59 years,55.18,0.155,40.7,61.9,30,2022-06-01,2024-09-16
+ever_had_covid,By Age,60 - 69 years,47.66,0.138,32.0,56.6,30,2022-06-01,2024-09-16
+ever_had_covid,By Age,70 - 79 years,41.41,0.173,23.3,50.5,30,2022-06-01,2024-09-16
+ever_had_covid,By Age,80 years and above,37.89,0.367,18.6,50.6,30,2022-06-01,2024-09-16
+ever_had_covid,By Race/Hispanic ethnicity,Hispanic or Latino,57.8,0.231,46.9,63.5,30,2022-06-01,2024-09-16
+ever_had_covid,By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",54.03,0.297,36.8,62.6,30,2022-06-01,2024-09-16
+ever_had_covid,By Race/Hispanic ethnicity,"Non-Hispanic Black, single race",44.67,0.205,36.4,49.8,30,2022-06-01,2024-09-16
+ever_had_covid,By Race/Hispanic ethnicity,"Non-Hispanic White, single race",55.61,0.069,39.1,63.6,30,2022-06-01,2024-09-16
+ever_had_covid,By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",55.93,0.306,44.4,63.3,30,2022-06-01,2024-09-16
+ever_had_covid,By Sex,Female,56.83,0.085,42.2,64.4,30,2022-06-01,2024-09-16
+ever_had_covid,By Sex,Male,52.47,0.108,38.3,58.6,30,2022-06-01,2024-09-16
+ever_had_covid,National Estimate,United States,54.71,0.069,40.3,61.6,30,2022-06-01,2024-09-16
+significant_limitation_all_adults,By Age,18 - 29 years,1.17,0.062,0.6,1.9,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Age,30 - 39 years,1.41,0.042,1.0,2.0,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Age,40 - 49 years,1.89,0.047,1.4,2.4,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Age,50 - 59 years,1.92,0.042,1.2,2.3,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Age,60 - 69 years,1.52,0.044,1.0,1.9,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Age,70 - 79 years,1.05,0.047,0.7,1.7,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Age,80 years and above,1.36,0.112,0.7,3.9,25,2022-10-05,2024-09-16
+significant_limitation_all_adults,By Race/Hispanic ethnicity,Hispanic or Latino,1.81,0.07,1.0,3.0,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Race/Hispanic ethnicity,"Non-Hispanic Asian, single race",0.7,0.057,0.2,1.8,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Race/Hispanic ethnicity,"Non-Hispanic Black, single race",1.12,0.048,0.7,2.2,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Race/Hispanic ethnicity,"Non-Hispanic White, single race",1.5,0.02,1.2,1.8,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Race/Hispanic ethnicity,"Non-Hispanic, other races and multiple races",2.59,0.105,1.5,4.0,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Sex,Female,1.89,0.025,1.5,2.4,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,By Sex,Male,1.14,0.025,0.8,1.6,26,2022-09-14,2024-09-16
+significant_limitation_all_adults,National Estimate,United States,1.52,0.018,1.2,1.9,26,2022-09-14,2024-09-16

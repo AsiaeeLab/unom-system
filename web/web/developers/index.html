@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#171918" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Integrate the UNOM models: the CDS Hooks service, the SMART on FHIR app, the scorer library, the model files and their contract, FHIR inputs, and test vectors.">
+    <link rel="canonical" href="https://undiagnosednomore.org/developers/">
+    <link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml">
+    <link rel="stylesheet" href="/shared/site-nav.css?v=20261024" />
+    <script src="/homepage-settings.js?v=20261019"></script>
+    <link rel="stylesheet" href="/developers/developers.css?v=20261014">
+    <title>Developer documentation | Undiagnosed No More</title>
+  </head>
+  <body data-door="developers">
+    <!-- Hand-written page. Blocks between "generated:" markers are rewritten by analysis/build_models_guide.py. -->
+    <main class="dev-layout">
+      <header class="dev-head" id="overview">
+        <h1>Developer documentation</h1>
+        <p class="lede">The condition cards run versioned JSON model files through one scorer. You can call the scorer from an EHR through the CDS Hooks service, launch the clinician view as a SMART on FHIR app, or run the scorer and the model files in your own code. Synthetic test patients with expected outputs let you check any implementation.</p>
+      </header>
+<!-- generated:nav:start -->
+<nav class="dev-nav" aria-label="Developer documentation"><div class="dev-nav-group"><p class="dev-nav-title">Start</p><ul><li><a href="#overview">Overview</a></li><li><a href="#try">Try the scorer</a></li></ul></div><div class="dev-nav-group"><p class="dev-nav-title">Integrate</p><ul><li><a href="#cds-hooks">CDS Hooks service</a></li><li><a href="#ehr-launch">SMART on FHIR app</a></li><li><a href="#scoring">Scorer library</a></li></ul></div><div class="dev-nav-group"><p class="dev-nav-title">Reference</p><ul><li><a href="#registry">Model registry</a></li><li><a href="#spec">Model contract</a></li><li><a href="#fhir-inputs">FHIR inputs</a></li><li><a href="#vectors">Test vectors</a></li><li><a href="#versioning">Versioning</a></li><li><a href="#source">Source code</a></li></ul></div><div class="dev-nav-group"><p class="dev-nav-title">Documents</p><ul><li><a href="/developers/models">Models guide</a></li><li><a href="/developers/spec">Interface spec</a></li></ul></div></nav>
+<!-- generated:nav:end -->
+      <div class="doc">
+        <section aria-label="How the pieces fit">
+<!-- generated:overview:start -->
+<figure class="flow">
+<figcaption class="flow-caption">How the pieces fit</figcaption>
+<div class="flow-grid">
+<div class="flow-col"><p class="flow-head"><a href="#registry">Model files</a></p><ul><li><code>longcovid.json</code> 1.2.0</li><li><code>chronicfatigue.json</code> 1.0.0</li><li><code>fibromyalgia.json</code> 1.0.0</li><li><code>endometriosis.json</code> 1.0.0</li><li><code>lyme.json</code> 1.0.0</li><li><code>lupus.json</code> 1.0.0</li><li><code>migraine.json</code> 1.0.0</li><li><code>depression.json</code> 1.0.0</li><li><code>anxiety.json</code> 1.0.0</li></ul><p class="flow-note">JSON: features with their codes, windows, and weights, a calibration map, and risk bands.</p></div>
+<div class="flow-col"><p class="flow-head"><a href="#scoring">Scorer</a></p><ul><li><code>score_fhir.py</code>, the Python reference</li><li><code>scorer.js</code>, its JavaScript port</li></ul><p class="flow-note">In: a model file, a FHIR R4 Bundle, and a scoring date. Out: status, probability, band, and the dated findings behind the score.</p></div>
+<div class="flow-col"><p class="flow-head">Where it runs</p><ul><li><a href="#cds-hooks">CDS Hooks service</a></li><li><a href="#ehr-launch">SMART on FHIR app</a></li><li><a href="#scoring">Your code</a></li></ul><p class="flow-note">The service and the apps import the same <code>scorer.js</code>.</p></div>
+</div>
+<p class="flow-base"><a href="#vectors">Test vectors</a>: 18 synthetic FHIR R4 patients with the reference scorer's output for each model. The JavaScript scorer reproduces every one to 1e-9.</p>
+</figure>
+<!-- generated:overview:end -->
+        </section>
+
+        <section id="try" aria-labelledby="try-title">
+          <h2 id="try-title">Try the scorer</h2>
+          <p>This runs <code>/shared/scorer.js</code> in your browser on a synthetic test patient and compares the result with the reference scorer's expected output. It reads only files from this site.</p>
+          <form class="try" id="try-form" hidden>
+<!-- generated:try:start -->
+<div class="try-fields">
+<label class="field"><span>Patient</span><select name="patient"><option value="maria" selected data-scenario="should score high">Maria</option><option value="james" data-scenario="should score low">James</option><option value="rosa" data-scenario="already coded: not scored">Rosa</option><option value="lee" data-scenario="no COVID: not scored">Lee</option><option value="nora" data-scenario="no baseline encounters: not scored">Nora</option><option value="dana" data-scenario="Lyme demo (Dutchess County, NY)">Dana</option><option value="elena" data-scenario="long fatigue work-up, never coded: should score high">Elena</option><option value="omar" data-scenario="routine care: should score typical">Omar</option><option value="grace" data-scenario="already coded: not scored">Grace</option><option value="sofia" data-scenario="years of widespread pain, negative rheumatology work-up, never coded">Sofia</option><option value="priya" data-scenario="Long COVID code before the COVID-19 index: not scored">Priya</option><option value="sam" data-scenario="Long COVID code (SNOMED) on the index date: not scored">Sam</option><option value="theo" data-scenario="Long COVID code on day 90, the landmark day: not scored">Theo</option><option value="yara" data-scenario="undated Long COVID code: not scored">Yara</option><option value="vera" data-scenario="COVID-19 508 days before, past day 455: not scored">Vera</option><option value="will" data-scenario="partial dates, a pre-era infection, and refuted or future Long COVID codes: should score (index 2023-12-05)">Will</option><option value="uma" data-scenario="no birth date: not scored by any model">Uma</option><option value="kai" data-scenario="16 at the COVID-19 index, 17 on the scoring date: not scored by any model">Kai</option></select></label>
+<label class="field"><span>Model</span><select name="model"><option value="/models/longcovid.json" data-expected="/developers/vectors/expected/unm-longcovid-1.2.0/">Long COVID 1.2.0</option><option value="/models/chronicfatigue.json" data-expected="/developers/vectors/expected/unm-chronicfatigue-1.0.0/">Chronic fatigue and ME/CFS 1.0.0</option><option value="/models/fibromyalgia.json" data-expected="/developers/vectors/expected/unm-fibromyalgia-1.0.0/">Fibromyalgia 1.0.0</option><option value="/models/endometriosis.json" data-expected="/developers/vectors/expected/unm-endometriosis-1.0.0/">Endometriosis 1.0.0</option><option value="/models/lyme.json" data-expected="/developers/vectors/expected/unm-lyme-1.0.0/">Lyme 1.0.0</option><option value="/models/lupus.json" data-expected="/developers/vectors/expected/unm-lupus-1.0.0/">Lupus 1.0.0</option><option value="/models/migraine.json" data-expected="/developers/vectors/expected/unm-migraine-1.0.0/">Migraine 1.0.0</option><option value="/models/depression.json" data-expected="/developers/vectors/expected/unm-depression-1.0.0/">Depression 1.0.0</option><option value="/models/anxiety.json" data-expected="/developers/vectors/expected/unm-anxiety-1.0.0/">Anxiety 1.0.0</option></select></label>
+<label class="field"><span>Scoring date</span><input name="as_of" type="date" value="2024-06-01" data-vectors="2024-06-01" required></label>
+</div>
+<fieldset class="try-unavailable"><legend>Searches that failed (the <code>unavailable</code> option)</legend><label class="check"><input type="checkbox" name="unavailable" value="Patient"> Patient</label><label class="check"><input type="checkbox" name="unavailable" value="Condition"> Condition</label><label class="check"><input type="checkbox" name="unavailable" value="Encounter"> Encounter</label><label class="check"><input type="checkbox" name="unavailable" value="MedicationRequest"> MedicationRequest</label><label class="check"><input type="checkbox" name="unavailable" value="Observation"> Observation</label><label class="check"><input type="checkbox" name="unavailable" value="Procedure"> Procedure</label></fieldset>
+<!-- generated:try:end -->
+          </form>
+          <div class="try-out" id="try-out" aria-live="polite"></div>
+        </section>
+
+        <section id="cds-hooks" aria-labelledby="cds-title">
+          <h2 id="cds-title">CDS Hooks service</h2>
+<!-- generated:cds-models:start -->
+<p>A stateless CDS Hooks 2.0 service for the <code>patient-view</code> hook. It scores the prefetched chart with the <a href="/developers/models#long-covid">Long COVID 1.2.0</a>, <a href="/developers/models#chronic-fatigue">Chronic fatigue and ME/CFS 1.0.0</a>, <a href="/developers/models#fibromyalgia">Fibromyalgia 1.0.0</a>, <a href="/developers/models#endometriosis">Endometriosis 1.0.0</a>, <a href="/developers/models#lyme">Lyme 1.0.0</a>, <a href="/developers/models#lupus">Lupus 1.0.0</a>, <a href="/developers/models#migraine">Migraine 1.0.0</a>, <a href="/developers/models#depression">Depression 1.0.0</a>, and <a href="/developers/models#anxiety">Anxiety 1.0.0</a> model files and answers with one card for each condition in the High band (indicator <code>warning</code>) or the Elevated band (<code>info</code>), plus one <code>info</code> card naming every condition it could not score. Typical and not-scored results give no card, so a chart with nothing to flag gets <code>{"cards": []}</code>.</p>
+<!-- generated:cds-models:end -->
+          <p>The service runs at <code>https://undiagnosednomore.org</code>:</p>
+          <div class="table-wrap">
+            <table class="fields">
+              <thead><tr><th scope="col">Method</th><th scope="col">Path</th><th scope="col">Answer</th></tr></thead>
+              <tbody>
+                <tr><td>GET</td><td><code>/cds-services</code></td><td>The discovery document</td></tr>
+                <tr><td>POST</td><td><code>/cds-services/invisible-illness</code></td><td><code>{"cards": [...]}</code></td></tr>
+                <tr><td>OPTIONS</td><td>both</td><td>204 with the CORS headers (<code>Access-Control-Allow-Origin: *</code>), so browser clients such as the CDS Hooks sandbox can call the service</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="cds-discovery">1. Discovery</h3>
+          <p>The service id is <code>invisible-illness</code>. The prefetch templates ask for the Patient and one search each for Condition, Encounter, Observation, MedicationRequest, and Procedure.</p>
+          <div class="code"><div class="code-head"><span>bash</span></div><pre><code>curl -s https://undiagnosednomore.org/cds-services</code></pre></div>
+<!-- generated:cds-discovery:start -->
+<div class="code code-wrap"><div class="code-head"><span>Response</span></div><pre><code>{
+  "services": [
+    {
+      "hook": "patient-view",
+      "id": "invisible-illness",
+      "title": "Undiagnosed No More: invisible illness check",
+      "description": "Scores the chart with the Long COVID, chronic fatigue (ME/CFS), fibromyalgia, endometriosis, Lyme disease, lupus, migraine, depression, and anxiety models and returns a card when a condition is in the High or Elevated band, plus one information card naming any condition it could not score. Research decision support; not a diagnosis. Synthetic-data prototype: the service does not authenticate callers.",
+      "prefetch": {
+        "patient": "Patient/{{context.patientId}}",
+        "conditions": "Condition?patient={{context.patientId}}",
+        "encounters": "Encounter?patient={{context.patientId}}",
+        "observations": "Observation?patient={{context.patientId}}",
+        "medications": "MedicationRequest?patient={{context.patientId}}",
+        "procedures": "Procedure?patient={{context.patientId}}"
+      },
+      "usageRequirements": "Read access to the patient's Condition, Encounter, Observation, MedicationRequest, and Procedure resources."
+    }
+  ]
+}</code></pre></div>
+<!-- generated:cds-discovery:end -->
+
+          <h3 id="cds-request">2. Request</h3>
+          <div class="table-wrap">
+            <table class="fields">
+              <thead><tr><th scope="col">Field</th><th scope="col">Required</th><th scope="col">What the service does with it</th></tr></thead>
+              <tbody>
+                <tr><td><code>hook</code></td><td data-label="Required">yes</td><td>Must be <code>patient-view</code>; any other hook gets 400.</td></tr>
+                <tr><td><code>hookInstance</code></td><td data-label="Required">yes</td><td>A nonempty string (the examples use a UUID).</td></tr>
+                <tr><td><code>context.patientId</code></td><td data-label="Required">yes</td><td>A FHIR id. The prefetched Patient must have this id, and every prefetched resource whose <code>subject</code> or <code>patient</code> names a patient must name this one; otherwise 400.</td></tr>
+                <tr><td><code>context.userId</code></td><td data-label="Required">no</td><td>A string if present; not used for scoring.</td></tr>
+                <tr><td><code>prefetch</code></td><td data-label="Required">no</td><td>The keys from discovery. <code>patient</code> holds the Patient resource; the other keys hold searchset Bundles.</td></tr>
+                <tr><td><code>fhirServer</code>, <code>fhirAuthorization</code></td><td data-label="Required">no</td><td>Used only to read prefetch keys the client did not send and the <code>next</code> pages of prefetched searches, and only when <code>fhirServer</code> is on the deployment's allow-list. The token is sent as a bearer token. The default list holds only the synthetic SMART Health IT sandbox, <code>https://launch.smarthealthit.org/v/r4/</code>.</td></tr>
+                <tr><td><code>extension["org.undiagnosednomore.scoring-date"]</code></td><td data-label="Required">no</td><td>The scoring date, <code>YYYY-MM-DD</code>; without it the service scores as of today (UTC). The examples set June 1, 2024, the date of the test vectors.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The example requests are test patients from the <a href="#vectors">test vectors</a> with the prefetch the service asks for: <a href="/developers/examples/maria.json">maria.json</a>, <a href="/developers/examples/elena.json">elena.json</a>, and <a href="/developers/examples/maria-missing-observations.json">maria-missing-observations.json</a>. To send one:</p>
+          <div class="code"><div class="code-head"><span>bash</span></div><pre><code>curl -s https://undiagnosednomore.org/developers/examples/maria.json |
+  curl -s -X POST https://undiagnosednomore.org/cds-services/invisible-illness \
+    -H "Content-Type: application/json" --data-binary @-</code></pre></div>
+<!-- generated:cds-request:start -->
+<details class="code-details"><summary>The whole request, <code>maria.json</code> (754 lines)</summary>
+<div class="code code-tall"><div class="code-head"><span>maria.json</span></div><pre><code>{
+ "hookInstance": "00000000-0000-4000-8000-000000000522",
+ "hook": "patient-view",
+ "context": {
+  "userId": "Practitioner/example",
+  "patientId": "maria"
+ },
+ "extension": {
+  "org.undiagnosednomore.scoring-date": "2024-06-01"
+ },
+ "prefetch": {
+  "patient": {
+   "resourceType": "Patient",
+   "id": "maria",
+   "gender": "female",
+   "birthDate": "1980-03-02",
+   "name": [
+    {
+     "family": "Synthetic",
+     "given": [
+      "Maria"
+     ]
+    }
+   ]
+  },
+  "conditions": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 9,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:c4029410-e7b9-5f61-a3d3-333bc5b2fad0",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-4",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "J45.909",
+         "display": "Asthma, unspecified, uncomplicated"
+        }
+       ],
+       "text": "Asthma, unspecified, uncomplicated"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2023-06-15",
+      "recordedDate": "2023-06-15"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:e40c2059-f000-56ae-9423-801c5b37874d",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-5",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "U07.1",
+         "display": "COVID-19"
+        }
+       ],
+       "text": "COVID-19"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-01-08",
+      "recordedDate": "2024-01-08"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:25ed6b87-55a4-56bd-a916-8984df6328aa",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-10",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R53.83",
+         "display": "Other fatigue"
+        }
+       ],
+       "text": "Other fatigue"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-02-20",
+      "recordedDate": "2024-02-20"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:c321d403-2315-5aeb-82ac-2166125a8550",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-11",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R00.2",
+         "display": "Palpitations"
+        }
+       ],
+       "text": "Palpitations"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-02-20",
+      "recordedDate": "2024-02-20"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:15db45b3-5856-52b6-a29a-d0961a7c0540",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-12",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "U07.1",
+         "display": "COVID-19"
+        }
+       ],
+       "text": "COVID-19"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-02-20",
+      "recordedDate": "2024-02-20"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:29ad0527-8368-584c-8648-0c78a2237840",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-14",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "Z86.16",
+         "display": "Personal history of COVID-19"
+        }
+       ],
+       "text": "Personal history of COVID-19"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-12",
+      "recordedDate": "2024-03-12"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:0cd08300-2efa-5b4c-b09e-7caec0a526fd",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-16",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R41.840",
+         "display": "Attention and concentration deficit"
+        }
+       ],
+       "text": "Attention and concentration deficit"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-05",
+      "recordedDate": "2024-03-05"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:22962e0f-227f-5cfd-804d-0351e1f7771a",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-18",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R06.02",
+         "display": "Shortness of breath"
+        }
+       ],
+       "text": "Shortness of breath"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-25",
+      "recordedDate": "2024-03-25"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:fc529004-fe7f-52c2-bfd9-578bcb712127",
+     "resource": {
+      "resourceType": "Condition",
+      "id": "maria-cond-19",
+      "clinicalStatus": {
+       "coding": [
+        {
+         "code": "active"
+        }
+       ]
+      },
+      "code": {
+       "coding": [
+        {
+         "system": "http://hl7.org/fhir/sid/icd-10-cm",
+         "code": "R07.89",
+         "display": "Other chest pain"
+        }
+       ],
+       "text": "Other chest pain"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "onsetDateTime": "2024-03-25",
+      "recordedDate": "2024-03-25"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "encounters": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 9,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:adb2a6dd-a1b8-5b3a-bf44-9dc9cf54bdd6",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-1",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2023-02-10"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:84e09ad6-f8df-5fbf-ab83-95eafd021ba4",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-2",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2023-06-15"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:ba0e60d3-b9ee-5a83-add0-d94e660c5e4b",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-3",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2023-10-20"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:285fdafa-f1ce-554c-8c61-3a1152318c80",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-6",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-01-08"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:d9853640-8f56-5b22-b957-e8bf8dbc8ccb",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-7",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "EMER"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-01-10"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:8bfce810-ceab-538a-bd94-01696606b10f",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-9",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-02-20"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:ec711b65-6042-54d2-8964-6d3d0ae76a7a",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-13",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-03-12"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:3fb48051-8bac-5463-b0e6-88779109a284",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-15",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-03-05"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:62bda78f-1085-5311-aab4-853d7b51944c",
+     "resource": {
+      "resourceType": "Encounter",
+      "id": "maria-enc-17",
+      "status": "finished",
+      "class": {
+       "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+       "code": "AMB"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "period": {
+       "start": "2024-03-25"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "observations": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 3,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:b7535a4c-9bc0-52b5-9932-ef0f1da743a6",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "maria-obs-8",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "48065-7",
+         "display": "Fibrin D-dimer FEU"
+        }
+       ],
+       "text": "Fibrin D-dimer FEU"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "effectiveDateTime": "2024-01-10",
+      "valueQuantity": {
+       "value": 0.4,
+       "unit": "ug/mL"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:e40530c0-c65f-5138-9eed-0ab0a22a4c3f",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "maria-obs-20",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "1988-5",
+         "display": "C reactive protein"
+        }
+       ],
+       "text": "C reactive protein"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "effectiveDateTime": "2024-02-20",
+      "valueQuantity": {
+       "value": 4.1,
+       "unit": "mg/L"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:6d04ac0f-ca63-5bb3-9945-5800badffb33",
+     "resource": {
+      "resourceType": "Observation",
+      "id": "maria-obs-25",
+      "status": "final",
+      "category": [
+       {
+        "coding": [
+         {
+          "code": "laboratory"
+         }
+        ]
+       }
+      ],
+      "code": {
+       "coding": [
+        {
+         "system": "http://loinc.org",
+         "code": "3016-3",
+         "display": "Thyrotropin"
+        }
+       ],
+       "text": "Thyrotropin"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "effectiveDateTime": "2024-02-20",
+      "valueQuantity": {
+       "value": 1.8,
+       "unit": "mIU/L"
+      }
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "medications": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 1,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:9a7a01a2-33c5-5a99-b389-798e665b3dda",
+     "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "maria-med-24",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+       "coding": [
+        {
+         "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+         "code": "8787",
+         "display": "propranolol"
+        }
+       ],
+       "text": "propranolol"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "authoredOn": "2024-03-12"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  },
+  "procedures": {
+   "resourceType": "Bundle",
+   "type": "searchset",
+   "total": 3,
+   "entry": [
+    {
+     "fullUrl": "urn:uuid:008ee8e8-a403-5a66-b5f0-801fd0c98751",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "maria-proc-21",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "71275",
+         "display": "CT angiography, chest"
+        }
+       ],
+       "text": "CT angiography, chest"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "performedDateTime": "2024-03-27"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:22e76223-e4aa-57a0-83d8-ee14d1be4a1f",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "maria-proc-22",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "93306",
+         "display": "Echocardiography, transthoracic, complete"
+        }
+       ],
+       "text": "Echocardiography, transthoracic, complete"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "performedDateTime": "2024-03-01"
+     },
+     "search": {
+      "mode": "match"
+     }
+    },
+    {
+     "fullUrl": "urn:uuid:c3e73679-33f9-560c-bbbc-48d1e2ea32aa",
+     "resource": {
+      "resourceType": "Procedure",
+      "id": "maria-proc-23",
+      "status": "completed",
+      "code": {
+       "coding": [
+        {
+         "system": "http://www.ama-assn.org/go/cpt",
+         "code": "93224",
+         "display": "External electrocardiographic recording up to 48 hours"
+        }
+       ],
+       "text": "External electrocardiographic recording up to 48 hours"
+      },
+      "subject": {
+       "reference": "Patient/maria"
+      },
+      "performedDateTime": "2024-03-10"
+     },
+     "search": {
+      "mode": "match"
+     }
+    }
+   ]
+  }
+ }
+}
+</code></pre></div>
+</details>
+<!-- generated:cds-request:end -->
+
+          <h3 id="cds-response">3. Response</h3>
+          <div class="table-wrap">
+            <table class="fields">
+              <thead><tr><th scope="col">Card field</th><th scope="col">Value</th></tr></thead>
+              <tbody>
+                <tr><td><code>summary</code></td><td>At most 139 characters: the condition, the band, the multiple of the average, and "Review the dated findings."</td></tr>
+                <tr><td><code>indicator</code></td><td><code>warning</code> for High; <code>info</code> for Elevated and for the could-not-score card. High cards come first.</td></tr>
+                <tr><td><code>detail</code></td><td>Markdown: the chart pattern, the probability and band, the top three findings with their dates, the next step, and the model id and version.</td></tr>
+                <tr><td><code>source</code></td><td><code>{"label": "Undiagnosed No More (research decision support)", "url": "https://undiagnosednomore.org/developers/"}</code></td></tr>
+                <tr><td><code>links</code></td><td>One link of <code>type</code> <code>smart</code> to <code>https://undiagnosednomore.org/smart/</code>.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The service's answers to the three example requests, generated by running its code on them:</p>
+<!-- generated:cds-responses:start -->
+<p class="code-caption"><code>maria.json</code>. Maria's expected results are Long COVID: High; Chronic fatigue and ME/CFS: Typical; Fibromyalgia: Typical; Endometriosis: Typical; Lyme: Typical; Lupus: Typical; Migraine: Typical; Depression: Typical; Anxiety: Typical. The service returns one card.</p>
+<div class="code code-wrap"><div class="code-head"><span>Response to maria.json</span></div><pre><code>{
+  "cards": [
+    {
+      "summary": "Long COVID: High chart pattern, 6.1× the post-COVID average. Review the dated findings.",
+      "indicator": "warning",
+      "detail": "**Chart pattern similar to adults later coded with Long COVID.**\n\nEstimated probability, as of day 90, of a Long COVID code 91 to 455 days after COVID-19: 6.2% (6.1× the average for adults 90 days after COVID-19). Band: High (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. 3+ symptom types coded in days 31-90 (2024-02-20, 2024-03-05, 2024-03-25)\n2. Personal history of COVID-19 coded (days 31-90) (2024-03-12)\n3. COVID-19 still coded at a follow-up visit (days 31-90) (2024-02-20)\n\nNext step: Review the dated findings and ask the patient to complete the RECOVER symptom list, the DePaul post-exertional malaise screen, and the PCFS functional status grade. If the review supports post-COVID illness, consider a post-COVID clinic referral or clinical trial screening.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-longcovid 1.2.0.",
+      "source": {
+        "label": "Undiagnosed No More (research decision support)",
+        "url": "https://undiagnosednomore.org/developers/"
+      },
+      "links": [
+        {
+          "label": "Open Undiagnosed No More (SMART app)",
+          "url": "https://undiagnosednomore.org/smart/",
+          "type": "smart"
+        }
+      ]
+    }
+  ]
+}</code></pre></div>
+<details class="code-details"><summary><code>elena.json</code>. Elena's expected results are Long COVID: not scored; Chronic fatigue and ME/CFS: High; Fibromyalgia: Typical; Endometriosis: Typical; Lyme: Typical; Lupus: Typical; Migraine: Elevated; Depression: Elevated; Anxiety: Elevated. The service returns four cards.</summary>
+<div class="code code-wrap"><div class="code-head"><span>Response to elena.json</span></div><pre><code>{
+  "cards": [
+    {
+      "summary": "Chronic fatigue or ME/CFS: High chart pattern, 3.3× the average. Review the dated findings.",
+      "indicator": "warning",
+      "detail": "**Chart pattern similar to patients who report a chronic fatigue or ME/CFS diagnosis that was never coded.**\n\nProbability that the patient reports a chronic fatigue diagnosis: 17% (3.3× the average for adults with a visit in the past year). Band: High (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Five or more symptom types (6 dates, 2020-05-12 to 2023-01-17)\n2. POTS medication (2022-09-28)\n3. Tilt-table test (2022-09-14)\n\nNext step: Ask the patient about post-exertional malaise (DePaul screen) and review the IOM 2015 ME/CFS criteria: reduced activity for more than 6 months with fatigue, post-exertional malaise, unrefreshing sleep, and cognitive impairment or orthostatic intolerance.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-chronicfatigue 1.0.0.",
+      "source": {
+        "label": "Undiagnosed No More (research decision support)",
+        "url": "https://undiagnosednomore.org/developers/"
+      },
+      "links": [
+        {
+          "label": "Open Undiagnosed No More (SMART app)",
+          "url": "https://undiagnosednomore.org/smart/",
+          "type": "smart"
+        }
+      ]
+    },
+    {
+      "summary": "Migraine: Elevated chart pattern, 1.7× the average. Review the dated findings.",
+      "indicator": "info",
+      "detail": "**Chart pattern similar to patients who report a migraine diagnosis that was never coded.**\n\nProbability that the patient reports a migraine diagnosis: 23% (1.7× the average for adults with a visit in the past year). Band: Elevated (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Female (patient demographics)\n2. Stimulant or wakefulness drug (2023-05-09)\n3. POTS medication (2022-09-28)\n\nNext step: Review the headaches against the ICHD-3 criteria for migraine (frequency, duration, pain features, and nausea or sensitivity to light and sound); if they fit, discuss acute and preventive treatment.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-migraine 1.0.0.",
+      "source": {
+        "label": "Undiagnosed No More (research decision support)",
+        "url": "https://undiagnosednomore.org/developers/"
+      },
+      "links": [
+        {
+          "label": "Open Undiagnosed No More (SMART app)",
+          "url": "https://undiagnosednomore.org/smart/",
+          "type": "smart"
+        }
+      ]
+    },
+    {
+      "summary": "Depression: Elevated chart pattern, 1.6× the average. Review the dated findings.",
+      "indicator": "info",
+      "detail": "**Chart pattern similar to patients who report a depression diagnosis that was never coded.**\n\nProbability that the patient reports a depression diagnosis: 33% (1.6× the average for adults with a visit in the past year). Band: Elevated (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Stimulant or wakefulness drug (2023-05-09)\n2. Age 18-39 (patient demographics)\n3. Female (patient demographics)\n\nNext step: Screen with the PHQ-9 (USPSTF 2023); if it is 10 or more, assess for major depression and ask about thoughts of self-harm, following your clinic's safety protocol and sharing the 988 Suicide and Crisis Lifeline.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-depression 1.0.0.",
+      "source": {
+        "label": "Undiagnosed No More (research decision support)",
+        "url": "https://undiagnosednomore.org/developers/"
+      },
+      "links": [
+        {
+          "label": "Open Undiagnosed No More (SMART app)",
+          "url": "https://undiagnosednomore.org/smart/",
+          "type": "smart"
+        }
+      ]
+    },
+    {
+      "summary": "Anxiety: Elevated chart pattern, 1.8× the average. Review the dated findings.",
+      "indicator": "info",
+      "detail": "**Chart pattern similar to patients who report an anxiety diagnosis that was never coded.**\n\nProbability that the patient reports an anxiety diagnosis: 26% (1.8× the average for adults with a visit in the past year). Band: Elevated (a descriptive score category, not a validated action threshold).\n\nTop findings in the chart:\n\n1. Stimulant or wakefulness drug (2023-05-09)\n2. Age 18-39 (patient demographics)\n3. Female (patient demographics)\n\nNext step: Screen with the GAD-7 (USPSTF 2023 recommends anxiety screening for adults under 65); if it is 10 or more, assess for an anxiety disorder.\n\nResearch decision support. Surfaces chart patterns for clinician review. Not a diagnosis. Model unm-anxiety 1.0.0.",
+      "source": {
+        "label": "Undiagnosed No More (research decision support)",
+        "url": "https://undiagnosednomore.org/developers/"
+      },
+      "links": [
+        {
+          "label": "Open Undiagnosed No More (SMART app)",
+          "url": "https://undiagnosednomore.org/smart/",
+          "type": "smart"
+        }
+      ]
+    }
+  ]
+}</code></pre></div>
+</details>
+<details class="code-details"><summary><code>maria-missing-observations.json</code>. Maria's request without the <code>observations</code> prefetch key and with no <code>fhirServer</code>, so the service cannot read the Observation search. The Long COVID, Chronic fatigue and ME/CFS, Fibromyalgia, Endometriosis, Lyme, Lupus, Migraine, Depression, and Anxiety models read Observation, so they get the could-not-score card instead of a result.</summary>
+<div class="code code-wrap"><div class="code-head"><span>Response to maria-missing-observations.json</span></div><pre><code>{
+  "cards": [
+    {
+      "summary": "Could not score Long COVID, Chronic fatigue or ME/CFS, Fibromyalgia, Endometriosis, Lyme disease, Lupus, Migraine, Depression, Anxiety: Ob…",
+      "indicator": "info",
+      "detail": "**Could not score this chart for Long COVID, Chronic fatigue or ME/CFS, Fibromyalgia, Endometriosis, Lyme disease, Lupus, Migraine, Depression, Anxiety.** These conditions have no result, which is not the same as a negative result.\n\nThe EHR did not return the patient's complete Observation records (a failed, forbidden, or incomplete search). The models treat missing records as unknown, not as absent.\n\nReview the chart directly or open the SMART app.\n\nResearch decision support. Not a diagnosis. Models: unm-longcovid 1.2.0, unm-chronicfatigue 1.0.0, unm-fibromyalgia 1.0.0, unm-endometriosis 1.0.0, unm-lyme 1.0.0, unm-lupus 1.0.0, unm-migraine 1.0.0, unm-depression 1.0.0, unm-anxiety 1.0.0.",
+      "source": {
+        "label": "Undiagnosed No More (research decision support)",
+        "url": "https://undiagnosednomore.org/developers/"
+      },
+      "links": [
+        {
+          "label": "Open Undiagnosed No More (SMART app)",
+          "url": "https://undiagnosednomore.org/smart/",
+          "type": "smart"
+        }
+      ]
+    }
+  ]
+}</code></pre></div>
+</details>
+<!-- generated:cds-responses:end -->
+
+          <h3 id="cds-errors">Errors and incomplete data</h3>
+          <ul>
+            <li><strong>400</strong> with <code>{"error": "..."}</code> for a request that fails the checks above, or a body that is not JSON.</li>
+            <li><strong>412</strong> when the Patient resource is not in the prefetch and cannot be read from an allowed <code>fhirServer</code>.</li>
+            <li><strong>502</strong> when the FHIR server returns data for another patient.</li>
+            <li>A search that failed, was forbidden, or was cut short is never read as an empty record. A searchset holding an <code>OperationOutcome</code> with an error, a <code>next</code> link the service may not follow, a <code>total</code> above the entries returned, or more than 10 pages makes that resource type unavailable, and the models that read it get the could-not-score card shown above.</li>
+          </ul>
+
+          <h3 id="cds-trust">Authentication and logging</h3>
+          <p>The service does not authenticate callers, so it is for synthetic data such as the examples here. A deployment with real patient data must verify the CDS client's signed JWT before handling the request (CDS Hooks 2.0, "Trusting CDS Clients") and limit the allow-list to that client's FHIR base URL. The service code keeps no copy of a request and does not log request bodies.</p>
+
+          <h3 id="cds-live-title">Send an example from this page</h3>
+          <p>The button posts the chosen example to the service on this site and compares the answer with the response shown above.</p>
+<!-- generated:cds-live:start -->
+<div class="live" id="cds-live" hidden><label class="field"><span>Example request</span><select id="cds-example"><option value="maria">maria.json</option><option value="elena">elena.json</option><option value="maria-missing-observations">maria-missing-observations.json</option></select></label><button class="button" type="button" id="cds-send">Send to the service</button></div><p class="live-status" id="cds-status" aria-live="polite"></p><div id="cds-output"></div>
+<!-- generated:cds-live:end -->
+          <h3 id="cds-sandbox">From the CDS Hooks sandbox</h3>
+          <ol>
+            <li>Open <a href="https://sandbox.cds-hooks.org">sandbox.cds-hooks.org</a>, open its settings, and add the discovery endpoint <code>https://undiagnosednomore.org/cds-services</code>.</li>
+            <li>Open the Patient View tab. The sandbox prefetches the selected patient's records and calls the service.</li>
+          </ol>
+        </section>
+
+        <section id="ehr-launch" aria-labelledby="ehr-title">
+          <h2 id="ehr-title">SMART on FHIR app</h2>
+          <p>The clinician view runs as a SMART on FHIR EHR-launch app with the five condition cards and the timeline of the <a href="/clinician/">clinician demo</a>. The EHR opens the launch URL with <code>iss</code> and <code>launch</code>. The app checks the issuer, authorizes as a public client with the authorization code flow and PKCE (<code>fhirclient</code> 3.0.0, <code>pkceMode: "required"</code>), reads the chart over FHIR R4, and scores it as of the current date in the clinician's time zone.</p>
+
+          <h3 id="smart-sandbox">SMART Health IT sandbox</h3>
+          <dl class="facts">
+            <dt>Launch URL</dt><dd><code>https://undiagnosednomore.org/smart/</code></dd>
+            <dt>Redirect URI</dt><dd><code>https://undiagnosednomore.org/smart/callback.html</code></dd>
+            <dt>Issuer accepted</dt><dd>The SMART Health IT R4 launcher: <code>https://launch.smarthealthit.org/v/r4/fhir</code>, or <code>/v/r4/sim/&lt;id&gt;/fhir</code> on the same host</dd>
+            <dt>Client ID</dt><dd><code>undiagnosednomore-lupus</code></dd>
+            <dt>Scope</dt><dd><code>launch openid fhirUser patient/*.read</code></dd>
+            <dt>Test patients</dt><dd>Opening the launch URL without launch parameters goes to the launcher with the 18 test patients preselected. <code>model/test_vectors/upload_sandbox.py</code> puts their charts on <code>https://r4.smarthealthit.org</code>, with every date moved from June 1, 2024 to the upload date (COVID-19 diagnoses before July 2, 2021 keep their dates), so each chart has the same history relative to the day it is scored. Rerunning it replaces the same resources.</dd>
+          </dl>
+          <p class="actions"><a class="button" href="/smart/">Launch in the SMART Health IT sandbox</a></p>
+          <div class="code"><div class="code-head"><span>bash: check, then upload (default: every patient, dated as of today)</span></div><pre><code>python3 model/test_vectors/upload_sandbox.py --dry-run
+python3 model/test_vectors/upload_sandbox.py maria elena</code></pre></div>
+
+          <h3 id="smart-epic">Epic</h3>
+          <dl class="facts">
+            <dt>Status</dt><dd>Registered; sandbox access pending.</dd>
+            <dt>Launch URL</dt><dd><code>https://undiagnosednomore.org/epic/</code></dd>
+            <dt>Redirect URI</dt><dd><code>https://undiagnosednomore.org/epic/callback.html</code></dd>
+            <dt>Issuer accepted</dt><dd><code>https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4</code> only</dd>
+            <dt>Client ID</dt><dd><code>e8dcbefa-45d6-42da-9159-3ac03e22c24f</code> (non-production)</dd>
+            <dt>Scope</dt><dd><code>launch openid fhirUser</code>. Epic grants resource access from the Incoming APIs on the client record, listed in <code>web/web/epic/README.md</code>.</dd>
+            <dt>Framing</dt><dd>Allowed from <code>https://fhir.epic.com</code> and <code>https://open.epic.com</code></dd>
+          </dl>
+
+          <h3 id="smart-athena">athenaOne</h3>
+          <dl class="facts">
+            <dt>Status</dt><dd>Registered; sandbox access pending.</dd>
+            <dt>Launch URL</dt><dd><code>https://undiagnosednomore.org/athena/launch.html</code></dd>
+            <dt>Redirect URI</dt><dd><code>https://undiagnosednomore.org/athena/</code></dd>
+            <dt>Issuer accepted</dt><dd><code>https://api.preview.platform.athenahealth.com/fhir/r4</code> (Preview) or <code>https://api.platform.athenahealth.com/fhir/r4</code> (Production)</dd>
+            <dt>Client ID</dt><dd><code>0oa147h04m1Ny6nsB298</code></dd>
+            <dt>Scope</dt><dd><code>launch openid patient/Patient.r</code> and <code>patient/&lt;type&gt;.rs</code> for Condition, Observation, DiagnosticReport, Specimen, Encounter, MedicationRequest, MedicationDispense, ServiceRequest, Procedure, QuestionnaireResponse, DocumentReference, Immunization, AllergyIntolerance, CarePlan, Goal, and FamilyMemberHistory</dd>
+            <dt>ID token</dt><dd>Signature checked against the issuer's published keys; audience must be the client ID; nonce checked</dd>
+            <dt>Framing</dt><dd>Allowed from <code>https://preview.athenahealth.com</code></dd>
+          </dl>
+
+          <h3 id="smart-reads">What the app reads</h3>
+          <p>The Patient, then one search per resource type with <code>_count=100</code>, following <code>next</code> links on the same server: Condition, Observation, DiagnosticReport, Specimen, Encounter, MedicationRequest, MedicationDispense, MedicationAdministration, MedicationStatement, ServiceRequest, Procedure, QuestionnaireResponse, DocumentReference, ImagingStudy, Immunization, AllergyIntolerance, CarePlan, Goal, and FamilyMemberHistory. A search that is denied or not supported marks that type unavailable, and a chart model that reads it shows "Could not score" instead of a result. Resources labeled <code>NOAUTH</code> in <code>meta.security</code> are left out. The model files read six of these types (<a href="#fhir-inputs">FHIR inputs</a>).</p>
+        </section>
+
+        <section id="scoring" aria-labelledby="scoring-title">
+          <h2 id="scoring-title">Scorer library</h2>
+          <p>Two implementations of the same rules, with no dependencies: <code>model/reference/score_fhir.py</code>, the reference that produced the expected outputs (Python standard library only), and <code>/shared/scorer.js</code>, an ES module port for the browser and Node. Both take a model file, a FHIR R4 Bundle of one patient's resources, and a scoring date.</p>
+          <h3 id="scoring-js">JavaScript</h3>
+          <div class="code"><div class="code-head"><span>JavaScript</span></div><pre id="js-example"><code>import { scoreBundle } from "/shared/scorer.js";
+
+const model = await (await fetch("/models/longcovid.json")).json();
+const bundle = await (await fetch("/developers/vectors/bundles/maria.json")).json();
+const result = scoreBundle(model, bundle, "2024-06-01");
+// { status, reason, band, probability, times_average, drivers }</code></pre></div>
+          <p>The date is a <code>YYYY-MM-DD</code> string; without it the scorer uses today's date in UTC. When a FHIR search failed or was forbidden, pass its resource type so the scorer does not treat the missing records as absent:</p>
+          <div class="code"><div class="code-head"><span>JavaScript</span></div><pre><code>const result = scoreBundle(model, bundle, "2024-06-01", { unavailable: ["Observation"] });
+// {
+//   status: "could_not_score",
+//   reason: "could not score: Observation unavailable",
+//   index_date: "2024-01-08",
+//   unavailable: ["Observation"]
+// }</code></pre></div>
+          <h3 id="scoring-python">Python</h3>
+          <div class="code"><div class="code-head"><span>bash</span></div><pre><code>python3 model/reference/score_fhir.py model/longcovid.json \
+  model/test_vectors/bundles/maria.json --as-of 2024-06-01
+# a failed search: --unavailable Observation,Procedure</code></pre></div>
+          <p>In Python the same call is <code>score_bundle(model, bundle, as_of, unavailable=[...])</code>, with <code>as_of</code> a <code>datetime.date</code>.</p>
+          <h3 id="scoring-result">The result</h3>
+          <p>The result is one JSON object. <code>not_scored</code> results carry the <code>reason</code> the card shows (for example "fewer than 90 days since the COVID-19 index"); <code>could_not_score</code> results name the unavailable resource types and must never be shown as a Typical result.</p>
+<!-- generated:result:start -->
+<div class="table-wrap"><table class="fields"><thead><tr><th scope="col">Field</th><th scope="col">Meaning</th><th scope="col">Maria, Long COVID 1.2.0</th></tr></thead><tbody><tr><td><code>status</code></td><td><code>"scored"</code>, <code>"not_scored"</code>, or <code>"could_not_score"</code></td><td data-label="Maria"><code>"scored"</code></td></tr><tr><td><code>reason</code></td><td>Why it did not score, as a sentence the app shows; absent when scored</td><td data-label="Maria">absent</td></tr><tr><td><code>index_date</code></td><td>Day 0 (YYYY-MM-DD): the index event, or the scoring date for a scoring-date model; absent when there is no index event</td><td data-label="Maria">2024-01-08</td></tr><tr><td><code>score</code></td><td><code>intercept</code> + Σ weight × value</td><td data-label="Maria">6.560688</td></tr><tr><td><code>probability</code></td><td>The calibration map applied to the score</td><td data-label="Maria">0.062489 (6.25%)</td></tr><tr><td><code>band</code></td><td>The first risk band whose <code>max_probability</code> is at or above the probability</td><td data-label="Maria">High</td></tr><tr><td><code>times_average</code></td><td>probability / <code>reference.cohort_base_rate</code></td><td data-label="Maria">6.0575</td></tr><tr><td><code>features</code></td><td>Every feature id with its value, 0 or 1</td><td data-label="Maria">69 features, 26 equal to 1</td></tr><tr><td><code>drivers</code></td><td>Present features with a nonzero weight, largest contribution first, each with the dated resources that set it; features that differ only in threshold are one entry</td><td data-label="Maria">21 drivers</td></tr><tr><td><code>unavailable</code></td><td>The resource types that could not be read; only when the status is <code>could_not_score</code></td><td data-label="Maria">absent</td></tr></tbody></table></div>
+<div class="code"><div class="code-head"><span>drivers[0] for Maria, longcovid.json</span></div><pre><code>{
+  "id": "sym_any_w3_count_ge3",
+  "label": "3+ symptom types coded in days 31-90",
+  "group": "Symptoms after COVID",
+  "contribution": 1.888304,
+  "evidence": [
+    {
+      "resourceType": "Condition",
+      "id": "maria-cond-10",
+      "date": "2024-02-20"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "maria-cond-18",
+      "date": "2024-03-25"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "maria-cond-19",
+      "date": "2024-03-25"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "maria-cond-11",
+      "date": "2024-02-20"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "maria-cond-16",
+      "date": "2024-03-05"
+    }
+  ]
+}</code></pre></div>
+<!-- generated:result:end -->
+        </section>
+
+        <section id="registry" aria-labelledby="registry-title">
+          <h2 id="registry-title">Model registry</h2>
+          <p>Every model file in <code>model/</code> except the placeholder <code>longcovid.example.json</code>, read from the files themselves. <a href="/models/index.json">/models/index.json</a> lists the same entries for programs: id, version, file, size, and SHA-256. Model files are served from <code>/models/</code> with <code>Access-Control-Allow-Origin: *</code>.</p>
+<!-- generated:registry:start -->
+<div class="model-entry" id="registry-long-covid"><h3>Long COVID <span class="model-id"><code>unm-longcovid</code> 1.2.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Future Long COVID diagnosis code. First ICD-10-CM U09.9 code 91-455 days after the first documented COVID-19 diagnosis.</dd><dt>Population</dt><dd>Adults with documented COVID-19 and no Long COVID code by day 90.</dd><dt>Day 0</dt><dd>The first Condition coded ICD-10-CM U07.1 on or after July 2, 2021. Scored from day 90 to day 455.</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM U09.9; SNOMED CT 1119303003, 1119304009, 1325161000000102.</dd><dt>Features</dt><dd>69, of which 57 carry a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/longcovid.json" download>longcovid.json</a> (65 KB, SHA-256 <code class="hash">520e1363d9de3c3e4cc120243933be5a266820f32f6a4ab5ad36037765f18fbe</code>); <a href="/developers/models#long-covid">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-chronic-fatigue"><h3>Chronic fatigue and ME/CFS <span class="model-id"><code>unm-chronicfatigue</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported chronic fatigue diagnosis. Participant reports having been told by a clinician that they have chronic fatigue (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Adults with an EHR visit in the past year and no chronic fatigue or ME/CFS code (ICD-10-CM G93.3, R53.82).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM G93.3, R53.82.</dd><dt>Features</dt><dd>73, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/chronicfatigue.json" download>chronicfatigue.json</a> (147 KB, SHA-256 <code class="hash">b5b91b40a2cf5200691dc8346e1a57fb76e5e4152c3ba4e4e37065d18fb027bb</code>); <a href="/developers/models#chronic-fatigue">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-fibromyalgia"><h3>Fibromyalgia <span class="model-id"><code>unm-fibromyalgia</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported fibromyalgia diagnosis. Participant reports having been told by a clinician that they have fibromyalgia (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Adults with an EHR visit in the past year and no fibromyalgia code (ICD-10-CM M79.7).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM M79.7.</dd><dt>Features</dt><dd>80, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/fibromyalgia.json" download>fibromyalgia.json</a> (180 KB, SHA-256 <code class="hash">8338f095f8c104970bf0d39083773f40d2f470db00f6d8d67a4ca40afe9ab0c7</code>); <a href="/developers/models#fibromyalgia">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-endometriosis"><h3>Endometriosis <span class="model-id"><code>unm-endometriosis</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported endometriosis diagnosis. Participant reports having been told by a clinician that they have endometriosis (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Women with an EHR visit in the past year and no endometriosis code (ICD-10-CM N80).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM N80.</dd><dt>Features</dt><dd>90, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/endometriosis.json" download>endometriosis.json</a> (200 KB, SHA-256 <code class="hash">7c314ccc2e778fc8765b12342455e22eb1aeb5682695785655e0b1dbd5874121</code>); <a href="/developers/models#endometriosis">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-lyme"><h3>Lyme <span class="model-id"><code>unm-lyme</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported Lyme disease diagnosis. Participant reports having been told by a clinician that they have Lyme disease (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Adults with an EHR visit in the past year and no Lyme disease code (ICD-10-CM A69.2).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM A69.2.</dd><dt>Features</dt><dd>86, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/lyme.json" download>lyme.json</a> (198 KB, SHA-256 <code class="hash">5eb97d14ee4d3357cc5ae49df9aaed4dc6f9649ba2510590ca8cc18aa529317d</code>); <a href="/developers/models#lyme">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-lupus"><h3>Lupus <span class="model-id"><code>unm-lupus</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported lupus diagnosis. Participant reports having been told by a clinician that they have lupus (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Adults with an EHR visit in the past year and no systemic lupus erythematosus code (ICD-10-CM M32).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM M32.</dd><dt>Features</dt><dd>79, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/lupus.json" download>lupus.json</a> (192 KB, SHA-256 <code class="hash">d4baa235c78ae1458b0337330388aa45ff54443ef77eebde189175f80f04cfcb</code>); <a href="/developers/models#lupus">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-migraine"><h3>Migraine <span class="model-id"><code>unm-migraine</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported migraine diagnosis. Participant reports having been told by a clinician that they have migraine (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Adults with an EHR visit in the past year and no migraine code (ICD-10-CM G43).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM G43.</dd><dt>Features</dt><dd>88, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/migraine.json" download>migraine.json</a> (201 KB, SHA-256 <code class="hash">e41f867ae35e3a62d869cb2934051118b1351d7f9c52e2d6b057cc36f254a916</code>); <a href="/developers/models#migraine">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-depression"><h3>Depression <span class="model-id"><code>unm-depression</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported depression diagnosis. Participant reports having been told by a clinician that they have depression (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Adults with an EHR visit in the past year and no depression code (ICD-10-CM F32, F33).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM F32, F33.</dd><dt>Features</dt><dd>86, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/depression.json" download>depression.json</a> (185 KB, SHA-256 <code class="hash">f7af1331be4222229d0f6f100a2b9e662a0dd7f877eb4927375b45f086576fc4</code>); <a href="/developers/models#depression">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<div class="model-entry" id="registry-anxiety"><h3>Anxiety <span class="model-id"><code>unm-anxiety</code> 1.0.0, research</span></h3><dl class="facts"><dt>Predicts</dt><dd>Self-reported anxiety diagnosis. Participant reports having been told by a clinician that they have anxiety (All of Us Personal and Family Health History survey).</dd><dt>Population</dt><dd>Adults with an EHR visit in the past year and no anxiety code (ICD-10-CM F41).</dd><dt>Day 0</dt><dd>The scoring date. Windows look back from it: <code>H</code> (days -1825 to -1) and <code>R</code> (days -365 to -1).</dd><dt>Already coded</dt><dd>Not scored when the chart has ICD-10-CM F41.</dd><dt>Features</dt><dd>84, all with a weight</dd><dt>Runs in</dt><dd>CDS Hooks service, clinician app (SMART on FHIR and demo), and patient app</dd><dt>Files</dt><dd><a href="/models/anxiety.json" download>anxiety.json</a> (193 KB, SHA-256 <code class="hash">92e145027341d0b2045c079c69416ddec29a92d56848d762060f02de6665eeb0</code>); <a href="/developers/models#anxiety">model card</a>; <a href="#vectors">expected outputs</a> for 18 test patients</dd></dl></div>
+<!-- generated:registry:end -->
+        </section>
+
+        <section id="spec" aria-labelledby="spec-title">
+          <h2 id="spec-title">Model contract</h2>
+          <p>A model file is a linear score over named, dated chart findings, with a calibration map and risk bands, so every point of the score traces to a chart resource. Its top-level fields:</p>
+          <div class="table-wrap">
+            <table class="fields">
+              <thead><tr><th scope="col">Field</th><th scope="col">Holds</th></tr></thead>
+              <tbody>
+                <tr><td><code>model_id</code>, <code>version</code>, <code>status</code></td><td>Identity: a stable id, a semantic version, and <code>research</code> or <code>placeholder</code></td></tr>
+                <tr><td><code>target</code></td><td>What the model predicts (<code>label</code>, <code>definition</code>) and for whom (<code>population</code>); for an index-event model, <code>landmark_days</code> and <code>horizon_days</code></td></tr>
+                <tr><td><code>index_event</code></td><td>Day 0: the codes of the index event, or <code>"type": "scoring_date"</code></td></tr>
+                <tr><td><code>exclusion</code></td><td>Codes that mean the target diagnosis is already recorded, so the chart is not scored</td></tr>
+                <tr><td><code>eligibility</code></td><td>Optional: the FHIR gender a model is limited to (<code>sex</code>) and the reason shown otherwise; the endometriosis model covers women</td></tr>
+                <tr><td><code>history_requirement</code></td><td>Scoring-date models: the encounters a chart needs in a window to be scored</td></tr>
+                <tr><td><code>windows</code></td><td>Named day ranges relative to day 0</td></tr>
+                <tr><td><code>features</code></td><td>Each with an <code>id</code>, <code>label</code>, <code>group</code>, <code>kind</code>, codes or classes, windows, and <code>weight</code></td></tr>
+                <tr><td><code>intercept</code>, <code>calibration</code>, <code>risk_bands</code></td><td>The score, its piecewise-linear map to a probability, and the bands by upper probability</td></tr>
+                <tr><td><code>reference</code></td><td><code>cohort_base_rate</code>, the denominator of "times the average"</td></tr>
+                <tr><td><code>provenance</code>, <code>statement</code></td><td>Data, method, and validation; the sentence shown with every result</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="code"><div class="code-head"><span>Scoring</span></div><pre><code>score       = intercept + Σ weight_j × value_j        (each value is 0 or 1)
+probability = calibration(score)                      (piecewise-linear, clamped at the ends)
+band        = first risk band with max_probability ≥ probability</code></pre></div>
+          <p>Features come in nine kinds: <code>any</code>, <code>new_onset</code>, <code>encounter_any</code>, <code>encounter_count_ge</code>, <code>encounter_rate_ratio_ge</code>, <code>derived_count_ge</code>, <code>cluster_count_ge</code>, <code>age_band</code>, and <code>sex</code>. The <a href="/developers/spec#spec-3-feature-kinds">interface spec</a> defines each, with the date rules and the order of the eligibility checks.</p>
+<!-- generated:contract-version:start -->
+<p>The contract is at version 0.2. Its full text is the <a href="/developers/spec">interface spec</a>.</p>
+<!-- generated:contract-version:end -->
+        </section>
+
+        <section id="fhir-inputs" aria-labelledby="fhir-title">
+          <h2 id="fhir-title">FHIR inputs</h2>
+          <p>The scorer reads FHIR R4 Patient, Condition, Encounter, Observation, MedicationRequest, and Procedure resources. A coding matches only when its <code>system</code> is exactly one of these URIs:</p>
+          <div class="table-wrap">
+            <table class="fields systems">
+              <thead><tr><th scope="col">Code system</th><th scope="col"><code>system</code></th><th scope="col">Where and how it matches</th></tr></thead>
+              <tbody>
+                <tr><td>ICD-10-CM</td><td data-label="system"><code>http://hl7.org/fhir/sid/icd-10-cm</code></td><td><code>Condition.code</code>, by prefix, with dots removed and letters uppercased</td></tr>
+                <tr><td>SNOMED CT</td><td data-label="system"><code>http://snomed.info/sct</code></td><td><code>Condition.code</code>, exact; used for already-recorded diagnoses</td></tr>
+                <tr><td>LOINC</td><td data-label="system"><code>http://loinc.org</code></td><td><code>Observation.code</code>, exact</td></tr>
+                <tr><td>CPT</td><td data-label="system"><code>http://www.ama-assn.org/go/cpt</code></td><td><code>Procedure.code</code>, exact</td></tr>
+                <tr><td>ICD-10-PCS</td><td data-label="system"><code>http://www.cms.gov/Medicare/Coding/ICD10</code></td><td><code>Procedure.code</code>, exact</td></tr>
+                <tr><td>RxNorm</td><td data-label="system"><code>http://www.nlm.nih.gov/research/umls/rxnorm</code></td><td><code>MedicationRequest.medicationCodeableConcept</code>, by RxCUI, or by an ingredient name in its <code>text</code> or a coding <code>display</code> (case-insensitive). A <code>medicationReference</code> is not followed.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li><strong>Encounters</strong> count by <code>class.code</code>: <code>AMB</code>, <code>EMER</code>, and <code>IMP</code> (HL7 v3 ActCode); virtual (<code>VR</code>) and home (<code>HH</code>) visits count as <code>AMB</code>.</li>
+            <li><strong>Patient</strong>: <code>birthDate</code> gives the age on day 0 (days / 365.25; under 18 is not scored), and <code>gender</code> the sex feature.</li>
+            <li><strong>Dates</strong> come from the first valid field of <code>onsetDateTime</code>, <code>onsetPeriod.start</code>, <code>recordedDate</code>, <code>period.start</code>, <code>effectiveDateTime</code>, <code>effectivePeriod.start</code>, <code>issued</code>, <code>authoredOn</code>, <code>performedDateTime</code>, <code>performedPeriod.start</code>, and <code>occurrenceDateTime</code>, as calendar dates (time and zone ignored). <code>YYYY</code> and <code>YYYY-MM</code> are read as the first day they allow, and as July 1 and the 15th on <code>birthDate</code>.</li>
+            <li><strong>Ignored</strong>: records dated after the scoring date; Conditions whose <code>verificationStatus</code> is <code>refuted</code> or <code>entered-in-error</code>; any record whose <code>status</code> is <code>entered-in-error</code>. An undated record falls in no window, but an undated target diagnosis still counts as already recorded.</li>
+            <li><strong>Missing records</strong> count as absent (value 0), as in training. A search that could not be read is different: pass it as <code>unavailable</code> (<a href="/developers/spec#spec-4c-unavailable-data">spec, section 4c</a>).</li>
+          </ul>
+          <p>Features per resource in each model, with the number that carry a weight in parentheses:</p>
+<!-- generated:fhir-inputs:start -->
+<div class="table-wrap"><table class="fields"><thead><tr><th scope="col">Resource or field</th><th scope="col">Code system</th><th scope="col">Long COVID</th><th scope="col">Chronic fatigue and ME/CFS</th><th scope="col">Fibromyalgia</th><th scope="col">Endometriosis</th><th scope="col">Lyme</th><th scope="col">Lupus</th><th scope="col">Migraine</th><th scope="col">Depression</th><th scope="col">Anxiety</th></tr></thead><tbody><tr><td>Condition</td><td data-label="Code system">ICD-10-CM</td><td data-label="Long COVID">39 (27)</td><td data-label="Chronic fatigue and ME/CFS">33 (33)</td><td data-label="Fibromyalgia">36 (36)</td><td data-label="Endometriosis">43 (43)</td><td data-label="Lyme">40 (40)</td><td data-label="Lupus">35 (35)</td><td data-label="Migraine">38 (38)</td><td data-label="Depression">39 (39)</td><td data-label="Anxiety">36 (36)</td></tr><tr><td>Condition (ICD-10-CM clusters)</td><td data-label="Code system">n/a</td><td data-label="Long COVID">2 (2)</td><td data-label="Chronic fatigue and ME/CFS">2 (2)</td><td data-label="Fibromyalgia">2 (2)</td><td data-label="Endometriosis">2 (2)</td><td data-label="Lyme">2 (2)</td><td data-label="Lupus">2 (2)</td><td data-label="Migraine">2 (2)</td><td data-label="Depression">2 (2)</td><td data-label="Anxiety">2 (2)</td></tr><tr><td>Encounter.class</td><td data-label="Code system">n/a</td><td data-label="Long COVID">9 (9)</td><td data-label="Chronic fatigue and ME/CFS">4 (4)</td><td data-label="Fibromyalgia">4 (4)</td><td data-label="Endometriosis">4 (4)</td><td data-label="Lyme">4 (4)</td><td data-label="Lupus">4 (4)</td><td data-label="Migraine">4 (4)</td><td data-label="Depression">4 (4)</td><td data-label="Anxiety">4 (4)</td></tr><tr><td>MedicationRequest</td><td data-label="Code system">RxNorm, RxNorm ingredient name (fallback)</td><td data-label="Long COVID">2 (2)</td><td data-label="Chronic fatigue and ME/CFS">9 (9)</td><td data-label="Fibromyalgia">12 (12)</td><td data-label="Endometriosis">13 (13)</td><td data-label="Lyme">14 (14)</td><td data-label="Lupus">12 (12)</td><td data-label="Migraine">16 (16)</td><td data-label="Depression">13 (13)</td><td data-label="Anxiety">14 (14)</td></tr><tr><td>Observation</td><td data-label="Code system">LOINC</td><td data-label="Long COVID">8 (8)</td><td data-label="Chronic fatigue and ME/CFS">11 (11)</td><td data-label="Fibromyalgia">13 (13)</td><td data-label="Endometriosis">12 (12)</td><td data-label="Lyme">13 (13)</td><td data-label="Lupus">16 (16)</td><td data-label="Migraine">13 (13)</td><td data-label="Depression">13 (13)</td><td data-label="Anxiety">13 (13)</td></tr><tr><td>Patient.birthDate (age on day 0)</td><td data-label="Code system">n/a</td><td data-label="Long COVID">5 (5)</td><td data-label="Chronic fatigue and ME/CFS">5 (5)</td><td data-label="Fibromyalgia">5 (5)</td><td data-label="Endometriosis">5 (5)</td><td data-label="Lyme">5 (5)</td><td data-label="Lupus">5 (5)</td><td data-label="Migraine">5 (5)</td><td data-label="Depression">5 (5)</td><td data-label="Anxiety">5 (5)</td></tr><tr><td>Patient.gender</td><td data-label="Code system">n/a</td><td data-label="Long COVID">1 (1)</td><td data-label="Chronic fatigue and ME/CFS">1 (1)</td><td data-label="Fibromyalgia">1 (1)</td><td data-label="Endometriosis">none</td><td data-label="Lyme">1 (1)</td><td data-label="Lupus">1 (1)</td><td data-label="Migraine">1 (1)</td><td data-label="Depression">1 (1)</td><td data-label="Anxiety">1 (1)</td></tr><tr><td>Procedure</td><td data-label="Code system">CPT</td><td data-label="Long COVID">2 (2)</td><td data-label="Chronic fatigue and ME/CFS">8 (8)</td><td data-label="Fibromyalgia">7 (7)</td><td data-label="Endometriosis">11 (11)</td><td data-label="Lyme">7 (7)</td><td data-label="Lupus">4 (4)</td><td data-label="Migraine">9 (9)</td><td data-label="Depression">9 (9)</td><td data-label="Anxiety">9 (9)</td></tr><tr><td>other features (count within a group)</td><td data-label="Code system">n/a</td><td data-label="Long COVID">1 (1)</td><td data-label="Chronic fatigue and ME/CFS">none</td><td data-label="Fibromyalgia">none</td><td data-label="Endometriosis">none</td><td data-label="Lyme">none</td><td data-label="Lupus">none</td><td data-label="Migraine">none</td><td data-label="Depression">none</td><td data-label="Anxiety">none</td></tr></tbody></table></div>
+<!-- generated:fhir-inputs:end -->
+          <p>The clinician app also imports the patient app's answers, a QuestionnaireResponse for <code>https://undiagnosednomore.org/fhir/Questionnaire/unm-patient-symptom-check</code> (versions 1.0.0, 1.1.0, 1.2.0, and 1.3.0). The answers are shown next to the chart score and never added to it.</p>
+        </section>
+
+        <section id="vectors" aria-labelledby="vectors-title">
+          <h2 id="vectors-title">Test vectors</h2>
+<!-- generated:vectors:start -->
+<p>Eighteen synthetic patients (no real data), each a FHIR R4 Bundle, and the reference scorer's output for each of the nine models above, scored as of June 1, 2024: 162 expected outputs.</p>
+<p class="actions"><a class="button" href="/developers/vectors/all-vectors.zip" download>Download all vectors (zip, 186 KB)</a></p>
+<details class="vectors-detail"><summary>Expected output for each patient and model (18 patients, 9 models, with links to each file)</summary>
+<div class="table-wrap"><table><thead><tr><th scope="col">Patient</th><th scope="col">Scenario</th><th scope="col">Long COVID 1.2.0</th><th scope="col">Chronic fatigue and ME/CFS 1.0.0</th><th scope="col">Fibromyalgia 1.0.0</th><th scope="col">Endometriosis 1.0.0</th><th scope="col">Lyme 1.0.0</th><th scope="col">Lupus 1.0.0</th><th scope="col">Migraine 1.0.0</th><th scope="col">Depression 1.0.0</th><th scope="col">Anxiety 1.0.0</th><th scope="col">Bundle</th></tr></thead><tbody>
+<tr><td>Maria</td><td>should score high</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/maria.json">High, 6.25%</a></td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/maria.json">Typical, 5.42%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/maria.json">Typical, 2.73%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/maria.json">Typical, 8.74%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/maria.json">Typical, 2.42%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/maria.json">Typical, 0.30%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/maria.json">Typical, 14.7%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/maria.json">Typical, 14.7%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/maria.json">Typical, 10.2%</a></td><td><a href="/developers/vectors/bundles/maria.json">maria.json</a></td></tr>
+<tr><td>James</td><td>should score low</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/james.json">Typical, 0.43%</a></td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/james.json">Typical, 1.51%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/james.json">Typical, 0.93%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/james.json">not scored</a>: the model covers women (FHIR gender female)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/james.json">Typical, 1.22%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/james.json">Typical, 0.12%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/james.json">Typical, 9.66%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/james.json">Typical, 18.2%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/james.json">Typical, 13.1%</a></td><td><a href="/developers/vectors/bundles/james.json">james.json</a></td></tr>
+<tr><td>Rosa</td><td>already coded: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/rosa.json">not scored</a>: a Long COVID diagnosis is already recorded</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/rosa.json">Typical, 2.04%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/rosa.json">Typical, 1.60%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/rosa.json">Typical, 6.15%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/rosa.json">Typical, 1.18%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/rosa.json">Typical, 0.18%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/rosa.json">Typical, 14.3%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/rosa.json">Typical, 20.1%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/rosa.json">Typical, 14.9%</a></td><td><a href="/developers/vectors/bundles/rosa.json">rosa.json</a></td></tr>
+<tr><td>Lee</td><td>no COVID: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/lee.json">not scored</a>: no documented COVID-19 index event</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/lee.json">Typical, 1.47%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/lee.json">Typical, 0.80%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/lee.json">not scored</a>: the model covers women (FHIR gender female)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/lee.json">Typical, 1.29%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/lee.json">Typical, 0.11%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/lee.json">Typical, 9.98%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/lee.json">Typical, 22.8%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/lee.json">Typical, 17.8%</a></td><td><a href="/developers/vectors/bundles/lee.json">lee.json</a></td></tr>
+<tr><td>Nora</td><td>no baseline encounters: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/nora.json">not scored</a>: no encounters in the year before COVID-19 (insufficient history)</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/nora.json">Typical, 1.73%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/nora.json">Typical, 1.10%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/nora.json">Typical, 5.10%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/nora.json">Typical, 1.10%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/nora.json">Typical, 0.16%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/nora.json">Typical, 13.7%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/nora.json">Typical, 24.8%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/nora.json">Typical, 20.8%</a></td><td><a href="/developers/vectors/bundles/nora.json">nora.json</a></td></tr>
+<tr><td>Dana</td><td>Lyme demo (Dutchess County, NY)</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/dana.json">not scored</a>: no documented COVID-19 index event</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/dana.json">Typical, 1.71%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/dana.json">Typical, 1.32%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/dana.json">Typical, 6.03%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/dana.json">Elevated, 3.48%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/dana.json">Typical, 0.18%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/dana.json">Typical, 12.2%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/dana.json">Typical, 20.1%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/dana.json">Typical, 14.0%</a></td><td><a href="/developers/vectors/bundles/dana.json">dana.json</a></td></tr>
+<tr><td>Elena</td><td>long fatigue work-up, never coded: should score high</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/elena.json">not scored</a>: no documented COVID-19 index event</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/elena.json">High, 16.9%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/elena.json">Typical, 3.96%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/elena.json">Typical, 9.33%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/elena.json">Typical, 2.24%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/elena.json">Typical, 0.19%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/elena.json">Elevated, 22.7%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/elena.json">Elevated, 33.3%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/elena.json">Elevated, 25.8%</a></td><td><a href="/developers/vectors/bundles/elena.json">elena.json</a></td></tr>
+<tr><td>Omar</td><td>routine care: should score typical</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/omar.json">not scored</a>: no documented COVID-19 index event</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/omar.json">Typical, 1.47%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/omar.json">Typical, 0.89%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/omar.json">not scored</a>: the model covers women (FHIR gender female)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/omar.json">Typical, 1.23%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/omar.json">Typical, 0.11%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/omar.json">Typical, 8.54%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/omar.json">Typical, 16.5%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/omar.json">Typical, 11.1%</a></td><td><a href="/developers/vectors/bundles/omar.json">omar.json</a></td></tr>
+<tr><td>Grace</td><td>already coded: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/grace.json">not scored</a>: no documented COVID-19 index event</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/grace.json">not scored</a>: a chronic fatigue or ME/CFS diagnosis is already recorded</td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/grace.json">Typical, 1.59%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/grace.json">Typical, 5.77%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/grace.json">Typical, 1.30%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/grace.json">Typical, 0.24%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/grace.json">Typical, 15.6%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/grace.json">Typical, 27.4%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/grace.json">Typical, 20.2%</a></td><td><a href="/developers/vectors/bundles/grace.json">grace.json</a></td></tr>
+<tr><td>Sofia</td><td>years of widespread pain, negative rheumatology work-up, never coded</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/sofia.json">not scored</a>: no documented COVID-19 index event</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/sofia.json">High, 16.7%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/sofia.json">High, 30.9%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/sofia.json">Typical, 12.4%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/sofia.json">Elevated, 3.94%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/sofia.json">High, 3.59%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/sofia.json">High, 53.1%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/sofia.json">High, 70.0%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/sofia.json">not scored</a>: an anxiety diagnosis is already recorded</td><td><a href="/developers/vectors/bundles/sofia.json">sofia.json</a></td></tr>
+<tr><td>Priya</td><td>Long COVID code before the COVID-19 index: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/priya.json">not scored</a>: a Long COVID diagnosis is already recorded</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/priya.json">Typical, 2.69%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/priya.json">Typical, 1.75%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/priya.json">Typical, 6.39%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/priya.json">Typical, 1.40%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/priya.json">Typical, 0.18%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/priya.json">Typical, 14.9%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/priya.json">Typical, 19.4%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/priya.json">Typical, 14.0%</a></td><td><a href="/developers/vectors/bundles/priya.json">priya.json</a></td></tr>
+<tr><td>Sam</td><td>Long COVID code (SNOMED) on the index date: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/sam.json">not scored</a>: a Long COVID diagnosis is already recorded</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/sam.json">Typical, 1.82%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/sam.json">Typical, 0.99%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/sam.json">not scored</a>: the model covers women (FHIR gender female)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/sam.json">Typical, 1.63%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/sam.json">Typical, 0.10%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/sam.json">Typical, 8.27%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/sam.json">Typical, 13.9%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/sam.json">Typical, 8.82%</a></td><td><a href="/developers/vectors/bundles/sam.json">sam.json</a></td></tr>
+<tr><td>Theo</td><td>Long COVID code on day 90, the landmark day: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/theo.json">not scored</a>: a Long COVID diagnosis is already recorded</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/theo.json">Typical, 2.29%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/theo.json">Typical, 1.03%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/theo.json">not scored</a>: the model covers women (FHIR gender female)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/theo.json">Typical, 1.53%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/theo.json">Typical, 0.09%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/theo.json">Typical, 9.93%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/theo.json">Typical, 16.6%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/theo.json">Typical, 12.3%</a></td><td><a href="/developers/vectors/bundles/theo.json">theo.json</a></td></tr>
+<tr><td>Yara</td><td>undated Long COVID code: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/yara.json">not scored</a>: a Long COVID diagnosis is already recorded</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/yara.json">Typical, 2.19%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/yara.json">Typical, 1.19%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/yara.json">Typical, 5.45%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/yara.json">Typical, 1.38%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/yara.json">Typical, 0.15%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/yara.json">Typical, 13.0%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/yara.json">Typical, 21.3%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/yara.json">Typical, 16.7%</a></td><td><a href="/developers/vectors/bundles/yara.json">yara.json</a></td></tr>
+<tr><td>Vera</td><td>COVID-19 508 days before, past day 455: not scored</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/vera.json">not scored</a>: more than 455 days since the COVID-19 index (outside the model&#x27;s time window)</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/vera.json">Typical, 1.87%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/vera.json">Typical, 1.27%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/vera.json">Typical, 6.39%</a></td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/vera.json">Typical, 1.79%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/vera.json">Typical, 0.14%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/vera.json">Typical, 10.2%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/vera.json">Typical, 14.9%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/vera.json">Typical, 9.20%</a></td><td><a href="/developers/vectors/bundles/vera.json">vera.json</a></td></tr>
+<tr><td>Will</td><td>partial dates, a pre-era infection, and refuted or future Long COVID codes: should score (index 2023-12-05)</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/will.json">Typical, 0.49%</a></td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/will.json">Typical, 1.51%</a></td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/will.json">Typical, 0.93%</a></td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/will.json">not scored</a>: the model covers women (FHIR gender female)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/will.json">Typical, 1.22%</a></td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/will.json">Typical, 0.12%</a></td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/will.json">Typical, 9.66%</a></td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/will.json">Typical, 18.2%</a></td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/will.json">Typical, 13.1%</a></td><td><a href="/developers/vectors/bundles/will.json">will.json</a></td></tr>
+<tr><td>Uma</td><td>no birth date: not scored by any model</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/uma.json">not scored</a>: birth date missing or unusable (age is required)</td><td><a href="/developers/vectors/bundles/uma.json">uma.json</a></td></tr>
+<tr><td>Kai</td><td>16 at the COVID-19 index, 17 on the scoring date: not scored by any model</td><td><a href="/developers/vectors/expected/unm-longcovid-1.2.0/kai.json">not scored</a>: under 18 at the COVID-19 index (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-chronicfatigue-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-fibromyalgia-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-endometriosis-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-lyme-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-lupus-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-migraine-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-depression-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/expected/unm-anxiety-1.0.0/kai.json">not scored</a>: under 18 on the scoring date (the model covers adults)</td><td><a href="/developers/vectors/bundles/kai.json">kai.json</a></td></tr>
+</tbody></table></div>
+</details>
+<!-- generated:vectors:end -->
+          <p>A scorer passes a vector when, run with the vector's <code>as_of</code> date, its result has the same fields as the expected output (without <code>as_of</code>), every number agrees to 1e-9, and everything else is identical: status, reason, band, each feature value, and the drivers in order with their evidence. Beyond the demo patients, the vectors cover the eligibility rules: a Long COVID code before the index, on the index date, on day 90, or undated; an index more than 455 days back; partial dates, an infection before July 2, 2021, and refuted or future-dated codes; no birth date; and a patient under 18.</p>
+          <div class="code"><div class="code-head"><span>bash</span></div><pre><code># rebuild the bundles and one model's expected outputs with the reference scorer
+python3 model/test_vectors/make_bundles.py model/longcovid.json
+
+# check the JavaScript scorer and the CDS Hooks service against them
+cd web &amp;&amp; npm test</code></pre></div>
+          <p>The bundles are FHIR R4 collection Bundles whose <code>fullUrl</code> values are name-based <code>urn:uuid:</code> UUIDs. Where the HL7 FHIR validator is installed: <code>java -jar validator_cli.jar -version 4.0.1 model/test_vectors/bundles/*.json</code>.</p>
+        </section>
+
+        <section id="versioning" aria-labelledby="versioning-title">
+          <h2 id="versioning-title">Versioning</h2>
+          <ul>
+            <li>Each model file carries its <code>model_id</code> and a semantic <code>version</code>. The CDS Hooks card names both, and so does <a href="/models/index.json">/models/index.json</a>.</li>
+            <li>Expected outputs are stored per version in <code>model/test_vectors/expected/&lt;model_id&gt;-&lt;version&gt;/</code>. The directories of superseded versions stay in the repository.</li>
+            <li>Model files are served with <code>Cache-Control: public, max-age=300</code>, so a cached copy is at most five minutes old.</li>
+            <li><code>python3 analysis/build_release_manifest.py --out &lt;file&gt;</code> records each deployed model file's hash and version, the scorer hashes, and the contract version.</li>
+          </ul>
+<!-- generated:versions:start -->
+<div class="table-wrap"><table class="fields"><thead><tr><th scope="col">Directory in <code>model/test_vectors/expected/</code></th><th scope="col">Outputs</th><th scope="col">Model file</th></tr></thead><tbody><tr><td><code>unm-anxiety-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/anxiety.json</code></td></tr><tr><td><code>unm-chronicfatigue-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/chronicfatigue.json</code></td></tr><tr><td><code>unm-depression-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/depression.json</code></td></tr><tr><td><code>unm-endometriosis-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/endometriosis.json</code></td></tr><tr><td><code>unm-fibromyalgia-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/fibromyalgia.json</code></td></tr><tr><td><code>unm-longcovid-0.1.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">placeholder example: <code>model/longcovid.example.json</code></td></tr><tr><td><code>unm-longcovid-1.0.0/</code></td><td data-label="Outputs">6</td><td data-label="Model file">superseded: no model file has this version</td></tr><tr><td><code>unm-longcovid-1.1.0/</code></td><td data-label="Outputs">10</td><td data-label="Model file">superseded: no model file has this version</td></tr><tr><td><code>unm-longcovid-1.2.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/longcovid.json</code></td></tr><tr><td><code>unm-lupus-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/lupus.json</code></td></tr><tr><td><code>unm-lyme-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/lyme.json</code></td></tr><tr><td><code>unm-migraine-1.0.0/</code></td><td data-label="Outputs">18</td><td data-label="Model file">current: <code>model/migraine.json</code></td></tr></tbody></table></div>
+<p><code>web/test/scorer.test.js</code> checks the JavaScript scorer against the 180 expected outputs whose model file is in <code>model/</code> and skips the superseded ones.</p>
+<!-- generated:versions:end -->
+        </section>
+
+        <section id="source" aria-labelledby="source-title">
+          <h2 id="source-title">Source code</h2>
+          <p>Repository: <a href="https://github.com/undiagnosed-no-more">github.com/undiagnosed-no-more</a> (public at release).</p>
+          <div class="table-wrap">
+            <table class="fields">
+              <thead><tr><th scope="col">Path</th><th scope="col">What it holds</th></tr></thead>
+              <tbody>
+                <tr><td><code>model/</code></td><td>The model files; <code>web/tools/sync_models.sh</code> copies them to <code>web/web/models/</code></td></tr>
+                <tr><td><code>docs/interface/model_spec.md</code></td><td>The model contract</td></tr>
+                <tr><td><code>model/reference/score_fhir.py</code></td><td>The Python reference scorer and, next to it, its tests</td></tr>
+                <tr><td><code>web/web/shared/scorer.js</code></td><td>The JavaScript scorer</td></tr>
+                <tr><td><code>model/test_vectors/</code></td><td>The bundle generator, the bundles, the expected outputs, and the SMART sandbox upload</td></tr>
+                <tr><td><code>web/functions/cds-services/</code></td><td>The CDS Hooks service (Cloudflare Pages Functions)</td></tr>
+                <tr><td><code>web/web/smart/</code>, <code>web/web/epic/</code>, <code>web/web/athena/</code></td><td>The SMART launch pages and the clinician app</td></tr>
+                <tr><td><code>analysis/build_models_guide.py</code></td><td>Generates the models guide, the spec page, the vectors, the examples, the registry, and the generated parts of this page</td></tr>
+                <tr><td><code>web/test/</code></td><td>The tests: <code>cd web &amp;&amp; npm test</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="/shared/site-nav.js?v=20261023" defer></script>
+    <script type="module" src="/developers/developers.js?v=20261014"></script>
+  </body>
+</html>

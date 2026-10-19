@@ -1,0 +1,124 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:a09edb25-74d0-5e4e-8d3d-ccc0218d768f",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "grace",
+    "gender": "female",
+    "birthDate": "1979-07-21",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Grace"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:00f29377-4c4e-5a0d-8234-d69dc9fde861",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "grace-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/grace"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:792a6d68-8216-543c-b366-b3e7b38e8881",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "grace-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/grace"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:0a67b6fa-cde9-53d5-a540-afd594e815b9",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "grace-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/grace"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:7e906707-b099-542b-af0a-871f9172934d",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "grace-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "G93.32",
+       "display": "Myalgic encephalomyelitis/chronic fatigue syndrome"
+      }
+     ],
+     "text": "Myalgic encephalomyelitis/chronic fatigue syndrome"
+    },
+    "subject": {
+     "reference": "Patient/grace"
+    },
+    "onsetDateTime": "2022-11-03",
+    "recordedDate": "2022-11-03"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:543d428c-327f-56e0-a5e2-5d6c7e237242",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "grace-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/grace"
+    },
+    "period": {
+     "start": "2022-11-03"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:55f7f23b-0ef6-5417-bc22-e7ba867c28d8",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "lee",
+    "gender": "male",
+    "birthDate": "1990-05-05",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Lee"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:a86aaf2b-7029-5a5c-b0a1-b0a150ae5960",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "lee-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/lee"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:1a72a154-15b8-5ddf-a0c2-027eac1f000b",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "lee-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/lee"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:a7827406-7ce8-57b4-98a2-4ff7be01083d",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "lee-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/lee"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+condition,population,axis,group,n_respondents,n_self_report,n_self_report_current,n_coded,n_both,n_both_current,p_code_given_self_report,p_code_given_current_self_report,p_self_report_given_code
+lupus,women and men,race_eth,Hispanic or Latino,16610,240,210,310,180,hidden,0.75,hidden,0.581
+lupus,women and men,race_eth,NH Asian,4450,50,hidden,50,hidden,hidden,hidden,hidden,hidden
+lupus,women and men,race_eth,NH Black,13910,280,hidden,390,240,hidden,0.857,hidden,0.615
+lupus,women and men,race_eth,NH White,115640,1010,870,1170,640,580,0.634,0.667,0.547
+lupus,women and men,race_eth,NH other or multiple,7220,120,100,120,80,hidden,0.667,hidden,0.667
+lupus,women and men,race_eth,Unknown,3660,50,hidden,60,hidden,hidden,hidden,hidden,hidden
+lupus,women and men,age_band,18-39,25790,290,270,320,190,hidden,0.655,hidden,0.594
+lupus,women and men,age_band,40-49,21500,380,340,380,250,hidden,0.658,hidden,0.658
+lupus,women and men,age_band,50-59,27020,410,360,500,290,270,0.707,0.75,0.58
+lupus,women and men,age_band,60-69,39060,400,350,500,270,250,0.675,0.714,0.54
+lupus,women and men,age_band,70+,48130,270,210,420,190,170,0.704,0.81,0.452
+lupus,women and men,ehr_depth,no condition records,2400,<=20,<=20,0,hidden,hidden,hidden,hidden,hidden
+lupus,women and men,ehr_depth,record starts after survey,4140,hidden,hidden,30,<=20,<=20,<=20,<=20,<=20
+lupus,women and men,ehr_depth,under 2 years,16480,170,hidden,190,hidden,hidden,hidden,hidden,hidden
+lupus,women and men,ehr_depth,2 to 4 years,23860,250,220,280,170,hidden,0.68,hidden,0.607
+lupus,women and men,ehr_depth,5 to 9 years,43090,470,400,580,310,290,0.66,0.725,0.534
+lupus,women and men,ehr_depth,10 years or more,71530,800,700,1030,580,540,0.725,0.771,0.563

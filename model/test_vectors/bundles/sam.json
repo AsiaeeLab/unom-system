@@ -1,0 +1,200 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:09e0d5d2-580b-59f4-a1b8-6a398c6d87c0",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "sam",
+    "gender": "male",
+    "birthDate": "1969-12-03",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Sam"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:ca3ce248-1453-57f6-bae3-c3f28f10adfd",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sam-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:bf2693a5-bc63-53e6-a758-18daa0202690",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sam-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:569c6784-da9b-53ee-b1fa-88ea0b80e7e2",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sam-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:536ee499-fb41-5d81-a4af-1304f2cc7df4",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sam-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:0d30b728-9be2-5c17-8615-d2705e4f871b",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sam-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "period": {
+     "start": "2024-01-08"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:b87b5279-d545-5715-b24e-b9ac5b0602cc",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "sam-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "period": {
+     "start": "2024-02-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:350e2ae6-2848-5c8a-a911-298576ec4558",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sam-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R53.83",
+       "display": "Other fatigue"
+      }
+     ],
+     "text": "Other fatigue"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "onsetDateTime": "2024-02-20",
+    "recordedDate": "2024-02-20"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:02ac7ada-2d65-576e-8331-5adcd12601e2",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "sam-cond-8",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://snomed.info/sct",
+       "code": "1325161000000102",
+       "display": "Post-COVID-19 syndrome"
+      }
+     ],
+     "text": "Post-COVID-19 syndrome"
+    },
+    "subject": {
+     "reference": "Patient/sam"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  }
+ ]
+}

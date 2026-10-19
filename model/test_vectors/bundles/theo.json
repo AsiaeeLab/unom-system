@@ -1,0 +1,218 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:ea8aa985-a80f-5ee7-84cc-13ab72597e59",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "theo",
+    "gender": "male",
+    "birthDate": "1988-02-11",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Theo"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:c16dc8d3-695f-5635-a8a8-976b267b792d",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "theo-enc-1",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "period": {
+     "start": "2023-02-10"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:414fa8da-c612-5658-8bb0-d2f30dbf1713",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "theo-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "period": {
+     "start": "2023-06-15"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:fcb07bff-1518-502f-b387-9f16c2cc69c3",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "theo-enc-3",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "period": {
+     "start": "2023-10-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:8618a17b-d48f-5faf-a376-4b953a6ab9cb",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "theo-cond-4",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:d74e4569-666e-5790-b90c-f9c9c0e162e7",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "theo-enc-5",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "period": {
+     "start": "2024-01-08"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:3acb2766-ffea-5563-99c0-fc6c350c0d9c",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "theo-enc-6",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "period": {
+     "start": "2024-02-20"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:30751840-4e5d-505e-aa73-7dba1d51bd1e",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "theo-cond-7",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "R53.83",
+       "display": "Other fatigue"
+      }
+     ],
+     "text": "Other fatigue"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "onsetDateTime": "2024-02-20",
+    "recordedDate": "2024-02-20"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:2db182ef-de2f-51fd-90c9-cd4c34382ebb",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "theo-enc-8",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "period": {
+     "start": "2024-04-07"
+    }
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:c26abdbd-283c-573a-af6f-feaefc9101c6",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "theo-cond-9",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U09.9",
+       "display": "Post COVID-19 condition, unspecified"
+      }
+     ],
+     "text": "Post COVID-19 condition, unspecified"
+    },
+    "subject": {
+     "reference": "Patient/theo"
+    },
+    "onsetDateTime": "2024-04-07",
+    "recordedDate": "2024-04-07"
+   }
+  }
+ ]
+}

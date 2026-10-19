@@ -1,0 +1,11 @@
+split,metric,estimate,lower,upper,uncertainty,valid_resamples,bootstrap_scheme
+patient,calibration_intercept_in_large,-0.1232415917984356,-0.4416315746824286,0.1538877550216743,available,500 resamples,ordinary patient
+patient,calibration_slope,0.8874762839805935,0.5101289810194729,1.1867793479703674,available,500 resamples,ordinary patient
+patient,Brier,0.0105248181706839,0.0076628789806024,0.0136286910123432,available,500 resamples,ordinary patient
+patient,AUROC,0.679055135135135,0.6026492432432432,0.753099189189189,available,500 resamples,outcome-stratified patient
+patient,AUPRC,0.0299488524056514,0.0187316150239409,0.0624231589293606,available,500 resamples,outcome-stratified patient
+site,calibration_intercept_in_large,-0.2938335116642417,-0.584883701705067,-0.0179577133929913,available,500 resamples,ordinary patient
+site,calibration_slope,0.8261622431860044,0.4038977180844787,1.179113036914384,available,500 resamples,ordinary patient
+site,Brier,0.0087938917472356,0.0066369074424245,0.0114777754529843,available,500 resamples,ordinary patient
+site,AUROC,0.6428986463952581,0.5532700797309982,0.7185876112675474,available,500 resamples,outcome-stratified patient
+site,AUPRC,0.0212927712476814,0.0120184518096581,0.054629968274679,available,500 resamples,outcome-stratified patient

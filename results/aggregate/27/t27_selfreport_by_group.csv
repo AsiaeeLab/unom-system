@@ -1,0 +1,171 @@
+condition,population,axis,group,n_respondents,n_self_report,n_self_report_current,n_coded,n_both,n_both_current,p_code_given_self_report,p_code_given_current_self_report,p_self_report_given_code
+hypertension,women and men,race_eth,Hispanic or Latino,16610,4390,4000,6730,3570,3360,0.813,0.84,0.53
+hypertension,women and men,race_eth,NH Asian,4450,960,870,1220,700,680,0.729,0.782,0.574
+hypertension,women and men,race_eth,NH Black,13910,6480,6180,8320,5350,5170,0.826,0.837,0.643
+hypertension,women and men,race_eth,NH White,115640,38030,35260,50070,30240,28710,0.795,0.814,0.604
+hypertension,women and men,race_eth,NH other or multiple,7220,2290,2080,2960,1730,1620,0.755,0.779,0.584
+hypertension,women and men,race_eth,Unknown,3660,1260,1180,1930,1060,1010,0.841,0.856,0.549
+hypertension,women and men,age_band,18-39,25790,2710,1920,3240,1500,1230,0.554,0.641,0.463
+hypertension,women and men,age_band,40-49,21500,4810,4030,5780,3270,2910,0.68,0.722,0.566
+hypertension,women and men,age_band,50-59,27020,8670,7980,11090,6690,6270,0.772,0.786,0.603
+hypertension,women and men,age_band,60-69,39060,15400,14580,20240,12520,12010,0.813,0.824,0.619
+hypertension,women and men,age_band,70+,48130,21820,21060,30860,18660,18120,0.855,0.86,0.605
+hypertension,women and men,ehr_depth,no condition records,2400,610,550,0,0,0,0.0,0.0,0.0
+hypertension,women and men,ehr_depth,record starts after survey,4140,1180,1080,1220,790,750,0.669,0.694,0.648
+hypertension,women and men,ehr_depth,under 2 years,16480,4460,4030,5370,3220,3040,0.722,0.754,0.6
+hypertension,women and men,ehr_depth,2 to 4 years,23860,7140,6550,9080,5420,5130,0.759,0.783,0.597
+hypertension,women and men,ehr_depth,5 to 9 years,43090,14250,13200,19030,11310,10740,0.794,0.814,0.594
+hypertension,women and men,ehr_depth,10 years or more,71530,25780,24170,36520,21910,20870,0.85,0.863,0.6
+diabetes_type2,women and men,race_eth,Hispanic or Latino,16610,2570,2470,4340,2240,2160,0.872,0.874,0.516
+diabetes_type2,women and men,race_eth,NH Asian,4450,410,hidden,630,320,hidden,0.78,hidden,0.508
+diabetes_type2,women and men,race_eth,NH Black,13910,2700,2600,4520,2330,2240,0.863,0.862,0.515
+diabetes_type2,women and men,race_eth,NH White,115640,11300,10790,18290,9420,9050,0.834,0.839,0.515
+diabetes_type2,women and men,race_eth,NH other or multiple,7220,1000,950,1530,800,780,0.8,0.821,0.523
+diabetes_type2,women and men,race_eth,Unknown,3660,490,hidden,840,430,hidden,0.878,hidden,0.512
+diabetes_type2,women and men,age_band,18-39,25790,650,600,1400,470,440,0.723,0.733,0.336
+diabetes_type2,women and men,age_band,40-49,21500,1710,1600,2690,1270,1200,0.743,0.75,0.472
+diabetes_type2,women and men,age_band,50-59,27020,3590,3430,5500,2880,2770,0.802,0.808,0.524
+diabetes_type2,women and men,age_band,60-69,39060,5720,5500,8990,4910,4730,0.858,0.86,0.546
+diabetes_type2,women and men,age_band,70+,48130,6790,6540,11570,6000,5820,0.884,0.89,0.519
+diabetes_type2,women and men,ehr_depth,no condition records,2400,170,hidden,0,0,0,0.0,hidden,0.0
+diabetes_type2,women and men,ehr_depth,record starts after survey,4140,360,hidden,470,260,hidden,0.722,hidden,0.553
+diabetes_type2,women and men,ehr_depth,under 2 years,16480,1550,1480,2260,1250,hidden,0.806,hidden,0.553
+diabetes_type2,women and men,ehr_depth,2 to 4 years,23860,2450,2340,3850,1960,1890,0.8,0.808,0.509
+diabetes_type2,women and men,ehr_depth,5 to 9 years,43090,5000,4790,8260,4170,4020,0.834,0.839,0.505
+diabetes_type2,women and men,ehr_depth,10 years or more,71530,8960,8570,15300,7900,7600,0.882,0.887,0.516
+obesity,women and men,race_eth,Hispanic or Latino,16610,4160,2130,6030,2700,1510,0.649,0.709,0.448
+obesity,women and men,race_eth,NH Asian,4450,450,220,500,230,130,0.511,0.591,0.46
+obesity,women and men,race_eth,NH Black,13910,4250,2290,6230,3020,1720,0.711,0.751,0.485
+obesity,women and men,race_eth,NH White,115640,30560,14950,31870,18780,10120,0.615,0.677,0.589
+obesity,women and men,race_eth,NH other or multiple,7220,2330,1250,2470,1430,830,0.614,0.664,0.579
+obesity,women and men,race_eth,Unknown,3660,860,410,1140,560,300,0.651,0.732,0.491
+obesity,women and men,age_band,18-39,25790,6110,3080,6100,3430,1940,0.561,0.63,0.562
+obesity,women and men,age_band,40-49,21500,6940,3760,7020,4240,2480,0.611,0.66,0.604
+obesity,women and men,age_band,50-59,27020,8770,4800,9590,5600,3320,0.639,0.692,0.584
+obesity,women and men,age_band,60-69,39060,10690,5210,12540,6950,3690,0.65,0.708,0.554
+obesity,women and men,age_band,70+,48130,10090,4400,12980,6500,3180,0.644,0.723,0.501
+obesity,women and men,ehr_depth,no condition records,2400,400,190,0,0,0,0.0,0.0,0.0
+obesity,women and men,ehr_depth,record starts after survey,4140,870,390,530,300,150,0.345,0.385,0.566
+obesity,women and men,ehr_depth,under 2 years,16480,3720,1700,3430,1820,950,0.489,0.559,0.531
+obesity,women and men,ehr_depth,2 to 4 years,23860,5900,2890,6200,3370,1840,0.571,0.637,0.544
+obesity,women and men,ehr_depth,5 to 9 years,43090,11540,5890,13150,7260,4000,0.629,0.679,0.552
+obesity,women and men,ehr_depth,10 years or more,71530,20190,10200,24930,13970,7660,0.692,0.751,0.56
+depression,women and men,race_eth,Hispanic or Latino,16610,4980,3580,5360,2920,2330,0.586,0.651,0.545
+depression,women and men,race_eth,NH Asian,4450,770,540,700,380,310,0.494,0.574,0.543
+depression,women and men,race_eth,NH Black,13910,3830,2770,4300,2330,1850,0.608,0.668,0.542
+depression,women and men,race_eth,NH White,115640,38170,28700,33010,21810,18250,0.571,0.636,0.661
+depression,women and men,race_eth,NH other or multiple,7220,2920,2190,2460,1640,1350,0.562,0.616,0.667
+depression,women and men,race_eth,Unknown,3660,1110,820,1150,660,540,0.595,0.659,0.574
+depression,women and men,age_band,18-39,25790,11440,8790,8450,6050,5050,0.529,0.575,0.716
+depression,women and men,age_band,40-49,21500,8910,6730,7070,4910,4030,0.551,0.599,0.694
+depression,women and men,age_band,50-59,27020,9920,7640,8740,5790,4900,0.584,0.641,0.662
+depression,women and men,age_band,60-69,39060,11420,8440,11060,6720,5610,0.588,0.665,0.608
+depression,women and men,age_band,70+,48130,10090,6990,11670,6270,5040,0.621,0.721,0.537
+depression,women and men,ehr_depth,no condition records,2400,600,400,0,0,0,0.0,0.0,0.0
+depression,women and men,ehr_depth,record starts after survey,4140,1120,770,560,350,280,0.312,0.364,0.625
+depression,women and men,ehr_depth,under 2 years,16480,5080,3670,3620,2310,1970,0.455,0.537,0.638
+depression,women and men,ehr_depth,2 to 4 years,23860,7640,5620,6230,4000,3300,0.524,0.587,0.642
+depression,women and men,ehr_depth,5 to 9 years,43090,14070,10570,12820,8150,6740,0.579,0.638,0.636
+depression,women and men,ehr_depth,10 years or more,71530,23270,17570,23750,14920,12330,0.641,0.702,0.628
+anxiety,women and men,race_eth,Hispanic or Latino,16610,3790,2920,5640,2350,1910,0.62,0.654,0.417
+anxiety,women and men,race_eth,NH Asian,4450,560,430,860,310,250,0.554,0.581,0.36
+anxiety,women and men,race_eth,NH Black,13910,2590,2060,4000,1540,1300,0.595,0.631,0.385
+anxiety,women and men,race_eth,NH White,115640,27650,22130,36940,16960,14330,0.613,0.648,0.459
+anxiety,women and men,race_eth,NH other or multiple,7220,2360,1860,2600,1340,1120,0.568,0.602,0.515
+anxiety,women and men,race_eth,Unknown,3660,760,600,1210,500,400,0.658,0.667,0.413
+anxiety,women and men,age_band,18-39,25790,10970,8900,10540,6530,5550,0.595,0.624,0.62
+anxiety,women and men,age_band,40-49,21500,7680,6280,8310,4680,3990,0.609,0.635,0.563
+anxiety,women and men,age_band,50-59,27020,7230,5930,9420,4420,3790,0.611,0.639,0.469
+anxiety,women and men,age_band,60-69,39060,6870,5380,11380,4270,3570,0.622,0.664,0.375
+anxiety,women and men,age_band,70+,48130,4950,3500,11600,3100,2420,0.626,0.691,0.267
+anxiety,women and men,ehr_depth,no condition records,2400,400,280,0,0,0,0.0,0.0,0.0
+anxiety,women and men,ehr_depth,record starts after survey,4140,810,610,620,280,230,0.346,0.377,0.452
+anxiety,women and men,ehr_depth,under 2 years,16480,3910,3050,4170,2010,1690,0.514,0.554,0.482
+anxiety,women and men,ehr_depth,2 to 4 years,23860,5830,4600,7050,3350,2820,0.575,0.613,0.475
+anxiety,women and men,ehr_depth,5 to 9 years,43090,10490,8340,14180,6480,5400,0.618,0.647,0.457
+anxiety,women and men,ehr_depth,10 years or more,71530,16280,13110,25240,10890,9170,0.669,0.699,0.431
+migraine,women and men,race_eth,Hispanic or Latino,16610,3180,1860,2720,1530,1150,0.481,0.618,0.562
+migraine,women and men,race_eth,NH Asian,4450,450,220,370,200,130,0.444,0.591,0.541
+migraine,women and men,race_eth,NH Black,13910,2070,1230,1920,970,740,0.469,0.602,0.505
+migraine,women and men,race_eth,NH White,115640,24170,12740,17750,11520,8300,0.477,0.651,0.649
+migraine,women and men,race_eth,NH other or multiple,7220,1880,1100,1310,870,650,0.463,0.591,0.664
+migraine,women and men,race_eth,Unknown,3660,640,370,610,330,250,0.516,0.676,0.541
+migraine,women and men,age_band,18-39,25790,6800,4120,5180,3390,2550,0.499,0.619,0.654
+migraine,women and men,age_band,40-49,21500,6330,3950,4610,3160,2500,0.499,0.633,0.685
+migraine,women and men,age_band,50-59,27020,6740,4000,5000,3300,2550,0.49,0.637,0.66
+migraine,women and men,age_band,60-69,39060,6860,3390,5260,3220,2250,0.469,0.664,0.612
+migraine,women and men,age_band,70+,48130,5670,2050,4650,2340,1360,0.413,0.663,0.503
+migraine,women and men,ehr_depth,no condition records,2400,310,130,0,0,0,0.0,0.0,0.0
+migraine,women and men,ehr_depth,record starts after survey,4140,660,330,260,160,120,0.242,0.364,0.615
+migraine,women and men,ehr_depth,under 2 years,16480,3040,1580,1740,1130,870,0.372,0.551,0.649
+migraine,women and men,ehr_depth,2 to 4 years,23860,4630,2510,3170,1980,1500,0.428,0.598,0.625
+migraine,women and men,ehr_depth,5 to 9 years,43090,8990,4980,6820,4240,3200,0.472,0.643,0.622
+migraine,women and men,ehr_depth,10 years or more,71530,14770,7990,12700,7900,5520,0.535,0.691,0.622
+fibromyalgia,women and men,race_eth,Hispanic or Latino,16610,1000,770,850,570,500,0.57,0.649,0.671
+fibromyalgia,women and men,race_eth,NH Asian,4450,80,60,80,50,hidden,0.625,hidden,0.625
+fibromyalgia,women and men,race_eth,NH Black,13910,730,570,610,410,360,0.562,0.632,0.672
+fibromyalgia,women and men,race_eth,NH White,115640,6930,4900,4760,3680,2910,0.531,0.594,0.773
+fibromyalgia,women and men,race_eth,NH other or multiple,7220,670,500,460,350,280,0.522,0.56,0.761
+fibromyalgia,women and men,race_eth,Unknown,3660,290,210,220,160,hidden,0.552,hidden,0.727
+fibromyalgia,women and men,age_band,18-39,25790,1180,880,850,590,480,0.5,0.545,0.694
+fibromyalgia,women and men,age_band,40-49,21500,1720,1340,1240,940,800,0.547,0.597,0.758
+fibromyalgia,women and men,age_band,50-59,27020,2310,1790,1660,1280,1080,0.554,0.603,0.771
+fibromyalgia,women and men,age_band,60-69,39060,2510,1760,1820,1390,1090,0.554,0.619,0.764
+fibromyalgia,women and men,age_band,70+,48130,1990,1240,1410,1030,770,0.518,0.621,0.73
+fibromyalgia,women and men,ehr_depth,no condition records,2400,70,40,0,0,0,0.0,0.0,0.0
+fibromyalgia,women and men,ehr_depth,record starts after survey,4140,170,120,70,hidden,hidden,hidden,hidden,hidden
+fibromyalgia,women and men,ehr_depth,under 2 years,16480,800,580,420,hidden,hidden,hidden,hidden,hidden
+fibromyalgia,women and men,ehr_depth,2 to 4 years,23860,1260,900,880,660,540,0.524,0.6,0.75
+fibromyalgia,women and men,ehr_depth,5 to 9 years,43090,2690,1990,1960,1460,1200,0.543,0.603,0.745
+fibromyalgia,women and men,ehr_depth,10 years or more,71530,4700,3360,3650,2730,2150,0.581,0.64,0.748
+endometriosis,women,race_eth,Hispanic or Latino,11620,770,270,410,180,110,0.234,0.407,0.439
+endometriosis,women,race_eth,NH Asian,2750,160,50,80,40,<=20,0.25,<=20,0.5
+endometriosis,women,race_eth,NH Black,10090,710,180,300,110,60,0.155,0.333,0.367
+endometriosis,women,race_eth,NH White,72740,7710,1440,2370,1300,550,0.169,0.382,0.549
+endometriosis,women,race_eth,NH other or multiple,4860,520,160,180,110,70,0.212,0.438,0.611
+endometriosis,women,race_eth,Unknown,2210,250,40,70,30,<=20,0.12,<=20,0.429
+endometriosis,women,age_band,18-39,19540,1210,820,800,460,360,0.38,0.439,0.575
+endometriosis,women,age_band,40-49,15850,1620,680,990,520,300,0.321,0.441,0.525
+endometriosis,women,age_band,50-59,19050,2150,370,850,410,120,0.191,0.324,0.482
+endometriosis,women,age_band,60-69,24630,2650,150,450,240,30,0.091,0.2,0.533
+endometriosis,women,age_band,70+,25190,2490,110,310,140,<=20,0.056,<=20,0.452
+endometriosis,women,ehr_depth,no condition records,1500,120,30,0,0,0,0.0,0.0,0.0
+endometriosis,women,ehr_depth,record starts after survey,2810,220,40,30,<=20,<=20,<=20,<=20,<=20
+endometriosis,women,ehr_depth,under 2 years,10600,890,210,240,hidden,70,hidden,0.333,hidden
+endometriosis,women,ehr_depth,2 to 4 years,15490,1430,360,420,220,130,0.154,0.361,0.524
+endometriosis,women,ehr_depth,5 to 9 years,28390,2860,630,950,500,260,0.175,0.413,0.526
+endometriosis,women,ehr_depth,10 years or more,45490,4610,870,1760,920,360,0.2,0.414,0.523
+lyme,women and men,race_eth,Hispanic or Latino,16610,130,<=20,50,<=20,<=20,<=20,<=20,<=20
+lyme,women and men,race_eth,NH Asian,4450,30,<=20,<=20,<=20,<=20,<=20,<=20,<=20
+lyme,women and men,race_eth,NH Black,13910,40,<=20,<=20,<=20,<=20,<=20,<=20,<=20
+lyme,women and men,race_eth,NH White,115640,3990,370,1620,790,140,0.198,0.378,0.488
+lyme,women and men,race_eth,NH other or multiple,7220,160,<=20,70,30,<=20,0.188,<=20,0.429
+lyme,women and men,race_eth,Unknown,3660,120,<=20,40,<=20,<=20,<=20,<=20,<=20
+lyme,women and men,age_band,18-39,25790,510,70,150,70,<=20,0.137,<=20,0.467
+lyme,women and men,age_band,40-49,21500,450,70,170,90,<=20,0.2,<=20,0.529
+lyme,women and men,age_band,50-59,27020,600,80,270,120,40,0.2,0.5,0.444
+lyme,women and men,age_band,60-69,39060,1210,120,470,250,50,0.207,0.417,0.532
+lyme,women and men,age_band,70+,48130,1710,120,760,340,40,0.199,0.333,0.447
+lyme,women and men,ehr_depth,no condition records,2400,40,<=20,0,0,hidden,0.0,hidden,0.0
+lyme,women and men,ehr_depth,record starts after survey,4140,80,<=20,<=20,<=20,<=20,<=20,<=20,<=20
+lyme,women and men,ehr_depth,under 2 years,16480,300,hidden,hidden,<=20,<=20,<=20,<=20,<=20
+lyme,women and men,ehr_depth,2 to 4 years,23860,470,50,140,70,<=20,0.149,<=20,0.5
+lyme,women and men,ehr_depth,5 to 9 years,43090,990,100,360,170,40,0.172,0.4,0.472
+lyme,women and men,ehr_depth,10 years or more,71530,2600,230,1260,620,90,0.238,0.391,0.492
+chronic_fatigue,women and men,race_eth,Hispanic or Latino,16610,800,550,770,120,90,0.15,0.164,0.156
+chronic_fatigue,women and men,race_eth,NH Asian,4450,130,80,150,<=20,<=20,<=20,<=20,<=20
+chronic_fatigue,women and men,race_eth,NH Black,13910,650,470,580,90,hidden,0.138,hidden,0.155
+chronic_fatigue,women and men,race_eth,NH White,115640,6980,4820,6880,1510,1160,0.216,0.241,0.219
+chronic_fatigue,women and men,race_eth,NH other or multiple,7220,760,540,450,150,110,0.197,0.204,0.333
+chronic_fatigue,women and men,race_eth,Unknown,3660,270,190,220,hidden,hidden,hidden,hidden,hidden
+chronic_fatigue,women and men,age_band,18-39,25790,2040,1480,1320,390,320,0.191,0.216,0.295
+chronic_fatigue,women and men,age_band,40-49,21500,1960,1440,1350,380,310,0.194,0.215,0.281
+chronic_fatigue,women and men,age_band,50-59,27020,2210,1580,1640,440,330,0.199,0.209,0.268
+chronic_fatigue,women and men,age_band,60-69,39060,1960,1300,1980,410,310,0.209,0.238,0.207
+chronic_fatigue,women and men,age_band,70+,48130,1410,830,2740,330,220,0.234,0.265,0.12
+chronic_fatigue,women and men,ehr_depth,no condition records,2400,80,50,0,0,0,0.0,0.0,0.0
+chronic_fatigue,women and men,ehr_depth,record starts after survey,4140,170,120,70,<=20,<=20,<=20,<=20,<=20
+chronic_fatigue,women and men,ehr_depth,under 2 years,16480,870,590,500,hidden,hidden,hidden,hidden,hidden
+chronic_fatigue,women and men,ehr_depth,2 to 4 years,23860,1440,990,1090,240,200,0.167,0.202,0.22
+chronic_fatigue,women and men,ehr_depth,5 to 9 years,43090,2710,1930,2650,570,450,0.21,0.233,0.215
+chronic_fatigue,women and men,ehr_depth,10 years or more,71530,4310,2960,4730,1000,750,0.232,0.253,0.211

@@ -1,0 +1,377 @@
+{
+ "status": "scored",
+ "index_date": "2024-06-01",
+ "score": 0.48522200000000115,
+ "probability": 0.12378938021423297,
+ "band": "Typical",
+ "times_average": 1.4556948683439517,
+ "features": {
+  "age_18_39": 0,
+  "age_40_49": 1,
+  "age_50_59": 0,
+  "age_60_69": 0,
+  "age_70p": 0,
+  "cx_fatigue_other": 1,
+  "cx_fatigue_recent": 1,
+  "cx_sleep": 1,
+  "cx_sleep_apnea": 0,
+  "cx_cognitive": 0,
+  "cx_autonomic": 0,
+  "cx_dizzy_syncope": 0,
+  "cx_headache": 1,
+  "cx_migraine": 0,
+  "cx_myalgia_arthralgia": 0,
+  "cx_fibromyalgia": 0,
+  "cx_chronic_pain": 0,
+  "cx_depression": 0,
+  "cx_anxiety": 1,
+  "cx_ptsd": 0,
+  "cx_ibs_gi": 1,
+  "cx_sore_throat_nodes": 0,
+  "cx_fever": 0,
+  "cx_lyme": 0,
+  "cx_covid": 0,
+  "cx_long_covid": 0,
+  "cx_eds_hypermobility": 0,
+  "cx_mast_cell": 0,
+  "cx_hypothyroid": 0,
+  "cx_anemia": 0,
+  "cx_vitd_deficiency": 0,
+  "cx_autoimmune": 0,
+  "cx_obesity": 0,
+  "cx_diabetes": 0,
+  "cx_hypertension": 0,
+  "cx_heart_disease": 0,
+  "cx_cancer": 0,
+  "cx_pelvic_pain": 0,
+  "cx_dysmenorrhea": 0,
+  "cx_dyspareunia": 0,
+  "cx_menstrual": 0,
+  "cx_infertility": 0,
+  "cx_ovarian_cyst": 0,
+  "cx_fibroids": 0,
+  "cx_pcos": 0,
+  "cx_interstitial_cystitis": 0,
+  "cx_back_pain": 1,
+  "cx_constipation": 0,
+  "clusters_ge3": 1,
+  "clusters_ge5": 1,
+  "px_tilt": 0,
+  "px_sleep_study": 0,
+  "px_brain_mri": 0,
+  "px_echo": 0,
+  "px_cardiac_monitor": 0,
+  "px_exercise_test": 0,
+  "px_neuropsych": 0,
+  "px_pt_eval": 1,
+  "px_pelvic_us": 0,
+  "px_hysterectomy": 0,
+  "px_pelvic_mri": 0,
+  "lab_tsh": 1,
+  "lab_ferritin": 0,
+  "lab_b12": 0,
+  "lab_vitamin_d": 0,
+  "lab_ana": 1,
+  "lab_crp": 1,
+  "lab_esr": 1,
+  "lab_ebv": 0,
+  "lab_lyme": 0,
+  "lab_cortisol": 0,
+  "lab_ck": 1,
+  "lab_ca125": 0,
+  "rx_stimulant": 0,
+  "rx_naltrexone": 0,
+  "rx_ssri_snri": 1,
+  "rx_tricyclic_lowdose": 1,
+  "rx_gabapentinoid": 1,
+  "rx_sleep_aid": 1,
+  "rx_beta_blocker": 0,
+  "rx_pots": 0,
+  "rx_opioid": 0,
+  "rx_hormonal": 0,
+  "rx_gnrh": 0,
+  "rx_nsaid": 1,
+  "rx_aromatase": 0,
+  "util_out_r_ge6": 0,
+  "util_out_r_ge12": 0,
+  "util_ed_r": 0,
+  "util_ip_h": 0
+ },
+ "drivers": [
+  {
+   "id": "clusters_ge5",
+   "label": "Five or more symptom types",
+   "group": "Symptom pattern",
+   "contribution": 0.49004099999999995,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-19",
+     "date": "2024-02-05"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-17",
+     "date": "2023-03-13"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-13",
+     "date": "2020-11-16"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-18",
+     "date": "2023-07-10"
+    },
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-16",
+     "date": "2022-08-15"
+    }
+   ]
+  },
+  {
+   "id": "rx_gabapentinoid",
+   "label": "Gabapentin or pregabalin",
+   "group": "Medications",
+   "contribution": 0.472002,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "sofia-med-31",
+     "date": "2022-08-15"
+    }
+   ]
+  },
+  {
+   "id": "rx_tricyclic_lowdose",
+   "label": "Amitriptyline, nortriptyline, or cyclobenzaprine",
+   "group": "Medications",
+   "contribution": 0.396435,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "sofia-med-29",
+     "date": "2020-11-16"
+    }
+   ]
+  },
+  {
+   "id": "lab_crp",
+   "label": "C-reactive protein test",
+   "group": "Lab tests ordered",
+   "contribution": 0.389346,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "sofia-obs-24",
+     "date": "2022-01-24"
+    }
+   ]
+  },
+  {
+   "id": "lab_ck",
+   "label": "Creatine kinase test",
+   "group": "Lab tests ordered",
+   "contribution": 0.364595,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "sofia-obs-25",
+     "date": "2022-01-24"
+    }
+   ]
+  },
+  {
+   "id": "lab_esr",
+   "label": "Sedimentation rate (ESR) test",
+   "group": "Lab tests ordered",
+   "contribution": 0.353959,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "sofia-obs-23",
+     "date": "2022-01-24"
+    }
+   ]
+  },
+  {
+   "id": "lab_ana",
+   "label": "Antinuclear antibody (ANA) test",
+   "group": "Lab tests ordered",
+   "contribution": 0.310794,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "sofia-obs-22",
+     "date": "2022-01-24"
+    }
+   ]
+  },
+  {
+   "id": "rx_sleep_aid",
+   "label": "Sleep medication",
+   "group": "Medications",
+   "contribution": 0.299121,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "sofia-med-32",
+     "date": "2023-03-13"
+    }
+   ]
+  },
+  {
+   "id": "rx_ssri_snri",
+   "label": "SSRI or SNRI antidepressant",
+   "group": "Medications",
+   "contribution": 0.286227,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "sofia-med-33",
+     "date": "2023-07-10"
+    }
+   ]
+  },
+  {
+   "id": "cx_ibs_gi",
+   "label": "Irritable bowel or gastrointestinal symptoms",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.235731,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-16",
+     "date": "2022-08-15"
+    }
+   ]
+  },
+  {
+   "id": "rx_nsaid",
+   "label": "NSAID pain reliever",
+   "group": "Medications",
+   "contribution": 0.225447,
+   "evidence": [
+    {
+     "resourceType": "MedicationRequest",
+     "id": "sofia-med-28",
+     "date": "2020-03-09"
+    }
+   ]
+  },
+  {
+   "id": "cx_back_pain",
+   "label": "Low back pain",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.220645,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-13",
+     "date": "2020-11-16"
+    }
+   ]
+  },
+  {
+   "id": "cx_fatigue_recent",
+   "label": "Fatigue or malaise coded in the past year",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.213768,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-19",
+     "date": "2024-02-05"
+    }
+   ]
+  },
+  {
+   "id": "cx_fatigue_other",
+   "label": "Fatigue or malaise coded",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.213696,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-19",
+     "date": "2024-02-05"
+    }
+   ]
+  },
+  {
+   "id": "cx_headache",
+   "label": "Headache",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.195611,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-15",
+     "date": "2022-01-24"
+    }
+   ]
+  },
+  {
+   "id": "cx_sleep",
+   "label": "Sleep disturbance",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.19364,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-17",
+     "date": "2023-03-13"
+    }
+   ]
+  },
+  {
+   "id": "px_pt_eval",
+   "label": "Physical therapy evaluation",
+   "group": "Tests and evaluations",
+   "contribution": 0.17809,
+   "evidence": [
+    {
+     "resourceType": "Procedure",
+     "id": "sofia-proc-27",
+     "date": "2020-11-23"
+    }
+   ]
+  },
+  {
+   "id": "cx_anxiety",
+   "label": "Anxiety",
+   "group": "Conditions and symptoms (past 5 years)",
+   "contribution": 0.122778,
+   "evidence": [
+    {
+     "resourceType": "Condition",
+     "id": "sofia-cond-18",
+     "date": "2023-07-10"
+    }
+   ]
+  },
+  {
+   "id": "age_40_49",
+   "label": "Age 40-49",
+   "group": "Demographics",
+   "contribution": 0.040091,
+   "evidence": []
+  },
+  {
+   "id": "lab_tsh",
+   "label": "Thyroid (TSH) test",
+   "group": "Lab tests ordered",
+   "contribution": 0.012551,
+   "evidence": [
+    {
+     "resourceType": "Observation",
+     "id": "sofia-obs-26",
+     "date": "2022-01-24"
+    }
+   ]
+  }
+ ],
+ "as_of": "2024-06-01"
+}

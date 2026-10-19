@@ -1,0 +1,290 @@
+/* Base for the Research page (/about/) and the 404 page, in the homepage system (/homepage.css): IBM Plex
+   (faces declared in /shared/site-nav.css), near-black on off-white, hairline rules, one red accent, no cards,
+   pills, gradients, or shadows. Tokens on :root, with the same light and dark values as the homepage; the
+   device setting applies unless the visitor picked a theme (data-theme on <html>, set by site-nav.js).
+   Page components: /about/evidence.css; the 404 page's rules are at the end of this file. */
+:root {
+  color-scheme: light;
+  --bg: #f6f5f1;
+  --soft: #ecebe5;
+  --ink: #191918;
+  --body: #3d3d38;
+  --muted: #62625b;
+  --line: #d5d4cd;
+  --line-strong: #84837b;
+  --accent: #ae0808;
+  --focus: #ae0808;
+  --ok-ink: #2e6b46;
+  --wait-ink: #8a5300;
+  --plan-ink: #62625b;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #171918;
+    --soft: #202321;
+    --ink: #eeeee7;
+    --body: #d6d6cf;
+    --muted: #adaea5;
+    --line: #3c403a;
+    --line-strong: #74786f;
+    --accent: #d87067;
+    --focus: #d87067;
+    --ok-ink: #8cc7a0;
+    --wait-ink: #d9a54a;
+    --plan-ink: #adaea5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #171918;
+  --soft: #202321;
+  --ink: #eeeee7;
+  --body: #d6d6cf;
+  --muted: #adaea5;
+  --line: #3c403a;
+  --line-strong: #74786f;
+  --accent: #d87067;
+  --focus: #d87067;
+  --ok-ink: #8cc7a0;
+  --wait-ink: #d9a54a;
+  --plan-ink: #adaea5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* The homepage's page column (gutters and width from /shared/site-nav.css), so content lines up under the logo. */
+.shell {
+  width: min(100% - 2 * var(--unm-gutter, 16px), var(--unm-wrap, 1120px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: clamp(48px, 7vw, 88px) 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 88px;
+}
+
+.section-alt {
+  background: var(--bg);
+}
+
+.section-kicker {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  letter-spacing: -0.005em;
+  line-height: 1.15;
+}
+
+.lede {
+  max-width: 46rem;
+  margin: 1rem 0 0;
+  color: var(--body);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.65;
+}
+
+/* Status labels: plain colored words, never pills. */
+.chip {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.chip-ok {
+  color: var(--ok-ink);
+}
+
+.chip-wait {
+  color: var(--wait-ink);
+}
+
+.chip-plan {
+  color: var(--plan-ink);
+}
+
+/* Buttons: square, hairline or solid ink, underline on hover. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.button-dark,
+.button-dark:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.button-outline {
+  color: var(--ink);
+}
+
+.button-outline:hover {
+  background: var(--soft);
+  color: var(--ink);
+}
+
+.site-footer {
+  padding: 28px 0 36px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.site-footer p {
+  margin: 0;
+  max-width: 60rem;
+}
+
+.site-footer p + p {
+  margin-top: 0.6rem;
+}
+
+.site-footer a {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 404 page: the homepage's first-screen type, and its door links (a full-width row between two hairlines,
+   label left, arrow right) in place of filled buttons. */
+.notfound {
+  border-top: 0;
+}
+
+.notfound h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(1.75rem, 1.25rem + 2.3vw, 3.25rem);
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+}
+
+.notfound .lede {
+  max-width: 38rem;
+  color: var(--ink);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  line-height: 1.5;
+}
+
+.notfound-actions {
+  display: grid;
+  max-width: 22rem;
+  margin: 1.6rem 0 0;
+}
+
+.notfound .button {
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: none;
+  color: var(--ink);
+}
+
+.notfound .button:first-child {
+  border-top: 1px solid var(--ink);
+}
+
+.notfound .button::after {
+  content: "\2192";
+  content: "\2192" / "";
+}
+
+.notfound .button:hover {
+  background: none;
+  color: var(--ink);
+}
+
+@media (forced-colors: active) {
+  .notfound .button {
+    border-color: CanvasText;
+  }
+}

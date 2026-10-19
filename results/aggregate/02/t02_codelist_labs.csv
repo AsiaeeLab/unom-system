@@ -1,0 +1,512 @@
+fid,loinc,concept_name
+lab_tsh,12943-7,Thyrotropin [Units/volume] in Serum or Plasma --4th specimen post XXX challenge
+lab_ana,8093-7,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Serum
+lab_b12,1888-7,Aquacobalamin [Mass/volume] in Serum or Plasma
+lab_ana,14615-9,Nuclear Ab [Titer] in Peritoneal fluid
+lab_b12,4203-6,Cyanocobalamin.PO [Mass] of Dose
+lab_ana,17587-7,Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_tsh,12933-8,Thyrotropin [Units/volume] in Serum or Plasma --10 minutes post XXX challenge
+lab_ana,49311-4,Nuclear Ab pattern [Interpretation] in Serum by Immunofluorescence Narrative
+lab_ana,17583-6,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_ana,29954-5,Extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_b12,32341-0,Transcobalamin II [Moles/volume] in Serum
+lab_ana,5352-0,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_tsh,5385-0,Thyrotropin receptor Ab [Units/volume] in Serum
+lab_b12,30906-2,Cobalamin (Vitamin B12) [Units/volume] in 24 hour Urine --post dose cyanocobalamin+intrinsic factor
+lab_ana,22297-6,Epstein Barr virus nuclear Ab [Titer] in Serum
+lab_ana,8092-9,SCL-70 extractable nuclear Ab [Presence] in Serum
+lab_b12,30904-7,Cobalamin (Vitamin B12) [Units/volume] in 24 hour Urine --post dose cyanocobalamin
+lab_ana,16394-9,Nuclear Ab [Presence] in Body fluid by Immunofluorescence
+lab_ana,53002-2,Fine speckled nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_tsh,20452-9,Thyrotropin [Presence] in Blood
+lab_ana,5234-0,Jo-1 extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_ana,5355-3,Smith extractable nuclear Ab [Presence] in Serum by Counterimmunoelectrophoresis (CIE)
+lab_ana,26880-5,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_ana,30556-5,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_tsh,35134-6,Thyrotropin Ab [Presence] in Serum
+lab_ana,35278-1,Neuronal nuclear Ab [Presence] in Serum by Immunoblot
+lab_tsh,40397-2,Thyrotropin [Units/volume] in Serum or Plasma --15 minutes post dose triple bolus
+lab_ana,14614-2,Nuclear Ab [Titer] in Pleural fluid
+lab_tsh,3015-5,Thyrotropin [Units/volume] in Blood
+lab_b12,55881-7,Hydroxocobalamin [Moles/volume] in Serum or Plasma
+lab_ana,13068-2,Nuclear Ab pattern [Interpretation] in Serum by Immunofluorescence
+lab_b12,54376-9,Cobalamin (Vitamin B12) [Moles/volume] in Body fluid
+lab_ana,42212-1,Nucleolar nuclear Ab pattern [Titer] in Body fluid
+lab_ana,31544-0,Nuclear Ab [Units/volume] in Synovial fluid
+lab_esr,4538-5,Erythrocyte sedimentation rate by Wintrobe method
+lab_ana,14235-6,Jo-1 extractable nuclear Ab [Titer] in Serum
+lab_ana,20400-8,Smooth nuclear envelope nuclear Ab pattern [Titer] in Serum
+lab_ferritin,24373-3,Ferritin [Mass/volume] in Blood
+lab_troponin,6597-9,Troponin T.cardiac [Mass/volume] in Venous blood
+lab_tsh,13897-4,Thyrotropin.beta subunit [Mass/volume] in Serum or Plasma
+lab_tsh,12942-9,Thyrotropin [Units/volume] in Serum or Plasma --3rd specimen post XXX challenge
+lab_ana,8091-1,Ribonucleoprotein extractable nuclear Ab [Presence] in Serum
+lab_ana,5351-2,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_b12,14685-2,Cobalamin (Vitamin B12) [Moles/volume] in Serum or Plasma
+lab_b12,54377-7,Cobalamin (Vitamin B12) [Mass/volume] in Body fluid
+lab_ana,29949-5,Sjogrens syndrome-B extractable nuclear Ab [Titer] in Serum by Immune diffusion (ID)
+lab_ana,8076-2,Jo-1 extractable nuclear Ab [Presence] in Serum
+lab_ana,17584-4,Sjogrens syndrome-A extractable nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_ana,5048-4,Nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_ana,5356-1,Smith extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_ana,8088-7,PCNA extractable nuclear Ab [Presence] in Serum
+lab_ana,14240-6,Neuronal nuclear Ab [Units/volume] in Cerebral spinal fluid
+lab_ana,31540-8,Nuclear Ab [Units/volume] in Body fluid
+lab_ana,5275-3,PCNA extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_ferritin,20567-4,Ferritin [Mass/volume] in Serum or Plasma by Immunoassay
+lab_tsh,29574-1,Thyrotropin [Presence] in DBS
+lab_ana,5047-6,Nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_ana,17032-4,Jo-1 extractable nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_vitamin_d,14635-7,25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma
+lab_ana,27416-7,SCL-70 extractable nuclear Ab [Units/volume] in Serum
+lab_ana,17791-5,Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Serum
+lab_ana,20401-6,Speckled nuclear Ab pattern [Titer] in Serum
+lab_tsh,12946-0,Thyrotropin [Units/volume] in Serum or Plasma --7th specimen post XXX challenge
+lab_ana,49310-6,Nuclear Ab pattern [Interpretation] in Serum Narrative
+lab_esr,18184-2,Erythrocyte sedimentation rate by 2H Westergren method
+lab_crp,11039-5,C reactive protein [Presence] in Serum or Plasma
+lab_tsh,11579-0,Thyrotropin [Units/volume] in Serum or Plasma by Detection limit <= 0.05 mIU/L
+lab_b12,26916-7,Cobalamin (Vitamin B12) [Presence] in Blood
+lab_ana,14608-4,Nuclear Ab [Presence] in Pleural fluid
+lab_b12,2440-6,Hydroxocobalamin [Mass/volume] in Serum or Plasma
+lab_tsh,33260-1,Thyrotropin [Units/volume] in Serum or Plasma --1.5 hours post dose TRH
+lab_tsh,11580-8,Thyrotropin [Units/volume] in Serum or Plasma by Detection limit <= 0.005 mIU/L
+lab_ana,31543-2,Nuclear Ab [Units/volume] in Peritoneal fluid
+lab_tsh,34054-7,Thyrotropin [Units/volume] in Serum or Plasma --pre or post dose TRH
+lab_ana,11089-0,Neuronal nuclear Ab [Presence] in Cerebral spinal fluid
+lab_ana,16824-5,Epstein Barr virus nuclear Ab [Presence] in Cerebral spinal fluid
+lab_ana,9423-5,Nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_ana,14612-6,Nuclear Ab [Titer] in Pericardial fluid
+lab_ana,22296-8,Epstein Barr virus nuclear Ab [Presence] in Serum
+lab_ana,17586-9,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_ana,21423-9,Nuclear Ab [Titer] in Serum by Immunofluorescence (IF) rat liver
+lab_ana,13067-4,Nuclear Ab pattern [Interpretation] in Body fluid by Immunofluorescence
+lab_ana,32715-5,SCL-70 extractable nuclear Ab [Titer] in Serum by Immune diffusion (ID)
+lab_ana,20432-1,Epstein Barr virus nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_crp,35648-5,C reactive protein [Quintile] in Serum or Plasma by High sensitivity method
+lab_b12,16695-9,Cobalamin (Vitamin B12) [Mass/volume] in Blood
+lab_ana,31541-6,Nuclear Ab [Units/volume] in Pericardial fluid
+lab_ana,5353-8,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_d_dimer,55398-2,Short Fibrin D-dimer FEU and DDU panel - Platelet poor plasma
+lab_ana,17792-3,Sjogrens syndrome-A extractable nuclear Ab [Units/volume] in Serum
+lab_ana,14607-6,Nuclear Ab [Presence] in Body fluid
+lab_b12,15052-4,Cobalamin (Vitamin B12).unsaturated Binding Capacity [Moles/volume] in Serum or Plasma
+lab_ana,9839-2,Rheumatoid arthritis nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_ana,20435-4,Unidentified extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_troponin,49563-0,Troponin I.cardiac [Mass/volume] in Serum or Plasma by Detection limit <= 0.01 ng/mL
+lab_esr,4537-7,Erythrocyte sedimentation rate by Westergren method
+lab_ana,14609-2,Nuclear Ab [Presence] in Peritoneal fluid
+lab_ana,14613-4,Nuclear Ab [Titer] in Body fluid
+lab_b12,2169-1,Cobalamin (Vitamin B12) renal clearance in 24 hour Urine and Serum or Plasma
+lab_tsh,3018-9,Thyrotropin releasing hormone [Mass/volume] in Plasma
+lab_ferritin,2276-4,Ferritin [Mass/volume] in Serum or Plasma
+lab_ana,21522-8,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Units/volume] in Serum
+lab_ana,14030-1,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_tsh,33258-5,Thyrotropin [Units/volume] in Serum or Plasma --30 minutes post dose TRH
+lab_troponin,6598-7,Troponin T.cardiac [Mass/volume] in Serum or Plasma
+lab_tsh,12947-8,Thyrotropin [Units/volume] in Serum or Plasma --8th specimen post XXX challenge
+lab_ana,21260-5,Epstein Barr virus nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_ana,29948-7,Sjogrens syndrome-A extractable nuclear Ab [Titer] in Serum by Immune diffusion (ID)
+lab_tsh,26998-5,Thyrotropin [Units/volume] in Saliva (oral fluid)
+lab_tsh,14255-4,Thyrotropin blocking Ab [Units/volume] in Serum
+lab_ana,5235-7,Jo-1 extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_natriuretic,33763-4,Natriuretic peptide.B prohormone N-Terminal [Moles/volume] in Serum or Plasma
+lab_tsh,45173-2,Thyrotropin.alpha subunit [Mass/volume] in Serum or Plasma
+lab_ana,6822-1,Nuclear Ab [Titer] in Synovial fluid by Immunofluorescence
+lab_ana,11090-8,Smith extractable nuclear Ab [Units/volume] in Serum
+lab_ana,17341-9,Neuronal nuclear Ab [Presence] in Cerebral spinal fluid by Immunofluorescence
+lab_ana,30138-2,Epstein Barr virus nuclear Ab [Presence] in Serum --2nd specimen
+lab_ana,31535-8,Neuronal nuclear Ab [Units/volume] in Serum
+lab_ana,33460-7,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Presence] in Serum
+lab_ana,33570-3,Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Serum by Immunoblot
+lab_b12,1460-5,Cobalamin (Vitamin B12) [Mass/time] in 24 hour Urine --post dose cyanocobalamin
+lab_ana,31542-4,Nuclear Ab [Units/volume] in Pleural fluid
+lab_ana,8094-5,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Serum
+lab_esr,30341-2,Erythrocyte sedimentation rate
+lab_tsh,15000-3,Thyrotropin [Units/volume] in Serum or Plasma --pre dose TRH IV
+lab_ana,33635-4,PM-SCL extractable nuclear Ab [Mass/volume] in Serum by Immune diffusion (ID)
+lab_ana,8061-4,Nuclear Ab [Presence] in Serum
+lab_ana,13066-6,Nuclear Ab [Units/volume] in Body fluid by Immunofluorescence
+lab_ana,11565-9,Jo-1 extractable nuclear Ab [Units/volume] in Serum
+lab_tsh,12941-1,Thyrotropin [Units/volume] in Serum or Plasma --2nd specimen post XXX challenge
+lab_tsh,3016-3,Thyrotropin [Units/volume] in Serum or Plasma
+lab_tsh,12939-5,Thyrotropin [Units/volume] in Serum or Plasma --2 hours post XXX challenge
+lab_vitamin_d,46269-7,25-hydroxyvitamin D2 [Moles/volume] in Serum or Plasma
+lab_crp,1988-5,C reactive protein [Mass/volume] in Serum or Plasma
+lab_esr,4539-3,Erythrocyte sedimentation rate Zeta by Zetafuge
+lab_ana,17031-6,Jo-1 extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_natriuretic,33762-6,Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma
+lab_ana,16139-8,Neuronal nuclear Ab [Titer] in Cerebral spinal fluid
+lab_tsh,12937-9,Thyrotropin [Units/volume] in Serum or Plasma --45 minutes post XXX challenge
+lab_crp,16503-5,C reactive protein [Mass/volume] in Body fluid
+lab_d_dimer,42727-8,Fibrin D-dimer DDU [Mass/volume] in Cerebral spinal fluid by Latex agglutination
+lab_ana,42213-9,Smooth nuclear envelope nuclear Ab pattern [Titer] in Body fluid
+lab_tsh,10516-3,Thyrotropin Ag [Presence] in Tissue by Immune stain
+lab_tsh,12948-6,Thyrotropin [Units/volume] in Serum or Plasma --9th specimen post XXX challenge
+lab_b12,2171-7,Cobalamin (Vitamin B12).unsaturated Binding Capacity [Mass/volume] in Serum or Plasma
+lab_tsh,14999-7,Thyrotropin [Units/volume] in Serum or Plasma --baseline
+lab_ana,9722-0,Smith extractable nuclear Ab [Titer] in Serum
+lab_natriuretic,30934-4,Natriuretic peptide B [Mass/volume] in Serum or Plasma
+lab_tsh,29575-8,Thyrotropin [Units/volume] in DBS
+lab_ana,5349-6,SCL-70 extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_tsh,14998-9,Thyrotropin [Units/volume] in Serum or Plasma --1 hour post dose TRH IV
+lab_ana,20398-4,Homogenous nuclear Ab pattern [Titer] in Serum
+lab_tsh,12944-5,Thyrotropin [Units/volume] in Serum or Plasma --5th specimen post XXX challenge
+lab_tsh,12935-3,Thyrotropin [Units/volume] in Serum or Plasma --20 minutes post XXX challenge
+lab_tsh,12945-2,Thyrotropin [Units/volume] in Serum or Plasma --6th specimen post XXX challenge
+lab_ana,15398-1,Neuronal nuclear Ab [Titer] in Serum
+lab_ferritin,14724-9,Ferritin [Interpretation] in Blood
+lab_tsh,33269-2,Thyrotropin [Units/volume] in Serum or Plasma --pre dose TRH
+lab_crp,14634-0,C reactive protein [Titer] in Serum or Plasma
+lab_ana,5354-6,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_tsh,12940-3,Thyrotropin [Units/volume] in Serum or Plasma --30 minutes pre XXX challenge
+lab_ana,17589-3,Smith extractable nuclear Ab [Titer] in Serum by Immune diffusion (ID)
+lab_tsh,12934-6,Thyrotropin [Units/volume] in Serum or Plasma --15 minutes post XXX challenge
+lab_tsh,14997-1,Thyrotropin [Units/volume] in Serum or Plasma --30 minutes post dose TRH IV
+lab_tsh,30151-5,Thyrotropin.long acting [Units/volume] in Serum or Plasma
+lab_ana,43119-7,Extractable nuclear Ab panel - Serum
+lab_ana,5301-7,Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_crp,30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method
+lab_b12,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum or Plasma
+lab_ana,42214-7,Speckled nuclear Ab pattern [Titer] in Body fluid
+lab_tsh,12932-0,Thyrotropin [Units/volume] in Serum or Plasma --post XXX challenge
+lab_ana,9399-7,Ribonucleoprotein extractable nuclear Ab [Titer] in Serum
+lab_tsh,3019-7,Thyrotropin.long acting [Presence] in Serum or Plasma
+lab_ana,49309-8,Nuclear Ab pattern [Interpretation] in Body fluid by Immunofluorescence Narrative
+lab_ana,5302-5,Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_ana,26023-2,Extractable nuclear Ab identified in Serum
+lab_vitamin_d,1989-3,25-hydroxyvitamin D3 [Mass/volume] in Serum or Plasma
+lab_ferritin,14723-1,Ferritin [Moles/volume] in Serum or Plasma
+lab_ana,5276-1,PCNA extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_ana,5348-8,SCL-70 extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_ana,17590-1,Smith extractable nuclear Ab [Titer] in Serum by Immunoassay
+lab_b12,54378-5,Cobalamin (Vitamin B12) [Moles/volume] in Urine
+lab_tsh,5384-3,Thyrotropin Ab [Units/volume] in Serum
+lab_tsh,12936-1,Thyrotropin [Units/volume] in Serum or Plasma --40 minutes post XXX challenge
+lab_ana,5357-9,Smith extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_ana,20399-2,Nucleolar nuclear Ab pattern [Titer] in Serum
+lab_ana,26703-9,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Titer] in Serum by Immunoassay
+lab_ana,11571-7,Rheumatoid arthritis nuclear Ab [Units/volume] in Serum
+lab_ana,33566-1,Sjogrens syndrome-A extractable nuclear Ab [Units/volume] in Serum by Immunoblot
+lab_ana,27048-8,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum
+lab_d_dimer,29280-5,Fibrin D-dimer [Presence] in Platelet poor plasma by Latex agglutination
+lab_ana,29374-6,Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum
+lab_ana,29953-7,Nuclear Ab [Titer] in Serum
+lab_tsh,40398-0,Thyrotropin [Units/volume] in Serum or Plasma --1 hour post dose triple bolus
+lab_d_dimer,48058-2,Fibrin D-dimer DDU [Mass/volume] in Platelet poor plasma by Immunoassay
+lab_ferritin,48141-6,Ferritin [Entitic mass] in Red Blood Cells
+lab_troponin,48426-1,Troponin T.cardiac [Presence] in Blood
+lab_tsh,50536-2,Thyrotropin [Units/volume] in Serum or Plasma --4th specimen
+lab_vitamin_d,57567-0,25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma --2 hours post dose calcium
+lab_ana,63308-1,PM-SCL extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_ana,63297-6,Nuclear Ab [Titer] in Cerebral spinal fluid by Hep2 substrate
+lab_ana,63405-5,Smith extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_ana,63542-5,SCL-70 extractable nuclear Ab [Presence] in Body fluid
+lab_ana,68374-8,Nuclear Ab [Titer] in Pleural fluid by Immunofluorescence
+lab_natriuretic,71425-3,Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Blood by Immunoassay
+lab_ana,31563-0,PM-SCL extractable nuclear Ab [Presence] in Serum
+lab_ana,33253-6,Nuclear Ab [Titer] in Serum by Hep2 substrate
+lab_ana,51749-0,Jo-1 extractable nuclear Ab [Presence] in Cerebral spinal fluid
+lab_b12,55883-3,Hydroxocobalamin [Mass/volume] in Body fluid
+lab_tsh,56594-5,Thyrotropin [Units/volume] in Serum or Plasma --3 hours post XXX challenge
+lab_tsh,57416-0,Thyrotropin receptor Ab [Units/volume] in Serum by Immunoassay
+lab_tsh,58834-3,Thyrotropin [Units/volume] in Serum or Plasma --15 minutes pre XXX challenge
+lab_ana,63337-0,SCL-70 extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_tsh,63363-6,Thyrotropin receptor Ab [Units/volume] in Blood from Fetus
+lab_ana,63390-9,Extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_ana,68370-6,Nuclear Ab [Presence] in Pleural fluid by Immunofluorescence
+lab_tsh,70096-3,Thyrotropin releasing hormone [Mass/volume] in Urine
+lab_troponin,76399-5,"Troponin I.cardiac [Presence] in Serum, Plasma or Blood by Rapid immunoassay"
+lab_d_dimer,38898-3,Fibrin D-dimer [Titer] in Platelet poor plasma
+lab_ana,43100-7,Sjogrens syndrome-A and B extractable nuclear Ab panel - Serum
+lab_ana,45142-7,Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_ana,54154-0,Intercellular bridge nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,54155-7,Intercellular bridge nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_b12,55884-1,Hydroxocobalamin [Moles/volume] in Urine
+lab_ana,63294-3,Nuclear Ab [Presence] in Cerebral spinal fluid by Immunofluorescence
+lab_ana,63307-3,PM-SCL extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63349-5,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Body fluid by Immune diffusion (ID)
+lab_ana,63398-2,Ribonucleoprotein extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_vitamin_d,72888-1,3-epi-25-Hydroxyvitamin D3/25-hydroxyvitamin D.total in Serum or Plasma
+lab_ferritin,74807-9,Transferrin receptor.soluble/log Ferritin index [Mass Ratio] in Serum or Plasma
+lab_b12,16696-7,Cobalamin (Vitamin B12) [Mass/volume] in Urine --post XXX challenge
+lab_ana,14611-8,Nuclear Ab pattern [Interpretation] in Serum
+lab_ana,16393-1,Nuclear Ab [Units/volume] in Serum by Rodent substrate
+lab_tsh,25789-9,Thyrotropin [Units/volume] in Serum or Plasma --1st specimen post XXX challenge
+lab_ana,32716-3,Sjogrens syndrome-A extractable nuclear Ab [Titer] in Serum
+lab_troponin,33204-9,Troponin T.cardiac [Presence] in Serum or Plasma
+lab_tsh,33259-3,Thyrotropin [Units/volume] in Serum or Plasma --1 hour post dose TRH
+lab_tsh,40673-6,Thyrotropin binding inhibitory immunoglobulins [Units/volume] in Serum
+lab_ana,40655-3,Nuclear Ab [Titer] in Serum by Immunoassay
+lab_ana,41025-8,Ribonucleoprotein extractable nuclear Ab [Mass/volume] in Serum
+lab_d_dimer,48066-5,Fibrin D-dimer DDU [Mass/volume] in Platelet poor plasma
+lab_ana,49738-8,Neuronal nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_ana,53008-9,PM-SCL extractable nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_ana,30342-0,Extractable nuclear Ab [Units/volume] in Serum
+lab_ana,31627-3,Smith extractable nuclear Ab [Presence] in Serum
+lab_tsh,40399-8,Thyrotropin [Units/volume] in Serum or Plasma --20 minutes post dose triple bolus
+lab_ana,42498-6,Epstein Barr virus nuclear Ab [Titer] in Cerebral spinal fluid
+lab_crp,45062-7,C reactive protein [Mass/volume] in Cerebral spinal fluid
+lab_tsh,50537-0,Thyrotropin [Units/volume] in Serum or Plasma --5th specimen
+lab_ana,53987-4,Atypic speckled nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,53984-1,Fine speckled nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,53998-1,Nuclear dots nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,56693-5,SCL-70 extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_ana,59069-5,Nuclear Ab [Presence] in Serum by Hep2 substrate
+lab_b12,59211-3,Transcobalamin I+Transcobalamin III [Moles/volume] in Serum
+lab_ana,63296-8,Nuclear Ab [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_ana,63336-2,SCL-70 extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_vitamin_d,68438-1,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma
+lab_tsh,17786-5,Thyrotropin [Interpretation] in Specimen--post dose TRH
+lab_ana,14616-7,Nuclear Ab [Titer] in Synovial fluid
+lab_troponin,10839-9,Troponin I.cardiac [Mass/volume] in Serum or Plasma
+lab_b12,30905-4,Cobalamin (Vitamin B12) [Ratio] in 24 hour Urine --post dose cyanocobalamin+intrinsic factor/post dose cyanocobalamin
+lab_ana,14610-0,Nuclear Ab [Presence] in Synovial fluid
+lab_ana,17592-7,Smith extractable nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_ana,33568-7,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Units/volume] in Serum by Immunoblot
+lab_tsh,44935-5,Thyrotropin [Units/volume] in Serum or Plasma --15 minutes post dose TRH IV
+lab_tsh,47949-3,Thyrotropin [Units/volume] in Serum or Plasma --15 minutes pre dose luteinizing releasing hormone IV
+lab_b12,33766-7,Radioactivity [Presence] in Urine --pre dose radioactive cyanocobalamin
+lab_ana,14722-3,Extractable nuclear Ab [Presence] in Serum
+lab_tsh,14919-5,Thyrotropin binding inhibitory immunoglobulins [Presence] in Serum
+lab_d_dimer,15179-5,Fibrin D-dimer [Presence] in Platelet poor plasma
+lab_ana,16392-3,Nuclear Ab [Presence] in Serum by Rodent substrate
+lab_ana,33567-9,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Units/volume] in Serum by Immunoassay
+lab_d_dimer,42499-4,Fibrin D-dimer [Presence] in Cerebral spinal fluid
+lab_tsh,47950-1,Thyrotropin [Units/volume] in Serum or Plasma --1 hour post dose luteinizing releasing hormone IV
+lab_ana,53007-1,PM-SCL extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_vitamin_d,55814-8,25-hydroxyvitamin D3 [Moles/volume] in Cord blood
+lab_ana,56148-0,Smith extractable nuclear Ab and Ribonucleoprotein extractable nuclear Ab panel - Serum
+lab_crp,59182-6,C reactive protein [Mass/volume] in Cerebral spinal fluid by High sensitivity method
+lab_ana,17380-7,Nuclear Ab.histone reactive [Presence] in Serum
+lab_ana,17533-1,Rheumatoid arthritis nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_ana,31372-6,Epstein Barr virus nuclear Ab [Units/volume] in Serum
+lab_tsh,33261-9,Thyrotropin [Units/volume] in Serum or Plasma --2 hours post dose TRH
+lab_ana,42254-3,Nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_tsh,50533-9,Thyrotropin [Units/volume] in Serum or Plasma --1st specimen
+lab_ferritin,53048-5,Ferritin [Mass/volume] in Body fluid
+lab_ana,53999-9,Multiple nuclear dots nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,53991-6,Nucleolar nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,56733-9,PCNA extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_vitamin_d,57566-2,25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma --pre dose calcium
+lab_ana,63239-8,Extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_ana,63546-6,Smith extractable nuclear Ab [Presence] in Body fluid
+lab_ana,68375-5,Nuclear Ab [Titer] in Peritoneal fluid by Immunofluorescence
+lab_ana,68376-3,Nuclear Ab [Titer] in Body fluid by Immunofluorescence
+lab_tsh,40400-4,Thyrotropin [Units/volume] in Serum or Plasma --30 minutes post dose triple bolus
+lab_natriuretic,42637-9,Natriuretic peptide B [Mass/volume] in Blood
+lab_esr,43402-7,Erythrocyte sedimentation rate by 15 minute reading
+lab_vitamin_d,49054-0,25-hydroxyvitamin D2 [Mass/volume] in Serum or Plasma
+lab_tsh,50541-2,Thyrotropin [Units/volume] in Serum or Plasma --20 minutes post dose TRH
+lab_b12,55850-2,Cobalamin (Vitamin B12) [Mass/volume] in Urine
+lab_ana,57448-3,Nuclear Ab pattern [Interpretation] in Synovial fluid by Immunofluorescence
+lab_ana,63238-0,Extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63354-5,Smith extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_ana,63536-7,Jo-1 extractable nuclear Ab [Presence] in Body fluid
+lab_ana,63570-6,Nuclear Ab pattern [Interpretation] in Pleural fluid by Immunofluorescence
+lab_natriuretic,77621-1,Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Pleural fluid by Immunoassay
+lab_tsh,25990-3,Thyrotropin [Moles/volume] in Serum or Plasma --30 minutes post dose TRH IN
+lab_ana,44083-4,Extractable nuclear Ab [Interpretation] in Serum
+lab_tsh,47952-7,Thyrotropin [Units/volume] in Serum or Plasma --30 minutes post dose luteinizing releasing hormone IV
+lab_troponin,48425-3,Troponin T.cardiac [Mass/volume] in Blood
+lab_tsh,50539-6,Thyrotropin [Units/volume] in Serum or Plasma --7th specimen
+lab_ana,53997-3,Nuclear dots nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,56730-5,Smith extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_ana,56731-3,Jo-1 extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_tsh,63364-4,Thyrotropin receptor Ab [Units/volume] in Cord blood
+lab_ana,68369-8,Nuclear Ab [Presence] in Pericardial fluid by Immunofluorescence
+lab_d_dimer,71427-9,Fibrin D-dimer FEU [Mass/volume] in Blood by Immunoassay
+lab_natriuretic,83107-3,Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay
+lab_ana,89535-9,Ribonucleoprotein extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_ana,93712-8,Epstein Barr virus nuclear Ab [Presence] in Serum from Donor by Immunoassay
+lab_tsh,47948-5,Thyrotropin [Units/volume] in Serum or Plasma --15 minutes post dose luteinizing releasing hormone IV
+lab_d_dimer,48067-3,Fibrin D-dimer FEU [Mass/volume] in Platelet poor plasma by Immunoassay
+lab_b12,49264-5,Folate+Cyanocobalamin [Interpretation] in Serum or Blood Narrative
+lab_tsh,50534-7,Thyrotropin [Units/volume] in Serum or Plasma --2nd specimen
+lab_tsh,50540-4,Thyrotropin [Units/volume] in Serum or Plasma --8th specimen
+lab_ana,51928-0,Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_ana,54006-2,Nuclear membrane pores nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,63267-9,Jo-1 extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_ana,63400-6,SCL-70 extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_ana,63547-4,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Body fluid
+lab_crp,71426-1,C reactive protein [Mass/volume] in Blood by High sensitivity method
+lab_b12,72160-5,Holo-transcobalamin II [Moles/volume] in Serum
+lab_vitamin_d,72404-7,3-epi-25-Hydroxyvitamin D2 [Mass/volume] in Serum or Plasma
+lab_b12,3031-2,Transcobalamin III [Mass/volume] in Serum
+lab_ana,81728-8,Neuronal nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_troponin,42757-5,Troponin I.cardiac [Mass/volume] in Blood
+lab_ana,43182-5,Smith extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_tsh,47951-9,Thyrotropin [Units/volume] in Serum or Plasma --2 hours post dose luteinizing releasing hormone IV
+lab_tsh,47953-5,Thyrotropin [Units/volume] in Serum or Plasma --pre dose luteinizing releasing hormone IV
+lab_ana,53985-8,Coarse speckled nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,54149-0,Homogenous nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_vitamin_d,57569-6,25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma --1 hour post dose calcium
+lab_tsh,57854-2,Thyrotropin [Units/volume] in Serum or Plasma --5 minutes post XXX challenge
+lab_ana,63319-8,Ribonucleoprotein extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_ana,63317-2,Ribonucleoprotein extractable nuclear Ab [Presence] in Body fluid by Immune diffusion (ID)
+lab_ana,63389-1,Extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_ana,63391-7,Extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_ana,63394-1,Jo-1 extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_ana,63540-9,Ribonucleoprotein extractable nuclear Ab [Presence] in Body fluid
+lab_ana,63545-8,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Body fluid
+lab_ana,63569-8,Nuclear Ab pattern [Interpretation] in Cerebral spinal fluid by Immunofluorescence
+lab_b12,72157-1,Apo-transcobalamin II [Moles/volume] in Serum
+lab_vitamin_d,95594-8,25-hydroxyvitamin D3 [Mass/volume] in Capillary blood
+lab_ana,101231-9,Neuronal nuclear Ab [Presence] in Cerebral spinal fluid by Immunoblot
+lab_troponin,101375-4,Troponin I.cardiac [Mass concentration difference] in Serum or Plasma by Calculation --2H post baseline measurement
+lab_ana,27200-5,Nuclear Ab [Units/volume] in Serum
+lab_ana,32041-6,Sjogrens syndrome-A extractable nuclear Ab+Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Serum
+lab_ana,35333-4,Jo-1 extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_ana,47383-5,Nuclear Ab [Presence] in Serum by Immunoassay
+lab_tsh,48700-9,Thyrotropin releasing hormone [Mass] of Dose
+lab_tsh,55362-8,Thyrotropin [Units/volume] in Serum or Plasma --pre XXX challenge
+lab_ana,56721-4,PM-SCL extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_tsh,63366-9,Thyrotropin receptor Ab [Units/volume] in Cerebral spinal fluid
+lab_ana,63353-7,Smith extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63295-0,Nuclear Ab [Presence] in Cerebral spinal fluid by Hep2 substrate
+lab_ana,63399-0,Ribonucleoprotein extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_ana,63388-3,Extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_natriuretic,77622-9,Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Peritoneal dialysis fluid by Immunoassay
+lab_ferritin,86914-9,Ferritin goal [Mass/volume] Serum or Plasma
+lab_b12,96809-9,Cyanocobalamin IgE Ab [Units/volume] in Serum
+lab_ana,44752-4,Nuclear Ab [Units/volume] in Serum by Immunofluorescence (IF) rat kidney
+lab_crp,48421-2,C reactive protein [Mass/volume] in Capillary blood
+lab_ana,53993-2,Centrosomal nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,53989-0,Chromosomal nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,53983-3,Homogenous nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,63306-5,PCNA extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_ana,63348-7,Sjogrens syndrome-A extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_ana,63404-8,Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_ana,68373-0,Nuclear Ab [Titer] in Pericardial fluid by Immunofluorescence
+lab_vitamin_d,86918-0,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 goal [Mass/volume] Serum or Plasma
+lab_troponin,89576-3,Troponin T.cardiac panel - Serum or Plasma by High sensitivity method
+lab_ana,96920-4,Nucleolar nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_troponin,89575-5,Troponin T.cardiac [Interpretation] in Serum or Plasma Qualitative by High sensitivity method
+lab_tsh,90801-2,Thyrotropin [Units/volume] in Serum or Plasma --6 hours post dose levothyroxine
+lab_ana,101221-0,PM-SCL-100 extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_troponin,101912-4,Troponin T.cardiac delta [Mass concentration difference] in 2 hour Serum or Plasma
+lab_tsh,25991-1,Thyrotropin [Moles/volume] in Serum or Plasma --pre dose TRH IN
+lab_esr,82477-1,Erythrocyte sedimentation rate by Photometric method
+lab_troponin,89578-9,Troponin I.cardiac [Interpretation] in Serum or Plasma Qualitative by High sensitivity method
+lab_troponin,89577-1,Troponin I.cardiac panel - Serum or Plasma by High sensitivity method
+lab_vitamin_d,94674-9,"25-Hydroxyvitamin D3+25-Hydroxyvitamin D2/24,25-dihydroxyvitamin D3+24,25-dihydroxyvitamin D2 ratio panel in Serum or Plasma"
+lab_b12,96805-7,Cobalamin (Vitamin B12) and folate panel - Serum
+lab_ana,96927-9,Centrosomal nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_ana,96922-0,Spindle fibers nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_troponin,101914-0,Troponin T.cardiac delta [Interpretation] in 2 hour Serum or Plasma Qualitative
+lab_ana,54000-5,Multiple nuclear dots nuclear Ab pattern [Titer] in Serum by Immunofluorescence
+lab_ana,56723-0,Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_vitamin_d,57568-8,25-hydroxyvitamin D3 [Moles/volume] in Serum or Plasma --3 hours post dose calcium
+lab_ana,63346-1,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Body fluid by Immune diffusion (ID)
+lab_ana,63352-9,Smith extractable nuclear Ab [Presence] in Body fluid by Immune diffusion (ID)
+lab_ana,63334-7,SCL-70 extractable nuclear Ab [Presence] in Body fluid by Immune diffusion (ID)
+lab_ana,63347-9,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63345-3,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Body fluid by Flow cytometry (FC)
+lab_ana,63338-8,SCL-70 extractable nuclear Ab [Titer] in Serum by Immunoassay
+lab_ana,63401-4,Sjogrens syndrome-A extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_ana,63393-3,Jo-1 extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_ana,63406-3,Smith extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_tsh,65360-0,Thyrotropin [Units/volume] in Serum or Plasma --pre or post XXX challenge
+lab_tsh,69561-9,Thyrotropin [Units/volume] in Cord blood
+lab_ana,89533-4,SCL-70 extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_ana,89526-8,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_ana,96926-1,PCNA extractable nuclear Ab [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_troponin,101918-1,Troponin T.cardiac delta [Interpretation] in 6 hour Serum or Plasma Qualitative
+lab_vitamin_d,95595-5,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Mass/volume] in Capillary blood
+lab_troponin,101865-4,Troponin T. cardiac 2H and 6H 5th generation panel in Serum or Plasma by High sensitivity method
+lab_troponin,101915-7,Troponin T.cardiac [Mass/volume] in 6 hour Serum or Plasma
+lab_tsh,12938-7,Thyrotropin [Units/volume] in Serum or Plasma --1.5 hours post XXX challenge
+lab_ana,17569-5,SCL-70 extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_tsh,29316-7,Thyrotropin [Units/volume] in Serum or Plasma --30 minutes post XXX challenge
+lab_tsh,29317-5,Thyrotropin [Units/volume] in Serum or Plasma --1 hour post XXX challenge
+lab_ana,31562-2,PM-SCL extractable nuclear Ab [Units/volume] in Serum
+lab_ana,31628-1,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Serum
+lab_ana,33600-8,Neuronal nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_ana,33569-5,Sjogrens syndrome-A extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_tsh,50535-4,Thyrotropin [Units/volume] in Serum or Plasma --3rd specimen
+lab_b12,55885-8,Hydroxocobalamin [Mass/volume] in Urine
+lab_ana,56725-5,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_ana,57431-9,Extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_ana,63305-7,PCNA extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63403-0,Sjogrens syndrome-B extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_ana,68372-2,Nuclear Ab [Presence] in Synovial fluid by Immunofluorescence
+lab_natriuretic,83108-1,Natriuretic peptide.B prohormone N-Terminal [Moles/volume] in Serum or Plasma by Immunoassay
+lab_ana,89529-2,Jo-1 extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_ana,96921-2,Speckled nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_troponin,101916-5,Troponin T.cardiac delta [Mass concentration difference] in 6 hour Serum or Plasma
+lab_ana,44751-6,Nuclear Ab [Presence] in Serum by Immunofluorescence (IF) rat kidney
+lab_tsh,44936-3,Thyrotropin [Units/volume] in Serum or Plasma --15 minutes pre dose TRH IV
+lab_natriuretic,47092-2,Natriuretic peptide B [Moles/volume] in Serum or Plasma
+lab_tsh,47947-7,Thyrotropin [Units/volume] in Serum or Plasma --1.5 hours post dose luteinizing releasing hormone IV
+lab_tsh,50538-8,Thyrotropin [Units/volume] in Serum or Plasma --6th specimen
+lab_ana,53992-4,Nucleolar nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,53988-2,Atypic speckled nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,53994-0,Centrosomal nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_b12,55882-5,Hydroxocobalamin [Moles/volume] in Body fluid
+lab_vitamin_d,62292-8,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Mass/volume] in Serum or Plasma
+lab_ana,63335-4,SCL-70 extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63266-1,Jo-1 extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63265-3,Jo-1 extractable nuclear Ab [Presence] in Body fluid by Immune diffusion (ID)
+lab_ana,68371-4,Nuclear Ab [Presence] in Peritoneal fluid by Immunofluorescence
+lab_crp,76486-0,C reactive protein [Moles/volume] in Serum or Plasma by High sensitivity method
+lab_crp,76485-2,C reactive protein [Moles/volume] in Serum or Plasma
+lab_b12,3032-0,Transcobalamin [Mass/volume] in Serum
+lab_tsh,13869-3,Thyrotropin [Mass/volume] in Serum or Plasma --1.5 hours post dose TRH IV
+lab_ana,89536-7,PM-SCL extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_troponin,101911-6,Troponin T. cardiac [Mass/volume] in 2 hour 5th generation Serum or Plasma
+lab_ana,11088-2,Neuronal nuclear Ab [Presence] in Serum
+lab_b12,14733-0,Folate+Cyanocobalamin [Interpretation] in Serum or Blood
+lab_ana,17532-3,Rheumatoid arthritis nuclear Ab [Presence] in Serum
+lab_ana,17591-9,Smith extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_ana,17535-6,Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_ana,17536-4,Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_ana,19137-9,Neuronal nuclear Ab [Units/volume] in Serum by Immunoblot
+lab_ana,26975-3,SCL-70 extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_ana,31693-5,Unidentified extractable nuclear Ab [Presence] in Serum
+lab_tsh,40401-2,Thyrotropin [Units/volume] in Serum or Plasma --pre dose triple bolus
+lab_ana,47074-0,PCNA extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_d_dimer,48065-7,Fibrin D-dimer FEU [Mass/volume] in Platelet poor plasma
+lab_tsh,48077-2,Thyrotropin [Units/volume] in Serum or Plasma --2.5 hours post dose luteinizing releasing hormone IV
+lab_ana,54005-4,Nuclear membrane pores nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,56724-8,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_ana,57010-1,Nuclear Ab [Presence] in Pleural fluid by Immunoassay
+lab_ana,56977-2,Rheumatoid arthritis nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_ana,89531-8,Smith extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_ana,89501-1,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Line blot
+lab_b12,96297-7,Cobalamin (Vitamin B12) IgE Ab [Units/volume] in Serum
+lab_ana,96924-6,Intercellular bridge nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_tsh,82659-4,Thyrotropin receptor Ab [Presence] in Serum
+lab_ana,89527-6,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_ana,89537-5,PCNA extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_d_dimer,91556-1,Fibrin D-dimer DDU [Mass/volume] in Blood by Immunoassay
+lab_ana,96923-8,Smooth nuclear envelope nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_troponin,101913-2,Troponin T.cardiac delta/Troponin T.cardiac in 2 hour Serum or Plasma --baseline
+lab_ana,53006-3,PCNA extractable nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_ana,53986-6,Coarse speckled nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_ana,53990-8,Chromosomal nuclear Ab pattern [Presence] in Serum by Immunofluorescence
+lab_tsh,63365-1,Thyrotropin receptor Ab [Units/volume] in Body fluid
+lab_ana,63350-3,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_ana,63318-0,Ribonucleoprotein extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_tsh,77623-7,Thyrotropin [Units/volume] in Serum or Plasma --2.5 hours post XXX challenge
+lab_b12,3029-6,Transcobalamin I [Mass/volume] in Serum
+lab_tsh,13871-9,Thyrotropin [Mass/volume] in Serum or Plasma --2 hours post dose TRH IV
+lab_vitamin_d,83070-3,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Mass/volume] in Serum or Plasma by Immunoassay
+lab_ana,89502-9,SCL-70 extractable nuclear Ab [Units/volume] in Serum by Line blot
+lab_ana,99069-7,Jo-1 extractable nuclear Ab [Units/volume] in Serum by Line blot
+lab_tsh,99078-8,Thyrotropin blocking Ab [Presence] in Serum by Cell binding immunofluorescent assay
+lab_ana,59390-5,Neuronal nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_ana,63351-1,Sjogrens syndrome-B extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_ana,63402-2,Sjogrens syndrome-A extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_troponin,67151-1,Troponin T.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method
+lab_vitamin_d,72403-9,3-epi-25-Hydroxyvitamin D3 [Mass/volume] in Serum or Plasma
+lab_tsh,58833-5,Thyrotropin [Mass/volume] in Serum or Plasma --20 minutes pre XXX challenge
+lab_vitamin_d,94673-1,"25-Hydroxyvitamin D3+25-Hydroxyvitamin D2/24,25-dihydroxyvitamin D3+24,25-dihydroxyvitamin D2 [Mass Ratio] in Serum or Plasma"
+lab_b12,72158-9,Apo-transcobalamin I [Moles/volume] in Serum
+lab_tsh,11033-8,Thyrotropin [Mass/volume] in Serum or Plasma --45 minutes post dose TRH IV
+lab_vitamin_d,83071-1,25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Moles/volume] in Serum or Plasma by Immunoassay
+lab_troponin,89579-7,Troponin I.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method
+lab_vitamin_d,95593-0,25-hydroxyvitamin D2 [Mass/volume] in Capillary blood
+lab_ana,96919-6,Homogenous nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_ana,96925-3,Nuclear dots nuclear Ab pattern [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_crp,98987-1,C reactive protein [Units/volume] in Body fluid
+lab_troponin,101917-3,Troponin T.cardiac delta/Troponin T.cardiac in 6 hour Serum or Plasma --baseline

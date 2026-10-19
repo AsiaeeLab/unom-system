@@ -1,0 +1,137 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.954 line:6% position:50% align:center size:92%
+Undiagnosed No More looks for patients whose invisible illness, from Long COVID and ME/CFS to lupus and depression, is missing from the health record. Every patient shown is synthetic.
+
+2
+00:00:07.004 --> 00:00:16.125 line:6% position:50% align:center size:92%
+U.S. government data trains the UNOM AI models, which serve four users: clinicians, patients, policymakers, and developers. Each part of the picture opens its page.
+
+3
+00:00:17.241 --> 00:00:24.195 line:6% position:50% align:center size:92%
+The patient app opens on Maria's synthetic answers. Each page is one part of a validated questionnaire.
+
+4
+00:00:24.245 --> 00:00:31.699 line:6% position:50% align:center size:92%
+Her answers to the NIH RECOVER symptom questions and the DePaul questions on crashes after activity are already filled in.
+
+5
+00:00:31.749 --> 00:00:39.043 line:6% position:50% align:center size:92%
+Next steps on through daily life and the condition self-checks, where she chose the Long COVID check.
+
+6
+00:00:39.093 --> 00:00:48.048 line:6% position:50% align:center size:92%
+Her summary: 16 points on the RECOVER symptom score, which reaches the research cutoff of 11, a positive DePaul screen, and daily-life grade 3. Each card says what to discuss.
+
+7
+00:00:48.098 --> 00:00:59.460 line:6% position:50% align:center size:92%
+Patterns in my record runs the same nine models on her synthetic record, on the phone, and says in plain words what it finds. Patients never see a probability.
+
+8
+00:00:59.510 --> 00:01:05.964 line:6% position:50% align:center size:92%
+Print makes her visit summary. Download saves her answers as a FHIR file that clinic software can read.
+
+9
+00:01:06.014 --> 00:01:14.011 line:6% position:50% align:center size:92%
+The patient app is the only part of the site in Spanish. Español in the bar switches it, and English switches it back.
+
+10
+00:01:14.061 --> 00:01:19.014 line:6% position:50% align:center size:92%
+Send to my clinician (demo) opens the clinician view with her answers attached.
+
+11
+00:01:19.064 --> 00:01:27.019 line:6% position:50% align:center size:92%
+The clinician view opens on Maria's chart. Needs review marks Long COVID High: 15.4 times the average with her answers, 6.1 times from the chart alone.
+
+12
+00:01:27.069 --> 00:01:34.523 line:6% position:50% align:center size:92%
+From the patient: Review responses opens her answers from the patient app, with her RECOVER score, her screen result, her daily-life grade, and her own words.
+
+13
+00:01:34.573 --> 00:01:43.032 line:6% position:50% align:center size:92%
+The Long COVID tab shows each finding with an arrow, an odds ratio, and a bar on one fixed scale. The first row is her RECOVER answer, which multiplies the odds by 2.83.
+
+14
+00:01:43.082 --> 00:01:49.541 line:6% position:50% align:center size:92%
+Hovering a bar shows its effect: an estimate of 15.9% with her answers against 6.2% from the chart alone.
+
+15
+00:01:49.591 --> 00:01:56.546 line:6% position:50% align:center size:92%
+Hovering estimated 15.9% shows what is estimated: the chance of a first Long COVID code 91 to 455 days after COVID-19.
+
+16
+00:01:56.596 --> 00:02:04.256 line:6% position:50% align:center size:92%
+The timeline shows every dated visit, diagnosis, test, and prescription, with the COVID-19 index, day 90, and the scoring date.
+
+17
+00:02:04.306 --> 00:02:11.259 line:6% position:50% align:center size:92%
+Dana: the Lyme disease model marks her chart Elevated, 1.5 times the average, from an April visit for an insect or tick bite and a rash, treated with doxycycline.
+
+18
+00:02:11.309 --> 00:02:18.264 line:6% position:50% align:center size:92%
+Beside it: knee pain and facial nerve palsy from her chart, and her county's reported incidence, 72.44 cases per 100,000 people a year.
+
+19
+00:02:18.314 --> 00:02:25.767 line:6% position:50% align:center size:92%
+Sofia: six models flag her chart. Fibromyalgia is High, 24.6 times the average with her answers and 9.6 times from the chart alone.
+
+20
+00:02:25.817 --> 00:02:32.320 line:6% position:50% align:center size:92%
+Her answers enter through her fibromyalgia self-check, which matches the pattern of the 2016 criteria.
+
+21
+00:02:33.283 --> 00:02:40.237 line:6% position:50% align:center size:92%
+The Atlas shows one condition at a time. For Long COVID, 1 in 9 adults who have ever had it carry its code in their health record.
+
+22
+00:02:40.287 --> 00:02:47.740 line:6% position:50% align:center size:92%
+State map (CDC Household Pulse Survey): 5.3% of US adults currently have Long COVID, 2.6% in Illinois to 10.4% in Mississippi.
+
+23
+00:02:47.790 --> 00:02:54.246 line:6% position:50% align:center size:92%
+Who goes uncoded, by sex, age group, and race and ethnicity: 9.4% of women's Long COVID is coded, against 12.0% of men's.
+
+24
+00:02:54.296 --> 00:03:01.751 line:6% position:50% align:center size:92%
+Fibromyalgia by state: the share of people who report it who have a code, from 64% in Alabama to 79% in Pennsylvania.
+
+25
+00:03:01.801 --> 00:03:09.754 line:6% position:50% align:center size:92%
+Who goes uncoded: in every age, sex, and race and ethnicity group, a smaller share is coded than for hypertension and type 2 diabetes.
+
+26
+00:03:09.804 --> 00:03:15.758 line:6% position:50% align:center size:92%
+What else is in the record: in people who report fibromyalgia, Ehlers-Danlos syndrome or hypermobility was coded 5.0 times as often as in other survey respondents.
+
+27
+00:03:15.808 --> 00:03:23.763 line:6% position:50% align:center size:92%
+Back to Long COVID for the cost calculator: with the default assumptions, a two-step screen costs $116 in clinician time for each later-coded patient it finds.
+
+28
+00:03:23.813 --> 00:03:33.800 line:6% position:50% align:center size:92%
+Every assumption can be changed. With 10 minutes of clinician review per patient instead of 5, the two-step screen costs $233 for each patient found.
+
+29
+00:03:34.811 --> 00:03:41.264 line:6% position:50% align:center size:92%
+The developer documentation starts with how the pieces fit: the model files, one scorer, and the places it runs.
+
+30
+00:03:41.314 --> 00:03:49.468 line:6% position:50% align:center size:92%
+Try the scorer runs it in the browser on a synthetic test patient. Sofia with the fibromyalgia model scores High, 9.60 times the average, the same as the reference output.
+
+31
+00:03:49.518 --> 00:03:56.472 line:6% position:50% align:center size:92%
+The CDS Hooks service scores a chart sent from an EHR and answers with a card for each flagged condition. For Maria, one card: Long COVID, High, 6.1 times the average.
+
+32
+00:03:56.522 --> 00:04:03.023 line:6% position:50% align:center size:92%
+The model registry lists each versioned model file with its model card and expected outputs for 18 test patients.
+
+33
+00:04:04.013 --> 00:04:15.782 line:6% position:50% align:center size:92%
+The About page shows the data sources, the conditions, the models, the four papers, and the team.
+
+34
+00:04:16.743 --> 00:04:21.800 line:6% position:50% align:center size:92%
+Undiagnosed No More: the patient app, the clinician view, the Atlas, and the developer documentation, at undiagnosednomore.org.

@@ -1,0 +1,32 @@
+/* Clinician demo shell around the shared dashboard (athena/cards.js, styles and light/dark tokens in athena/styles.css).
+   The shell uses the homepage's 1120px column and gutters (from /shared/site-nav.css). */
+.demo-shell { width: min(100% - 2 * var(--unm-gutter, 16px), var(--unm-wrap, 1120px)); margin: 0 auto; padding: 20px 0 48px; }
+.demo-intro { margin-bottom: 20px; }
+.demo-intro h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 600; letter-spacing: -0.02em; }
+.demo-intro p { margin: 6px 0 0; color: var(--muted); font-size: 1.05rem; }
+.demo-intro .demo-lede { max-width: 46rem; margin: 0 0 12px; color: var(--ink); line-height: 1.5; }
+.demo-intro .demo-smartlink { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+.demo-intro .demo-smartlink:hover { color: var(--accent); }
+.demo-picker { margin-bottom: 14px; }
+.demo-patients { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; min-width: 0; }
+.demo-patient-button { display: flex; align-items: baseline; gap: 6px; min-width: 0; min-height: 40px; padding: 8px 12px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); font: inherit; font-size: 0.9rem; text-align: left; cursor: pointer; }
+.demo-patient-button strong { flex: 0 0 auto; font-weight: 600; }
+.demo-patient-button span { min-width: 0; overflow: hidden; color: var(--muted); font-size: 0.8rem; text-overflow: ellipsis; white-space: nowrap; }
+.demo-patient-button:hover, .demo-patient-button:focus-visible { border-color: var(--ink); }
+.demo-patient-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.demo-patient-button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--on-ink); }
+.demo-patient-button[aria-pressed="true"] span { color: var(--on-ink-muted); }
+.demo-note { margin: 14px 4px 0; color: var(--muted); font-size: 0.86rem; }
+@media (max-width: 760px) {
+  .demo-patients { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .demo-patient-button span { display: none; }
+}
+/* Phones keep the app frame visible below the patient picker. */
+@media (max-width: 600px) {
+  .demo-shell { padding: 12px 0 32px; }
+  .demo-intro { margin-bottom: 16px; }
+  .demo-picker { margin-bottom: 12px; }
+  .demo-note { margin: 14px 0 0; }
+}

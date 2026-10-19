@@ -1,0 +1,4 @@
+item,value
+features whose values changed with observation-table codes,21 features: sym_fatigue sym_cognitive sym_dizzy_syncope sym_smell_taste sym_gi sym_paresthesia sym_count_ge2 sym_count_ge4 hx_obesity hx_heart_disease sym_any_fatigue sym_any_cognitive sym_any_dizzy_syncope sym_any_smell_taste sym_any_sleep sym_any_gi sym_any_paresthesia sym_any_w3_count_ge2 sym_any_w3_count_ge3 covid_code_w3 covid_history_code
+features reverted to the condition-table definition by the guard,0 features: cross-release guard removed
+seed for the Task 04 training split and Task 16 fit/calibration roles,"Task 04 seed 20260929, Task 16 seed 20261003"

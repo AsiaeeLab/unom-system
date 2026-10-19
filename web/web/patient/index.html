@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#09252f">
+    <meta name="description" content="A private symptom check and visit-prep tool. Your answers stay on this device.">
+    <meta name="robots" content="noindex">
+    <link rel="manifest" href="/patient/manifest.webmanifest">
+    <link rel="icon" href="/patient/icon.svg?v=20261012" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/patient/icon-192.png?v=20261012">
+    <link rel="stylesheet" href="/shared/site-nav.css?v=20261024" />
+    <link rel="stylesheet" href="/shared/demo-frame.css?v=20261015">
+    <link rel="stylesheet" href="/patient/app.css?v=20261031">
+    <title>Symptom check | Undiagnosed No More</title>
+    <script src="/homepage-settings.js?v=20261019"></script>
+    <script type="module" src="/patient/app.js?v=20261031"></script>
+    <script src="/shared/site-nav.js?v=20261023" defer></script>
+  </head>
+  <body data-door="patient">
+    <!-- The page text is English; with ?lang=es app.js replaces every data-i18n string (i18n.js applyStatic). -->
+    <button type="button" class="skip-link" id="skip-main" data-i18n="page.skip">Skip to main content</button>
+
+    <div class="offline-banner no-print" id="offline-banner" role="status" hidden>You are offline.</div>
+
+    <main id="main" class="wrap">
+      <header class="patient-intro">
+        <p class="patient-lede" data-i18n="intro.about">Answer validated symptom questions in English or Spanish, see what your answers mean for each condition, and print or download a summary for your next visit. Your answers stay on your device.</p>
+        <h1 id="home-title" tabindex="-1" data-i18n="intro.title">Explore the patient app</h1>
+        <p><span data-i18n="intro.lead">Try it with synthetic patient answers below, or</span> <a class="patient-try-link" href="/patient/?standalone=1&amp;reset=1#qp-1" target="_blank" rel="noreferrer" data-i18n="intro.try">Try it yourself ↗</a></p>
+      </header>
+
+      <div class="demo-card" aria-label="Synthetic patient answers" data-i18n-attr="aria-label=intro.demoLabel">
+        <div data-demo-picker></div>
+        <p class="note" data-demo-status role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="demo-frame" id="demo-app-frame" aria-busy="false">
+        <div class="demo-frame-bar">
+          <span class="demo-frame-title" data-i18n="demo.frameTitle">Patient app</span>
+          <span class="demo-frame-context" data-i18n="demo.frameContext">Interactive demo · synthetic answers</span>
+        </div>
+        <div class="demo-frame-content" id="demo-app-stage">
+          <div class="demo-frame-loader" id="demo-app-loader" role="status" aria-live="polite" hidden>
+            <span class="demo-frame-spinner" aria-hidden="true"></span>
+            <span id="demo-app-loader-text" data-i18n="demo.opening">Opening the patient app…</span>
+          </div>
+          <div class="demo-frame-body">
+
+      <!-- Home -->
+      <section class="screen" data-screen="home" aria-labelledby="home-title">
+      </section>
+
+      <!-- Symptom check (steps rendered by app.js) -->
+      <section class="screen" data-screen="check" aria-labelledby="check-title" hidden>
+        <div class="questionnaire-controls no-print">
+          <div class="progress-row">
+          <div class="progress-head">
+            <label for="check-progress" id="check-progress-label">Page 1 of 12</label>
+            <a id="check-instrument" target="_blank" rel="noreferrer" hidden></a>
+          </div>
+          <progress id="check-progress" max="12" value="1"></progress>
+          </div>
+          <div class="step-actions">
+            <button type="button" class="btn btn-secondary" id="step-back" hidden>Back</button>
+            <button type="submit" class="btn btn-primary" id="step-next" form="check-form">Next</button>
+          </div>
+        </div>
+        <form id="check-form" class="step" novalidate>
+          <div id="step-body"></div>
+          <p class="note"><span data-i18n="check.skipNote">You can skip any question.</span><span data-i18n="check.savedAsYouGo" class="standalone-only"> Your answers are saved on this device as you go.</span></p>
+        </form>
+      </section>
+
+      <!-- Results -->
+      <section class="screen" data-screen="results" aria-labelledby="results-title" hidden>
+        <button type="button" class="btn-link no-print" data-show-screen="check" data-i18n="check.backToQuestionnaire">Back to questionnaire</button>
+        <h1 id="results-title" tabindex="-1" data-i18n="results.title">Your results</h1>
+        <p class="demo-banner" id="results-demo" hidden></p>
+        <p class="lead" data-i18n="results.lead">Scores follow each questionnaire's published rules, and each card notes any limits. Some answers are not scored. Please discuss these results with your clinician.</p>
+        <p><button type="button" class="btn-link" data-scroll-to="next-title" data-i18n="results.skip">Skip to what happens next</button></p>
+        <div id="results-body" aria-live="polite"></div>
+        <section class="card next-card" aria-labelledby="next-title">
+          <h2 id="next-title" data-i18n="results.next.title">What happens next</h2>
+          <p data-i18n="results.next.body">Bring this summary to your visit, or send it to your clinician.</p>
+          <div class="actions">
+            <button type="button" class="btn btn-primary" data-show-screen="summary" data-i18n="results.next.summary">Make my visit summary</button>
+            <button type="button" class="btn btn-secondary" data-send aria-describedby="results-send-why" data-i18n="common.sendDemo">Send to my clinician (demo)</button>
+          </div>
+          <p class="note" id="results-send-why" data-i18n="results.sendWhy">Sending through your health record is planned but not built. It would send the summary as a FHIR QuestionnaireResponse, a format clinic software can read. In this demo the answers stay in this browser: the button opens the clinician's view with them attached.</p>
+          <p class="note" data-send-status role="status" aria-live="polite"></p>
+        </section>
+        <div class="actions actions-quiet">
+          <button type="button" class="btn btn-secondary btn-small" data-show-screen="check" id="edit-answers" data-i18n="results.change">Change my answers</button>
+          <button type="button" class="btn btn-danger btn-small" data-start-over data-i18n="results.startOver">Start over</button>
+        </div>
+      </section>
+
+      <!-- Record patterns -->
+      <section class="screen" data-screen="record" aria-labelledby="record-title" hidden>
+        <button type="button" class="btn-link no-print" data-show-screen="check" data-i18n="check.backToQuestionnaire">Back to questionnaire</button>
+        <h1 id="record-title" tabindex="-1" data-i18n="record.title">Patterns in my record</h1>
+        <p class="lead" data-i18n="record.lead">Invisible illnesses such as Long COVID, ME/CFS, Lyme disease, and lupus are often diagnosed late. A health record can show patterns that are common in people diagnosed with these conditions.</p>
+
+        <div class="card">
+          <button type="button" class="btn btn-secondary" disabled aria-describedby="connect-why" data-i18n="record.connect">Connect my health record (planned)</button>
+          <p id="connect-why" class="note" data-i18n="record.connectWhy">This is not built yet. It would use the patient-access connections that the 21st Century Cures Act requires health systems to offer, so you could bring in your own record.</p>
+        </div>
+
+        <h2 data-i18n="record.demoTitle">Try with a demo person</h2>
+        <p data-i18n="record.demoIntro">These are made-up people with made-up health records. No real person's data is used. Each record is checked for patterns common in people diagnosed with nine conditions, from Long COVID and ME/CFS to lupus and depression. The home address is also checked against how common Lyme disease is in that county.</p>
+        <div class="persona-list" id="persona-list"></div>
+        <div id="record-body" aria-live="polite"></div>
+      </section>
+
+      <!-- Visit summary -->
+      <section class="screen" data-screen="summary" aria-labelledby="summary-title" hidden>
+        <button type="button" class="btn-link no-print" data-show-screen="check" data-i18n="check.backToQuestionnaire">Back to questionnaire</button>
+        <div class="no-print">
+          <h1 id="summary-title" tabindex="-1" data-i18n="summary.title">My visit summary</h1>
+          <p class="lead" data-i18n="summary.lead">Check this page before you share it. You can change or remove anything. Then bring it to your visit, or send it to your clinician.</p>
+          <p><button type="button" class="btn-link" data-scroll-to="print-btn" data-i18n="summary.skip">Skip to print, download, or send</button></p>
+          <div id="summary-edit"></div>
+          <div class="actions">
+            <button type="button" class="btn btn-primary" id="print-btn" data-i18n="summary.printPage">Print this page</button>
+            <button type="button" class="btn btn-secondary" id="download-btn" aria-describedby="download-why" data-i18n="summary.downloadFile">Download for my clinician</button>
+            <button type="button" class="btn btn-secondary" data-send aria-describedby="summary-send-why" data-i18n="common.sendDemo">Send to my clinician (demo)</button>
+          </div>
+          <p class="note" id="download-why" data-i18n="summary.downloadWhy">The download is a FHIR QuestionnaireResponse file, a standard format that clinic software can read. It holds the parts you left checked above. Findings from the record appear only on the printed page.</p>
+          <p class="note" id="summary-send-why" data-i18n="summary.sendWhy">Sending through your health record is planned but not built; it would send this same file. In this demo the file stays in this browser: "Send to my clinician (demo)" opens the clinician's view with these answers attached.</p>
+          <p class="note" data-send-status role="status" aria-live="polite"></p>
+          <p class="sr-only" id="download-status" role="status"></p>
+          <h2 data-i18n="summary.willPrint">What will print</h2>
+        </div>
+        <article id="print-sheet" class="sheet" aria-label="Printable visit summary" data-i18n-attr="aria-label=summary.sheetLabel"></article>
+      </section>
+
+      <!-- Trial finder -->
+      <section class="screen" data-screen="trials" aria-labelledby="trials-title" hidden>
+        <button type="button" class="btn-link no-print" data-show-screen="check" data-i18n="check.backToQuestionnaire">Back to questionnaire</button>
+        <h1 id="trials-title" tabindex="-1" data-i18n="trials.title">Find a research study</h1>
+        <p class="lead" data-i18n="trials.lead">Search for studies that are looking for people now. The list comes from ClinicalTrials.gov, a U.S. government website. The search needs an internet connection.</p>
+        <form id="trials-form" class="card" novalidate>
+          <div class="field">
+            <label for="trial-condition" data-i18n="trials.conditionLabel">Condition</label>
+            <select id="trial-condition" name="condition"></select>
+          </div>
+          <div class="field">
+            <label for="trial-location" data-i18n="trials.locationLabel">ZIP code or state (optional)</label>
+            <input id="trial-location" name="location" type="text" inputmode="text" autocomplete="postal-code" aria-describedby="trial-location-help">
+            <p class="note" id="trial-location-help" data-i18n="trials.locationHelp">A ZIP code searches the whole state it is in.</p>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="trials.search">Search studies</button>
+          <p class="note" data-i18n="trials.sendsOnly">Searching sends only the condition and the place you typed to ClinicalTrials.gov. It does not send your answers.</p>
+        </form>
+        <p id="trials-status" role="status" aria-live="polite"></p>
+        <ol id="trials-list" class="trial-list"></ol>
+      </section>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="standalone-delete">
+        <p class="save-status" id="save-status" role="status" aria-live="polite" data-i18n="save.saved">Your answers are saved on this device.</p>
+        <button type="button" class="btn btn-danger btn-small" data-delete data-i18n="delete.button">Delete my answers</button>
+      </div>
+    </main>
+
+    <dialog id="delete-dialog" class="dialog" aria-labelledby="delete-title">
+      <form method="dialog">
+        <h2 id="delete-title" data-i18n="delete.title">Delete your answers?</h2>
+        <p data-i18n="delete.body">This removes all your answers, your visit summary, and saved study searches from this device. It cannot be undone.</p>
+        <div class="actions">
+          <button type="submit" value="delete" class="btn btn-danger" id="delete-confirm" data-i18n="delete.yes">Yes, delete</button>
+          <button type="submit" value="cancel" class="btn btn-secondary" autofocus data-i18n="dialog.cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="reset-dialog" class="dialog" aria-labelledby="reset-title">
+      <form method="dialog">
+        <h2 id="reset-title" data-i18n="reset.title">Start over?</h2>
+        <p data-i18n="reset.body">This clears all answers, the visit summary, the demo person, saved study searches, and anything sent to the clinician demo from this browser. The symptom check starts again at page 1.</p>
+        <div class="actions">
+          <button type="submit" value="reset" class="btn btn-danger" data-i18n="reset.yes">Yes, start over</button>
+          <button type="submit" value="cancel" class="btn btn-secondary" autofocus data-i18n="dialog.cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

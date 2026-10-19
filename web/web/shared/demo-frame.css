@@ -1,0 +1,57 @@
+/* Shared shell for the patient and clinician interactive demos. */
+.demo-frame {
+  min-width: 0;
+  border: 1px solid var(--line-strong);
+  background: var(--surface, var(--bg));
+}
+.demo-frame-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 16px;
+  min-height: 38px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+  font: 400 0.75rem/1.4 var(--mono);
+}
+.demo-frame-title { font-weight: 600; }
+.demo-frame-title::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border: 1px solid currentColor;
+  vertical-align: 1px;
+}
+.demo-frame-context { color: var(--muted); }
+.demo-frame-content { position: relative; min-height: 320px; }
+.demo-frame-body { padding: 16px 20px 20px; }
+.demo-frame-loader {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  background: var(--surface, var(--bg));
+  color: var(--muted);
+  text-align: center;
+}
+.demo-frame-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--line-strong);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: demo-frame-spin 750ms linear infinite;
+}
+.demo-frame.is-loading .demo-frame-body { visibility: hidden; }
+@keyframes demo-frame-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .demo-frame-spinner { animation: none; } }
+@media (max-width: 600px) { .demo-frame-body { padding: 12px 14px 16px; } }

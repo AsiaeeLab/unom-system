@@ -1,0 +1,70 @@
+{
+ "resourceType": "Bundle",
+ "type": "collection",
+ "entry": [
+  {
+   "fullUrl": "urn:uuid:5dc39935-4732-5ee4-b57d-1916c3a47520",
+   "resource": {
+    "resourceType": "Patient",
+    "id": "nora",
+    "gender": "female",
+    "birthDate": "1985-09-09",
+    "name": [
+     {
+      "family": "Synthetic",
+      "given": [
+       "Nora"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:49211bca-2c0c-5c27-af98-42cb86f0c09f",
+   "resource": {
+    "resourceType": "Condition",
+    "id": "nora-cond-1",
+    "clinicalStatus": {
+     "coding": [
+      {
+       "code": "active"
+      }
+     ]
+    },
+    "code": {
+     "coding": [
+      {
+       "system": "http://hl7.org/fhir/sid/icd-10-cm",
+       "code": "U07.1",
+       "display": "COVID-19"
+      }
+     ],
+     "text": "COVID-19"
+    },
+    "subject": {
+     "reference": "Patient/nora"
+    },
+    "onsetDateTime": "2024-01-08",
+    "recordedDate": "2024-01-08"
+   }
+  },
+  {
+   "fullUrl": "urn:uuid:c050a979-3feb-58d0-a29e-eb95aec69131",
+   "resource": {
+    "resourceType": "Encounter",
+    "id": "nora-enc-2",
+    "status": "finished",
+    "class": {
+     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+     "code": "AMB"
+    },
+    "subject": {
+     "reference": "Patient/nora"
+    },
+    "period": {
+     "start": "2024-01-08"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f8" />
+    <title>Clinician view | Undiagnosed No More</title>
+    <meta name="description" content="The Undiagnosed No More clinician view on synthetic patients: chart patterns for nine conditions, from Long COVID, ME/CFS, and Lyme disease to lupus, endometriosis, and depression, with dated evidence. No login, no real patient data." />
+    <link rel="icon" href="/favicon.svg?v=20261011-unom" type="image/svg+xml" />
+    <link rel="stylesheet" href="/shared/site-nav.css?v=20261024" />
+    <script src="/homepage-settings.js?v=20261019"></script>
+    <link rel="stylesheet" href="/athena/styles.css?v=20261014" />
+    <link rel="stylesheet" href="/shared/demo-frame.css?v=20261015" />
+    <link rel="stylesheet" href="clinician.css?v=20261018" />
+  </head>
+  <body data-door="clinician">
+    <main class="demo-shell">
+      <header class="demo-intro">
+        <p class="demo-lede">Inside the health record, see which condition a chart pattern points to, the dated findings behind it and how much each one moves the estimate, the patient's own answers combined into it, and what to check next, for all nine conditions.</p>
+        <h1>Explore the clinician app</h1>
+        <p>Use UNOM with synthetic patient records below, or <a class="demo-smartlink" href="/smart/" target="_blank" rel="noreferrer">Launch via SMART on FHIR ↗</a></p>
+      </header>
+
+      <nav class="demo-picker" aria-label="Example patients">
+        <div class="demo-patients" id="demo-patients" role="group" aria-label="Example patients"></div>
+      </nav>
+
+      <div class="demo-frame">
+        <div class="demo-frame-bar">
+          <span class="demo-frame-title">Clinician app</span>
+          <span class="demo-frame-context">Interactive demo · synthetic records</span>
+        </div>
+        <div class="demo-frame-content">
+          <div class="demo-frame-loader" id="demo-frame-loader" role="status" aria-live="polite" hidden>
+            <span class="demo-frame-spinner" aria-hidden="true"></span>
+            <span id="demo-frame-loader-text">Opening the clinician app…</span>
+          </div>
+          <div class="demo-frame-body demo-body" id="dashboard"></div>
+        </div>
+      </div>
+    </main>
+    <script src="/shared/site-nav.js?v=20261023" defer></script>
+    <script type="module" src="demo.js?v=20261016c"></script>
+  </body>
+</html>

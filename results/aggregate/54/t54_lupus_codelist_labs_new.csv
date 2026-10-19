@@ -1,0 +1,142 @@
+fid,loinc,concept_name
+lab_c3,10434-9,Complement C3 Ag [Presence] in Tissue by Immune stain
+lab_c3,14195-2,Complement C3b Inactive [Mass/volume] in Plasma
+lab_c3,15164-7,Complement C3 [Mass/volume] in Synovial fluid
+lab_c3,34401-0,Complement C3d [Mass/volume] in Serum or Plasma
+lab_c3,34544-7,Complement C3 and C4 panel [Mass/volume] - Serum or Plasma
+lab_c3,38388-5,Complement C3 [Presence] in Serum or Plasma
+lab_c3,43575-0,Complement C3 [Mass/volume] in Pericardial fluid
+lab_c3,43578-4,Complement C3 [Mass/volume] in Peritoneal fluid
+lab_c3,43579-2,Complement C3 [Mass/volume] in Pleural fluid
+lab_c3,44714-4,Complement C3/Protein [Mass Ratio] in Synovial fluid
+lab_c3,4485-9,Complement C3 [Mass/volume] in Serum or Plasma
+lab_c3,4486-7,Complement C3 fragment [Presence] in Red Blood Cells
+lab_c3,4487-5,Complement C3 fragment [Mass/volume] in Red Blood Cells
+lab_c3,4488-3,Complement C3a [Mass/volume] in Serum or Plasma
+lab_c3,4489-1,Complement C3b [Mass/volume] in Serum or Plasma
+lab_c3,4490-9,Complement C3b-C4b receptor [Entitic number] in Red Blood Cells
+lab_c3,4491-7,Complement C3c [Mass/volume] in Serum or Plasma
+lab_c3,4492-5,Complement C3d [Entitic number] in Red Blood Cells
+lab_c3,48420-4,Complement C3c [Mass/volume] in Body fluid
+lab_c3,54409-8,Direct antiglobulin test.complement C3+C4 specific reagent [Presence] on Red Blood Cells
+lab_c3,54410-6,Direct antiglobulin test.complement C3 specific reagent [Presence] on Red Blood Cells
+lab_c3,55774-4,Direct antiglobulin test.complement C3d specific reagent [Presence] on Red Blood Cells
+lab_c3,56471-6,Direct antiglobulin test.complement C3c specific reagent [Presence] on Red Blood Cells
+lab_c3,58956-4,Direct antiglobulin test.complement C3b+C4d specific reagent [Presence] on Red Blood Cells
+lab_c3,60277-1,Complement C3 Ag [Presence] in Tissue by Immunofluorescence
+lab_c3,6295-0,Complement C3d [Presence] in Red Blood Cells
+lab_c3,6296-8,Complement C3b-C4b receptor [Presence] in Red Blood Cells
+lab_c3,6801-5,Complement C3 [Mass/volume] in Body fluid
+lab_c3,81313-9,Cryoglobulin.complement C3 [Presence] in Serum
+lab_c3,87723-3,Complement C3.functional [Units/volume] in Serum or Plasma
+lab_c4,15165-4,Complement C4 [Mass/volume] in Synovial fluid
+lab_c4,21217-5,Complement C4d [Mass/volume] in Plasma
+lab_c4,26931-6,Complement C4 [Units/volume] in Serum or Plasma
+lab_c4,38522-9,Complement C4b binding protein actual/normal in Serum or Plasma
+lab_c4,39565-7,Complement C4d [Mass/volume] in Plasma by Immunoassay
+lab_c4,43580-0,Complement C4 [Mass/volume] in Pericardial fluid
+lab_c4,43581-8,Complement C4 [Mass/volume] in Peritoneal fluid
+lab_c4,43582-6,Complement C4 [Mass/volume] in Pleural fluid
+lab_c4,44715-1,Complement C4/Protein [Mass Ratio] in Synovial fluid
+lab_c4,4498-2,Complement C4 [Mass/volume] in Serum or Plasma
+lab_c4,4500-5,Complement C4 CH50 [Mass/volume] in Cerebral spinal fluid
+lab_c4,4501-3,Complement C4a [Mass/volume] in Plasma
+lab_c4,4502-1,Complement C4b binding protein [Units/volume] in Serum or Plasma
+lab_c4,4503-9,Complement C4b binding protein [Mass/volume] in Serum or Plasma
+lab_c4,4504-7,Complement C4d [Entitic number] in Red Blood Cells
+lab_c4,48731-4,Complement C4 [Presence] in Serum or Plasma
+lab_c4,57949-0,Complement C4c [Mass/volume] in Serum or Plasma
+lab_c4,6293-5,Complement C4d [Presence] in Red Blood Cells
+lab_c4,6908-8,Complement C4 [Mass/volume] in Body fluid
+lab_c4,76496-9,Complement C4 [Moles/volume] in Serum or Plasma
+lab_c4,93978-5,Complement C4.functional [Units/volume] in Serum or Plasma
+lab_cardiolipin,2040-4,Cardiolipin [Mass/volume] in Serum
+lab_cardiolipin,20424-8,Cardiolipin IgG Ab [Interpretation] in Serum
+lab_cardiolipin,20425-5,Cardiolipin IgM Ab [Interpretation] in Serum
+lab_cardiolipin,20484-2,Cardiolipin IgG Ab [Titer] in Serum
+lab_cardiolipin,20485-9,Cardiolipin IgM Ab [Titer] in Serum
+lab_cardiolipin,20669-8,Cardiolipin IgA Ab [Titer] in Serum
+lab_cardiolipin,24319-6,Cardiolipin IgG and IgM panel - Serum
+lab_cardiolipin,24385-7,Cardiolipin IgG Ab [Presence] in Serum by Immunoassay
+lab_cardiolipin,24386-5,Cardiolipin IgM Ab [Presence] in Serum by Immunoassay
+lab_cardiolipin,27183-3,Cardiolipin IgG Ab [Presence] in Serum
+lab_cardiolipin,29860-4,Cardiolipin Ab [Presence] in Serum
+lab_cardiolipin,30470-9,Cardiolipin IgA Ab [Presence] in Serum
+lab_cardiolipin,3180-7,Cardiolipin Ab [Units/volume] in Serum by Immunoassay
+lab_cardiolipin,3181-5,Cardiolipin IgG Ab [Units/volume] in Serum by Immunoassay
+lab_cardiolipin,3182-3,Cardiolipin IgM Ab [Units/volume] in Serum by Immunoassay
+lab_cardiolipin,42729-4,Cardiolipin IgA Ab B2GP1 dependent [Multiple of the median] in Serum
+lab_cardiolipin,42730-2,Cardiolipin IgA Ab B2GP1 independent [Multiple of the median] in Serum
+lab_cardiolipin,42731-0,Cardiolipin IgG Ab B2GP1 dependent [Multiple of the median] in Serum
+lab_cardiolipin,42732-8,Cardiolipin IgG Ab B2GP1 independent [Multiple of the median] in Serum
+lab_cardiolipin,42733-6,Cardiolipin IgM Ab B2GP1 dependent [Multiple of the median] in Serum
+lab_cardiolipin,42734-4,Cardiolipin IgM Ab B2GP1 independent [Multiple of the median] in Serum
+lab_cardiolipin,43361-5,Cardiolipin IgA Ab [Mass/volume] in Serum
+lab_cardiolipin,43362-3,Cardiolipin IgG Ab [Mass/volume] in Serum
+lab_cardiolipin,43363-1,Cardiolipin IgM Ab [Mass/volume] in Serum
+lab_cardiolipin,45057-7,Cardiolipin IgA and IgG and IgM panel - Serum
+lab_cardiolipin,46125-1,Cardiolipin Ab [Presence] in Serum by Immunoassay
+lab_cardiolipin,5076-5,Cardiolipin IgA Ab [Units/volume] in Serum by Immunoassay
+lab_cardiolipin,55772-8,Cardiolipin IgG Ab [Multiple of the median] in Serum
+lab_cardiolipin,55773-6,Cardiolipin IgM Ab [Multiple of the median] in Serum
+lab_cardiolipin,56149-8,Beta 2 glycoprotein and Cardiolipin Ab and Phosphatidylserine panel - Serum
+lab_cardiolipin,80154-8,Monolysocardiolipin/Cardiolipin [Molar ratio] in DBS
+lab_cardiolipin,8062-2,Cardiolipin Ab [Units/volume] in Serum
+lab_cardiolipin,8063-0,Cardiolipin IgA Ab [Units/volume] in Serum or Plasma
+lab_cardiolipin,8065-5,Cardiolipin IgG Ab [Units/volume] in Serum or Plasma
+lab_cardiolipin,8067-1,Cardiolipin IgM Ab [Units/volume] in Serum or Plasma
+lab_dsdna,11013-0,DNA double strand Ab [Titer] in Serum
+lab_dsdna,12277-0,DNA double strand Ab [Presence] in Serum by Farr method
+lab_dsdna,15177-9,DNA double strand Ab [Units/volume] in Body fluid
+lab_dsdna,31348-6,DNA double strand Ab [Presence] in Serum
+lab_dsdna,32677-7,DNA double strand Ab [Units/volume] in Serum by Immunoassay
+lab_dsdna,34187-5,DNA double strand Ab [Titer] in Serum by Immunofluorescence (IF) Crithidia luciliae
+lab_dsdna,37993-3,DNA double strand Ab [Mass/volume] in Serum by Radioimmunoassay (RIA)
+lab_dsdna,42200-6,DNA double strand Ab [Units/volume] in Serum by Radioimmunoassay (RIA)
+lab_dsdna,47299-3,DNA double strand Ab [Units/volume] in Serum by Farr method
+lab_dsdna,48308-1,DNA double strand Ab [Units/volume] in Body fluid by Farr method
+lab_dsdna,5130-0,DNA double strand Ab [Units/volume] in Serum
+lab_dsdna,5131-8,DNA double strand Ab [Presence] in Serum by Immunofluorescence
+lab_dsdna,53148-3,DNA double strand Ab [Presence] in Body fluid
+lab_dsdna,54910-5,DNA double strand Ab [Units/volume] in Serum by Immunofluorescence
+lab_dsdna,63220-8,DNA double strand Ab [Titer] in Cerebral spinal fluid by Immunofluorescence
+lab_dsdna,63221-6,DNA double strand Ab [Presence] in Pleural fluid by Immunofluorescence
+lab_dsdna,63222-4,DNA double strand Ab [Units/volume] in Pleural fluid by Immunoassay
+lab_dsdna,63223-2,DNA double strand Ab [Titer] in Pleural fluid by Immunofluorescence
+lab_dsdna,63408-9,DNA double strand Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_dsdna,63409-7,DNA double strand Ab [Presence] in Cerebral spinal fluid by Immunofluorescence
+lab_dsdna,63410-5,DNA double strand Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_dsdna,6457-6,DNA double strand Ab [Presence] in Serum by Immunofluorescence (IF) Crithidia luciliae
+lab_dsdna,81716-3,DNA double strand Ab [Presence] in Serum by Line blot
+lab_smith,11090-8,Smith extractable nuclear Ab [Units/volume] in Serum
+lab_smith,14030-1,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_smith,17589-3,Smith extractable nuclear Ab [Titer] in Serum by Immune diffusion (ID)
+lab_smith,17590-1,Smith extractable nuclear Ab [Titer] in Serum by Immunoassay
+lab_smith,17591-9,Smith extractable nuclear Ab [Presence] in Serum by Immunofluorescence
+lab_smith,17592-7,Smith extractable nuclear Ab [Units/volume] in Serum by Immunofluorescence
+lab_smith,21522-8,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Units/volume] in Serum
+lab_smith,26703-9,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Titer] in Serum by Immunoassay
+lab_smith,26880-5,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_smith,27048-8,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Units/volume] in Serum
+lab_smith,30556-5,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Titer] in Serum by Immunofluorescence
+lab_smith,31627-3,Smith extractable nuclear Ab [Presence] in Serum
+lab_smith,31628-1,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Serum
+lab_smith,33460-7,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Presence] in Serum
+lab_smith,33567-9,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Units/volume] in Serum by Immunoassay
+lab_smith,33568-7,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear IgG Ab [Units/volume] in Serum by Immunoblot
+lab_smith,43182-5,Smith extractable nuclear Ab [Units/volume] in Serum by Immunoassay
+lab_smith,5355-3,Smith extractable nuclear Ab [Presence] in Serum by Counterimmunoelectrophoresis (CIE)
+lab_smith,5356-1,Smith extractable nuclear Ab [Presence] in Serum by Immunoassay
+lab_smith,5357-9,Smith extractable nuclear Ab [Presence] in Serum by Immune diffusion (ID)
+lab_smith,56148-0,Smith extractable nuclear Ab and Ribonucleoprotein extractable nuclear Ab panel - Serum
+lab_smith,56730-5,Smith extractable nuclear Ab [Presence] in Serum by Immunoblot
+lab_smith,63352-9,Smith extractable nuclear Ab [Presence] in Body fluid by Immune diffusion (ID)
+lab_smith,63353-7,Smith extractable nuclear Ab [Presence] in Body fluid by Immunoassay
+lab_smith,63354-5,Smith extractable nuclear Ab [Presence] in Cerebral spinal fluid by Immunoassay
+lab_smith,63405-5,Smith extractable nuclear Ab [Units/volume] in Body fluid by Immunoassay
+lab_smith,63406-3,Smith extractable nuclear Ab [Units/volume] in Cerebral spinal fluid by Immunoassay
+lab_smith,63546-6,Smith extractable nuclear Ab [Presence] in Body fluid
+lab_smith,63547-4,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Body fluid
+lab_smith,89501-1,Smith extractable nuclear Ab+Ribonucleoprotein extractable nuclear Ab [Presence] in Serum by Line blot
+lab_smith,89531-8,Smith extractable nuclear Ab [Presence] in Cerebral spinal fluid by Line blot
+lab_smith,9722-0,Smith extractable nuclear Ab [Titer] in Serum
