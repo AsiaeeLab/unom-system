@@ -36,7 +36,7 @@ SELF_REPORT = ['chronicfatigue', 'fibromyalgia', 'endometriosis', 'lyme', 'lupus
                'anxiety']
 CURRENT = ['longcovid'] + SELF_REPORT + ['longcovid.example']
 # Table 2 of the manuscript: the JavaScript suite and the cross-implementation parity check.
-TABLE2 = {'tests': 453, 'pass': 437, 'skipped': 16, 'fail': 0, 'reference outputs': 180}
+TABLE2 = {'tests': 437, 'pass': 437, 'skipped': 0, 'fail': 0, 'reference outputs': 180}
 ROWS: list[tuple[str, bool]] = []
 
 

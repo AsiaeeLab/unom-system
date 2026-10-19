@@ -54,9 +54,8 @@ compares it with `paper4/figures/scoring.pdf` (apart from the creation date in t
 and compares it with `web/web/atlas/data/`, and reruns, in a copy of the repository, every script that writes in
 place (the synthetic patients and their reference outputs, the site's model copies, and the developer pages), none
 of which may change a file. It then runs the Python reference tests and the JavaScript suite and compares the counts
-with Table 2 of the manuscript: 453 JavaScript tests, of which 437 pass and 16 are skipped (they hold the reference
-outputs of two superseded Long COVID model versions), and 180 reference outputs (18 patients, 10 model versions)
-reproduced by both scorers. The last line reports how many checks passed.
+with Table 2 of the manuscript: 437 JavaScript tests, all passing, and 180 reference outputs (18 patients, 10 model
+versions) reproduced by both scorers. The last line reports how many checks passed.
 
 To run only the JavaScript suite: `cd web && npm test`.
 
@@ -77,7 +76,7 @@ calls it directly. The About page and the competition entry page of the live sit
 part of this repository; the homepage and the developer pages link to them, and those links work on the live
 site.
 Neither are the tests that check those two pages or check agreement with the companion manuscripts' text (35 tests
-of the project's suite of 488).
+of the project's suite of 472).
 
 The system is a research prototype evaluated on synthetic records only. The Long COVID model predicts a later Long
 COVID diagnosis code and the other models a self-reported diagnosis, not disease; none has been validated outside All
