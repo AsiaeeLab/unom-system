@@ -1,7 +1,7 @@
 {
  ".gitignore": "cb7f26be888d17acec5171117b3eace6e7ec59558ba47da8607aee2ae914eda2",
  "LICENSE": "285244e1f3dad6f7dc4e9b7b5e8453d8f1035c5477f42fd991bc426771cff49b",
- "README.md": "aeed58fa024bb220dc0dfadac8710151c512d0b9387587c7c6969ce0d3d53495",
+ "README.md": "efd99ec86161a3a757393654906d0379a79dc3b613e88e26f535db6059e169ff",
  "analysis/build_atlas_data.py": "231ad558a56d78c0b2edb7e83e2b5a0ebdb6384995691d0e1f1f4938f55460b3",
  "analysis/build_cf_model.py": "155a1efeccda4960087c78c870af5edc6e6b3c942bffe0ea9a0bef27f8296e57",
  "analysis/build_clinician_interface.py": "c8e902d0291babefc6aacae3b19dc7c248bf3ba86cf131be69495acce5a9fdc4",
@@ -245,7 +245,7 @@
  "paper4/figures/figure1_architecture.pdf": "8b70c32f5cceaadcfbd9598ffc61e1b0042b08f3f79cd37a67e085a09bc5d722",
  "paper4/figures/figure1_architecture.tex": "343ec22839f9cc8ef53b8caa9f5977dec7cae425db32feb76897cee6b9577d57",
  "paper4/figures/make_screens.py": "e7d75b0791902fc03c1bfd5c7461cfca2168204b859cf802837f4d39b056bdba",
- "paper4/figures/scoring.pdf": "f9505d419b1e518179860078f4737bc29c2e20a3e10fe8c901b53fe47ae844d8",
+ "paper4/figures/scoring.pdf": "b22075ade56c0306a851983dc0d80d7a36d93b2560856081ff2ed2fef51d55ff",
  "paper4/figures/scoring.png": "a359db7ff063c2f8498dd49d9c0ab21695c4da051d0ed892cb68afda2ad56a62",
  "paper4/figures/scoring.py": "bd19e2286ed6c1b7eb64a8b716b132d176154a052965a9242695a0e6adb01403",
  "paper4/figures/screens.png": "c71f317e0785f5548a99c5bbcb8db6510870f45803c6984ec4f2bca2a65c5e5f",

@@ -1,8 +1,8 @@
 # Undiagnosed No More: case-finding models from All of Us, delivered to patients and clinicians
 
 Source code, model files, and released aggregate statistics for the manuscript "Design and Technical Evaluation of a
-Standards-Based System That Delivers Enclave-Derived Case-Finding Models to Patients and Clinicians" by Kaveh Aryan
-and Amir Asiaee.
+Standards-Based System That Delivers Enclave-Derived Case-Finding Models to Patients and Clinicians" by Amir Asiaee
+and Kaveh Aryan.
 
 Case-finding models for often-uncoded conditions (Long COVID, chronic fatigue, fibromyalgia, endometriosis, Lyme
 disease, lupus, migraine, depression, and anxiety) were fitted outside the All of Us Researcher Workbench from
